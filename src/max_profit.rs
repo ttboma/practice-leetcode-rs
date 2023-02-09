@@ -28,6 +28,10 @@ impl Solution {
     /// 
     /// - 1 <= prices.length <= 105
     /// - 0 <= prices[i] <= 104
+    ///
+    /// ------ 
+    ///
+    /// ***Extracted from:*** [best-time-to-buy-and-sell-stock](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/)
     pub fn max_profit(prices: Vec<i32>) -> i32 {
         let mut max = 0;
         let mut buy  = prices[0];
