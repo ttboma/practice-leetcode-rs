@@ -18,7 +18,7 @@ pub struct Solution {}
 
 /// Each of the methods for Solution struct are placed under its own module
 mod fib;
-mod fruit_into_baskets;
+mod total_fruit;
 mod generate;
 mod is_isomorphic;
 mod is_subsequence;
@@ -30,3 +30,6 @@ mod middle_node;
 mod pivot_index;
 mod reverse_list;
 mod running_sum;
+
+// parser utilities
+pub mod parse_util;
