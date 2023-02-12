@@ -25,14 +25,22 @@ use nom::{
     sequence::delimited, IResult,
 };
 fn parse_list(input: &str) -> IResult<&str, Vec<i32>> {
-    let (_, list) = delimited(char('['), is_not("]"), char(']'))(input.trim())?;
-    many0(parse_i32)(list)
+    let input = input.trim();
+    if input.len() == 0 {
+        fail(input)
+    } else if input == "[]" {
+        Ok((input, vec![]))
+    } else {
+        let (_input, list) = delimited(char('['), is_not("]"), char(']'))(input)?;
+        many0(parse_i32)(list)
+    }
 }
 fn parse_i32(input: &str) -> IResult<&str, i32> {
     let (input, value) = take_till(|c| c == ',')(input)?;
     let (input, comma) = opt(tag(","))(input)?;
+    let value = value.trim();
     if comma.is_some() || value.len() != 0 {
-        Ok((input, value.trim().parse::<i32>().unwrap()))
+        Ok((input, value.parse::<i32>().unwrap()))
     } else {
         fail(input)
     }
