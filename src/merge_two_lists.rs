@@ -30,7 +30,7 @@ impl Solution {
     /// - -100 <= Node.val <= 100
     /// - Both list1 and list2 are sorted in non-decreasing order.
     ///
-    /// ------ 
+    /// ------
     ///
     /// ***Extracted from:*** [merge-two-sorted-lists](https://leetcode.com/problems/merge-two-sorted-lists/)
     pub fn merge_two_lists(
