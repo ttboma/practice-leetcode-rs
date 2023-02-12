@@ -8,7 +8,7 @@ fn read_string() -> io::Result<String> {
     stdin.read_to_string(&mut buffer)?;
     Ok(buffer)
 }
-fn read_line() -> io::Result<String> {
+pub fn read_line() -> io::Result<String> {
     let stdin = io::stdin();
     let mut buffer = String::new();
     stdin.read_line(&mut buffer)?;
@@ -24,6 +24,16 @@ use nom::{
     character::complete::char, combinator::fail, combinator::opt, multi::many0,
     sequence::delimited, IResult,
 };
+fn parse_i32(input: &str) -> IResult<&str, i32> {
+    let (input, value) = take_till(|c| c == ',')(input)?;
+    let (input, comma) = opt(tag(","))(input)?;
+    let value = value.trim();
+    if comma.is_some() || value.len() != 0 {
+        Ok((input, value.parse::<i32>().unwrap()))
+    } else {
+        fail(input)
+    }
+}
 fn parse_list(input: &str) -> IResult<&str, Vec<i32>> {
     let input = input.trim();
     if input.len() == 0 {
@@ -33,16 +43,6 @@ fn parse_list(input: &str) -> IResult<&str, Vec<i32>> {
     } else {
         let (_input, list) = delimited(char('['), is_not("]"), char(']'))(input)?;
         many0(parse_i32)(list)
-    }
-}
-fn parse_i32(input: &str) -> IResult<&str, i32> {
-    let (input, value) = take_till(|c| c == ',')(input)?;
-    let (input, comma) = opt(tag(","))(input)?;
-    let value = value.trim();
-    if comma.is_some() || value.len() != 0 {
-        Ok((input, value.parse::<i32>().unwrap()))
-    } else {
-        fail(input)
     }
 }
 pub fn read_i32_list() -> Vec<i32> {
