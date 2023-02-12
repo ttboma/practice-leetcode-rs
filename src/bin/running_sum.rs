@@ -2,6 +2,12 @@ use syc_leetcode_solution_rs::parse_util;
 use syc_leetcode_solution_rs::Solution;
 
 fn main() {
-    let nums = parse_util::read_i32_list();
+    let buffer = parse_util::read_line().unwrap();
+    let (input, list) = parse_util::parse_list(&buffer).unwrap();
+    assert!(
+        input.trim().len() == 0,
+        "Please enter one square-bracket-enclosed-list in one line.",
+    );
+    let nums: Vec<i32> = list.iter().map(|s| s.trim().parse().unwrap()).collect();
     println!("{:?}", Solution::running_sum(nums));
 }

@@ -3,13 +3,14 @@ use syc_leetcode_solution_rs::Solution;
 
 fn main() {
     let buffer = parse_util::read_line().unwrap();
-    let v: Vec<&str> = buffer.split_whitespace().collect();
+    let (input, s) = parse_util::parse_string(&buffer).unwrap();
+    let (input, t) = parse_util::parse_string(&input).unwrap();
     assert!(
-        v.len() == 2,
-        "Please enter two whitespace-splited string in one line."
+        input.trim().len() == 0,
+        "Please enter two whitespace-splited string in one line.",
     );
     println!(
         "{:?}",
-        Solution::is_subsequence(v[0].to_owned(), v[1].to_owned())
+        Solution::is_subsequence(s.to_owned(), t.to_owned())
     );
 }
