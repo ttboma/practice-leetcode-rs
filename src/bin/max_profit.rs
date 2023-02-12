@@ -8,6 +8,6 @@ fn main() {
         input.trim().len() == 0,
         "Please enter one square-bracket-enclosed-list in one line.",
     );
-    let prices: Vec<i32> = list.iter().map(|s| s.trim().parse().unwrap()).collect();
+    let prices: Vec<i32> = list.iter().map(|s| s.parse().unwrap()).collect();
     println!("{}", Solution::max_profit(prices));
 }

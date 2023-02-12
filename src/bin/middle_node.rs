@@ -9,7 +9,7 @@ fn main() {
         input.trim().len() == 0,
         "Please enter one square-bracket-enclosed-list in one line.",
     );
-    let nums: Vec<i32> = list.iter().map(|s| s.trim().parse().unwrap()).collect();
+    let nums: Vec<i32> = list.iter().map(|s| s.parse().unwrap()).collect();
 
     // Store nums into head
     let mut head: Option<Box<ListNode>> = None;
