@@ -30,6 +30,7 @@ mod middle_node;
 mod pivot_index;
 mod reverse_list;
 mod running_sum;
+mod count_odds;
 
 // parser utilities
 pub mod parse_util;
