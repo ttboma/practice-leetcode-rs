@@ -31,6 +31,7 @@ mod pivot_index;
 mod reverse_list;
 mod running_sum;
 mod count_odds;
+mod ship_within_days;
 
 // parser utilities
 pub mod parse_util;
