@@ -1,3 +1,6 @@
+use std::cell::RefCell;
+use std::rc::Rc;
+
 /// Definition for singly-linked list.
 #[derive(PartialEq, Eq, Clone, Debug)]
 pub struct ListNode {
@@ -32,6 +35,7 @@ mod reverse_list;
 mod running_sum;
 mod count_odds;
 mod ship_within_days;
+mod find_kth_positive;
 
 // parser utilities
 pub mod parse_util;
