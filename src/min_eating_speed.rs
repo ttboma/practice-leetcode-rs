@@ -49,9 +49,9 @@ impl Solution {
                 .iter()
                 .map(|banana| {
                     if banana % m != 0 {
-                        (banana / m) + 1
+                        banana / m + 1
                     } else {
-                        (banana / m)
+                        banana / m
                     }
                 })
                 .sum();
