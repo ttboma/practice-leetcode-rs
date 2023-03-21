@@ -37,6 +37,7 @@ mod count_odds;
 mod ship_within_days;
 mod find_kth_positive;
 mod min_eating_speed;
+mod zero_filled_subarray;
 
 // parser utilities
 pub mod parse_util;
