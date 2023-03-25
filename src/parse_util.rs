@@ -45,7 +45,7 @@ pub fn parse_list_2d(input: &str) -> IResult<&str, Vec<Vec<&str>>> {
     )(input)
 }
 pub fn parse_i32_and_list_2d(input: &str) -> IResult<&str, (&str, Vec<Vec<&str>>)> {
-    tuple((delimited(multispace0, digit1, multispace0), parse_list_2d))(input)
+    tuple((ws(digit1), parse_list_2d))(input)
 }
 pub fn parse_string(input: &str) -> IResult<&str, &str> {
     preceded(
