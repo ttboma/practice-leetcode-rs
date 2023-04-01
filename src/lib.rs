@@ -40,6 +40,7 @@ mod min_eating_speed;
 mod zero_filled_subarray;
 mod min_score;
 mod count_pairs;
+mod search;
 
 // parser utilities
 pub mod parse_util;
