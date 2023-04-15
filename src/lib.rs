@@ -41,6 +41,7 @@ mod zero_filled_subarray;
 mod min_score;
 mod count_pairs;
 mod search;
+mod count_bits;
 
 // parser utilities
 pub mod parse_util;
