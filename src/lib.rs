@@ -16,15 +16,33 @@ impl ListNode {
     }
 }
 
-/// LeetCode solutions provided by Shieh, Yueh-chang <ttboma@gmail.com>
-pub struct Solution {}
+/// Definition for a binary tree node.
+#[derive(Debug, PartialEq, Eq)]
+pub struct TreeNode {
+    pub val: i32,
+    pub left: Option<Rc<RefCell<TreeNode>>>,
+    pub right: Option<Rc<RefCell<TreeNode>>>,
+}
+
+impl TreeNode {
+    #[inline]
+    pub fn new(val: i32) -> Self {
+        TreeNode {
+            val,
+            left: None,
+            right: None,
+        }
+    }
+}
+
 
 /// LeetCode solutions provided by Shieh, Yueh-chang <ttboma@gmail.com>
 /// Each of the methods for Solution struct are placed under its own module
 pub struct Solution {}
 mod count_bits;
+mod count_odds;
+mod count_pairs;
 mod fib;
-mod find_duplicate_subtrees;
 mod find_kth_positive;
 mod generate;
 mod is_isomorphic;
@@ -41,13 +59,9 @@ mod reverse_list;
 mod running_sum;
 mod search;
 mod ship_within_days;
-mod find_kth_positive;
-mod min_eating_speed;
+mod total_fruit;
 mod zero_filled_subarray;
-mod min_score;
-mod count_pairs;
-mod search;
-mod count_bits;
+mod merge_alternately;
 
 // parser utilities
 pub mod parse_util;

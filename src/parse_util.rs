@@ -9,7 +9,7 @@ pub fn read_line() -> io::Result<String> {
 
 use nom::{
     bytes::complete::{tag, take_while1},
-    character::complete::{multispace0, digit1},
+    character::complete::{digit1, multispace0},
     combinator::opt,
     error::ParseError,
     multi::separated_list0,
