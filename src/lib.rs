@@ -63,6 +63,7 @@ mod total_fruit;
 mod zero_filled_subarray;
 mod merge_alternately;
 mod gcd_of_strings;
+mod kids_with_candies;
 
 // parser utilities
 pub mod parse_util;

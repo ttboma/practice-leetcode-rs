@@ -44,12 +44,15 @@ pub fn parse_list_2d(input: &str) -> IResult<&str, Vec<Vec<&str>>> {
         ws(tag("]")),
     )(input)
 }
-pub fn parse_i32_and_list_2d(input: &str) -> IResult<&str, (&str, Vec<Vec<&str>>)> {
-    tuple((ws(digit1), parse_list_2d))(input)
-}
 pub fn parse_string(input: &str) -> IResult<&str, &str> {
     preceded(
         multispace0,
         take_while1(|x: char| x.is_ascii() && !x.is_whitespace()),
     )(input)
+}
+pub fn parse_i32_and_list_2d(input: &str) -> IResult<&str, (&str, Vec<Vec<&str>>)> {
+    tuple((ws(digit1), parse_list_2d))(input)
+}
+pub fn parse_list_and_i32(input: &str) -> IResult<&str, (Vec<&str>, &str)> {
+    tuple((parse_list, ws(digit1)))(input)
 }
