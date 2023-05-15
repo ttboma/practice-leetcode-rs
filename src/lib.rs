@@ -64,6 +64,7 @@ mod zero_filled_subarray;
 mod merge_alternately;
 mod gcd_of_strings;
 mod kids_with_candies;
+mod can_place_flowers;
 
 // parser utilities
 pub mod parse_util;
