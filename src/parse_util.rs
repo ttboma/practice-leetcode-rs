@@ -8,7 +8,7 @@ pub fn read_line() -> io::Result<String> {
 }
 
 use nom::{
-    bytes::complete::{tag, take_while1},
+    bytes::complete::{tag, take_while, take_while1},
     character::complete::{digit1, multispace0},
     combinator::opt,
     error::ParseError,
@@ -45,9 +45,10 @@ pub fn parse_list_2d(input: &str) -> IResult<&str, Vec<Vec<&str>>> {
     )(input)
 }
 pub fn parse_string(input: &str) -> IResult<&str, &str> {
-    preceded(
-        multispace0,
-        take_while1(|x: char| x.is_ascii() && !x.is_whitespace()),
+    delimited(
+        ws(tag("\"")),
+        take_while(|x: char| x.is_ascii() && x != '"'),
+        ws(tag("\"")),
     )(input)
 }
 pub fn parse_i32_and_list_2d(input: &str) -> IResult<&str, (&str, Vec<Vec<&str>>)> {

@@ -66,6 +66,7 @@ mod gcd_of_strings;
 mod kids_with_candies;
 mod can_place_flowers;
 mod reverse_vowels;
+mod reverse_words;
 
 // parser utilities
 pub mod parse_util;
