@@ -31,21 +31,28 @@ impl Solution {
     ///
     /// ***Extracted from:*** [reverse-vowels-of-a-string](https://leetcode.com/problems/reverse-vowels-of-a-string/)
     pub fn reverse_vowels(s: String) -> String {
-        let mut ret = s.clone();
-        let vowels: HashSet<char> = "aeiouAEIOU".chars().collect();
-        let mut i = s.char_indices().filter(|(_idx, c)| vowels.contains(c));
-        let mut j = s.char_indices().filter(|(_idx, c)| vowels.contains(c)).rev();
+        fn is_vowel(c: u8) -> bool {
+            b"aeiouAEIOU".contains(&c)
+        }
+        let mut s = s.into_bytes();
+        let mut i = 0;
+        let mut j = s.len() - 1;
         loop {
-            match (i.next(), j.next()) {
-                (Some((i, v)), Some((j, u))) if i < j => {
-                   ret.replace_range(i..i+1, &u.to_string());
-                   ret.replace_range(j..j+1, &v.to_string());
-                }
-                _ => {
-                    break ret;
-                }
+            while !is_vowel(s[i]) && i < j {
+                i += 1;
+            }
+            while !is_vowel(s[j]) && i < j {
+                j -= 1;
+            }
+            if i < j {
+                s.swap(i, j);
+                i += 1;
+                j -= 1;
+            } else {
+                break;
             }
         }
+        String::from_utf8(s).unwrap()
     }
 }
 
@@ -59,7 +66,7 @@ mod tests {
         let output = String::from("holle");
         assert_eq!(Solution::reverse_vowels(s), output);
     }
-    
+
     #[test]
     fn example2() {
         let s = String::from("leetcode");
