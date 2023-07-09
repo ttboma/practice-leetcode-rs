@@ -69,6 +69,7 @@ mod reverse_vowels;
 mod reverse_words;
 mod product_except_self;
 mod move_zeroes;
+mod find_max_average;
 
 // parser utilities
 pub mod parse_util;
