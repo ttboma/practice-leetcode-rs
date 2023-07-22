@@ -71,6 +71,8 @@ mod product_except_self;
 mod move_zeroes;
 mod find_max_average;
 mod largest_altitude;
+mod find_difference;
+mod maximum_sum_queries;
 
 // parser utilities
 pub mod parse_util;
