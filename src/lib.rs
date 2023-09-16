@@ -1,3 +1,8 @@
+//! # Development Note
+//!
+//! * Use chrome and [Clip LeetCode](https://chrome.google.com/webstore/detail/clip-leetcode/cnghimckckgcmhbdokjielmhkmnagdcp/related)
+//!   extension to maintain documentation of each method of [`Solution`]
+
 use std::cell::RefCell;
 use std::rc::Rc;
 
@@ -35,44 +40,43 @@ impl TreeNode {
     }
 }
 
-
 /// LeetCode solutions provided by Shieh, Yueh-chang <ttboma@gmail.com>
 /// Each of the methods for Solution struct are placed under its own module
 pub struct Solution {}
+mod can_place_flowers;
 mod count_bits;
 mod count_odds;
 mod count_pairs;
 mod fib;
+mod find_difference;
 mod find_kth_positive;
+mod find_max_average;
+mod gcd_of_strings;
 mod generate;
 mod is_isomorphic;
 mod is_subsequence;
 mod jump;
+mod kids_with_candies;
+mod largest_altitude;
 mod longest_palindrome;
+mod majority_element;
 mod max_profit;
+mod merge_alternately;
 mod merge_two_lists;
 mod middle_node;
 mod min_eating_speed;
 mod min_score;
+mod move_zeroes;
 mod pivot_index;
+mod product_except_self;
 mod reverse_list;
+mod reverse_vowels;
+mod reverse_words;
 mod running_sum;
 mod search;
 mod ship_within_days;
 mod total_fruit;
 mod zero_filled_subarray;
-mod merge_alternately;
-mod gcd_of_strings;
-mod kids_with_candies;
-mod can_place_flowers;
-mod reverse_vowels;
-mod reverse_words;
-mod product_except_self;
-mod move_zeroes;
-mod find_max_average;
-mod largest_altitude;
-mod find_difference;
-mod maximum_sum_queries;
 
 // parser utilities
 pub mod parse_util;
