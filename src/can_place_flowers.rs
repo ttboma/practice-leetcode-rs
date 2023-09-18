@@ -33,8 +33,8 @@ impl Solution {
     pub fn can_place_flowers(flowerbed: Vec<i32>, n: i32) -> bool {
         let n = n as usize;
         let mut it = flowerbed.iter().enumerate().filter(|(_i, &v)| v == 1);
-        let mut prev_i = 0;
-        let mut max_plots = 0;
+        let mut prev_i: usize;
+        let mut max_plots: usize;
 
         if let Some((i, _v)) = it.next() {
             max_plots = i / 2;

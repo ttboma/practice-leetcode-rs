@@ -1,4 +1,4 @@
-use std::iter::{successors, from_fn};
+use std::iter::successors;
 
 use crate::Solution;
 
