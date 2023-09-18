@@ -77,6 +77,7 @@ mod search;
 mod ship_within_days;
 mod total_fruit;
 mod zero_filled_subarray;
+mod contains_duplicate;
 
 // parser utilities
 pub mod parse_util;
