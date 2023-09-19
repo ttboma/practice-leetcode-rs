@@ -10,14 +10,14 @@ impl Solution {
     ///  
     /// **Example 1:**
     ///  
-    /// ```
+    /// ```txt
     /// Input: s = "anagram", t = "nagaram"
     /// Output: true
     /// ```
     ///
     /// **Example 2:**
     ///
-    /// ```
+    /// ```txt
     /// Input: s = "rat", t = "car"
     /// Output: false
     /// ```
