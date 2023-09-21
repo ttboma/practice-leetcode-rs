@@ -44,6 +44,7 @@ impl TreeNode {
 /// Each of the methods for Solution struct are placed under its own module
 pub struct Solution {}
 mod can_place_flowers;
+mod contains_duplicate;
 mod count_bits;
 mod count_odds;
 mod count_pairs;
@@ -53,6 +54,8 @@ mod find_kth_positive;
 mod find_max_average;
 mod gcd_of_strings;
 mod generate;
+mod get_row;
+mod is_anagram;
 mod is_isomorphic;
 mod is_subsequence;
 mod jump;
@@ -64,6 +67,7 @@ mod max_profit;
 mod merge_alternately;
 mod merge_two_lists;
 mod middle_node;
+mod min_cost_climbing_stairs;
 mod min_eating_speed;
 mod min_score;
 mod move_zeroes;
@@ -76,10 +80,7 @@ mod running_sum;
 mod search;
 mod ship_within_days;
 mod total_fruit;
-mod get_row;
 mod zero_filled_subarray;
-mod contains_duplicate;
-mod is_anagram;
 
 // parser utilities
 pub mod parse_util;

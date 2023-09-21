@@ -1,4 +1,4 @@
-use std::iter::once;
+use std::iter::{once, successors};
 
 use crate::Solution;
 
@@ -37,17 +37,15 @@ impl Solution {
     ///
     /// **Follow up:**  Could you optimize your algorithm to use only `O(rowIndex)` extra space?
     pub fn get_row(row_index: i32) -> Vec<i32> {
-        let mut row = vec![1];
-        for _ in 0..row_index {
-            row = compute_next_row(&row);
-        }
-        row
+        successors(Some(vec![1]), |row| Some(compute_next_row(row)))
+            .nth(row_index as usize)
+            .unwrap()
     }
 }
 
 fn compute_next_row(row: &Vec<i32>) -> Vec<i32> {
     once(1)
-        .chain(row.windows(2).map(|item| item[0] + item[1]))
+        .chain(row.windows(2).map(|item| item.iter().sum()))
         .chain(once(1))
         .collect()
 }
