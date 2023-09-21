@@ -40,7 +40,7 @@ impl Solution {
             }
             count.insert(n);
         }
-        return false;
+        false
     }
 }
 

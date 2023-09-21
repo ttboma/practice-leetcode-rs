@@ -2,16 +2,16 @@ use crate::Solution;
 
 impl Solution {
     /// # 338. Counting Bits
-    /// 
+    ///
     /// Given an integer `n`, return an array `ans` of length `n + 1` such that
     /// for each `i` (`0 <= i <= n`), `ans[i]` is the number of `1`'s in the
     /// binary representation of `i`.
     ///
     /// **Example 1:**
-    /// 
+    ///
     /// - **Input:** n = 2
     /// - **Output:** [0,1,1]
-    /// - **Explanation:** 
+    /// - **Explanation:**
     ///     ```txt
     ///     0 --> 0
     ///     1 --> 1
@@ -19,7 +19,7 @@ impl Solution {
     ///     ```
     ///
     /// **Example 2:**
-    /// 
+    ///
     /// - **Input:** n = 5
     /// - **Output:** [0,1,1,2,1,2]
     /// - **Explanation:**
@@ -31,9 +31,9 @@ impl Solution {
     ///     4 --> 100
     ///     5 --> 101
     ///     ```
-    /// 
+    ///
     /// **Constraints:**
-    /// 
+    ///
     /// - `0 <= n <= 10^5`
     ///
     /// ------
@@ -68,12 +68,12 @@ mod tests {
     fn example1() {
         assert_eq!(Solution::count_bits(0), vec![0]);
     }
-    
+
     #[test]
     fn example2() {
         assert_eq!(Solution::count_bits(1), vec![0, 1]);
     }
-    
+
     #[test]
     fn example3() {
         assert_eq!(Solution::count_bits(2), vec![0, 1, 1]);

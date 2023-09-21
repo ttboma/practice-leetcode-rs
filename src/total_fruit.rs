@@ -53,27 +53,27 @@ impl Solution {
         }
         let mut i = 1;
         while i != fruits.len() && fruits[i] == fruits[0] {
-            i = i + 1;
+            i += 1;
         }
         if i == fruits.len() {
             return i.try_into().unwrap();
         }
         let mut bucket = (fruits[0], fruits[i]);
-        i = i + 1;
+        i += 1;
         let mut max = i;
         let mut cur_max = i;
         let mut conseq = 1;
-        for idx in i..fruits.len() {
-            if bucket.1 == fruits[idx] {
-                cur_max = cur_max + 1;
-                conseq = conseq + 1;
-            } else if bucket.0 == fruits[idx] {
-                cur_max = cur_max + 1;
+        for item in fruits.iter().skip(i) {
+            if bucket.1 == *item {
+                cur_max += 1;
+                conseq += 1;
+            } else if bucket.0 == *item {
+                cur_max += 1;
                 conseq = 1;
-                bucket = (bucket.1, fruits[idx]);
+                bucket = (bucket.1, *item);
             } else {
                 max = cmp::max(max, cur_max);
-                bucket = (bucket.1, fruits[idx]);
+                bucket = (bucket.1, *item);
                 cur_max = conseq + 1;
                 conseq = 1;
             }

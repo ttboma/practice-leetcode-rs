@@ -5,7 +5,7 @@ fn main() {
     let buffer = parse_util::read_line().unwrap();
     let (input, s) = parse_util::parse_string(&buffer).unwrap();
     assert!(
-        input.trim().len() == 0,
+        input.trim().is_empty(),
         "Please enter one whitespace-splited string in one line.",
     );
     println!("{:?}", Solution::longest_palindrome(s.to_owned()));

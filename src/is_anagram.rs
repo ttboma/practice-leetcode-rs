@@ -5,11 +5,11 @@ impl Solution {
     /// # [242. Valid Anagram](https://leetcode.com/problems/valid-anagram/)
     ///
     /// Given two strings `s` and `t`, return `true` if `t` is an anagram of `s`, and `false` otherwise.
-    ///  
+    ///
     /// An **Anagram**  is a word or phrase formed by rearranging the letters of a different word or phrase, typically using all the original letters exactly once.
-    ///  
+    ///
     /// **Example 1:**
-    ///  
+    ///
     /// ```txt
     /// Input: s = "anagram", t = "nagaram"
     /// Output: true
@@ -34,7 +34,10 @@ impl Solution {
         }
         let mut count = HashMap::<char, usize>::new();
         for s_char in s.chars() {
-            count.entry(s_char).and_modify(|counter| *counter += 1).or_insert(1);
+            count
+                .entry(s_char)
+                .and_modify(|counter| *counter += 1)
+                .or_insert(1);
         }
         for t_char in t.chars() {
             match count.get_mut(&t_char) {

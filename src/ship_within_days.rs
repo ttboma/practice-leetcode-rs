@@ -25,7 +25,7 @@ impl Solution {
     /// - Note that the cargo must be shipped in the order given, so using a ship
     ///   of capacity 14 and splitting the packages into parts like (2, 3, 4, 5),
     ///   (1, 6, 7), (8), (9), (10) is not allowed.
-    ///   
+    ///
     /// **Example 2:**
     ///
     /// - **Input:** weights = [3,2,2,4,1,4], days = 3
@@ -61,20 +61,20 @@ impl Solution {
             let mut load = 0;
             let mut cnt = 1;
             for w in &weights {
-                load = load + *w;
+                load += *w;
                 if load > cap {
                     if cnt == days {
                         return false;
                     }
-                    cnt = cnt + 1;
+                    cnt += 1;
                     load = *w;
                 }
             }
-            return true;
+            true
         };
         while low != high {
             let mid = low + (high - low) / 2;
-            if feasible(mid) == true {
+            if feasible(mid) {
                 high = mid;
             } else {
                 low = mid + 1;

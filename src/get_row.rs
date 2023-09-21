@@ -12,21 +12,21 @@ impl Solution {
     ///
     /// **Example 1:**
     ///
-    /// ```
+    /// ```txt
     /// Input: rowIndex = 3
     /// Output: [1,3,3,1]
     /// ```
     ///
     /// **Example 2:**
     ///
-    /// ```
+    /// ```txt
     /// Input: rowIndex = 0
     /// Output: [1]
     /// ```
     ///
     /// **Example 3:**
     ///
-    /// ```
+    /// ```txt
     /// Input: rowIndex = 1
     /// Output: [1,1]
     /// ```
@@ -43,7 +43,7 @@ impl Solution {
     }
 }
 
-fn compute_next_row(row: &Vec<i32>) -> Vec<i32> {
+fn compute_next_row(row: &[i32]) -> Vec<i32> {
     once(1)
         .chain(row.windows(2).map(|item| item.iter().sum()))
         .chain(once(1))

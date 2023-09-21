@@ -25,9 +25,9 @@ impl Solution {
     /// **Constraints:**
     ///
     /// - `2 <= nums.length <= 10^5`
-    /// - `-5000 <= Node.val <= 5000` 
+    /// - `-5000 <= Node.val <= 5000`
     /// - The product of any prefix or suffix of `nums` is guaranteed to fit in a **32-bit** integer.
-    ///  
+    ///
     /// **Follow up:** Can you solve the problem in `O(1)` extra space complexity? (The output array does not count as extra space for space complexity analysis.)
     ///
     /// ------
@@ -35,21 +35,15 @@ impl Solution {
     /// ***Extracted from:*** [product-of-array-except-self](https://leetcode.com/problems/product-of-array-except-self/)
     pub fn product_except_self(nums: Vec<i32>) -> Vec<i32> {
         let mut it = nums.iter();
-        let mut ret: Vec<i32>= successors(Some(1), |n| {match it.next() {
-            None => None,
-            Some(x) => Some(n * x),
-        }}).collect();
+        let mut ret: Vec<i32> = successors(Some(1), |n| it.next().map(|x| n * x)).collect();
         ret.pop();
-        
+
         let mut it2 = nums.iter().rev();
-        let mut b = successors(Some(1), |n| {match it2.next() {
-            None => None,
-            Some(x) => Some(n * x),
-        }});
+        let mut b = successors(Some(1), |n| it2.next().map(|x| n * x));
 
         for i in ret.iter_mut().rev() {
-            *i = *i * b.next().unwrap();
-        } 
+            *i *= b.next().unwrap();
+        }
         ret
     }
 }

@@ -27,7 +27,7 @@ impl Solution {
     /// - All the integers in `nums` are unique.
     /// - `nums` is sorted in ascending orde
     ///
-    /// ------ 
+    /// ------
     ///
     /// ***Extracted from:*** [binary-search](https://leetcode.com/problems/binary-search/)
     pub fn search(nums: Vec<i32>, target: i32) -> i32 {
@@ -38,15 +38,15 @@ impl Solution {
         }
         while i != j {
             let m = i + (j - i) / 2;
-            if nums[m] < target {
-                i = m + 1;
-            } else if target < nums[m] {
-                j = m;
-            } else {
-                return m as i32;
+            match nums[m].cmp(&target) {
+                std::cmp::Ordering::Less => i = m + 1,
+                std::cmp::Ordering::Greater => j = m,
+                std::cmp::Ordering::Equal => {
+                    return m as i32;
+                }
             }
         }
-        return -1;
+        -1
     }
 }
 

@@ -2,7 +2,7 @@ use crate::Solution;
 
 impl Solution {
     /// # 605. Can Place Flowers
-    /// 
+    ///
     /// You have a long flowerbed in which some of the plots are planted, and some are not. However, flowers
     /// cannot be planted in adjacent plots.
     ///
@@ -11,17 +11,17 @@ impl Solution {
     /// without violating the no-adjacent-flowers rule and `false` otherwise.
     ///
     /// **Example 1:**
-    /// 
+    ///
     /// - **Input:** flowerbed = [1,0,0,0,1], n = 1
     /// - **Output:** true
     ///
     /// **Example 2:**
-    /// 
+    ///
     /// - **Input:** flowerbed = [1,0,0,0,1], n = 2
     /// - **Output:** false
-    /// 
+    ///
     /// **Constraints:**
-    /// 
+    ///
     /// - `1 <= flowerbed.length <= 2 * 10^4`
     /// - `flowerbed[i]` is `0` or `1`.
     /// - There are no two adjacent flowers in `flowerbed`.
@@ -42,12 +42,12 @@ impl Solution {
         } else {
             return n <= (flowerbed.len() + 1) / 2;
         }
-        while let Some((i, _v)) = it.next() {
+        for (i, _v) in it {
             max_plots += (i - prev_i - 2) / 2;
             prev_i = i;
         }
         max_plots += (flowerbed.len() - prev_i - 1) / 2;
-        return n <= max_plots;
+        n <= max_plots
     }
 }
 

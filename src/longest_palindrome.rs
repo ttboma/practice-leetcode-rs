@@ -24,7 +24,7 @@ impl Solution {
     /// - 1 <= s.length <= 2000
     /// - s consists of lowercase and/or uppercase English letters only.
     ///
-    /// ------ 
+    /// ------
     ///
     /// ***Extracted from:*** [longest-palindrome](https://leetcode.com/problems/longest-palindrome/)
     pub fn longest_palindrome(s: String) -> i32 {

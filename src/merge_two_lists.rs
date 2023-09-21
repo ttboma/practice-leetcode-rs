@@ -37,10 +37,10 @@ impl Solution {
         list1: Option<Box<ListNode>>,
         list2: Option<Box<ListNode>>,
     ) -> Option<Box<ListNode>> {
-        if let None = list1 {
+        if list1.is_none() {
             return list2;
         }
-        if let None = list2 {
+        if list2.is_none() {
             return list1;
         }
 

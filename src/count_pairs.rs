@@ -17,7 +17,7 @@ impl Solution {
     /// - **Output:** 0
     /// - **Explanation:** There are no pairs of nodes that are unreachable from
     ///   each other. Therefore, we return 0.
-    /// 
+    ///
     /// ## Example 2:
     ///
     /// - **Input:** n = 7, edges = [[0,2],[0,5],[2,4],[1,6],[5,4]]
@@ -36,7 +36,7 @@ impl Solution {
     /// ------
     ///
     /// ***Extracted from:***
-    /// 
+    ///
     /// [count-unreachable-pairs-of-nodes-in-an-undirected-graph](https://leetcode.com/problems/count-unreachable-pairs-of-nodes-in-an-undirected-graph/)
     pub fn count_pairs(n: i32, edges: Vec<Vec<i32>>) -> i64 {
         let mut groups: Vec<Option<usize>> = vec![None; n as usize];
@@ -51,7 +51,7 @@ impl Solution {
                         return i;
                     }
                 }
-                return w;
+                w
             };
             let v = find_group(e[0] as usize);
             let u = find_group(e[1] as usize);

@@ -13,7 +13,7 @@ impl Solution {
     ///
     /// **Example 1:**
     ///
-    /// ```
+    /// ```txt
     /// Input: cost = [10,15,20]
     /// Output: 15
     /// Explanation: You will start at index 1.
@@ -23,7 +23,7 @@ impl Solution {
     ///
     /// **Example 2:**
     ///
-    /// ```
+    /// ```txt
     /// Input: cost = [1,100,1,1,1,100,1,1,100,1]
     /// Output: 6
     /// Explanation: You will start at index 0.

@@ -51,7 +51,7 @@ impl Solution {
                 cur_far = jump;
             }
             if i == cur_end {
-                answer = answer + 1;
+                answer += 1;
                 cur_end = cur_far;
             }
         }

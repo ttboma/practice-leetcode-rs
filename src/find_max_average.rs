@@ -17,7 +17,7 @@ impl Solution {
     ///
     /// - **Input:** nums = [5], k = 1
     /// - **Output:** 5.00000
-    ///     
+    ///
     /// **Constraints:**
     ///
     /// - `n == nums.length`
@@ -62,8 +62,11 @@ mod tests {
 
     #[test]
     fn example_3() {
-        let nums = vec![3,3,4,3,0];
+        let nums = vec![3, 3, 4, 3, 0];
         let k = 3;
-        assert_eq!(format!("{:.5}", Solution::find_max_average(nums, k)), "3.33333")
+        assert_eq!(
+            format!("{:.5}", Solution::find_max_average(nums, k)),
+            "3.33333"
+        )
     }
 }

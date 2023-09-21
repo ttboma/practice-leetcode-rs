@@ -1,12 +1,12 @@
 use syc_leetcode_solution_rs::parse_util;
-use syc_leetcode_solution_rs::Solution;
 use syc_leetcode_solution_rs::ListNode;
+use syc_leetcode_solution_rs::Solution;
 
 fn main() {
     let buffer = parse_util::read_line().unwrap();
     let (input, list) = parse_util::parse_list(&buffer).unwrap();
     assert!(
-        input.trim().len() == 0,
+        input.trim().is_empty(),
         "Please enter one square-bracket-enclosed-list in one line.",
     );
     let nums: Vec<i32> = list.iter().map(|s| s.parse().unwrap()).collect();
@@ -14,7 +14,10 @@ fn main() {
     // Store nums into head
     let mut head: Option<Box<ListNode>> = None;
     for i in nums.iter().rev() {
-        head = Some(Box::new(ListNode{val: *i, next: head}));
+        head = Some(Box::new(ListNode {
+            val: *i,
+            next: head,
+        }));
     }
     head = Solution::middle_node(head);
 
