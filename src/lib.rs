@@ -48,6 +48,7 @@ mod contains_duplicate;
 mod count_bits;
 mod count_odds;
 mod count_pairs;
+mod divisor_game;
 mod fib;
 mod find_difference;
 mod find_kth_positive;
