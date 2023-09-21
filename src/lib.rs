@@ -55,6 +55,7 @@ mod find_kth_positive;
 mod find_max_average;
 mod gcd_of_strings;
 mod generate;
+mod get_maximum_generated;
 mod get_row;
 mod is_anagram;
 mod is_isomorphic;
