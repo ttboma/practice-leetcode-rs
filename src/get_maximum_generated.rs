@@ -14,7 +14,7 @@ impl Solution {
     ///
     /// **Example 1:**
     ///
-    /// ```
+    /// ```txt
     /// Input: n = 7
     /// Output: 3
     /// Explanation: According to the given rules:
@@ -31,7 +31,7 @@ impl Solution {
     ///
     /// **Example 2:**
     ///
-    /// ```
+    /// ```txt
     /// Input: n = 2
     /// Output: 1
     /// Explanation: According to the given rules, nums = [0,1,1]. The maximum is max(0,1,1) = 1.
@@ -39,7 +39,7 @@ impl Solution {
     ///
     /// **Example 3:**
     ///
-    /// ```
+    /// ```txt
     /// Input: n = 3
     /// Output: 2
     /// Explanation: According to the given rules, nums = [0,1,1,2]. The maximum is max(0,1,1,2) = 2.
