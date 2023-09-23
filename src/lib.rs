@@ -83,6 +83,7 @@ mod running_sum;
 mod search;
 mod ship_within_days;
 mod total_fruit;
+mod tribonacci;
 mod zero_filled_subarray;
 
 // parser utilities
