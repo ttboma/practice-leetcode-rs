@@ -49,6 +49,8 @@ mod contains_duplicate;
 mod count_bits;
 mod count_odds;
 mod count_pairs;
+mod count_squares;
+mod count_vowel_strings;
 mod divisor_game;
 mod fib;
 mod find_difference;
