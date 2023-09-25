@@ -7,7 +7,7 @@ impl Solution {
     ///
     /// **Example 1:**
     ///
-    /// ```
+    /// ```txt
     /// Input: matrix =
     /// [
     ///  [0,1,1,1],
@@ -24,7 +24,7 @@ impl Solution {
     ///
     /// **Example 2:**
     ///
-    /// ```
+    /// ```txt
     /// Input: matrix =
     /// [
     ///   [1,0,1],
