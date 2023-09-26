@@ -58,6 +58,7 @@ mod find_kth_positive;
 mod find_max_average;
 mod gcd_of_strings;
 mod generate;
+mod generate_parenthesis;
 mod get_maximum_generated;
 mod get_row;
 mod is_anagram;
