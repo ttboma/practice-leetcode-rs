@@ -70,6 +70,7 @@ mod largest_altitude;
 mod longest_palindrome;
 mod majority_element;
 mod max_profit;
+mod max_sum_after_partitioning;
 mod merge_alternately;
 mod merge_two_lists;
 mod middle_node;
@@ -87,6 +88,7 @@ mod search;
 mod ship_within_days;
 mod total_fruit;
 mod tribonacci;
+mod two_egg_drop;
 mod zero_filled_subarray;
 
 // parser utilities
