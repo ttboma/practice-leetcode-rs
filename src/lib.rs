@@ -53,6 +53,7 @@ mod count_squares;
 mod count_vowel_strings;
 mod divisor_game;
 mod fib;
+mod find_ball;
 mod find_difference;
 mod find_kth_positive;
 mod find_max_average;
