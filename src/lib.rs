@@ -50,6 +50,7 @@ mod count_bits;
 mod count_odds;
 mod count_pairs;
 mod count_squares;
+mod count_substrings;
 mod count_vowel_strings;
 mod divisor_game;
 mod fib;
