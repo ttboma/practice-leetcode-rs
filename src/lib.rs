@@ -88,6 +88,7 @@ mod reverse_words;
 mod running_sum;
 mod search;
 mod ship_within_days;
+mod stone_game;
 mod total_fruit;
 mod tribonacci;
 mod two_egg_drop;
