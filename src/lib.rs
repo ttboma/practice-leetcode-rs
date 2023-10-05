@@ -91,6 +91,7 @@ mod running_sum;
 mod search;
 mod ship_within_days;
 mod stone_game;
+mod subset_xor_sum;
 mod total_fruit;
 mod tribonacci;
 mod two_egg_drop;
