@@ -67,6 +67,7 @@ mod get_maximum_generated;
 mod get_row;
 mod is_anagram;
 mod is_isomorphic;
+mod is_palindrome;
 mod is_subsequence;
 mod jump;
 mod kids_with_candies;
