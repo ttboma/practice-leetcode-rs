@@ -1,4 +1,5 @@
 use crate::ListNode;
+use crate::SinglyLinkedList;
 use crate::Solution;
 
 impl Solution {
@@ -29,61 +30,52 @@ impl Solution {
     ///
     /// **Follow up:**  Could you do it in `O(n)` time and `O(1)` space?
     pub fn is_palindrome(head: Option<Box<ListNode>>) -> bool {
-        let mut head = head;
-        if head.as_mut().unwrap().next.is_none() {
-            return true;
-        }
+        let mut list = SinglyLinkedList { head };
+        let rev_list = list.splice_at_half().reverse();
 
-        let mut head2 = head.splice_at_half().reverse();
-        loop {
-            if head.is_none() {
-                break true;
+        let mut it = list.head.as_ref();
+        let mut rev_it = rev_list.head.as_ref();
+        while rev_it.is_some() {
+            if it.unwrap().val != rev_it.unwrap().val {
+                return false;
             }
-            if head.as_mut().unwrap().val != head2.as_deref_mut().unwrap().val {
-                break false;
-            }
-            head = head.as_mut().unwrap().next.take();
-            head2 = head2.as_mut().unwrap().next.take();
+            it = it.unwrap().next.as_ref();
+            rev_it = rev_it.unwrap().next.as_ref();
         }
+        true
     }
 }
 
-trait SingleLinkedList {
-    fn reverse(self) -> Option<Box<ListNode>>;
-    fn splice_at_half(&mut self) -> Option<Box<ListNode>>;
-}
-
-impl SingleLinkedList for Option<Box<ListNode>> {
-    fn reverse(mut self) -> Option<Box<ListNode>> {
+impl SinglyLinkedList {
+    fn reverse(mut self) -> SinglyLinkedList {
         let mut prev_node: Option<Box<ListNode>> = None;
-        while self.is_some() {
-            let mut tmp = self.as_mut().unwrap().next.take();
-            self.as_mut().unwrap().next = prev_node.take();
-            prev_node = self.take();
-            self = tmp.take();
+        while self.head.is_some() {
+            let mut tmp = self.head.as_mut().unwrap().next.take();
+            self.head.as_mut().unwrap().next = prev_node.take();
+            prev_node = self.head.take();
+            self = SinglyLinkedList { head: tmp.take() };
         }
-        prev_node
+        SinglyLinkedList { head: prev_node }
     }
 
-    fn splice_at_half(&mut self) -> Option<Box<ListNode>> {
-        let mut slow = self.as_deref_mut().unwrap() as *mut ListNode;
+    fn splice_at_half(&mut self) -> SinglyLinkedList {
+        if self.head.is_none() {
+            return SinglyLinkedList { head: None };
+        }
+        let mut slow = self.head.as_deref_mut().unwrap() as *mut ListNode;
         let mut fast = slow;
         unsafe {
-            loop {
-                if (*fast).next.is_none() {
-                    break;
-                }
+            while (*fast).next.is_some() {
                 fast = (*fast).next.as_deref_mut().unwrap() as *mut ListNode;
                 if (*fast).next.is_none() {
                     break;
                 }
                 fast = (*fast).next.as_deref_mut().unwrap() as *mut ListNode;
-                if (*fast).next.is_none() {
-                    break;
-                }
                 slow = (*slow).next.as_deref_mut().unwrap() as *mut ListNode;
             }
-            (*slow).next.take()
+            SinglyLinkedList {
+                head: (*slow).next.take(),
+            }
         }
     }
 }

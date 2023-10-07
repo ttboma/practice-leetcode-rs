@@ -6,6 +6,11 @@
 use std::cell::RefCell;
 use std::rc::Rc;
 
+#[derive(PartialEq, Eq, Clone, Debug)]
+pub struct SinglyLinkedList {
+    head: Option<Box<ListNode>>,
+}
+
 /// Definition for singly-linked list.
 #[derive(PartialEq, Eq, Clone, Debug)]
 pub struct ListNode {
