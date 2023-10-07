@@ -33,20 +33,40 @@ impl Solution {
         let mut list = SinglyLinkedList { head };
         let rev_list = list.splice_at_half().reverse();
 
-        let mut it = list.head.as_ref();
-        let mut rev_it = rev_list.head.as_ref();
-        while rev_it.is_some() {
-            if it.unwrap().val != rev_it.unwrap().val {
+        let mut it = list.iter();
+        let mut rev_it = rev_list.iter();
+        while let (Some(a), Some(b)) = (rev_it.next(), it.next()) {
+            if a != b {
                 return false;
             }
-            it = it.unwrap().next.as_ref();
-            rev_it = rev_it.unwrap().next.as_ref();
         }
         true
     }
 }
 
+struct SinglyLinkedListIterator<'a> {
+    link: Option<&'a ListNode>,
+}
+
+impl<'a> SinglyLinkedListIterator<'a> {
+    fn next(&mut self) -> Option<&i32> {
+        match self.link {
+            Some(node) => {
+                self.link = node.next.as_deref();
+                Some(&node.val)
+            }
+            None => None,
+        }
+    }
+}
+
 impl SinglyLinkedList {
+    fn iter(&self) -> SinglyLinkedListIterator {
+        SinglyLinkedListIterator {
+            link: self.head.as_deref(),
+        }
+    }
+
     fn reverse(mut self) -> SinglyLinkedList {
         let mut prev_node: Option<Box<ListNode>> = None;
         while self.head.is_some() {
