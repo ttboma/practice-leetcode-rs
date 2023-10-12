@@ -49,6 +49,7 @@ impl TreeNode {
 /// Each of the methods for Solution struct are placed under its own module
 pub struct Solution {}
 mod all_possible_fbt;
+mod binary_tree_paths;
 mod can_place_flowers;
 mod contains_duplicate;
 mod count_bits;
