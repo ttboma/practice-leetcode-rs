@@ -91,6 +91,7 @@ mod min_score;
 mod move_zeroes;
 mod pivot_index;
 mod product_except_self;
+mod read_binary_watch;
 mod reverse_list;
 mod reverse_vowels;
 mod reverse_words;
