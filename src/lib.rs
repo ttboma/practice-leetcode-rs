@@ -72,6 +72,7 @@ mod generate_parenthesis;
 mod get_kth;
 mod get_maximum_generated;
 mod get_row;
+mod has_path_sum;
 mod is_anagram;
 mod is_isomorphic;
 mod is_palindrome;
