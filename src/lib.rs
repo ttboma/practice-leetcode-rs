@@ -48,6 +48,7 @@ impl TreeNode {
 /// LeetCode solutions provided by Shieh, Yueh-chang <ttboma@gmail.com>
 /// Each of the methods for Solution struct are placed under its own module
 pub struct Solution {}
+mod all_paths_source_target;
 mod all_possible_fbt;
 mod binary_tree_paths;
 mod can_place_flowers;
