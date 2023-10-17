@@ -54,6 +54,7 @@ mod binary_tree_paths;
 mod can_place_flowers;
 mod contains_duplicate;
 mod count_bits;
+mod count_max_or_subsets;
 mod count_odds;
 mod count_pairs;
 mod count_squares;
