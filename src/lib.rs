@@ -92,6 +92,7 @@ mod min_cost_climbing_stairs;
 mod min_eating_speed;
 mod min_score;
 mod move_zeroes;
+mod num_tile_possibilities;
 mod permute;
 mod pivot_index;
 mod product_except_self;
