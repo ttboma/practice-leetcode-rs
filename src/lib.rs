@@ -1,7 +1,22 @@
-//! # Development Note
+//! # Hello
 //!
-//! * Use chrome and [Clip LeetCode](https://chrome.google.com/webstore/detail/clip-leetcode/cnghimckckgcmhbdokjielmhkmnagdcp/related)
+//! Hi,
+//!
+//! The purpose of this project is to practice Rust and DSA.
+//!
+//! ## Development Note
+//!
+//! Please follow the rules below to contribute to this project.
+//!
+//! - Use chrome and [Clip LeetCode](https://chrome.google.com/webstore/detail/clip-leetcode/cnghimckckgcmhbdokjielmhkmnagdcp/related)
 //!   extension to maintain documentation of each method of [`Solution`]
+//!
+//! ## TODO
+//!
+//! - [ ] Implement constructor of [`SinglyLinkedList`] by macro
+//! - [ ] Implement command line program to be able to use all methods of [`Solution`] by `nom` and `clap`
+//! - [ ] Make sure to use [Clip LeetCode](https://chrome.google.com/webstore/detail/clip-leetcode/cnghimckckgcmhbdokjielmhkmnagdcp/related)
+//!       for all methods of [`Solution`]
 
 use std::cell::RefCell;
 use std::rc::Rc;
@@ -97,6 +112,7 @@ mod permute;
 mod pivot_index;
 mod product_except_self;
 mod read_binary_watch;
+mod remove_elements;
 mod reverse_list;
 mod reverse_vowels;
 mod reverse_words;
