@@ -34,15 +34,7 @@ impl Solution {
     ///
     /// **Follow up:**  Could you solve it without loops/recursion?
     pub fn is_power_of_four(n: i32) -> bool {
-        if n == 0 {
-            false
-        } else if n == 1 {
-            true
-        } else if n % 4 != 0 {
-            false
-        } else {
-            Self::is_power_of_four(n / 4)
-        }
+        n > 0 && (n & (n - 1)) == 0 && (n - 1).count_ones() % 2 == 0
     }
 }
 
