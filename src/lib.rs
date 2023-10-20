@@ -92,6 +92,7 @@ mod has_path_sum;
 mod is_anagram;
 mod is_isomorphic;
 mod is_palindrome;
+mod is_power_of_four;
 mod is_subsequence;
 mod jump;
 mod kids_with_candies;
