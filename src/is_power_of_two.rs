@@ -36,15 +36,7 @@ impl Solution {
     ///
     /// **Follow up:**  Could you solve it without loops/recursion?
     pub fn is_power_of_two(n: i32) -> bool {
-        if n == 0 {
-            false
-        } else if n == 1 {
-            true
-        } else if n % 2 == 1 {
-            false
-        } else {
-            Self::is_power_of_two(n / 2)
-        }
+        n == 1 || (n - 1) & n == 0
     }
 }
 
