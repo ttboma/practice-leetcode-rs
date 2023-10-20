@@ -36,7 +36,7 @@ impl Solution {
     ///
     /// **Follow up:**  Could you solve it without loops/recursion?
     pub fn is_power_of_two(n: i32) -> bool {
-        n == 1 || (n - 1) & n == 0
+        n > 0 && (n - 1) & n == 0
     }
 }
 
@@ -57,5 +57,10 @@ mod tests {
     #[test]
     fn example3() {
         assert_eq!(Solution::is_power_of_two(3), false);
+    }
+
+    #[test]
+    fn example4() {
+        assert_eq!(Solution::is_power_of_two(0), false);
     }
 }
