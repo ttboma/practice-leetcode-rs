@@ -82,6 +82,7 @@ mod find_ball;
 mod find_difference;
 mod find_kth_positive;
 mod find_max_average;
+mod find_the_winner;
 mod gcd_of_strings;
 mod generate;
 mod generate_parenthesis;
