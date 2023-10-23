@@ -59,3 +59,59 @@ fn remove_nodes_impl(iter: &mut Option<Box<ListNode>>) -> i32 {
         iter.as_ref().unwrap().val
     }
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn example1() {
+        let head = Some(Box::new(ListNode {
+            val: 5,
+            next: Some(Box::new(ListNode {
+                val: 2,
+                next: Some(Box::new(ListNode {
+                    val: 13,
+                    next: Some(Box::new(ListNode {
+                        val: 3,
+                        next: Some(Box::new(ListNode::new(8))),
+                    })),
+                })),
+            })),
+        }));
+
+        let expected = Some(Box::new(ListNode {
+            val: 13,
+            next: Some(Box::new(ListNode::new(8))),
+        }));
+
+        assert_eq!(Solution::remove_nodes(head), expected);
+    }
+
+    #[test]
+    fn example2() {
+        let head = Some(Box::new(ListNode {
+            val: 1,
+            next: Some(Box::new(ListNode {
+                val: 1,
+                next: Some(Box::new(ListNode {
+                    val: 1,
+                    next: Some(Box::new(ListNode::new(1))),
+                })),
+            })),
+        }));
+
+        let expected = Some(Box::new(ListNode {
+            val: 1,
+            next: Some(Box::new(ListNode {
+                val: 1,
+                next: Some(Box::new(ListNode {
+                    val: 1,
+                    next: Some(Box::new(ListNode::new(1))),
+                })),
+            })),
+        }));
+
+        assert_eq!(Solution::remove_nodes(head), expected);
+    }
+}
