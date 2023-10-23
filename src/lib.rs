@@ -117,6 +117,7 @@ mod pivot_index;
 mod product_except_self;
 mod read_binary_watch;
 mod remove_elements;
+mod remove_nodes;
 mod reverse_list;
 mod reverse_vowels;
 mod reverse_words;
