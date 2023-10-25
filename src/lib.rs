@@ -75,6 +75,7 @@ mod count_pairs;
 mod count_squares;
 mod count_substrings;
 mod count_vowel_strings;
+mod diff_ways_to_compute;
 mod distribute_cookies;
 mod divisor_game;
 mod fib;
