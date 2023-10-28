@@ -1,5 +1,3 @@
-use nom::AsChar;
-
 use crate::Solution;
 
 impl Solution {
@@ -47,9 +45,6 @@ impl Solution {
 }
 
 fn decode_string_impl(s: &[u8], i: &mut usize) -> String {
-    if s.is_empty() {
-        return String::new();
-    }
     let mut ret = String::new();
     while *i != s.len() {
         if s[*i] == b']' {
@@ -58,7 +53,7 @@ fn decode_string_impl(s: &[u8], i: &mut usize) -> String {
         } else if s[*i].is_ascii_alphabetic() {
             ret.push(s[*i] as char);
             *i += 1;
-        } else if s[*i].is_dec_digit() {
+        } else if s[*i].is_ascii_digit() {
             let mut j = *i;
             while s[j] != b'[' {
                 j += 1;
