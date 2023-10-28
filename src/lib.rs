@@ -81,6 +81,7 @@ mod divisor_game;
 mod fib;
 mod find_ball;
 mod find_difference;
+mod find_kth_bit;
 mod find_kth_positive;
 mod find_max_average;
 mod find_the_winner;
