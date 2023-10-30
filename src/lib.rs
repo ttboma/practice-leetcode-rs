@@ -117,6 +117,7 @@ mod move_zeroes;
 mod num_tile_possibilities;
 mod permute;
 mod pivot_index;
+mod predict_the_winner;
 mod product_except_self;
 mod read_binary_watch;
 mod remove_elements;
