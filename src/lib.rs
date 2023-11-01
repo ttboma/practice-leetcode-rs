@@ -102,6 +102,7 @@ mod is_power_of_two;
 mod is_subsequence;
 mod jump;
 mod kids_with_candies;
+mod kth_grammar;
 mod largest_altitude;
 mod longest_palindrome;
 mod majority_element;
