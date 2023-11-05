@@ -113,6 +113,7 @@ mod merge_two_lists;
 mod middle_node;
 mod min_cost_climbing_stairs;
 mod min_eating_speed;
+mod min_non_zero_product;
 mod min_score;
 mod move_zeroes;
 mod num_tile_possibilities;
