@@ -108,6 +108,7 @@ mod longest_palindrome;
 mod majority_element;
 mod max_profit;
 mod max_sum_after_partitioning;
+mod merge;
 mod merge_alternately;
 mod merge_two_lists;
 mod middle_node;
