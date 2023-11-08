@@ -123,6 +123,7 @@ mod pivot_index;
 mod predict_the_winner;
 mod product_except_self;
 mod read_binary_watch;
+mod remove_duplicates;
 mod remove_element;
 mod remove_elements;
 mod remove_nodes;
