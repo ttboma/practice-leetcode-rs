@@ -62,6 +62,24 @@ enum Commands {
     GcdOfStrings { str1: String, str2: String },
     /// [22. Generate Parentheses](https://leetcode.com/problems/generate-parentheses/)
     GenerateParenthesis { n: i32 },
+    /// [118. Pascal's Triangle](https://leetcode.com/problems/pascals-triangle/)
+    Generate { num_rows: i32 },
+    /// [1387. Sort Integers by The Power Value](https://leetcode.com/problems/sort-integers-by-the-power-value/)
+    GetKth { lo: i32, hi: i32, k: i32 },
+    /// [1646. Get Maximum in Generated Array](https://leetcode.com/problems/get-maximum-in-generated-array/description/)
+    GetMaximumGenerated { n: i32 },
+    /// [119. Pascal's Triangle II](https://leetcode.com/problems/pascals-triangle-ii/)
+    GetRow { row_index: i32 },
+    // [112. Path Sum](https://leetcode.com/problems/path-sum/)
+    //HasPathSum{root: Option<Rc<RefCell<TreeNode>>>, target_sum: i32},
+    /// [242. Valid Anagram](https://leetcode.com/problems/valid-anagram/)
+    IsAnagram { s: String, t: String },
+    /// [205. Isomorphic Strings](https://leetcode.com/problems/isomorphic-strings/)
+    IsIsomorphic { s: String, t: String },
+    // [234. Palindrome Linked List](https://leetcode.com/problems/palindrome-linked-list/description/)
+    //IsPalindrome{head: Option<Box<ListNode>>},
+    /// [342. Power of Four](https://leetcode.com/problems/power-of-four/)
+    IsPowerOfFour { n: i32 },
 }
 
 fn main() {
@@ -150,6 +168,27 @@ fn main() {
         }
         Commands::GenerateParenthesis { n } => {
             println!("{:?}", Solution::generate_parenthesis(*n));
+        }
+        Commands::Generate { num_rows } => {
+            println!("{:?}", Solution::generate(*num_rows));
+        }
+        Commands::GetKth { lo, hi, k } => {
+            println!("{:?}", Solution::get_kth(*lo, *hi, *k));
+        }
+        Commands::GetMaximumGenerated { n } => {
+            println!("{:?}", Solution::get_maximum_generated(*n));
+        }
+        Commands::GetRow { row_index } => {
+            println!("{:?}", Solution::get_row(*row_index));
+        }
+        Commands::IsAnagram { s, t } => {
+            println!("{:?}", Solution::is_anagram(s.clone(), t.clone()));
+        }
+        Commands::IsIsomorphic { s, t } => {
+            println!("{:?}", Solution::is_isomorphic(s.clone(), t.clone()));
+        }
+        Commands::IsPowerOfFour { n } => {
+            println!("{:?}", Solution::is_power_of_four(*n));
         }
     }
 }
