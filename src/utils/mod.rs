@@ -1,5 +1,7 @@
 use std::io;
 
+mod error_msg;
+
 pub fn read_line() -> io::Result<String> {
     let stdin = io::stdin();
     let mut buffer = String::new();
@@ -16,6 +18,7 @@ use nom::{
     sequence::{delimited, terminated, tuple},
     IResult,
 };
+
 fn ws<'a, F: 'a, O, E: ParseError<&'a str>>(
     inner: F,
 ) -> impl FnMut(&'a str) -> IResult<&'a str, O, E>
@@ -24,6 +27,7 @@ where
 {
     delimited(multispace0, inner, multispace0)
 }
+
 pub fn parse_list(input: &str) -> IResult<&str, Vec<&str>> {
     delimited(
         ws(tag("[")),
@@ -39,13 +43,15 @@ pub fn parse_list(input: &str) -> IResult<&str, Vec<&str>> {
         ws(tag("]")),
     )(input)
 }
-pub fn parse_list_2d(input: &str) -> IResult<&str, Vec<Vec<&str>>> {
+
+pub fn parse_2d_list(input: &str) -> IResult<&str, Vec<Vec<&str>>> {
     delimited(
         ws(tag("[")),
         terminated(separated_list0(ws(tag(",")), parse_list), opt(ws(tag(",")))),
         ws(tag("]")),
     )(input)
 }
+
 pub fn parse_string(input: &str) -> IResult<&str, &str> {
     delimited(
         ws(tag("\"")),
@@ -53,9 +59,33 @@ pub fn parse_string(input: &str) -> IResult<&str, &str> {
         ws(tag("\"")),
     )(input)
 }
+
 pub fn parse_i32_and_list_2d(input: &str) -> IResult<&str, (&str, Vec<Vec<&str>>)> {
-    tuple((ws(digit1), parse_list_2d))(input)
+    tuple((ws(digit1), parse_2d_list))(input)
 }
+
 pub fn parse_list_and_i32(input: &str) -> IResult<&str, (Vec<&str>, &str)> {
     tuple((parse_list, ws(digit1)))(input)
+}
+
+pub fn parse_list_i32(input: &str) -> Vec<i32> {
+    parse_list(input)
+        .expect(error_msg::LIST_FORMAT)
+        .1
+        .into_iter()
+        .map(|x| x.parse::<i32>().expect(error_msg::ITEM_OF_I32))
+        .collect::<Vec<_>>()
+}
+
+pub fn parse_2d_list_i32(input: &str) -> Vec<Vec<i32>> {
+    parse_2d_list(input)
+        .expect(error_msg::TWO_DIMENSION_LIST_FORMAT)
+        .1
+        .into_iter()
+        .map(|x| {
+            x.into_iter()
+                .map(|y| y.parse::<i32>().expect(error_msg::ITEM_OF_I32))
+                .collect::<Vec<_>>()
+        })
+        .collect::<Vec<_>>()
 }

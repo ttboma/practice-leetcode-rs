@@ -165,5 +165,5 @@ mod tribonacci;
 mod two_egg_drop;
 mod zero_filled_subarray;
 
-// parser utilities
-pub mod parse_util;
+/// utilities
+pub mod utils;
