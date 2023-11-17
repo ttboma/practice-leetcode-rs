@@ -131,6 +131,7 @@ mod reorder_list;
 mod reverse_list;
 mod reverse_vowels;
 mod reverse_words;
+mod rotate;
 mod running_sum;
 mod search;
 mod ship_within_days;
