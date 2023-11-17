@@ -1,8 +1,26 @@
-//! # Hello
+//! # README
 //!
-//! Hi,
+//! Hi Johns,
 //!
 //! The purpose of this project is to practice Rust and DSA.
+//!
+//! 1. Please run `cargo test` to ensure that all the tests are passed correctly
+//! 2. Please run `cargo doc --open` to access the documentation for this crate
+//! 3. To access the command line interface for this crate, please run
+//!
+//!    ```bash
+//!    cargo run --bin solution -- --help
+//!    cargo run --bin solution -- <COMMAND> --help
+//!    cargo run --bin solution -- <COMMAND>
+//!    ```
+//!
+//!    For example:
+//!
+//!    ```bash
+//!    cargo run --bin solution -- --help
+//!    cargo run --bin solution -- fib --help
+//!    cargo run --bin solution -- fib 5
+//!    ```
 //!
 //! ## Development Note
 //!
@@ -13,10 +31,13 @@
 //!
 //! ## TODO
 //!
+//! - [ ] Implement command line program `bin/solution.rs` to be able to use **all** methods of [`Solution`] by `nom` and `clap`
+//!     - [ ] Make sure to use [Clip LeetCode](https://chrome.google.com/webstore/detail/clip-leetcode/cnghimckckgcmhbdokjielmhkmnagdcp/related)
+//!           for all methods of [`Solution`]
+//!     - [ ] ensure that all debug printed output have their proper formatting
+//!     - [ ] delete all other binaries (except `bin/solution.rs`)
+//!     - [ ] refactor `parse_util` module
 //! - [ ] Implement constructor of [`SinglyLinkedList`] by macro
-//! - [ ] Implement command line program to be able to use all methods of [`Solution`] by `nom` and `clap`
-//! - [ ] Make sure to use [Clip LeetCode](https://chrome.google.com/webstore/detail/clip-leetcode/cnghimckckgcmhbdokjielmhkmnagdcp/related)
-//!       for all methods of [`Solution`]
 
 use std::cell::RefCell;
 use std::rc::Rc;

@@ -30,7 +30,9 @@ pub fn parse_list(input: &str) -> IResult<&str, Vec<&str>> {
         terminated(
             separated_list0(
                 ws(tag(",")),
-                take_while1(|x: char| x.is_ascii() && x != ',' && x != ']' && !x.is_whitespace()),
+                ws(take_while1(|x: char| {
+                    x.is_ascii() && x != ',' && x != ']' && !x.is_whitespace()
+                })),
             ),
             opt(ws(tag(","))),
         ),
