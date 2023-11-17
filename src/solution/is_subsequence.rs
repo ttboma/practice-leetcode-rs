@@ -18,7 +18,7 @@ impl Solution {
     ///
     /// - **Input:** s = "axc", t = "ahbgdc"
     /// - **Output:** false
-    ///  
+    ///
     ///
     /// **Constraints:**
     ///

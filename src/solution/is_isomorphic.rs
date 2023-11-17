@@ -24,7 +24,7 @@ impl Solution {
     ///
     /// - **Input:** s = "paper", t = "title"
     /// - **Output:** true
-    ///  
+    ///
     /// **Constraints:**
     ///
     /// - 1 <= s.length <= 5 * 104

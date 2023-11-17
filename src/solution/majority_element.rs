@@ -28,7 +28,7 @@ impl Solution {
     /// - `n == nums.length`
     /// - `1 <= n <= 5 * 10^4`
     /// - `-10^9 <= nums[i] <= 10^9`
-    ///  
+    ///
     /// **Follow-up:**  Could you solve the problem in linear time and in `O(1)` space?
     pub fn majority_element(nums: Vec<i32>) -> i32 {
         let majority = nums.len() / 2;

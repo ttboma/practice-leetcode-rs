@@ -22,7 +22,7 @@ impl Solution {
     ///
     /// - `1 <= s.length <= 3 * 10^5`
     /// - `s` consist of printable ASCII characters.
-    ///  
+    ///
     /// Follow up: A linked list can be reversed either iteratively or recursively. Could you implement both?
     ///
     /// ------

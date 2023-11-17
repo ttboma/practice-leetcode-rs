@@ -20,12 +20,12 @@ impl Solution {
     ///
     /// - **Input:** head = []
     /// - **Output:** []
-    ///  
+    ///
     /// **Constraints:**
     ///
     /// - The number of nodes in the list is the range [0, 5000].
     /// - -5000 <= Node.val <= 5000
-    ///  
+    ///
     /// Follow up: A linked list can be reversed either iteratively or recursively. Could you implement both?
     ///
     /// ------
