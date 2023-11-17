@@ -1,6 +1,7 @@
-# README
+# [README](https://github.com/ttboma/syc_leetcode_solution_rs)
 
 Hi Johns,
+
 The purpose of this project is to practice Rust and DSA.
 
 1. Please run `cargo test` to ensure that all the tests are passed correctly
