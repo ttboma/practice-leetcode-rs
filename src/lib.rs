@@ -1,6 +1,6 @@
 //! # README
 //!
-//! Hi Johns,
+//! Hi SHIEH YUEH-CHANG,
 //!
 //! The purpose of this project is to practice Rust and DSA.
 //!
