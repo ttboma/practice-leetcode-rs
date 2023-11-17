@@ -32,6 +32,8 @@ enum Commands {
     CountPairs { n: i32, edges: String },
     /// [1277. Count Square Submatrices with All Ones](https://leetcode.com/problems/count-square-submatrices-with-all-ones/)
     CountSquares { matrix: String },
+    /// [1638. Count Substrings That Differ by One Character](https://leetcode.com/problems/count-substrings-that-differ-by-one-character/)
+    CountSubstrings { s: String, t: String },
     /// [509. Fibonacci Number](https://leetcode.com/problems/fibonacci-number/)
     Fib { n: i32 },
 }
@@ -71,6 +73,9 @@ fn main() {
         Commands::CountSquares { matrix } => {
             let matrix = utils::parse_2d_list_i32(matrix);
             println!("{}", Solution::count_squares(matrix));
+        }
+        Commands::CountSubstrings { s, t } => {
+            println!("{}", Solution::count_substrings(s.clone(), t.clone()));
         }
         Commands::Fib { n } => {
             println!("{}", Solution::fib(*n));
