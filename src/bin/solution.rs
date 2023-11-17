@@ -1,6 +1,6 @@
 use clap::{Parser, Subcommand};
-use syc_leetcode_solution_rs::utils;
-use syc_leetcode_solution_rs::Solution;
+use leetcode_rs::utils;
+use leetcode_rs::Solution;
 
 #[derive(Parser)]
 #[command(author, version, about, long_about = None)]

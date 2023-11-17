@@ -1,5 +1,5 @@
 [package]
-name = "syc_leetcode_solution_rs"
+name = "leetcode_rs"
 version = "0.1.0"
 edition = "2021"
 

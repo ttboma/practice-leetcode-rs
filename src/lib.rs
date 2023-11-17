@@ -28,6 +28,12 @@
 //!
 //! - Use chrome and [Clip LeetCode](https://chrome.google.com/webstore/detail/clip-leetcode/cnghimckckgcmhbdokjielmhkmnagdcp/related)
 //!   extension to maintain documentation of each method of [`Solution`]
+//! - Please install the [git hook](https://git-scm.com/book/zh-tw/v2/Customizing-Git-Git-Hooks) scripts
+//!   by the following [pre-commit](https://pre-commit.com/) command:
+//!
+//!   ```bash
+//!   pre-commit install --hook-type commit-msg --hook-type pre-commit --hook-type pre-push
+//!   ```
 //!
 //! ## TODO
 //!
