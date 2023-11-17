@@ -1,4 +1,4 @@
-//! # README
+//! # [README](https://github.com/ttboma/syc_leetcode_solution_rs)
 //!
 //! Hi SHIEH YUEH-CHANG,
 //!
