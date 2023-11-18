@@ -5,8 +5,8 @@
 //! The purpose of this project is to practice Rust and DSA.
 //!
 //! 1. Please run `cargo test` to ensure that all the tests are passed correctly
-//! 2. The following shows an example that how to use this library crate, to access
-//!    the documentation, please run `cargo doc --open`
+//! 2. The following shows an example that how to use this library crate. And please run
+//!    `cargo doc --open` to access the documentation.
 //!
 //!    ```rust
 //!    use leetcode_rs::Solution;
