@@ -1,6 +1,6 @@
 //! # [README](https://github.com/ttboma/syc_leetcode_solution_rs)
 //!
-//! Hi SHIEH YUEH-CHANG,
+//! Hi,
 //!
 //! The purpose of this project is to practice Rust and DSA.
 //!
