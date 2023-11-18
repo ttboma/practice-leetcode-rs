@@ -1,7 +1,8 @@
-//! # [README](https://github.com/ttboma/syc_leetcode_solution_rs)
+//! # [README](https://github.com/ttboma/leetcode_rs)
 //!
 //! Hi,
 //!
+//! This crate is a collection of solutions to [LeetCode](https://leetcode.com/) problems provided by SHIEH YUEH-CHANG.
 //! The purpose of this project is to practice Rust and DSA.
 //!
 //! 1. Please run `cargo test` to ensure that all the tests are passed correctly
