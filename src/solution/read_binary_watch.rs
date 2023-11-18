@@ -3,7 +3,7 @@ use crate::Solution;
 impl Solution {
     /// # [401. Binary Watch](https://leetcode.com/problems/binary-watch/)
     ///
-    /// A binary watch has 4 LEDs on the top to represent the hours (0-11), and 6 LEDs on the bottom to representthe minutes (0-59). Each LED represents a zero or one, with the least significant bit on the right.
+    /// A binary watch has 4 LEDs on the top to represent the hours (0-11), and 6 LEDs on the bottom to represent the minutes (0-59). Each LED represents a zero or one, with the least significant bit on the right.
     ///
     /// - For example, the below binary watch reads `"4:51"`.
     ///

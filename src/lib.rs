@@ -37,13 +37,8 @@
 //!
 //! ## TODO
 //!
-//! - [ ] Implement command line program `bin/solution.rs` to be able to use **all** methods of [`Solution`] by `nom` and `clap`
-//!     - [ ] Make sure to use [Clip LeetCode](https://chrome.google.com/webstore/detail/clip-leetcode/cnghimckckgcmhbdokjielmhkmnagdcp/related)
-//!           for all methods of [`Solution`]
-//!     - [ ] ensure that all debug printed output have their proper formatting
-//!     - [ ] delete all other binaries (except `bin/solution.rs`)
-//!     - [ ] refactor `parse_util` module
-//! - [ ] Implement constructor of [`SinglyLinkedList`] by macro
+//! - [ ] Implement constructor of [`SinglyLinkedList`] and [`TreeNode`] by macro
+//!     - [ ] ensure that all debug printed output have their proper formatting in `bin/solution.rs`
 
 pub use solution::Solution;
 mod solution;

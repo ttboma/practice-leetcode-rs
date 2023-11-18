@@ -80,6 +80,103 @@ enum Commands {
     //IsPalindrome{head: Option<Box<ListNode>>},
     /// [342. Power of Four](https://leetcode.com/problems/power-of-four/)
     IsPowerOfFour { n: i32 },
+    /// [326. Power of Three](https://leetcode.com/problems/power-of-three/)
+    IsPowerOfThree { n: i32 },
+    /// [231. Power of Two](https://leetcode.com/problems/power-of-two/)
+    IsPowerOfTwo { n: i32 },
+    /// [392. Is Subsequence](https://leetcode.com/problems/is-subsequence/)
+    IsSubsequence { s: String, t: String },
+    /// [45. Jump Game II](https://leetcode.com/problems/jump-game-ii/)
+    Jump { nums: String },
+    /// [1431. Kids With the Greatest Number of Candies](https://leetcode.com/problems/kids-with-the-greatest-number-of-candies/)
+    KidsWithCandies { candies: String, extra_candies: i32 },
+    /// [779. K-th Symbol in Grammar](https://leetcode.com/problems/k-th-symbol-in-grammar/)
+    KthGrammar { n: i32, k: i32 },
+    /// [1732. Find the Highest Altitude](https://leetcode.com/problems/find-the-highest-altitude/)
+    LargestAltitude { gain: String },
+    /// [409. Longest Palindrome](https://leetcode.com/problems/longest-palindrome/)
+    LongestPalindrome { s: String },
+    /// [169. Majority Element](https://leetcode.com/problems/majority-element/)
+    MajorityElement { nums: String },
+    /// [121. Best Time to Buy and Sell Stock](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/?envType=study-plan-v2&envId=top-interview-150)
+    MaxProfit { prices: String },
+    /// [1043. Partition Array for Maximum Sum](https://leetcode.com/problems/partition-array-for-maximum-sum/)
+    MaxSumAfterPartitioning { arr: String, k: i32 },
+    /// [1768. Merge Strings Alternately](https://leetcode.com/problems/merge-strings-alternately/)
+    MergeAlternately { word1: String, word2: String },
+    // [21. Merge Two Sorted Lists](https://leetcode.com/problems/merge-two-sorted-lists/)
+    //MergeTwoLists { list1: String, list2: String },
+    /// [88. Merge Sorted Array](https://leetcode.com/problems/merge-sorted-array/?envType=study-plan-v2&envId=top-interview-150)
+    Merge {
+        nums1: String,
+        m: i32,
+        nums2: String,
+        n: i32,
+    },
+    // [876. Middle of the Linked List](https://leetcode.com/problems/middle-of-the-linked-list/)
+    //MiddleNode{head: String},
+    /// [746. Min Cost Climbing Stairs](https://leetcode.com/problems/min-cost-climbing-stairs/)
+    MinCostClimbingStairs { cost: String },
+    /// [875. Koko Eating Bananas](https://leetcode.com/problems/koko-eating-bananas/)
+    MinEatingSpeed { piles: String, h: i32 },
+    /// [1969. Minimum Non-Zero Product of the Array Elements](https://leetcode.com/problems/minimum-non-zero-product-of-the-array-elements/)
+    MinNonZeroProduct { p: u64 },
+    /// [2492. Minimum Score of a Path Between Two Cities](https://leetcode.com/problems/minimum-score-of-a-path-between-two-cities/)
+    MinScore { n: i32, roads: String },
+    /// [283. Move Zeroes](https://leetcode.com/problems/move-zeroes/)
+    MoveZeroes { nums: String },
+    /// [1079. Letter Tile Possibilities](https://leetcode.com/problems/letter-tile-possibilities/description/)
+    NumTilePossibilities { tiles: String },
+    /// [46. Permutations](https://leetcode.com/problems/permutations/)
+    Permute { nums: String },
+    /// [724. Find Pivot Index](https://leetcode.com/problems/find-pivot-index/)
+    PivotIndex { nums: String },
+    /// [486. Predict the Winner](https://leetcode.com/problems/predict-the-winner/)
+    PredictTheWinner { nums: String },
+    /// [238. Product of Array Except Self](https://leetcode.com/problems/product-of-array-except-self/)
+    ProductExceptSelf { nums: String },
+    /// [401. Binary Watch](https://leetcode.com/problems/binary-watch/)
+    ReadBinaryWatch { turned_on: i32 },
+    /// [26. Remove Duplicates from Sorted Array](https://leetcode.com/problems/remove-duplicates-from-sorted-array/?envType=study-plan-v2&envId=top-interview-150)
+    RemoveDuplicates1 { nums: String },
+    /// [27. Remove Element](https://leetcode.com/problems/remove-element/?envType=study-plan-v2&envId=top-interview-150)
+    RemoveElement { nums: String, val: i32 },
+    // [203. Remove Linked List Elements](https://leetcode.com/problems/remove-linked-list-elements/)
+    //RemoveElements{head: String, val: i32},
+    // [2487. Remove Nodes From Linked List](https://leetcode.com/problems/remove-nodes-from-linked-list/)
+    //RemoveNodes{head: Option<Box<ListNode>>},
+    // [143. Reorder List](https://leetcode.com/problems/reorder-list/)
+    //ReorderList{head: &mut Option<Box<ListNode>>},
+    // [206. Reverse Linked List](https://leetcode.com/problems/reverse-linked-list/)
+    //ReverseList{head: Option<Box<ListNode>>},
+    /// [345. Reverse Vowels of a String](https://leetcode.com/problems/reverse-vowels-of-a-string/)
+    ReverseVowels { s: String },
+    /// [151. Reverse Words in a String](https://leetcode.com/problems/reverse-words-in-a-string/)
+    ReverseWords { s: String },
+    /// [189. Rotate Array](https://leetcode.com/problems/rotate-array/?envType=study-plan-v2&envId=top-interview-150)
+    Rotate { nums: String, k: i32 },
+    /// [1480. Running Sum of 1d Array](https://leetcode.com/problems/running-sum-of-1d-array/)
+    RunningSum { nums: String },
+    /// [704. Binary Search](https://leetcode.com/problems/binary-search/)
+    Search { nums: String, target: i32 },
+    /// [1011. Capacity To Ship Packages Within D Days](https://leetcode.com/problems/capacity-to-ship-packages-within-d-days/)
+    ShipWithinDays { weights: String, days: i32 },
+    /// [877. Stone Game](https://leetcode.com/problems/stone-game/)
+    StoneGame { piles: String },
+    /// [1863. Sum of All Subset XOR Totals](https://leetcode.com/problems/sum-of-all-subset-xor-totals/)
+    SubsetXorSum { nums: String },
+    /// [78. Subsets](https://leetcode.com/problems/subsets/)
+    Subsets { nums: String },
+    // [24. Swap Nodes in Pairs](https://leetcode.com/problems/swap-nodes-in-pairs/)
+    //SwapPairs{head: Option<Box<ListNode>>},
+    /// [904. Fruit Into Baskets](https://leetcode.com/problems/fruit-into-baskets/)
+    TotalFruit { fruits: String },
+    /// [1137. N-th Tribonacci Number](https://leetcode.com/problems/n-th-tribonacci-number/)
+    Tribonacci { n: i32 },
+    /// [1884. Egg Drop With 2 Eggs and N Floors](https://leetcode.com/problems/egg-drop-with-2-eggs-and-n-floors/)
+    TwoEggDrop { n: i32 },
+    /// [2348. Number of Zero-Filled Subarrays](https://leetcode.com/problems/number-of-zero-filled-subarrays/)
+    ZeroFilledSubarray { nums: String },
 }
 
 fn main() {
@@ -189,6 +286,156 @@ fn main() {
         }
         Commands::IsPowerOfFour { n } => {
             println!("{:?}", Solution::is_power_of_four(*n));
+        }
+        Commands::IsPowerOfThree { n } => {
+            println!("{:?}", Solution::is_power_of_three(*n));
+        }
+        Commands::IsPowerOfTwo { n } => {
+            println!("{:?}", Solution::is_power_of_two(*n));
+        }
+        Commands::IsSubsequence { s, t } => {
+            println!("{:?}", Solution::is_subsequence(s.clone(), t.clone()));
+        }
+        Commands::Jump { nums } => {
+            let nums = utils::parse_list_i32(nums);
+            println!("{:?}", Solution::jump(nums));
+        }
+        Commands::KidsWithCandies {
+            candies,
+            extra_candies,
+        } => {
+            let candies = utils::parse_list_i32(candies);
+            println!("{:?}", Solution::kids_with_candies(candies, *extra_candies));
+        }
+        Commands::KthGrammar { n, k } => {
+            println!("{:?}", Solution::kth_grammar(*n, *k));
+        }
+        Commands::LargestAltitude { gain } => {
+            let gain = utils::parse_list_i32(gain);
+            println!("{:?}", Solution::largest_altitude(gain));
+        }
+        Commands::LongestPalindrome { s } => {
+            println!("{:?}", Solution::longest_palindrome(s.clone()));
+        }
+        Commands::MajorityElement { nums } => {
+            let nums = utils::parse_list_i32(nums);
+            println!("{:?}", Solution::majority_element(nums));
+        }
+        Commands::MaxProfit { prices } => {
+            let prices = utils::parse_list_i32(prices);
+            println!("{:?}", Solution::max_profit(prices));
+        }
+        Commands::MaxSumAfterPartitioning { arr, k } => {
+            let arr = utils::parse_list_i32(arr);
+            println!("{:?}", Solution::max_sum_after_partitioning(arr, *k));
+        }
+        Commands::MergeAlternately { word1, word2 } => {
+            println!(
+                "{:?}",
+                Solution::merge_alternately(word1.clone(), word2.clone())
+            );
+        }
+        Commands::Merge { nums1, m, nums2, n } => {
+            let mut nums1 = utils::parse_list_i32(nums1);
+            let mut nums2 = utils::parse_list_i32(nums2);
+            println!("{:?}", Solution::merge(&mut nums1, *m, &mut nums2, *n));
+        }
+        Commands::MinCostClimbingStairs { cost } => {
+            let cost = utils::parse_list_i32(cost);
+            println!("{:?}", Solution::min_cost_climbing_stairs(cost));
+        }
+        Commands::MinEatingSpeed { piles, h } => {
+            let piles = utils::parse_list_i32(piles);
+            println!("{:?}", Solution::min_eating_speed(piles, *h));
+        }
+        Commands::MinNonZeroProduct { p } => {
+            println!("{:?}", Solution::min_non_zero_product(*p));
+        }
+        Commands::MinScore { n, roads } => {
+            let roads = utils::parse_2d_list_i32(roads);
+            println!("{:?}", Solution::min_score(*n, roads));
+        }
+        Commands::MoveZeroes { nums } => {
+            let mut nums = utils::parse_list_i32(nums);
+            println!("{:?}", Solution::move_zeroes(&mut nums));
+        }
+        Commands::NumTilePossibilities { tiles } => {
+            println!("{:?}", Solution::num_tile_possibilities(tiles.clone()));
+        }
+        Commands::Permute { nums } => {
+            let nums = utils::parse_list_i32(nums);
+            println!("{:?}", Solution::permute(nums));
+        }
+        Commands::PivotIndex { nums } => {
+            let nums = utils::parse_list_i32(nums);
+            println!("{:?}", Solution::pivot_index(nums));
+        }
+        Commands::PredictTheWinner { nums } => {
+            let nums = utils::parse_list_i32(nums);
+            println!("{:?}", Solution::predict_the_winner(nums));
+        }
+        Commands::ProductExceptSelf { nums } => {
+            let nums = utils::parse_list_i32(nums);
+            println!("{:?}", Solution::product_except_self(nums));
+        }
+        Commands::ReadBinaryWatch { turned_on } => {
+            println!("{:?}", Solution::read_binary_watch(*turned_on));
+        }
+        Commands::RemoveDuplicates1 { nums } => {
+            let mut nums = utils::parse_list_i32(nums);
+            println!("{:?}", Solution::remove_duplicates1(&mut nums));
+        }
+        Commands::RemoveElement { nums, val } => {
+            let mut nums = utils::parse_list_i32(nums);
+            println!("{:?}", Solution::remove_element(&mut nums, *val));
+        }
+        Commands::ReverseVowels { s } => {
+            println!("{:?}", Solution::reverse_vowels(s.clone()));
+        }
+        Commands::ReverseWords { s } => {
+            println!("{:?}", Solution::reverse_words(s.clone()));
+        }
+        Commands::Rotate { nums, k } => {
+            let mut nums = utils::parse_list_i32(nums);
+            println!("{:?}", Solution::rotate(&mut nums, *k));
+        }
+        Commands::RunningSum { nums } => {
+            let nums = utils::parse_list_i32(nums);
+            println!("{:?}", Solution::running_sum(nums));
+        }
+        Commands::Search { nums, target } => {
+            let nums = utils::parse_list_i32(nums);
+            println!("{:?}", Solution::search(nums, *target));
+        }
+        Commands::ShipWithinDays { weights, days } => {
+            let weights = utils::parse_list_i32(weights);
+            println!("{:?}", Solution::ship_within_days(weights, *days));
+        }
+        Commands::StoneGame { piles } => {
+            let piles = utils::parse_list_i32(piles);
+            println!("{:?}", Solution::stone_game(piles));
+        }
+        Commands::SubsetXorSum { nums } => {
+            let nums = utils::parse_list_i32(nums);
+            println!("{:?}", Solution::subset_xor_sum(nums));
+        }
+        Commands::Subsets { nums } => {
+            let nums = utils::parse_list_i32(nums);
+            println!("{:?}", Solution::subsets(nums));
+        }
+        Commands::TotalFruit { fruits } => {
+            let fruits = utils::parse_list_i32(fruits);
+            println!("{:?}", Solution::total_fruit(fruits));
+        }
+        Commands::Tribonacci { n } => {
+            println!("{:?}", Solution::tribonacci(*n));
+        }
+        Commands::TwoEggDrop { n } => {
+            println!("{:?}", Solution::two_egg_drop(*n));
+        }
+        Commands::ZeroFilledSubarray { nums } => {
+            let nums = utils::parse_list_i32(nums);
+            println!("{:?}", Solution::zero_filled_subarray(nums));
         }
     }
 }
