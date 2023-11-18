@@ -99,7 +99,9 @@ enum Commands {
     /// [169. Majority Element](https://leetcode.com/problems/majority-element/)
     MajorityElement { nums: String },
     /// [121. Best Time to Buy and Sell Stock](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/?envType=study-plan-v2&envId=top-interview-150)
-    MaxProfit { prices: String },
+    MaxProfit1 { prices: String },
+    /// [122. Best Time to Buy and Sell Stock II](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/?envType=study-plan-v2&envId=top-interview-150)
+    MaxProfit2 { prices: String },
     /// [1043. Partition Array for Maximum Sum](https://leetcode.com/problems/partition-array-for-maximum-sum/)
     MaxSumAfterPartitioning { arr: String, k: i32 },
     /// [1768. Merge Strings Alternately](https://leetcode.com/problems/merge-strings-alternately/)
@@ -139,6 +141,8 @@ enum Commands {
     ReadBinaryWatch { turned_on: i32 },
     /// [26. Remove Duplicates from Sorted Array](https://leetcode.com/problems/remove-duplicates-from-sorted-array/?envType=study-plan-v2&envId=top-interview-150)
     RemoveDuplicates1 { nums: String },
+    /// [80. Remove Duplicates from Sorted Array II](https://leetcode.com/problems/remove-duplicates-from-sorted-array-ii/?envType=study-plan-v2&envId=top-interview-150)
+    RemoveDuplicates2 { nums: String },
     /// [27. Remove Element](https://leetcode.com/problems/remove-element/?envType=study-plan-v2&envId=top-interview-150)
     RemoveElement { nums: String, val: i32 },
     // [203. Remove Linked List Elements](https://leetcode.com/problems/remove-linked-list-elements/)
@@ -321,9 +325,13 @@ fn main() {
             let nums = utils::parse_list_i32(nums);
             println!("{:?}", Solution::majority_element(nums));
         }
-        Commands::MaxProfit { prices } => {
+        Commands::MaxProfit1 { prices } => {
             let prices = utils::parse_list_i32(prices);
-            println!("{:?}", Solution::max_profit(prices));
+            println!("{:?}", Solution::max_profit1(prices));
+        }
+        Commands::MaxProfit2 { prices } => {
+            let prices = utils::parse_list_i32(prices);
+            println!("{:?}", Solution::max_profit2(prices));
         }
         Commands::MaxSumAfterPartitioning { arr, k } => {
             let arr = utils::parse_list_i32(arr);
@@ -384,6 +392,10 @@ fn main() {
         Commands::RemoveDuplicates1 { nums } => {
             let mut nums = utils::parse_list_i32(nums);
             println!("{:?}", Solution::remove_duplicates1(&mut nums));
+        }
+        Commands::RemoveDuplicates2 { nums } => {
+            let mut nums = utils::parse_list_i32(nums);
+            println!("{:?}", Solution::remove_duplicates2(&mut nums));
         }
         Commands::RemoveElement { nums, val } => {
             let mut nums = utils::parse_list_i32(nums);
