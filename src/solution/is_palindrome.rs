@@ -35,7 +35,7 @@ impl Solution {
 
         let mut it = list.iter();
         let mut rev_it = rev_list.iter();
-        while let (Some(a), Some(b)) = (rev_it.next(), it.next()) {
+        while let (Some(a), Some(b)) = (rev_it.next_(), it.next_()) {
             if a != b {
                 return false;
             }
@@ -44,93 +44,27 @@ impl Solution {
     }
 }
 
-struct SinglyLinkedListIterator<'a> {
-    link: Option<&'a ListNode>,
-}
-
-impl<'a> SinglyLinkedListIterator<'a> {
-    fn next(&mut self) -> Option<&i32> {
-        match self.link {
-            Some(node) => {
-                self.link = node.next.as_deref();
-                Some(&node.val)
-            }
-            None => None,
-        }
-    }
-}
-
-impl SinglyLinkedList {
-    fn iter(&self) -> SinglyLinkedListIterator {
-        SinglyLinkedListIterator {
-            link: self.head.as_deref(),
-        }
-    }
-
-    fn reverse(mut self) -> SinglyLinkedList {
-        let mut prev_node: Option<Box<ListNode>> = None;
-        while self.head.is_some() {
-            let mut tmp = self.head.as_mut().unwrap().next.take();
-            self.head.as_mut().unwrap().next = prev_node.take();
-            prev_node = self.head.take();
-            self = SinglyLinkedList { head: tmp.take() };
-        }
-        SinglyLinkedList { head: prev_node }
-    }
-
-    fn splice_at_half(&mut self) -> SinglyLinkedList {
-        if self.head.is_none() {
-            return SinglyLinkedList { head: None };
-        }
-        let mut slow = self.head.as_deref_mut().unwrap() as *mut ListNode;
-        let mut fast = slow;
-        unsafe {
-            while (*fast).next.is_some() {
-                fast = (*fast).next.as_deref_mut().unwrap() as *mut ListNode;
-                if (*fast).next.is_none() {
-                    break;
-                }
-                fast = (*fast).next.as_deref_mut().unwrap() as *mut ListNode;
-                slow = (*slow).next.as_deref_mut().unwrap() as *mut ListNode;
-            }
-            SinglyLinkedList {
-                head: (*slow).next.take(),
-            }
-        }
-    }
-}
-
 #[cfg(test)]
 mod tests {
+    use crate::singly_linked_list;
+
     use super::*;
 
     #[test]
     fn example1() {
-        let head = Some(Box::new(ListNode {
-            val: 1,
-            next: Some(Box::new(ListNode {
-                val: 2,
-                next: Some(Box::new(ListNode {
-                    val: 2,
-                    next: Some(Box::new(ListNode::new(1))),
-                })),
-            })),
-        }));
+        let head = singly_linked_list![1, 2, 2, 1].head;
         assert_eq!(Solution::is_palindrome(head), true);
     }
 
     #[test]
     fn example2() {
-        let head = Some(Box::new(ListNode {
-            val: 1,
-            next: Some(Box::new(ListNode::new(2))),
-        }));
+        let head = singly_linked_list![1, 2].head;
         assert_eq!(Solution::is_palindrome(head), false);
     }
 
     #[test]
     fn example3() {
-        let head = Some(Box::new(ListNode::new(2)));
+        let head = singly_linked_list![2].head;
         assert_eq!(Solution::is_palindrome(head), true);
     }
 }

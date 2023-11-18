@@ -51,46 +51,19 @@ impl Solution {
 #[cfg(test)]
 mod tests {
     use super::*;
+    use crate::{singly_linked_list, SinglyLinkedList};
 
     #[test]
     fn example1() {
-        let head = Some(Box::new(ListNode::new(5)));
-        let head = Some(Box::new(ListNode { val: 4, next: head }));
-        let head = Some(Box::new(ListNode { val: 3, next: head }));
-        let head = Some(Box::new(ListNode { val: 2, next: head }));
-        let head = Some(Box::new(ListNode { val: 1, next: head }));
-
-        let output = Some(Box::new(ListNode::new(1)));
-        let output = Some(Box::new(ListNode {
-            val: 2,
-            next: output,
-        }));
-        let output = Some(Box::new(ListNode {
-            val: 3,
-            next: output,
-        }));
-        let output = Some(Box::new(ListNode {
-            val: 4,
-            next: output,
-        }));
-        let output = Some(Box::new(ListNode {
-            val: 5,
-            next: output,
-        }));
-        assert_eq!(Solution::reverse_list(head), output);
+        let head = singly_linked_list![1, 2, 3, 4, 5].head;
+        let expected = singly_linked_list![5, 4, 3, 2, 1].head;
+        assert_eq!(Solution::reverse_list(head), expected);
     }
     #[test]
     fn example2() {
-        let head = Some(Box::new(ListNode::new(2)));
-        let head = Some(Box::new(ListNode { val: 1, next: head }));
-
-        let output = Some(Box::new(ListNode::new(1)));
-        let output = Some(Box::new(ListNode {
-            val: 2,
-            next: output,
-        }));
-
-        assert_eq!(Solution::reverse_list(head), output);
+        let head = singly_linked_list![1, 2].head;
+        let expected = singly_linked_list![2, 1].head;
+        assert_eq!(Solution::reverse_list(head), expected);
     }
     #[test]
     fn example3() {

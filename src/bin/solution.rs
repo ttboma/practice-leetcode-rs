@@ -1,6 +1,6 @@
 use clap::{Parser, Subcommand};
 use leetcode_rs::utils;
-use leetcode_rs::Solution;
+use leetcode_rs::*;
 
 #[derive(Parser)]
 #[command(author, version, about, long_about = None)]
@@ -13,101 +13,212 @@ struct Cli {
 #[derive(Subcommand)]
 enum Commands {
     /// [797. All Paths From Source to Target](https://leetcode.com/problems/all-paths-from-source-to-target/)
-    AllPathsSourceTarget { graph: String },
+    AllPathsSourceTarget {
+        graph: String,
+    },
     // [894. All Possible Full Binary Trees](https://leetcode.com/problems/all-possible-full-binary-trees/)
     //AllPossibleFbt { n: i32 },
     // [257. Binary Tree Paths](https://leetcode.com/problems/binary-tree-paths/)
     //binary_tree_paths { root: String },
     /// [605. Can Place Flowers](https://leetcode.com/problems/can-place-flowers/)
-    CanPlaceFlowers { flowerbed: String, n: i32 },
+    CanPlaceFlowers {
+        flowerbed: String,
+        n: i32,
+    },
     /// [217. Contains Duplicate](https://leetcode.com/problems/contains-duplicate/)
-    ContainsDuplicate { nums: String },
+    ContainsDuplicate {
+        nums: String,
+    },
     /// [338. Counting Bits](https://leetcode.com/problems/counting-bits/)
-    CountBits { n: i32 },
+    CountBits {
+        n: i32,
+    },
     /// [2044. Count Number of Maximum Bitwise-OR Subsets](https://leetcode.com/problems/count-number-of-maximum-bitwise-or-subsets/)
-    CountMaxOrSubsets { nums: String },
+    CountMaxOrSubsets {
+        nums: String,
+    },
     /// [1523. Count Odd Numbers in an Interval Range](https://leetcode.com/problems/count-odd-numbers-in-an-interval-range/)
-    CountOdds { low: i32, high: i32 },
+    CountOdds {
+        low: i32,
+        high: i32,
+    },
     /// [2316. Count Unreachable Pairs of Nodes in an Undirected Graph](https://leetcode.com/problems/count-unreachable-pairs-of-nodes-in-an-undirected-graph/)
-    CountPairs { n: i32, edges: String },
+    CountPairs {
+        n: i32,
+        edges: String,
+    },
     /// [1277. Count Square Submatrices with All Ones](https://leetcode.com/problems/count-square-submatrices-with-all-ones/)
-    CountSquares { matrix: String },
+    CountSquares {
+        matrix: String,
+    },
     /// [1638. Count Substrings That Differ by One Character](https://leetcode.com/problems/count-substrings-that-differ-by-one-character/)
-    CountSubstrings { s: String, t: String },
+    CountSubstrings {
+        s: String,
+        t: String,
+    },
     /// [1641. Count Sorted Vowel Strings](https://leetcode.com/problems/count-sorted-vowel-strings/)
-    CountVowelStrings { n: i32 },
+    CountVowelStrings {
+        n: i32,
+    },
     /// [394. Decode String](https://leetcode.com/problems/decode-string/)
-    DecodeString { s: String },
+    DecodeString {
+        s: String,
+    },
     /// [241. Different Ways to Add Parentheses](https://leetcode.com/problems/different-ways-to-add-parentheses/)
-    DiffWaysToCompute { expression: String },
+    DiffWaysToCompute {
+        expression: String,
+    },
     /// [2305. Fair Distribution of Cookies](https://leetcode.com/problems/fair-distribution-of-cookies/)
-    DistributeCookies { cookies: String, k: i32 },
+    DistributeCookies {
+        cookies: String,
+        k: i32,
+    },
     /// [1025. Divisor Game](https://leetcode.com/problems/divisor-game/description/)
-    DivisorGame { n: i32 },
+    DivisorGame {
+        n: i32,
+    },
     /// [509. Fibonacci Number](https://leetcode.com/problems/fibonacci-number/)
-    Fib { n: i32 },
+    Fib {
+        n: i32,
+    },
     /// [1706. Where Will the Ball Fall](https://leetcode.com/problems/where-will-the-ball-fall/description/)
-    FindBall { grid: String },
+    FindBall {
+        grid: String,
+    },
     /// [1706. Where Will the Ball Fall](https://leetcode.com/problems/where-will-the-ball-fall/description/)
-    FindDifference { nums1: String, nums2: String },
+    FindDifference {
+        nums1: String,
+        nums2: String,
+    },
     /// [1545. Find Kth Bit in Nth Binary String](https://leetcode.com/problems/find-kth-bit-in-nth-binary-string/)
-    FindKthBit { n: i32, k: i32 },
+    FindKthBit {
+        n: i32,
+        k: i32,
+    },
     /// [1539. Kth Missing Positive Number](https://leetcode.com/problems/kth-missing-positive-number/)
-    FindKthPositive { arr: String, k: i32 },
+    FindKthPositive {
+        arr: String,
+        k: i32,
+    },
     /// [643. Maximum Average Subarray I](https://leetcode.com/problems/maximum-average-subarray-i/)
-    FindMaxAverage { nums: String, k: i32 },
+    FindMaxAverage {
+        nums: String,
+        k: i32,
+    },
     /// [1823. Find the Winner of the Circular Game](https://leetcode.com/problems/find-the-winner-of-the-circular-game/)
-    FindTheWinner { n: i32, k: i32 },
+    FindTheWinner {
+        n: i32,
+        k: i32,
+    },
     /// [1071. Greatest Common Divisor of Strings](https://leetcode.com/problems/greatest-common-divisor-of-strings/)
-    GcdOfStrings { str1: String, str2: String },
+    GcdOfStrings {
+        str1: String,
+        str2: String,
+    },
     /// [22. Generate Parentheses](https://leetcode.com/problems/generate-parentheses/)
-    GenerateParenthesis { n: i32 },
+    GenerateParenthesis {
+        n: i32,
+    },
     /// [118. Pascal's Triangle](https://leetcode.com/problems/pascals-triangle/)
-    Generate { num_rows: i32 },
+    Generate {
+        num_rows: i32,
+    },
     /// [1387. Sort Integers by The Power Value](https://leetcode.com/problems/sort-integers-by-the-power-value/)
-    GetKth { lo: i32, hi: i32, k: i32 },
+    GetKth {
+        lo: i32,
+        hi: i32,
+        k: i32,
+    },
     /// [1646. Get Maximum in Generated Array](https://leetcode.com/problems/get-maximum-in-generated-array/description/)
-    GetMaximumGenerated { n: i32 },
+    GetMaximumGenerated {
+        n: i32,
+    },
     /// [119. Pascal's Triangle II](https://leetcode.com/problems/pascals-triangle-ii/)
-    GetRow { row_index: i32 },
+    GetRow {
+        row_index: i32,
+    },
     // [112. Path Sum](https://leetcode.com/problems/path-sum/)
     //HasPathSum{root: Option<Rc<RefCell<TreeNode>>>, target_sum: i32},
     /// [242. Valid Anagram](https://leetcode.com/problems/valid-anagram/)
-    IsAnagram { s: String, t: String },
+    IsAnagram {
+        s: String,
+        t: String,
+    },
     /// [205. Isomorphic Strings](https://leetcode.com/problems/isomorphic-strings/)
-    IsIsomorphic { s: String, t: String },
+    IsIsomorphic {
+        s: String,
+        t: String,
+    },
     // [234. Palindrome Linked List](https://leetcode.com/problems/palindrome-linked-list/description/)
-    //IsPalindrome{head: Option<Box<ListNode>>},
+    IsPalindrome {
+        head: String,
+    },
     /// [342. Power of Four](https://leetcode.com/problems/power-of-four/)
-    IsPowerOfFour { n: i32 },
+    IsPowerOfFour {
+        n: i32,
+    },
     /// [326. Power of Three](https://leetcode.com/problems/power-of-three/)
-    IsPowerOfThree { n: i32 },
+    IsPowerOfThree {
+        n: i32,
+    },
     /// [231. Power of Two](https://leetcode.com/problems/power-of-two/)
-    IsPowerOfTwo { n: i32 },
+    IsPowerOfTwo {
+        n: i32,
+    },
     /// [392. Is Subsequence](https://leetcode.com/problems/is-subsequence/)
-    IsSubsequence { s: String, t: String },
+    IsSubsequence {
+        s: String,
+        t: String,
+    },
     /// [45. Jump Game II](https://leetcode.com/problems/jump-game-ii/)
-    Jump { nums: String },
+    Jump {
+        nums: String,
+    },
     /// [1431. Kids With the Greatest Number of Candies](https://leetcode.com/problems/kids-with-the-greatest-number-of-candies/)
-    KidsWithCandies { candies: String, extra_candies: i32 },
+    KidsWithCandies {
+        candies: String,
+        extra_candies: i32,
+    },
     /// [779. K-th Symbol in Grammar](https://leetcode.com/problems/k-th-symbol-in-grammar/)
-    KthGrammar { n: i32, k: i32 },
+    KthGrammar {
+        n: i32,
+        k: i32,
+    },
     /// [1732. Find the Highest Altitude](https://leetcode.com/problems/find-the-highest-altitude/)
-    LargestAltitude { gain: String },
+    LargestAltitude {
+        gain: String,
+    },
     /// [409. Longest Palindrome](https://leetcode.com/problems/longest-palindrome/)
-    LongestPalindrome { s: String },
+    LongestPalindrome {
+        s: String,
+    },
     /// [169. Majority Element](https://leetcode.com/problems/majority-element/)
-    MajorityElement { nums: String },
+    MajorityElement {
+        nums: String,
+    },
     /// [121. Best Time to Buy and Sell Stock](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/?envType=study-plan-v2&envId=top-interview-150)
-    MaxProfit1 { prices: String },
+    MaxProfit1 {
+        prices: String,
+    },
     /// [122. Best Time to Buy and Sell Stock II](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/?envType=study-plan-v2&envId=top-interview-150)
-    MaxProfit2 { prices: String },
+    MaxProfit2 {
+        prices: String,
+    },
     /// [1043. Partition Array for Maximum Sum](https://leetcode.com/problems/partition-array-for-maximum-sum/)
-    MaxSumAfterPartitioning { arr: String, k: i32 },
+    MaxSumAfterPartitioning {
+        arr: String,
+        k: i32,
+    },
     /// [1768. Merge Strings Alternately](https://leetcode.com/problems/merge-strings-alternately/)
-    MergeAlternately { word1: String, word2: String },
+    MergeAlternately {
+        word1: String,
+        word2: String,
+    },
     // [21. Merge Two Sorted Lists](https://leetcode.com/problems/merge-two-sorted-lists/)
-    //MergeTwoLists { list1: String, list2: String },
+    MergeTwoLists {
+        list1: String,
+        list2: String,
+    },
     /// [88. Merge Sorted Array](https://leetcode.com/problems/merge-sorted-array/?envType=study-plan-v2&envId=top-interview-150)
     Merge {
         nums1: String,
@@ -116,71 +227,144 @@ enum Commands {
         n: i32,
     },
     // [876. Middle of the Linked List](https://leetcode.com/problems/middle-of-the-linked-list/)
-    //MiddleNode{head: String},
+    MiddleNode {
+        head: String,
+    },
     /// [746. Min Cost Climbing Stairs](https://leetcode.com/problems/min-cost-climbing-stairs/)
-    MinCostClimbingStairs { cost: String },
+    MinCostClimbingStairs {
+        cost: String,
+    },
     /// [875. Koko Eating Bananas](https://leetcode.com/problems/koko-eating-bananas/)
-    MinEatingSpeed { piles: String, h: i32 },
+    MinEatingSpeed {
+        piles: String,
+        h: i32,
+    },
     /// [1969. Minimum Non-Zero Product of the Array Elements](https://leetcode.com/problems/minimum-non-zero-product-of-the-array-elements/)
-    MinNonZeroProduct { p: u64 },
+    MinNonZeroProduct {
+        p: u64,
+    },
     /// [2492. Minimum Score of a Path Between Two Cities](https://leetcode.com/problems/minimum-score-of-a-path-between-two-cities/)
-    MinScore { n: i32, roads: String },
+    MinScore {
+        n: i32,
+        roads: String,
+    },
     /// [283. Move Zeroes](https://leetcode.com/problems/move-zeroes/)
-    MoveZeroes { nums: String },
+    MoveZeroes {
+        nums: String,
+    },
     /// [1079. Letter Tile Possibilities](https://leetcode.com/problems/letter-tile-possibilities/description/)
-    NumTilePossibilities { tiles: String },
+    NumTilePossibilities {
+        tiles: String,
+    },
     /// [46. Permutations](https://leetcode.com/problems/permutations/)
-    Permute { nums: String },
+    Permute {
+        nums: String,
+    },
     /// [724. Find Pivot Index](https://leetcode.com/problems/find-pivot-index/)
-    PivotIndex { nums: String },
+    PivotIndex {
+        nums: String,
+    },
     /// [486. Predict the Winner](https://leetcode.com/problems/predict-the-winner/)
-    PredictTheWinner { nums: String },
+    PredictTheWinner {
+        nums: String,
+    },
     /// [238. Product of Array Except Self](https://leetcode.com/problems/product-of-array-except-self/)
-    ProductExceptSelf { nums: String },
+    ProductExceptSelf {
+        nums: String,
+    },
     /// [401. Binary Watch](https://leetcode.com/problems/binary-watch/)
-    ReadBinaryWatch { turned_on: i32 },
+    ReadBinaryWatch {
+        turned_on: i32,
+    },
     /// [26. Remove Duplicates from Sorted Array](https://leetcode.com/problems/remove-duplicates-from-sorted-array/?envType=study-plan-v2&envId=top-interview-150)
-    RemoveDuplicates1 { nums: String },
+    RemoveDuplicates1 {
+        nums: String,
+    },
     /// [80. Remove Duplicates from Sorted Array II](https://leetcode.com/problems/remove-duplicates-from-sorted-array-ii/?envType=study-plan-v2&envId=top-interview-150)
-    RemoveDuplicates2 { nums: String },
+    RemoveDuplicates2 {
+        nums: String,
+    },
     /// [27. Remove Element](https://leetcode.com/problems/remove-element/?envType=study-plan-v2&envId=top-interview-150)
-    RemoveElement { nums: String, val: i32 },
+    RemoveElement {
+        nums: String,
+        val: i32,
+    },
     // [203. Remove Linked List Elements](https://leetcode.com/problems/remove-linked-list-elements/)
-    //RemoveElements{head: String, val: i32},
+    RemoveElements {
+        head: String,
+        val: i32,
+    },
     // [2487. Remove Nodes From Linked List](https://leetcode.com/problems/remove-nodes-from-linked-list/)
-    //RemoveNodes{head: Option<Box<ListNode>>},
+    RemoveNodes {
+        head: String,
+    },
     // [143. Reorder List](https://leetcode.com/problems/reorder-list/)
-    //ReorderList{head: &mut Option<Box<ListNode>>},
+    ReorderList {
+        head: String,
+    },
     // [206. Reverse Linked List](https://leetcode.com/problems/reverse-linked-list/)
-    //ReverseList{head: Option<Box<ListNode>>},
+    ReverseList {
+        head: String,
+    },
     /// [345. Reverse Vowels of a String](https://leetcode.com/problems/reverse-vowels-of-a-string/)
-    ReverseVowels { s: String },
+    ReverseVowels {
+        s: String,
+    },
     /// [151. Reverse Words in a String](https://leetcode.com/problems/reverse-words-in-a-string/)
-    ReverseWords { s: String },
+    ReverseWords {
+        s: String,
+    },
     /// [189. Rotate Array](https://leetcode.com/problems/rotate-array/?envType=study-plan-v2&envId=top-interview-150)
-    Rotate { nums: String, k: i32 },
+    Rotate {
+        nums: String,
+        k: i32,
+    },
     /// [1480. Running Sum of 1d Array](https://leetcode.com/problems/running-sum-of-1d-array/)
-    RunningSum { nums: String },
+    RunningSum {
+        nums: String,
+    },
     /// [704. Binary Search](https://leetcode.com/problems/binary-search/)
-    Search { nums: String, target: i32 },
+    Search {
+        nums: String,
+        target: i32,
+    },
     /// [1011. Capacity To Ship Packages Within D Days](https://leetcode.com/problems/capacity-to-ship-packages-within-d-days/)
-    ShipWithinDays { weights: String, days: i32 },
+    ShipWithinDays {
+        weights: String,
+        days: i32,
+    },
     /// [877. Stone Game](https://leetcode.com/problems/stone-game/)
-    StoneGame { piles: String },
+    StoneGame {
+        piles: String,
+    },
     /// [1863. Sum of All Subset XOR Totals](https://leetcode.com/problems/sum-of-all-subset-xor-totals/)
-    SubsetXorSum { nums: String },
+    SubsetXorSum {
+        nums: String,
+    },
     /// [78. Subsets](https://leetcode.com/problems/subsets/)
-    Subsets { nums: String },
+    Subsets {
+        nums: String,
+    },
     // [24. Swap Nodes in Pairs](https://leetcode.com/problems/swap-nodes-in-pairs/)
-    //SwapPairs{head: Option<Box<ListNode>>},
+    SwapPairs {
+        head: String,
+    },
     /// [904. Fruit Into Baskets](https://leetcode.com/problems/fruit-into-baskets/)
-    TotalFruit { fruits: String },
+    TotalFruit {
+        fruits: String,
+    },
     /// [1137. N-th Tribonacci Number](https://leetcode.com/problems/n-th-tribonacci-number/)
-    Tribonacci { n: i32 },
+    Tribonacci {
+        n: i32,
+    },
     /// [1884. Egg Drop With 2 Eggs and N Floors](https://leetcode.com/problems/egg-drop-with-2-eggs-and-n-floors/)
-    TwoEggDrop { n: i32 },
+    TwoEggDrop {
+        n: i32,
+    },
     /// [2348. Number of Zero-Filled Subarrays](https://leetcode.com/problems/number-of-zero-filled-subarrays/)
-    ZeroFilledSubarray { nums: String },
+    ZeroFilledSubarray {
+        nums: String,
+    },
 }
 
 fn main() {
@@ -288,6 +472,11 @@ fn main() {
         Commands::IsIsomorphic { s, t } => {
             println!("{:?}", Solution::is_isomorphic(s.clone(), t.clone()));
         }
+        Commands::IsPalindrome { head } => {
+            let head = utils::parse_list_i32(head);
+            let mut list = SinglyLinkedList::from(head);
+            println!("{:?}", Solution::is_palindrome(list.head.take()));
+        }
         Commands::IsPowerOfFour { n } => {
             println!("{:?}", Solution::is_power_of_four(*n));
         }
@@ -343,10 +532,30 @@ fn main() {
                 Solution::merge_alternately(word1.clone(), word2.clone())
             );
         }
+        Commands::MergeTwoLists { list1, list2 } => {
+            let mut list1 = SinglyLinkedList::from(utils::parse_list_i32(list1));
+            let mut list2 = SinglyLinkedList::from(utils::parse_list_i32(list2));
+            println!(
+                "{:?}",
+                SinglyLinkedList {
+                    head: Solution::merge_two_lists(list1.head.take(), list2.head.take()),
+                }
+            );
+        }
         Commands::Merge { nums1, m, nums2, n } => {
             let mut nums1 = utils::parse_list_i32(nums1);
             let mut nums2 = utils::parse_list_i32(nums2);
             println!("{:?}", Solution::merge(&mut nums1, *m, &mut nums2, *n));
+        }
+        Commands::MiddleNode { head } => {
+            let head = utils::parse_list_i32(head);
+            let mut list = SinglyLinkedList::from(head);
+            println!(
+                "{:?}",
+                SinglyLinkedList {
+                    head: Solution::middle_node(list.head.take())
+                }
+            );
         }
         Commands::MinCostClimbingStairs { cost } => {
             let cost = utils::parse_list_i32(cost);
@@ -401,6 +610,42 @@ fn main() {
             let mut nums = utils::parse_list_i32(nums);
             println!("{:?}", Solution::remove_element(&mut nums, *val));
         }
+        Commands::RemoveElements { head, val } => {
+            let head = utils::parse_list_i32(head);
+            let mut list = SinglyLinkedList::from(head);
+            println!(
+                "{:?}",
+                SinglyLinkedList {
+                    head: Solution::remove_elements(list.head.take(), *val)
+                }
+            );
+        }
+        Commands::RemoveNodes { head } => {
+            let head = utils::parse_list_i32(head);
+            let mut list = SinglyLinkedList::from(head);
+            println!(
+                "{:?}",
+                SinglyLinkedList {
+                    head: Solution::remove_nodes(list.head.take())
+                }
+            );
+        }
+        Commands::ReorderList { head } => {
+            let head = utils::parse_list_i32(head);
+            let mut list = SinglyLinkedList::from(head);
+            Solution::reorder_list(&mut list.head);
+            println!("{:?}", list);
+        }
+        Commands::ReverseList { head } => {
+            let head = utils::parse_list_i32(head);
+            let mut list = SinglyLinkedList::from(head);
+            println!(
+                "{:?}",
+                SinglyLinkedList {
+                    head: Solution::reverse_list(list.head.take())
+                }
+            );
+        }
         Commands::ReverseVowels { s } => {
             println!("{:?}", Solution::reverse_vowels(s.clone()));
         }
@@ -434,6 +679,16 @@ fn main() {
         Commands::Subsets { nums } => {
             let nums = utils::parse_list_i32(nums);
             println!("{:?}", Solution::subsets(nums));
+        }
+        Commands::SwapPairs { head } => {
+            let head = utils::parse_list_i32(head);
+            let mut list = SinglyLinkedList::from(head);
+            println!(
+                "{:?}",
+                SinglyLinkedList {
+                    head: Solution::swap_pairs(list.head.take())
+                }
+            );
         }
         Commands::TotalFruit { fruits } => {
             let fruits = utils::parse_list_i32(fruits);

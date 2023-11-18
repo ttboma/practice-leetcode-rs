@@ -63,55 +63,19 @@ fn remove_nodes_impl(iter: &mut Option<Box<ListNode>>) -> i32 {
 #[cfg(test)]
 mod tests {
     use super::*;
+    use crate::{singly_linked_list, SinglyLinkedList};
 
     #[test]
     fn example1() {
-        let head = Some(Box::new(ListNode {
-            val: 5,
-            next: Some(Box::new(ListNode {
-                val: 2,
-                next: Some(Box::new(ListNode {
-                    val: 13,
-                    next: Some(Box::new(ListNode {
-                        val: 3,
-                        next: Some(Box::new(ListNode::new(8))),
-                    })),
-                })),
-            })),
-        }));
-
-        let expected = Some(Box::new(ListNode {
-            val: 13,
-            next: Some(Box::new(ListNode::new(8))),
-        }));
-
+        let head = singly_linked_list![5, 2, 13, 3, 8].head;
+        let expected = singly_linked_list![13, 8].head;
         assert_eq!(Solution::remove_nodes(head), expected);
     }
 
     #[test]
     fn example2() {
-        let head = Some(Box::new(ListNode {
-            val: 1,
-            next: Some(Box::new(ListNode {
-                val: 1,
-                next: Some(Box::new(ListNode {
-                    val: 1,
-                    next: Some(Box::new(ListNode::new(1))),
-                })),
-            })),
-        }));
-
-        let expected = Some(Box::new(ListNode {
-            val: 1,
-            next: Some(Box::new(ListNode {
-                val: 1,
-                next: Some(Box::new(ListNode {
-                    val: 1,
-                    next: Some(Box::new(ListNode::new(1))),
-                })),
-            })),
-        }));
-
+        let head = singly_linked_list![1, 1, 1, 1].head;
+        let expected = singly_linked_list![1, 1, 1, 1].head;
         assert_eq!(Solution::remove_nodes(head), expected);
     }
 }

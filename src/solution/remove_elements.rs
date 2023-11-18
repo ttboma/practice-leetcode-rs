@@ -51,36 +51,13 @@ impl Solution {
 #[cfg(test)]
 mod tests {
     use super::*;
+    use crate::{singly_linked_list, SinglyLinkedList};
 
     #[test]
     fn example1() {
-        let head = Some(Box::new(ListNode {
-            val: 1,
-            next: Some(Box::new(ListNode {
-                val: 2,
-                next: Some(Box::new(ListNode {
-                    val: 6,
-                    next: Some(Box::new(ListNode {
-                        val: 3,
-                        next: Some(Box::new(ListNode {
-                            val: 5,
-                            next: Some(Box::new(ListNode::new(6))),
-                        })),
-                    })),
-                })),
-            })),
-        }));
-        let output = Some(Box::new(ListNode {
-            val: 1,
-            next: Some(Box::new(ListNode {
-                val: 2,
-                next: Some(Box::new(ListNode {
-                    val: 3,
-                    next: Some(Box::new(ListNode::new(5))),
-                })),
-            })),
-        }));
-        assert_eq!(Solution::remove_elements(head, 6), output);
+        let head = singly_linked_list![1, 2, 6, 3, 4, 5, 6].head;
+        let expected = singly_linked_list![1, 2, 3, 4, 5].head;
+        assert_eq!(Solution::remove_elements(head, 6), expected);
     }
 
     #[test]
@@ -90,16 +67,7 @@ mod tests {
 
     #[test]
     fn example3() {
-        let head = Some(Box::new(ListNode {
-            val: 7,
-            next: Some(Box::new(ListNode {
-                val: 7,
-                next: Some(Box::new(ListNode {
-                    val: 7,
-                    next: Some(Box::new(ListNode::new(7))),
-                })),
-            })),
-        }));
+        let head = singly_linked_list![7, 7, 7, 7].head;
         assert_eq!(Solution::remove_elements(head, 7), None);
     }
 }

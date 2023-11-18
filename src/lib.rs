@@ -47,17 +47,17 @@
 //!
 //! ## TODO
 //!
-//! - [ ] Implement constructor of [`SinglyLinkedList`] and [`TreeNode`] by macro
-//!     - [ ] ensure that all debug printed output have their proper formatting in `bin/solution.rs`
+//! - [ ] ensure that all debug printed output have their proper formatting in `bin/solution.rs`
+//!     - [ ] [`TreeNode`] by macro
+//!     - [ ] modify [`TreeNode`] unit tests
 
-pub use solution::Solution;
+pub use solution::*;
 mod solution;
 
-pub use tree_node::TreeNode;
+pub use tree_node::*;
 mod tree_node;
 
-pub use list_node::ListNode;
-pub use list_node::SinglyLinkedList;
+pub use list_node::*;
 mod list_node;
 
 /// utilities

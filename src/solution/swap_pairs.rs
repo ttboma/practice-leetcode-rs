@@ -53,36 +53,19 @@ impl Solution {
 #[cfg(test)]
 mod tests {
     use super::*;
+    use crate::{singly_linked_list, SinglyLinkedList};
 
     #[test]
     fn example1() {
-        let head = Some(Box::new(ListNode {
-            val: 1,
-            next: Some(Box::new(ListNode {
-                val: 2,
-                next: Some(Box::new(ListNode {
-                    val: 3,
-                    next: Some(Box::new(ListNode::new(4))),
-                })),
-            })),
-        }));
-        let expected = Some(Box::new(ListNode {
-            val: 2,
-            next: Some(Box::new(ListNode {
-                val: 1,
-                next: Some(Box::new(ListNode {
-                    val: 4,
-                    next: Some(Box::new(ListNode::new(3))),
-                })),
-            })),
-        }));
+        let head = singly_linked_list![1, 2, 3, 4].head;
+        let expected = singly_linked_list![2, 1, 4, 3].head;
         assert_eq!(Solution::swap_pairs(head), expected);
     }
 
     #[test]
     fn example2() {
-        let head = Some(Box::new(ListNode::new(1)));
-        let expected = Some(Box::new(ListNode::new(1)));
+        let head = singly_linked_list![1].head;
+        let expected = singly_linked_list![1].head;
         assert_eq!(Solution::swap_pairs(head), expected);
     }
 

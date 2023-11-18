@@ -44,63 +44,33 @@ impl Solution {
 #[cfg(test)]
 mod tests {
     use super::*;
+    use crate::{singly_linked_list, SinglyLinkedList};
 
     #[test]
     fn example1() {
-        let head = Some(Box::new(ListNode::new(5)));
-        let head = Some(Box::new(ListNode { val: 4, next: head }));
-        let head = Some(Box::new(ListNode { val: 3, next: head }));
-        let head = Some(Box::new(ListNode { val: 2, next: head }));
-        let head = Some(Box::new(ListNode { val: 1, next: head }));
-
-        let output = Some(Box::new(ListNode::new(5)));
-        let output = Some(Box::new(ListNode {
-            val: 4,
-            next: output,
-        }));
-        let output = Some(Box::new(ListNode {
-            val: 3,
-            next: output,
-        }));
-
-        assert_eq!(Solution::middle_node(head), output);
+        let head = singly_linked_list![1, 2, 3, 4, 5].head;
+        let expected = singly_linked_list![3, 4, 5].head;
+        assert_eq!(Solution::middle_node(head), expected);
     }
+
     #[test]
     fn example2() {
-        let head = Some(Box::new(ListNode::new(6)));
-        let head = Some(Box::new(ListNode { val: 5, next: head }));
-        let head = Some(Box::new(ListNode { val: 4, next: head }));
-        let head = Some(Box::new(ListNode { val: 3, next: head }));
-        let head = Some(Box::new(ListNode { val: 2, next: head }));
-        let head = Some(Box::new(ListNode { val: 1, next: head }));
-
-        let output = Some(Box::new(ListNode::new(6)));
-        let output = Some(Box::new(ListNode {
-            val: 5,
-            next: output,
-        }));
-        let output = Some(Box::new(ListNode {
-            val: 4,
-            next: output,
-        }));
-
-        assert_eq!(Solution::middle_node(head), output);
+        let head = singly_linked_list![1, 2, 3, 4, 5, 6].head;
+        let expected = singly_linked_list![4, 5, 6].head;
+        assert_eq!(Solution::middle_node(head), expected);
     }
+
     #[test]
     fn example3() {
-        let head = Some(Box::new(ListNode::new(1)));
-
-        let output = Some(Box::new(ListNode::new(1)));
-
-        assert_eq!(Solution::middle_node(head), output);
+        let head = singly_linked_list![1].head;
+        let expected = singly_linked_list![1].head;
+        assert_eq!(Solution::middle_node(head), expected);
     }
+
     #[test]
     fn example4() {
-        let head = Some(Box::new(ListNode::new(2)));
-        let head = Some(Box::new(ListNode { val: 1, next: head }));
-
-        let output = Some(Box::new(ListNode::new(2)));
-
-        assert_eq!(Solution::middle_node(head), output);
+        let head = singly_linked_list![2, 1].head;
+        let expected = singly_linked_list![1].head;
+        assert_eq!(Solution::middle_node(head), expected);
     }
 }

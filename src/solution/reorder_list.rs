@@ -86,63 +86,20 @@ fn reverse_list(head: &mut Option<Box<ListNode>>) -> Option<Box<ListNode>> {
 #[cfg(test)]
 mod tests {
     use super::*;
+    use crate::{singly_linked_list, SinglyLinkedList};
 
     #[test]
     fn example1() {
-        let mut head = Some(Box::new(ListNode {
-            val: 1,
-            next: Some(Box::new(ListNode {
-                val: 2,
-                next: Some(Box::new(ListNode {
-                    val: 3,
-                    next: Some(Box::new(ListNode::new(4))),
-                })),
-            })),
-        }));
-
-        let expected = Some(Box::new(ListNode {
-            val: 1,
-            next: Some(Box::new(ListNode {
-                val: 4,
-                next: Some(Box::new(ListNode {
-                    val: 2,
-                    next: Some(Box::new(ListNode::new(3))),
-                })),
-            })),
-        }));
+        let mut head = singly_linked_list![1, 2, 3, 4].head;
+        let expected = singly_linked_list![1, 4, 2, 3].head;
         Solution::reorder_list(&mut head);
         assert_eq!(head, expected);
     }
 
     #[test]
     fn example2() {
-        let mut head = Some(Box::new(ListNode {
-            val: 1,
-            next: Some(Box::new(ListNode {
-                val: 2,
-                next: Some(Box::new(ListNode {
-                    val: 3,
-                    next: Some(Box::new(ListNode {
-                        val: 4,
-                        next: Some(Box::new(ListNode::new(5))),
-                    })),
-                })),
-            })),
-        }));
-
-        let expected = Some(Box::new(ListNode {
-            val: 1,
-            next: Some(Box::new(ListNode {
-                val: 5,
-                next: Some(Box::new(ListNode {
-                    val: 2,
-                    next: Some(Box::new(ListNode {
-                        val: 4,
-                        next: Some(Box::new(ListNode::new(3))),
-                    })),
-                })),
-            })),
-        }));
+        let mut head = singly_linked_list![1, 2, 3, 4, 5].head;
+        let expected = singly_linked_list![1, 5, 2, 4, 3].head;
         Solution::reorder_list(&mut head);
         assert_eq!(head, expected);
     }

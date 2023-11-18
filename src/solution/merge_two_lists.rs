@@ -70,51 +70,13 @@ impl Solution {
 #[cfg(test)]
 mod tests {
     use super::*;
+    use crate::{singly_linked_list, SinglyLinkedList};
 
     #[test]
     fn example1() {
-        let list1 = Some(Box::new(ListNode::new(4)));
-        let list1 = Some(Box::new(ListNode {
-            val: 2,
-            next: list1,
-        }));
-        let list1 = Some(Box::new(ListNode {
-            val: 1,
-            next: list1,
-        }));
-
-        let list2 = Some(Box::new(ListNode::new(4)));
-        let list2 = Some(Box::new(ListNode {
-            val: 3,
-            next: list2,
-        }));
-        let list2 = Some(Box::new(ListNode {
-            val: 1,
-            next: list2,
-        }));
-
-        let list3 = Some(Box::new(ListNode::new(4)));
-        let list3 = Some(Box::new(ListNode {
-            val: 4,
-            next: list3,
-        }));
-        let list3 = Some(Box::new(ListNode {
-            val: 3,
-            next: list3,
-        }));
-        let list3 = Some(Box::new(ListNode {
-            val: 2,
-            next: list3,
-        }));
-        let list3 = Some(Box::new(ListNode {
-            val: 1,
-            next: list3,
-        }));
-        let list3 = Some(Box::new(ListNode {
-            val: 1,
-            next: list3,
-        }));
-
+        let list1 = singly_linked_list![1, 2, 4].head;
+        let list2 = singly_linked_list![1, 3, 4].head;
+        let list3 = singly_linked_list![1, 1, 2, 3, 4, 4].head;
         assert_eq!(Solution::merge_two_lists(list1, list2), list3);
     }
     #[test]
@@ -123,8 +85,8 @@ mod tests {
     }
     #[test]
     fn example3() {
-        let list2 = Some(Box::new(ListNode::new(0)));
-        let list3 = Some(Box::new(ListNode::new(0)));
+        let list2 = singly_linked_list![0].head;
+        let list3 = singly_linked_list![0].head;
         assert_eq!(Solution::merge_two_lists(None, list2), list3);
     }
 }
