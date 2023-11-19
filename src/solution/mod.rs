@@ -5,6 +5,7 @@ pub struct Solution {}
 mod all_paths_source_target;
 mod all_possible_fbt;
 mod binary_tree_paths;
+mod can_jump;
 mod can_place_flowers;
 mod contains_duplicate;
 mod count_bits;

@@ -365,6 +365,10 @@ enum Commands {
     ZeroFilledSubarray {
         nums: String,
     },
+    /// [55. Jump Game](https://leetcode.com/problems/jump-game/?envType=study-plan-v2&envId=top-interview-150)
+    CanJump {
+        nums: String,
+    },
 }
 
 fn main() {
@@ -703,6 +707,10 @@ fn main() {
         Commands::ZeroFilledSubarray { nums } => {
             let nums = utils::parse_list_i32(nums);
             println!("{:?}", Solution::zero_filled_subarray(nums));
+        }
+        Commands::CanJump { nums } => {
+            let nums = utils::parse_list_i32(nums);
+            println!("{:?}", Solution::can_jump(nums));
         }
     }
 }
