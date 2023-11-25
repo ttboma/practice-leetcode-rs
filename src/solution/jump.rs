@@ -42,9 +42,8 @@ fn jump_impl(nums: &Vec<i32>, mut i_end: usize, mut answer: i32, mut reach: usiz
         let jump = i + <i32 as TryInto<usize>>::try_into(nums[i]).unwrap();
         if nums.len() - 1 <= jump {
             return answer + 1;
-        } else if reach < jump {
-            reach = jump;
         }
+        reach = reach.max(jump);
         if i == i_end {
             answer += 1;
             i_end = reach;
