@@ -33,24 +33,24 @@ impl Solution {
     /// - `0 <= nums[i] <= 1000`
     /// - It's guaranteed that you can reach `nums[n - 1]`.
     pub fn jump(nums: Vec<i32>) -> i32 {
-        let mut answer = 0;
-        let mut cur_end: usize = 0;
-        let mut cur_far: usize = 0;
-
-        for i in 0..(nums.len() - 1) {
-            let jump = i + <i32 as TryInto<usize>>::try_into(nums[i]).unwrap();
-            if nums.len() - 1 <= jump {
-                return answer + 1;
-            } else if cur_far < jump {
-                cur_far = jump;
-            }
-            if i == cur_end {
-                answer += 1;
-                cur_end = cur_far;
-            }
-        }
-        answer
+        jump_impl(&nums, 0, 0, 0)
     }
+}
+
+fn jump_impl(nums: &Vec<i32>, mut i_end: usize, mut answer: i32, mut reach: usize) -> i32 {
+    for i in 0..(nums.len() - 1) {
+        let jump = i + <i32 as TryInto<usize>>::try_into(nums[i]).unwrap();
+        if nums.len() - 1 <= jump {
+            return answer + 1;
+        } else if reach < jump {
+            reach = jump;
+        }
+        if i == i_end {
+            answer += 1;
+            i_end = reach;
+        }
+    }
+    answer
 }
 
 #[cfg(test)]
