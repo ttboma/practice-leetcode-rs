@@ -369,6 +369,10 @@ enum Commands {
     CanJump {
         nums: String,
     },
+    /// [274. H-Index](https://leetcode.com/problems/h-index/description/?envType=study-plan-v2&envId=top-interview-150)
+    HIndex {
+        citations: String,
+    },
 }
 
 fn main() {
@@ -711,6 +715,10 @@ fn main() {
         Commands::CanJump { nums } => {
             let nums = utils::parse_list_i32(nums);
             println!("{:?}", Solution::can_jump(nums));
+        }
+        Commands::HIndex { citations } => {
+            let citations = utils::parse_list_i32(citations);
+            println!("{:?}", Solution::h_index(citations));
         }
     }
 }
