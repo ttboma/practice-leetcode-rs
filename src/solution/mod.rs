@@ -1,6 +1,7 @@
 /// LeetCode solutions provided by Shieh, Yueh-chang <ttboma@gmail.com>
 pub struct Solution {}
 
+/// Each of the methods for Solution struct are placed under its own module
 mod all_paths_source_target;
 mod all_possible_fbt;
 mod binary_tree_paths;
@@ -31,7 +32,6 @@ mod generate_parenthesis;
 mod get_kth;
 mod get_maximum_generated;
 mod get_row;
-/// Each of the methods for Solution struct are placed under its own module
 mod h_index;
 mod has_path_sum;
 mod is_anagram;

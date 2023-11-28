@@ -54,6 +54,9 @@
 pub use solution::*;
 mod solution;
 
+pub use randomized_set::*;
+mod randomized_set;
+
 pub use tree_node::*;
 mod tree_node;
 
