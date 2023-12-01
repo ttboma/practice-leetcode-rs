@@ -1,5 +1,3 @@
-use std::iter::successors;
-
 use crate::Solution;
 
 impl Solution {
@@ -33,15 +31,18 @@ impl Solution {
     ///
     /// **Follow up:** Can you solve the problem in `O(1)` extra space complexity? (The output array **does not**  count as extra space for space complexity analysis.)
     pub fn product_except_self(nums: Vec<i32>) -> Vec<i32> {
-        let mut it = nums.iter();
-        let mut ret: Vec<i32> = successors(Some(1), |n| it.next().map(|x| n * x)).collect();
-        ret.pop();
-
-        let mut it2 = nums.iter().rev();
-        let mut b = successors(Some(1), |n| it2.next().map(|x| n * x));
-
-        for i in ret.iter_mut().rev() {
-            *i *= b.next().unwrap();
+        let mul_acc = |acc: &mut i32, x: &i32| {
+            *acc *= *x;
+            Some(*acc)
+        };
+        let mut a = nums.iter().scan(1, mul_acc);
+        let mut b = nums.iter().rev().scan(1, mul_acc);
+        let mut ret = vec![1; nums.len()];
+        for v in ret.iter_mut().skip(1) {
+            *v *= a.next().unwrap();
+        }
+        for v in ret.iter_mut().rev().skip(1) {
+            *v *= b.next().unwrap();
         }
         ret
     }
