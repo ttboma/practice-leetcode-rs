@@ -373,6 +373,11 @@ enum Commands {
     HIndex {
         citations: String,
     },
+    /// [134. Gas Station](https://leetcode.com/problems/gas-station/?envType=study-plan-v2&envId=top-interview-150)
+    CanCompleteCircuit {
+        gas: String,
+        cost: String,
+    },
 }
 
 fn main() {
@@ -719,6 +724,11 @@ fn main() {
         Commands::HIndex { citations } => {
             let citations = utils::parse_list_i32(citations);
             println!("{:?}", Solution::h_index(citations));
+        }
+        Commands::CanCompleteCircuit { gas, cost } => {
+            let gas = utils::parse_list_i32(gas);
+            let cost = utils::parse_list_i32(cost);
+            println!("{:?}", Solution::can_complete_circuit(gas, cost));
         }
     }
 }
