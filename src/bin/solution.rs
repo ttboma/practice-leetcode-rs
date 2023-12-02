@@ -378,6 +378,10 @@ enum Commands {
         gas: String,
         cost: String,
     },
+    /// [58. Length of Last Word](https://leetcode.com/problems/length-of-last-word/?envType=study-plan-v2&envId=top-interview-150)
+    LengthOfLastWord {
+        s: String,
+    },
 }
 
 fn main() {
@@ -729,6 +733,9 @@ fn main() {
             let gas = utils::parse_list_i32(gas);
             let cost = utils::parse_list_i32(cost);
             println!("{:?}", Solution::can_complete_circuit(gas, cost));
+        }
+        Commands::LengthOfLastWord { s } => {
+            println!("{:?}", Solution::length_of_last_word(s.clone()));
         }
     }
 }

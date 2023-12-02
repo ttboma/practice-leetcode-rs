@@ -46,6 +46,7 @@ mod jump;
 mod kids_with_candies;
 mod kth_grammar;
 mod largest_altitude;
+mod length_of_last_word;
 mod longest_palindrome;
 mod majority_element;
 mod max_profit;
