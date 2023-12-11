@@ -18,5 +18,8 @@
         "Submatrices",
         "Tribonacci",
         "Yueh"
-    ]
+    ],
+    "files.exclude": {
+        "**/.git": false
+    }
 }

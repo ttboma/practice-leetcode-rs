@@ -74,6 +74,7 @@ mod reorder_list;
 mod reverse_list;
 mod reverse_vowels;
 mod reverse_words;
+mod roman_to_int;
 mod rotate;
 mod running_sum;
 mod search;

@@ -382,6 +382,10 @@ enum Commands {
     LengthOfLastWord {
         s: String,
     },
+    /// [12. Integer to Roman](https://leetcode.com/problems/integer-to-roman/?envType=study-plan-v2&envId=top-interview-150)
+    RomanToInt {
+        s: String,
+    },
 }
 
 fn main() {
@@ -736,6 +740,9 @@ fn main() {
         }
         Commands::LengthOfLastWord { s } => {
             println!("{:?}", Solution::length_of_last_word(s.clone()));
+        }
+        Commands::RomanToInt { s } => {
+            println!("{:?}", Solution::roman_to_int(s.clone()));
         }
     }
 }
