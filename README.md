@@ -31,3 +31,23 @@ The purpose of this project is to practice Rust and DSA.
    cargo run --bin solution -- fib --help
    cargo run --bin solution -- fib 5
    ```
+
+## Development Note
+
+Please follow the conventions, as noted below, to contribute to this project.
+
+- Use chrome and [Clip LeetCode](https://chrome.google.com/webstore/detail/clip-leetcode/cnghimckckgcmhbdokjielmhkmnagdcp/related)
+   extension to maintain documentation of each method of [`Solution`]
+- Please install the [git hook](https://git-scm.com/book/zh-tw/v2/Customizing-Git-Git-Hooks) scripts by the following [pre-commit](https://pre-commit.com/) command:
+
+   ```bash
+   pre-commit install --hook-type commit-msg --hook-type pre-commit --hook-type pre-push
+   ```
+
+It is recommended to use [Visual Studio Code](https://code.visualstudio.com/) and plugins listed in the following to maintain your code quality:
+
+- [rust-analyzer](https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer)
+- [Rust Doc Viewer](https://marketplace.visualstudio.com/items?itemName=JScearcy.rust-doc-viewer)
+- [GitLens — Git supercharged](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens)
+- [Code Spell Checker](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker)
+- [markdownlint](https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint)
