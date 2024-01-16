@@ -386,6 +386,10 @@ enum Commands {
     RomanToInt {
         s: String,
     },
+    /// [14. Longest Common Prefix](https://leetcode.com/problems/longest-common-prefix/description/)
+    LongestCommonPrefix {
+        strs: String,
+    },
 }
 
 fn main() {
@@ -743,6 +747,10 @@ fn main() {
         }
         Commands::RomanToInt { s } => {
             println!("{:?}", Solution::roman_to_int(s.clone()));
+        }
+        Commands::LongestCommonPrefix { strs } => {
+            let strs = utils::parse_list_str(strs);
+            println!("{:?}", Solution::longest_common_prefix(strs));
         }
     }
 }

@@ -1,5 +1,5 @@
 use nom::{
-    bytes::complete::{tag, take_while1},
+    bytes::complete::{tag, take_while, take_while1},
     character::complete::multispace0,
     combinator::opt,
     error::ParseError,
@@ -30,6 +30,14 @@ pub fn parse_list(input: &str) -> IResult<&str, Vec<&str>> {
             opt(ws(tag(","))),
         ),
         ws(tag("]")),
+    )(input)
+}
+
+pub fn parse_str(input: &str) -> IResult<&str, &str> {
+    delimited(
+        tag("\""),
+        take_while(|x: char| x.is_ascii() && x != '"'),
+        tag("\""),
     )(input)
 }
 
