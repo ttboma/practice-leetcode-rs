@@ -14,6 +14,7 @@ struct Cli {
 enum Commands {
     /// [797. All Paths From Source to Target](https://leetcode.com/problems/all-paths-from-source-to-target/)
     AllPathsSourceTarget {
+        #[arg(help = "A 2-dimension list of integer. E.g. '[[1,2],[3],[3],[]]'")]
         graph: String,
     },
     // [894. All Possible Full Binary Trees](https://leetcode.com/problems/all-possible-full-binary-trees/)
@@ -388,7 +389,15 @@ enum Commands {
     },
     /// [14. Longest Common Prefix](https://leetcode.com/problems/longest-common-prefix/description/)
     LongestCommonPrefix {
+        #[arg(help = "A list of string. E.g. '[\"flower\",\"flow\",\"flight\"]'")]
         strs: String,
+    },
+    /// [28. Find the Index of the First Occurrence in a String](https://leetcode.com/problems/find-the-index-of-the-first-occurrence-in-a-string/description/?envType=study-plan-v2&envId=top-interview-150)
+    StrStr {
+        #[arg(help = "A string. E.g. 'sadbutsad'")]
+        haystack: String,
+        #[arg(help = "A string. E.g. 'sad'")]
+        needle: String,
     },
 }
 
@@ -751,6 +760,9 @@ fn main() {
         Commands::LongestCommonPrefix { strs } => {
             let strs = utils::parse_list_str(strs);
             println!("{:?}", Solution::longest_common_prefix(strs));
+        }
+        Commands::StrStr { haystack, needle } => {
+            println!("{:?}", Solution::str_str(haystack.clone(), needle.clone()));
         }
     }
 }

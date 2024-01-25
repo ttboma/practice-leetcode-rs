@@ -81,6 +81,7 @@ mod running_sum;
 mod search;
 mod ship_within_days;
 mod stone_game;
+mod str_str;
 mod subset_xor_sum;
 mod subsets;
 mod swap_pairs;
