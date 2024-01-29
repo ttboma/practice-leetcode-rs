@@ -1,4 +1,5 @@
 use crate::Solution;
+use std::collections::HashMap;
 
 impl Solution {
     /// # [205. Isomorphic Strings](https://leetcode.com/problems/isomorphic-strings/)
@@ -36,28 +37,21 @@ impl Solution {
     /// - `t.length == s.length`
     /// - `s` and `t` consist of any valid ascii character.
     pub fn is_isomorphic(s: String, t: String) -> bool {
-        use std::collections::HashMap;
-
-        let mut m_s = HashMap::new();
-        let mut m_t = HashMap::new();
-
-        let mut it_s = s.chars().enumerate();
-        let mut it_t = t.chars().enumerate();
-
-        while let (Some((i, n)), Some((j, m))) = (it_s.next(), it_t.next()) {
-            if let Some(x) = m_s.get(&n) {
-                if let Some(y) = m_t.get(&m) {
-                    if x != y {
-                        return false;
-                    }
-                } else {
+        if s.len() != t.len() {
+            return false;
+        }
+        let mut table1 = HashMap::new();
+        let mut table2 = HashMap::new();
+        for (a, b) in s.chars().zip(t.chars()) {
+            if let Some(ma) = table1.insert(a, b) {
+                if ma != b {
                     return false;
                 }
-            } else if m_t.get(&m).is_some() {
-                return false;
-            } else {
-                m_s.insert(n, i);
-                m_t.insert(m, j);
+            }
+            if let Some(mb) = table2.insert(b, a) {
+                if mb != a {
+                    return false;
+                }
             }
         }
         true

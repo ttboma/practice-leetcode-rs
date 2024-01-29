@@ -147,7 +147,9 @@ enum Commands {
     },
     /// [205. Isomorphic Strings](https://leetcode.com/problems/isomorphic-strings/)
     IsIsomorphic {
+        #[arg(help = "A string. E.g. 'paper'")]
         s: String,
+        #[arg(help = "A string. E.g. 'title'")]
         t: String,
     },
     // [234. Palindrome Linked List](https://leetcode.com/problems/palindrome-linked-list/description/)
