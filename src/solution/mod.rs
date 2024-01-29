@@ -6,6 +6,7 @@ mod all_paths_source_target;
 mod all_possible_fbt;
 mod binary_tree_paths;
 mod can_complete_circuit;
+mod can_construct;
 mod can_jump;
 mod can_place_flowers;
 mod contains_duplicate;

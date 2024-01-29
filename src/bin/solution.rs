@@ -399,6 +399,13 @@ enum Commands {
         #[arg(help = "A string. E.g. 'sad'")]
         needle: String,
     },
+    /// [383. Ransom Note](https://leetcode.com/problems/ransom-note/description/?envType=study-plan-v2&envId=top-interview-150)
+    CanConstruct {
+        #[arg(help = "A string. E.g. 'aa'")]
+        ransom_note: String,
+        #[arg(help = "A string. E.g. 'aab'")]
+        magazine: String,
+    },
 }
 
 fn main() {
@@ -763,6 +770,15 @@ fn main() {
         }
         Commands::StrStr { haystack, needle } => {
             println!("{:?}", Solution::str_str(haystack.clone(), needle.clone()));
+        }
+        Commands::CanConstruct {
+            ransom_note,
+            magazine,
+        } => {
+            println!(
+                "{:?}",
+                Solution::can_construct(ransom_note.clone(), magazine.clone())
+            );
         }
     }
 }
