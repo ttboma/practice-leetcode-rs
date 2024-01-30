@@ -408,6 +408,13 @@ enum Commands {
         #[arg(help = "A string. E.g. 'aab'")]
         magazine: String,
     },
+    /// [290. Word Pattern](https://leetcode.com/problems/word-pattern/description/?envType=study-plan-v2&envId=top-interview-150)
+    WordPattern {
+        #[arg(help = "A string. E.g. 'abba'")]
+        pattern: String,
+        #[arg(help = "A string. E.g. 'dog cat cat dog'")]
+        s: String,
+    },
 }
 
 fn main() {
@@ -781,6 +788,9 @@ fn main() {
                 "{:?}",
                 Solution::can_construct(ransom_note.clone(), magazine.clone())
             );
+        }
+        Commands::WordPattern { pattern, s } => {
+            println!("{:?}", Solution::word_pattern(pattern.clone(), s.clone()));
         }
     }
 }
