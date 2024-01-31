@@ -415,6 +415,13 @@ enum Commands {
         #[arg(help = "A string. E.g. 'dog cat cat dog'")]
         s: String,
     },
+    /// [1. Two Sum](https://leetcode.com/problems/two-sum/description/?envType=study-plan-v2&envId=top-interview-150)
+    TwoSum {
+        #[arg(help = "A list of integer. E.g. '[2,7,11,15]'")]
+        nums: String,
+        #[arg(help = "An integer. E.g. '9'")]
+        target: i32,
+    },
 }
 
 fn main() {
@@ -791,6 +798,10 @@ fn main() {
         }
         Commands::WordPattern { pattern, s } => {
             println!("{:?}", Solution::word_pattern(pattern.clone(), s.clone()));
+        }
+        Commands::TwoSum { nums, target } => {
+            let nums = utils::parse_list_i32(nums);
+            println!("{:?}", Solution::two_sum(nums, *target));
         }
     }
 }

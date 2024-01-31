@@ -89,5 +89,6 @@ mod swap_pairs;
 mod total_fruit;
 mod tribonacci;
 mod two_egg_drop;
+mod two_sum;
 mod word_pattern;
 mod zero_filled_subarray;
