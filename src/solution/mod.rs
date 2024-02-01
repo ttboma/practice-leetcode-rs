@@ -37,6 +37,7 @@ mod get_row;
 mod h_index;
 mod has_path_sum;
 mod is_anagram;
+mod is_happy;
 mod is_isomorphic;
 mod is_palindrome;
 mod is_power_of_four;

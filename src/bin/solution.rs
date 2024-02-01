@@ -422,6 +422,11 @@ enum Commands {
         #[arg(help = "An integer. E.g. '9'")]
         target: i32,
     },
+    /// [202. Happy Number](https://leetcode.com/problems/happy-number/description/?envType=study-plan-v2&envId=top-interview-150)
+    IsHappy {
+        #[arg(help = "An integer. E.g. '19'")]
+        n: i32,
+    },
 }
 
 fn main() {
@@ -802,6 +807,9 @@ fn main() {
         Commands::TwoSum { nums, target } => {
             let nums = utils::parse_list_i32(nums);
             println!("{:?}", Solution::two_sum(nums, *target));
+        }
+        Commands::IsHappy { n } => {
+            println!("{:?}", Solution::is_happy(*n));
         }
     }
 }
