@@ -471,6 +471,13 @@ enum Commands {
         #[arg(help = "An integer. E.g. '19'")]
         n: i32,
     },
+    /// [219. Contains Duplicate II](https://leetcode.com/problems/contains-duplicate-ii/description/?envType=study-plan-v2&envId=top-interview-150)
+    ContainsNearbyDuplicate {
+        #[arg(help = "A list of integer. E.g. '[1,2,3,1]'")]
+        nums: String,
+        #[arg(help = "An integer. E.g. '3'")]
+        k: i32,
+    },
 }
 
 fn main() {
@@ -854,6 +861,10 @@ fn main() {
         }
         Commands::IsHappy { n } => {
             println!("{:?}", Solution::is_happy(*n));
+        }
+        Commands::ContainsNearbyDuplicate { nums, k } => {
+            let nums = utils::parse_list_i32(nums);
+            println!("{:?}", Solution::contains_nearby_duplicate(nums, *k));
         }
     }
 }

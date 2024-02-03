@@ -10,6 +10,7 @@ mod can_construct;
 mod can_jump;
 mod can_place_flowers;
 mod contains_duplicate;
+mod contains_nearby_duplicate;
 mod count_bits;
 mod count_max_or_subsets;
 mod count_odds;
