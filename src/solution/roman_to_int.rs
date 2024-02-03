@@ -1,11 +1,11 @@
 use super::*;
 
 impl Solution {
-    /// # [12. Integer to Roman](https://leetcode.com/problems/integer-to-roman/?envType=study-plan-v2&envId=top-interview-150)
+    /// # [13. Roman to Integer](https://leetcode.com/problems/roman-to-integer/description/)
     ///
     /// Roman numerals are represented by seven different symbols:`I`, `V`, `X`, `L`, `C`, `D` and `M`.
     ///
-    /// ```txt
+    /// ```
     /// **Symbol**        **Value**
     /// I             1
     /// V             5
@@ -13,10 +13,9 @@ impl Solution {
     /// L             50
     /// C             100
     /// D             500
-    /// M             1000
-    /// ```
+    /// M             1000```
     ///
-    /// For example,`2` is written as `II`in Roman numeral, just two one's added together. `12` is written as`XII`, which is simply `X + II`. The number `27` is written as `XXVII`, which is `XX + V + II`.
+    /// For example,`2` is written as `II`in Roman numeral, just two ones added together. `12` is written as`XII`, which is simply `X + II`. The number `27` is written as `XXVII`, which is `XX + V + II`.
     ///
     /// Roman numerals are usually written largest to smallest from left to right. However, the numeral for four is not `IIII`. Instead, the number four is written as `IV`. Because the one is before the five we subtract it making four. The same principle applies to the number nine, which is written as `IX`. There are six instances where subtraction is used:
     ///
@@ -24,35 +23,37 @@ impl Solution {
     /// - `X` can be placed before `L` (50) and `C` (100) to make 40 and 90.
     /// - `C` can be placed before `D` (500) and `M` (1000) to make 400 and 900.
     ///
-    /// Given an integer, convert it to a roman numeral.
+    /// Given a roman numeral, convert it to an integer.
     ///
     /// **Example 1:**
     ///
     /// ```txt
-    /// Input: num = 3
-    /// Output: "III"
-    /// Explanation: 3 is represented as 3 ones.
+    /// Input: s = "III"
+    /// Output: 3
+    /// Explanation: III = 3.
     /// ```
     ///
     /// **Example 2:**
     ///
     /// ```txt
-    /// Input: num = 58
-    /// Output: "LVIII"
-    /// Explanation: L = 50, V = 5, III = 3.
+    /// Input: s = "LVIII"
+    /// Output: 58
+    /// Explanation: L = 50, V= 5, III = 3.
     /// ```
     ///
     /// **Example 3:**
     ///
     /// ```txt
-    /// Input: num = 1994
-    /// Output: "MCMXCIV"
+    /// Input: s = "MCMXCIV"
+    /// Output: 1994
     /// Explanation: M = 1000, CM = 900, XC = 90 and IV = 4.
     /// ```
     ///
     /// **Constraints:**
     ///
-    /// - `1 <= num <= 3999`
+    /// - `1 <= s.length <= 15`
+    /// - `s` contains onlythe characters `('I', 'V', 'X', 'L', 'C', 'D', 'M')`.
+    /// - It is **guaranteed** that `s` is a valid roman numeral in the range `[1, 3999]`.
     pub fn roman_to_int(s: String) -> i32 {
         let mut n = 0;
         let mut buffer = 0;

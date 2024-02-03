@@ -210,227 +210,296 @@ enum Commands {
     },
     /// [231. Power of Two](https://leetcode.com/problems/power-of-two/)
     IsPowerOfTwo {
+        #[arg(help = "An integer. E.g. '1'")]
         n: i32,
     },
     /// [392. Is Subsequence](https://leetcode.com/problems/is-subsequence/)
     IsSubsequence {
+        #[arg(help = "A string. E.g. 'abc'")]
         s: String,
+        #[arg(help = "A string. E.g. 'ahbgdc'")]
         t: String,
     },
     /// [45. Jump Game II](https://leetcode.com/problems/jump-game-ii/)
     Jump {
+        #[arg(help = "A list of integer. E.g. '[2,3,1,1,4]'")]
         nums: String,
     },
     /// [1431. Kids With the Greatest Number of Candies](https://leetcode.com/problems/kids-with-the-greatest-number-of-candies/)
     KidsWithCandies {
+        #[arg(help = "A list of integer. E.g. '[2,3,5,1,3]'")]
         candies: String,
+        #[arg(help = "An integer. E.g. '3'")]
         extra_candies: i32,
     },
     /// [779. K-th Symbol in Grammar](https://leetcode.com/problems/k-th-symbol-in-grammar/)
     KthGrammar {
+        #[arg(help = "An integer. E.g. '1'")]
         n: i32,
+        #[arg(help = "An integer. E.g. '1'")]
         k: i32,
     },
     /// [1732. Find the Highest Altitude](https://leetcode.com/problems/find-the-highest-altitude/)
     LargestAltitude {
+        #[arg(help = "A list of integer. E.g. '[-5,1,5,0,-7]'")]
         gain: String,
     },
     /// [409. Longest Palindrome](https://leetcode.com/problems/longest-palindrome/)
     LongestPalindrome {
+        #[arg(help = "A string. E.g. 'abccccdd'")]
         s: String,
     },
     /// [169. Majority Element](https://leetcode.com/problems/majority-element/)
     MajorityElement {
+        #[arg(help = "A list of integer. E.g. '[3,2,3]'")]
         nums: String,
     },
     /// [121. Best Time to Buy and Sell Stock](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/?envType=study-plan-v2&envId=top-interview-150)
     MaxProfit1 {
+        #[arg(help = "A list of integer. E.g. '[7,1,5,3,6,4]'")]
         prices: String,
     },
     /// [122. Best Time to Buy and Sell Stock II](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/?envType=study-plan-v2&envId=top-interview-150)
     MaxProfit2 {
+        #[arg(help = "A list of integer. E.g. '[7,1,5,3,6,4]'")]
         prices: String,
     },
     /// [1043. Partition Array for Maximum Sum](https://leetcode.com/problems/partition-array-for-maximum-sum/)
     MaxSumAfterPartitioning {
+        #[arg(help = "A list of integer. E.g. '[1,15,7,9,2,5,10]'")]
         arr: String,
+        #[arg(help = "A list of integer. E.g. '3'")]
         k: i32,
     },
     /// [1768. Merge Strings Alternately](https://leetcode.com/problems/merge-strings-alternately/)
     MergeAlternately {
+        #[arg(help = "A string. E.g. 'abc'")]
         word1: String,
+        #[arg(help = "A string. E.g. 'pqr'")]
         word2: String,
     },
     // [21. Merge Two Sorted Lists](https://leetcode.com/problems/merge-two-sorted-lists/)
     MergeTwoLists {
+        #[arg(help = "A list of integer. E.g. '[1,2,4]'")]
         list1: String,
+        #[arg(help = "A list of integer. E.g. '[1,3,4]'")]
         list2: String,
     },
     /// [88. Merge Sorted Array](https://leetcode.com/problems/merge-sorted-array/?envType=study-plan-v2&envId=top-interview-150)
     Merge {
+        #[arg(help = "A list of integer. E.g. '[1,2,3,0,0,0]'")]
         nums1: String,
+        #[arg(help = "An integer. E.g. '3'")]
         m: i32,
+        #[arg(help = "A list of integer. E.g. '[2,5,6]'")]
         nums2: String,
+        #[arg(help = "An integer. E.g. '3'")]
         n: i32,
     },
     // [876. Middle of the Linked List](https://leetcode.com/problems/middle-of-the-linked-list/)
     MiddleNode {
+        #[arg(help = "A list of integer. E.g. '[1,2,3,4,5]'")]
         head: String,
     },
     /// [746. Min Cost Climbing Stairs](https://leetcode.com/problems/min-cost-climbing-stairs/)
     MinCostClimbingStairs {
+        #[arg(help = "A list of integer. E.g. '[1,100,1,1,1,100,1,1,100,1]'")]
         cost: String,
     },
     /// [875. Koko Eating Bananas](https://leetcode.com/problems/koko-eating-bananas/)
     MinEatingSpeed {
+        #[arg(help = "A list of integer. E.g. '[1,100,1,1,1,100,1,1,100,1]'")]
         piles: String,
+        #[arg(help = "An integer. E.g. '8'")]
         h: i32,
     },
     /// [1969. Minimum Non-Zero Product of the Array Elements](https://leetcode.com/problems/minimum-non-zero-product-of-the-array-elements/)
     MinNonZeroProduct {
+        #[arg(help = "An integer. E.g. '1'")]
         p: u64,
     },
     /// [2492. Minimum Score of a Path Between Two Cities](https://leetcode.com/problems/minimum-score-of-a-path-between-two-cities/)
     MinScore {
+        #[arg(help = "An integer. E.g. '4'")]
         n: i32,
+        #[arg(help = "A 2-dimension list of integer. E.g. '[[1,2,9],[2,3,6],[2,4,5],[1,4,7]]'")]
         roads: String,
     },
     /// [283. Move Zeroes](https://leetcode.com/problems/move-zeroes/)
     MoveZeroes {
+        #[arg(help = "A list of integer. E.g. '[0,1,0,3,12]'")]
         nums: String,
     },
     /// [1079. Letter Tile Possibilities](https://leetcode.com/problems/letter-tile-possibilities/description/)
     NumTilePossibilities {
+        #[arg(help = "A string. E.g. 'AAB'")]
         tiles: String,
     },
     /// [46. Permutations](https://leetcode.com/problems/permutations/)
     Permute {
+        #[arg(help = "A list of integer. E.g. '[1,2,3]'")]
         nums: String,
     },
     /// [724. Find Pivot Index](https://leetcode.com/problems/find-pivot-index/)
     PivotIndex {
+        #[arg(help = "A list of integer. E.g. '[1,7,3,6,5,6]'")]
         nums: String,
     },
     /// [486. Predict the Winner](https://leetcode.com/problems/predict-the-winner/)
     PredictTheWinner {
+        #[arg(help = "A list of integer. E.g. '[1,5,2]'")]
         nums: String,
     },
     /// [238. Product of Array Except Self](https://leetcode.com/problems/product-of-array-except-self/)
     ProductExceptSelf {
+        #[arg(help = "A list of integer. E.g. '[1,2,3,4]'")]
         nums: String,
     },
     /// [401. Binary Watch](https://leetcode.com/problems/binary-watch/)
     ReadBinaryWatch {
+        #[arg(help = "An integer. E.g. '1'")]
         turned_on: i32,
     },
     /// [26. Remove Duplicates from Sorted Array](https://leetcode.com/problems/remove-duplicates-from-sorted-array/?envType=study-plan-v2&envId=top-interview-150)
     RemoveDuplicates1 {
+        #[arg(help = "A list of integer. E.g. '[1,1,2]'")]
         nums: String,
     },
     /// [80. Remove Duplicates from Sorted Array II](https://leetcode.com/problems/remove-duplicates-from-sorted-array-ii/?envType=study-plan-v2&envId=top-interview-150)
     RemoveDuplicates2 {
+        #[arg(help = "A list of integer. E.g. '[1,1,1,2,2,3]'")]
         nums: String,
     },
     /// [27. Remove Element](https://leetcode.com/problems/remove-element/?envType=study-plan-v2&envId=top-interview-150)
     RemoveElement {
+        #[arg(help = "A list of integer. E.g. '[3,2,2,3]'")]
         nums: String,
+        #[arg(help = "An integer. E.g. '3'")]
         val: i32,
     },
     // [203. Remove Linked List Elements](https://leetcode.com/problems/remove-linked-list-elements/)
     RemoveElements {
+        #[arg(help = "A list of integer. E.g. '[1,2,6,3,4,5,6]'")]
         head: String,
+        #[arg(help = "An integer. E.g. '6'")]
         val: i32,
     },
     // [2487. Remove Nodes From Linked List](https://leetcode.com/problems/remove-nodes-from-linked-list/)
     RemoveNodes {
+        #[arg(help = "A list of integer. E.g. '[5,2,13,3,8]'")]
         head: String,
     },
     // [143. Reorder List](https://leetcode.com/problems/reorder-list/)
     ReorderList {
+        #[arg(help = "A list of integer. E.g. '[1,2,3,4]'")]
         head: String,
     },
     // [206. Reverse Linked List](https://leetcode.com/problems/reverse-linked-list/)
     ReverseList {
+        #[arg(help = "A list of integer. E.g. '[1,2,3,4,5]'")]
         head: String,
     },
     /// [345. Reverse Vowels of a String](https://leetcode.com/problems/reverse-vowels-of-a-string/)
     ReverseVowels {
+        #[arg(help = "A string. E.g. 'hello'")]
         s: String,
     },
     /// [151. Reverse Words in a String](https://leetcode.com/problems/reverse-words-in-a-string/)
     ReverseWords {
+        #[arg(help = "A string. E.g. 'the sky is blue'")]
         s: String,
     },
     /// [189. Rotate Array](https://leetcode.com/problems/rotate-array/?envType=study-plan-v2&envId=top-interview-150)
     Rotate {
+        #[arg(help = "A list of integer. E.g. '[1,2,3,4,5,6,7]'")]
         nums: String,
+        #[arg(help = "An integer. E.g. '3'")]
         k: i32,
     },
     /// [1480. Running Sum of 1d Array](https://leetcode.com/problems/running-sum-of-1d-array/)
     RunningSum {
+        #[arg(help = "A list of integer. E.g. '[1,2,3,4]'")]
         nums: String,
     },
     /// [704. Binary Search](https://leetcode.com/problems/binary-search/)
     Search {
+        #[arg(help = "A list of integer. E.g. '[-1,0,3,5,9,12]'")]
         nums: String,
+        #[arg(help = "An integer. E.g. '9'")]
         target: i32,
     },
     /// [1011. Capacity To Ship Packages Within D Days](https://leetcode.com/problems/capacity-to-ship-packages-within-d-days/)
     ShipWithinDays {
+        #[arg(help = "A list of integer. E.g. '[1,2,3,4,5,6,7,8,9,10]'")]
         weights: String,
+        #[arg(help = "An integer. E.g. '5'")]
         days: i32,
     },
     /// [877. Stone Game](https://leetcode.com/problems/stone-game/)
     StoneGame {
+        #[arg(help = "A list of integer. E.g. '[5,3,4,5]'")]
         piles: String,
     },
     /// [1863. Sum of All Subset XOR Totals](https://leetcode.com/problems/sum-of-all-subset-xor-totals/)
     SubsetXorSum {
+        #[arg(help = "A list of integer. E.g. '[1,3]'")]
         nums: String,
     },
     /// [78. Subsets](https://leetcode.com/problems/subsets/)
     Subsets {
+        #[arg(help = "A list of integer. E.g. '[1,2,3]'")]
         nums: String,
     },
     // [24. Swap Nodes in Pairs](https://leetcode.com/problems/swap-nodes-in-pairs/)
     SwapPairs {
+        #[arg(help = "A list of integer. E.g. '[1,2,3,4]'")]
         head: String,
     },
     /// [904. Fruit Into Baskets](https://leetcode.com/problems/fruit-into-baskets/)
     TotalFruit {
+        #[arg(help = "A list of integer. E.g. '[1,2,1]'")]
         fruits: String,
     },
     /// [1137. N-th Tribonacci Number](https://leetcode.com/problems/n-th-tribonacci-number/)
     Tribonacci {
+        #[arg(help = "An integer. E.g. '4'")]
         n: i32,
     },
     /// [1884. Egg Drop With 2 Eggs and N Floors](https://leetcode.com/problems/egg-drop-with-2-eggs-and-n-floors/)
     TwoEggDrop {
+        #[arg(help = "An integer. E.g. '2'")]
         n: i32,
     },
     /// [2348. Number of Zero-Filled Subarrays](https://leetcode.com/problems/number-of-zero-filled-subarrays/)
     ZeroFilledSubarray {
+        #[arg(help = "A list of integer. E.g. '[1,3,0,0,2,0,0,4]'")]
         nums: String,
     },
     /// [55. Jump Game](https://leetcode.com/problems/jump-game/?envType=study-plan-v2&envId=top-interview-150)
     CanJump {
+        #[arg(help = "A list of integer. E.g. '[2,3,1,1,4]'")]
         nums: String,
     },
     /// [274. H-Index](https://leetcode.com/problems/h-index/description/?envType=study-plan-v2&envId=top-interview-150)
     HIndex {
+        #[arg(help = "A list of integer. E.g. '[3,0,6,1,5]'")]
         citations: String,
     },
     /// [134. Gas Station](https://leetcode.com/problems/gas-station/?envType=study-plan-v2&envId=top-interview-150)
     CanCompleteCircuit {
+        #[arg(help = "A list of integer. E.g. '[1,2,3,4,5]'")]
         gas: String,
+        #[arg(help = "A list of integer. E.g. '[3,4,5,1,2]'")]
         cost: String,
     },
     /// [58. Length of Last Word](https://leetcode.com/problems/length-of-last-word/?envType=study-plan-v2&envId=top-interview-150)
     LengthOfLastWord {
+        #[arg(help = "A string. E.g. 'Hello World'")]
         s: String,
     },
-    /// [12. Integer to Roman](https://leetcode.com/problems/integer-to-roman/?envType=study-plan-v2&envId=top-interview-150)
+    /// [13. Roman to Integer](https://leetcode.com/problems/roman-to-integer/description/)
     RomanToInt {
+        #[arg(help = "A string. E.g. 'III'")]
         s: String,
     },
     /// [14. Longest Common Prefix](https://leetcode.com/problems/longest-common-prefix/description/)
