@@ -5,7 +5,7 @@ impl Solution {
     ///
     /// Roman numerals are represented by seven different symbols:`I`, `V`, `X`, `L`, `C`, `D` and `M`.
     ///
-    /// ```
+    /// ```txt
     /// **Symbol**        **Value**
     /// I             1
     /// V             5
