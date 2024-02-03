@@ -23,126 +23,167 @@ enum Commands {
     //binary_tree_paths { root: String },
     /// [605. Can Place Flowers](https://leetcode.com/problems/can-place-flowers/)
     CanPlaceFlowers {
+        #[arg(help = "A list of integer. E.g. '[1,0,0,0,1]'")]
         flowerbed: String,
+        #[arg(help = "An integer. E.g. '1'")]
         n: i32,
     },
     /// [217. Contains Duplicate](https://leetcode.com/problems/contains-duplicate/)
     ContainsDuplicate {
+        #[arg(help = "A list of integer. E.g. '[1,1,1,3,3,4,3,2,4,2]'")]
         nums: String,
     },
     /// [338. Counting Bits](https://leetcode.com/problems/counting-bits/)
     CountBits {
+        #[arg(help = "An integer. E.g. '2'")]
         n: i32,
     },
     /// [2044. Count Number of Maximum Bitwise-OR Subsets](https://leetcode.com/problems/count-number-of-maximum-bitwise-or-subsets/)
     CountMaxOrSubsets {
+        #[arg(help = "A list of integer. E.g. '[3,1]'")]
         nums: String,
     },
     /// [1523. Count Odd Numbers in an Interval Range](https://leetcode.com/problems/count-odd-numbers-in-an-interval-range/)
     CountOdds {
+        #[arg(help = "An integer. E.g. '3'")]
         low: i32,
+        #[arg(help = "An integer. E.g. '7'")]
         high: i32,
     },
     /// [2316. Count Unreachable Pairs of Nodes in an Undirected Graph](https://leetcode.com/problems/count-unreachable-pairs-of-nodes-in-an-undirected-graph/)
     CountPairs {
+        #[arg(help = "An integer. E.g. '3'")]
         n: i32,
+        #[arg(help = "A 2-dimension list of integer. E.g. '[[0,1],[0,2],[1,2]]'")]
         edges: String,
     },
     /// [1277. Count Square Submatrices with All Ones](https://leetcode.com/problems/count-square-submatrices-with-all-ones/)
     CountSquares {
+        #[arg(help = "A 2-dimension list of integer. E.g. '[[0,1,1,1],[1,1,1,1],[0,1,1,1]]'")]
         matrix: String,
     },
     /// [1638. Count Substrings That Differ by One Character](https://leetcode.com/problems/count-substrings-that-differ-by-one-character/)
     CountSubstrings {
+        #[arg(help = "A string. E.g. 'aba'")]
         s: String,
+        #[arg(help = "A string. E.g. 'baba'")]
         t: String,
     },
     /// [1641. Count Sorted Vowel Strings](https://leetcode.com/problems/count-sorted-vowel-strings/)
     CountVowelStrings {
+        #[arg(help = "An integer. E.g. '1'")]
         n: i32,
     },
     /// [394. Decode String](https://leetcode.com/problems/decode-string/)
     DecodeString {
+        #[arg(help = "A string. E.g. '3[a]2[bc]'")]
         s: String,
     },
     /// [241. Different Ways to Add Parentheses](https://leetcode.com/problems/different-ways-to-add-parentheses/)
     DiffWaysToCompute {
+        #[arg(help = "A string. E.g. '2-1-1'")]
         expression: String,
     },
     /// [2305. Fair Distribution of Cookies](https://leetcode.com/problems/fair-distribution-of-cookies/)
     DistributeCookies {
+        #[arg(help = "A list of integer. E.g. '[8,15,10,20,8]'")]
         cookies: String,
+        #[arg(help = "An integer. E.g. '2'")]
         k: i32,
     },
     /// [1025. Divisor Game](https://leetcode.com/problems/divisor-game/description/)
     DivisorGame {
+        #[arg(help = "An integer. E.g. '2'")]
         n: i32,
     },
     /// [509. Fibonacci Number](https://leetcode.com/problems/fibonacci-number/)
     Fib {
+        #[arg(help = "An integer. E.g. '2'")]
         n: i32,
     },
     /// [1706. Where Will the Ball Fall](https://leetcode.com/problems/where-will-the-ball-fall/description/)
     FindBall {
+        #[arg(help = "A 2-dimension list of integer. E.g. '[[0,1,1,1],[1,1,1,1],[0,1,1,1]]'")]
         grid: String,
     },
     /// [1706. Where Will the Ball Fall](https://leetcode.com/problems/where-will-the-ball-fall/description/)
     FindDifference {
+        #[arg(help = "A list of integer. E.g. '[1,2,3]'")]
         nums1: String,
+        #[arg(help = "A list of integer. E.g. '[2,4,6]'")]
         nums2: String,
     },
     /// [1545. Find Kth Bit in Nth Binary String](https://leetcode.com/problems/find-kth-bit-in-nth-binary-string/)
     FindKthBit {
+        #[arg(help = "An integer. E.g. '3'")]
         n: i32,
+        #[arg(help = "An integer. E.g. '1'")]
         k: i32,
     },
     /// [1539. Kth Missing Positive Number](https://leetcode.com/problems/kth-missing-positive-number/)
     FindKthPositive {
+        #[arg(help = "A list of integer. E.g. '[2,3,4,7,11]'")]
         arr: String,
+        #[arg(help = "An integer. E.g. '5'")]
         k: i32,
     },
     /// [643. Maximum Average Subarray I](https://leetcode.com/problems/maximum-average-subarray-i/)
     FindMaxAverage {
+        #[arg(help = "A list of integer. E.g. '[1,12,-5,-6,50,3]'")]
         nums: String,
+        #[arg(help = "An integer. E.g. '4'")]
         k: i32,
     },
     /// [1823. Find the Winner of the Circular Game](https://leetcode.com/problems/find-the-winner-of-the-circular-game/)
     FindTheWinner {
+        #[arg(help = "An integer. E.g. '5'")]
         n: i32,
+        #[arg(help = "An integer. E.g. '2'")]
         k: i32,
     },
     /// [1071. Greatest Common Divisor of Strings](https://leetcode.com/problems/greatest-common-divisor-of-strings/)
     GcdOfStrings {
+        #[arg(help = "A string. E.g. 'ABCABC'")]
         str1: String,
+        #[arg(help = "A string. E.g. 'ABC'")]
         str2: String,
     },
     /// [22. Generate Parentheses](https://leetcode.com/problems/generate-parentheses/)
     GenerateParenthesis {
+        #[arg(help = "An integer. E.g. '3'")]
         n: i32,
     },
     /// [118. Pascal's Triangle](https://leetcode.com/problems/pascals-triangle/)
     Generate {
+        #[arg(help = "An integer. E.g. '5'")]
         num_rows: i32,
     },
     /// [1387. Sort Integers by The Power Value](https://leetcode.com/problems/sort-integers-by-the-power-value/)
     GetKth {
+        #[arg(help = "An integer. E.g. '12'")]
         lo: i32,
+        #[arg(help = "An integer. E.g. '15'")]
         hi: i32,
+        #[arg(help = "An integer. E.g. '2'")]
         k: i32,
     },
     /// [1646. Get Maximum in Generated Array](https://leetcode.com/problems/get-maximum-in-generated-array/description/)
     GetMaximumGenerated {
+        #[arg(help = "An integer. E.g. '7'")]
         n: i32,
     },
     /// [119. Pascal's Triangle II](https://leetcode.com/problems/pascals-triangle-ii/)
     GetRow {
+        #[arg(help = "An integer. E.g. '3'")]
         row_index: i32,
     },
     // [112. Path Sum](https://leetcode.com/problems/path-sum/)
     //HasPathSum{root: Option<Rc<RefCell<TreeNode>>>, target_sum: i32},
     /// [242. Valid Anagram](https://leetcode.com/problems/valid-anagram/)
     IsAnagram {
+        #[arg(help = "A string. E.g. 'anagram'")]
         s: String,
+        #[arg(help = "A string. E.g. 'nagaram'")]
         t: String,
     },
     /// [205. Isomorphic Strings](https://leetcode.com/problems/isomorphic-strings/)
@@ -154,14 +195,17 @@ enum Commands {
     },
     // [234. Palindrome Linked List](https://leetcode.com/problems/palindrome-linked-list/description/)
     IsPalindrome {
+        #[arg(help = "A list of integer. E.g. '[1,2,2,1]'")]
         head: String,
     },
     /// [342. Power of Four](https://leetcode.com/problems/power-of-four/)
     IsPowerOfFour {
+        #[arg(help = "An integer. E.g. '16'")]
         n: i32,
     },
     /// [326. Power of Three](https://leetcode.com/problems/power-of-three/)
     IsPowerOfThree {
+        #[arg(help = "An integer. E.g. '27'")]
         n: i32,
     },
     /// [231. Power of Two](https://leetcode.com/problems/power-of-two/)
