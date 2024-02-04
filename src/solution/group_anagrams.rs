@@ -53,17 +53,18 @@ mod tests {
 
     #[test]
     fn example1() {
-        assert_eq!(
-            Solution::group_anagrams(vec![
-                "eat".to_string(),
-                "tea".to_string(),
-                "tan".to_string(),
-                "ate".to_string(),
-                "nat".to_string(),
-                "bat".to_string()
-            ]),
-            vec![vec!["bat"], vec!["eat", "tea", "ate"], vec!["tan", "nat"]]
-        );
+        let mut answer = Solution::group_anagrams(vec![
+            "eat".to_string(),
+            "tea".to_string(),
+            "tan".to_string(),
+            "ate".to_string(),
+            "nat".to_string(),
+            "bat".to_string(),
+        ]);
+        let mut expected = vec![vec!["eat", "tea", "ate"], vec!["tan", "nat"], vec!["bat"]];
+        answer.sort();
+        expected.sort();
+        assert_eq!(answer, expected);
     }
     #[test]
     fn example2() {
