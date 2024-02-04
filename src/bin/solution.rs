@@ -547,6 +547,11 @@ enum Commands {
         #[arg(help = "An integer. E.g. '3'")]
         k: i32,
     },
+    /// [49. Group Anagrams](https://leetcode.com/problems/group-anagrams/description/?envType=study-plan-v2&envId=top-interview-150)
+    GroupAnagrams {
+        #[arg(help = r#"A list of String. E.g. '["eat","tea","tan","ate","nat","bat"]'"#)]
+        strs: String,
+    },
 }
 
 fn main() {
@@ -934,6 +939,10 @@ fn main() {
         Commands::ContainsNearbyDuplicate { nums, k } => {
             let nums = utils::parse_list_i32(nums);
             println!("{:?}", Solution::contains_nearby_duplicate(nums, *k));
+        }
+        Commands::GroupAnagrams { strs } => {
+            let strs = utils::parse_list_str(strs);
+            println!("{:?}", Solution::group_anagrams(strs));
         }
     }
 }

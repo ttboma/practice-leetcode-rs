@@ -35,6 +35,7 @@ mod generate_parenthesis;
 mod get_kth;
 mod get_maximum_generated;
 mod get_row;
+mod group_anagrams;
 mod h_index;
 mod has_path_sum;
 mod is_anagram;
