@@ -52,6 +52,7 @@ mod kth_grammar;
 mod largest_altitude;
 mod length_of_last_word;
 mod longest_common_prefix;
+mod longest_consecutive;
 mod longest_palindrome;
 mod majority_element;
 mod max_profit;

@@ -552,6 +552,11 @@ enum Commands {
         #[arg(help = r#"A list of String. E.g. '["eat","tea","tan","ate","nat","bat"]'"#)]
         strs: String,
     },
+    /// [128. Longest Consecutive Sequence](https://leetcode.com/problems/longest-consecutive-sequence/description/?envType=study-plan-v2&envId=top-interview-150)
+    LongestConsecutive {
+        #[arg(help = "A list of integer. E.g. '[100,4,200,1,3,2]'")]
+        nums: String,
+    },
 }
 
 fn main() {
@@ -943,6 +948,10 @@ fn main() {
         Commands::GroupAnagrams { strs } => {
             let strs = utils::parse_list_str(strs);
             println!("{:?}", Solution::group_anagrams(strs));
+        }
+        Commands::LongestConsecutive { nums } => {
+            let nums = utils::parse_list_i32(nums);
+            println!("{:?}", Solution::longest_consecutive(nums));
         }
     }
 }
