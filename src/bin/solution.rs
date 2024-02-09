@@ -557,6 +557,11 @@ enum Commands {
         #[arg(help = "A list of integer. E.g. '[100,4,200,1,3,2]'")]
         nums: String,
     },
+    /// [12. Integer to Roman](https://leetcode.com/problems/integer-to-roman/description/?envType=study-plan-v2&envId=top-interview-150)
+    IntToRoman {
+        #[arg(help = "An integer. E.g. '3'")]
+        num: i32,
+    },
 }
 
 fn main() {
@@ -952,6 +957,9 @@ fn main() {
         Commands::LongestConsecutive { nums } => {
             let nums = utils::parse_list_i32(nums);
             println!("{:?}", Solution::longest_consecutive(nums));
+        }
+        Commands::IntToRoman { num } => {
+            println!("{:?}", Solution::int_to_roman(*num));
         }
     }
 }
