@@ -562,6 +562,13 @@ enum Commands {
         #[arg(help = "An integer. E.g. '3'")]
         num: i32,
     },
+    /// [6. Zigzag Conversion](https://leetcode.com/problems/zigzag-conversion/description/)
+    Convert {
+        #[arg(help = "A string. E.g. 'PAYPALISHIRING'")]
+        s: String,
+        #[arg(help = "An integer. E.g. '3'")]
+        num_rows: i32,
+    },
 }
 
 fn main() {
@@ -960,6 +967,9 @@ fn main() {
         }
         Commands::IntToRoman { num } => {
             println!("{:?}", Solution::int_to_roman(*num));
+        }
+        Commands::Convert { s, num_rows } => {
+            println!("{:?}", Solution::convert(s.clone(), *num_rows));
         }
     }
 }
