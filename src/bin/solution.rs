@@ -569,6 +569,11 @@ enum Commands {
         #[arg(help = "An integer. E.g. '3'")]
         num_rows: i32,
     },
+    /// [135. Candy](https://leetcode.com/problems/candy/description/?envType=study-plan-v2&envId=top-interview-150)
+    Candy {
+        #[arg(help = "A list of integer. E.g. '[1,0,2]'")]
+        ratings: String,
+    },
 }
 
 fn main() {
@@ -970,6 +975,10 @@ fn main() {
         }
         Commands::Convert { s, num_rows } => {
             println!("{:?}", Solution::convert(s.clone(), *num_rows));
+        }
+        Commands::Candy { ratings } => {
+            let ratings = utils::parse_list_i32(ratings);
+            println!("{:?}", Solution::candy(ratings));
         }
     }
 }
