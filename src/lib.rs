@@ -62,6 +62,3 @@ mod tree_node;
 
 pub use list_node::*;
 mod list_node;
-
-/// utilities
-pub mod utils;

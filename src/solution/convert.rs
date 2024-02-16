@@ -86,8 +86,6 @@ impl Solution {
 
 #[cfg(test)]
 mod tests {
-    use std::iter::successors;
-
     use super::*;
 
     #[test]
