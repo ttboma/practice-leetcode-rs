@@ -2,12 +2,11 @@
 
 Hi,
 
-This crate is a collection of solutions to [LeetCode](https://leetcode.com/) problems provided by SHIEH YUEH-CHANG.
+This crate is a collection of solutions to [LeetCode](https://leetcode.com/) problems provided by SHIEH, YUEH-CHANG.
 The purpose of this project is to practice Rust and DSA.
 
 1. Please run `cargo test` to ensure that all the tests are passed correctly
-2. The following shows an example that how to use this library crate. And please run
-   `cargo doc --open` to access the documentation
+2. The following shows an example that how to use this library crate. And please run `cargo doc --open` to access the documentation
 
    ```rust
    use leetcode_rs::Solution;
@@ -19,17 +18,18 @@ The purpose of this project is to practice Rust and DSA.
 3. To access the command line interface, please run
 
    ```bash
-   cargo run --bin solution -- --help
-   cargo run --bin solution -- <COMMAND> --help
-   cargo run --bin solution -- <COMMAND>
+   $ cargo run --bin solution -- --help
+   $ cargo run --bin solution -- <COMMAND> --help
+   $ cargo run --bin solution -- <COMMAND>
    ```
 
    For example:
 
    ```bash
-   cargo run --bin solution -- --help
-   cargo run --bin solution -- fib --help
-   cargo run --bin solution -- fib 5
+   $ cargo run --bin solution -- --help
+   $ cargo run --bin solution -- fib --help
+   $ echo 10 | cargo run --bin solution -- fib
+   55
    ```
 
 ## Development Note
@@ -51,3 +51,9 @@ It is recommended to use [Visual Studio Code](https://code.visualstudio.com/) an
 - [GitLens — Git supercharged](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens)
 - [Code Spell Checker](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker)
 - [markdownlint](https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint)
+
+## TODO
+
+- [ ] ensure that all debug printed output have their proper formatting in `bin/solution.rs`
+  - [ ] [`TreeNode`] by macro
+  - [ ] modify [`TreeNode`] unit tests
