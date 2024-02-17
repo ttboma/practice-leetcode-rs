@@ -56,9 +56,6 @@ impl Solution {
         if digits.len() == 1 {
             return ret;
         }
-        // digits
-        // ret <- FlatMap
-        // phone -> phone[*i].iter(), closure1
         for i in digits.iter().skip(1) {
             ret = ret
                 .iter()
