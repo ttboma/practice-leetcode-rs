@@ -215,6 +215,8 @@ enum Commands {
     Convert {},
     /// [135. Candy](https://leetcode.com/problems/candy/description/?envType=study-plan-v2&envId=top-interview-150)
     Candy {},
+    /// [17. Letter Combinations of a Phone Number](https://leetcode.com/problems/letter-combinations-of-a-phone-number/description/?envType=study-plan-v2&envId=top-interview-150)
+    LetterCombinations {},
 }
 
 fn main() {
@@ -654,6 +656,10 @@ fn main() {
         Commands::Candy {} => {
             let ratings = parse_i32_list(&input);
             println!("{:?}", Solution::candy(ratings));
+        }
+        Commands::LetterCombinations {} => {
+            let digits = input.trim().to_owned();
+            println!("{:?}", Solution::letter_combinations(digits));
         }
     }
 }
