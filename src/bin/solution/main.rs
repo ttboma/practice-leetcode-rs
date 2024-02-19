@@ -219,6 +219,8 @@ enum Commands {
     LetterCombinations {},
     /// # [77. Combinations](https://leetcode.com/problems/combinations/description/?envType=study-plan-v2&envId=top-interview-150)
     Combine {},
+    /// # [39. Combination Sum](https://leetcode.com/problems/combination-sum/description/?envType=study-plan-v2&envId=top-interview-150)
+    CombinationSum {},
 }
 
 fn main() {
@@ -666,6 +668,10 @@ fn main() {
         Commands::Combine {} => {
             let (n, k) = parse_two_i32(&input);
             println!("{:?}", Solution::combine(n, k));
+        }
+        Commands::CombinationSum {} => {
+            let (candidates, target) = parse_i32_list_and_i32(&input);
+            println!("{:?}", Solution::combination_sum(candidates, target));
         }
     }
 }

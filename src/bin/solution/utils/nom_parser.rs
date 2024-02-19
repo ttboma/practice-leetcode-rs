@@ -66,4 +66,13 @@ mod tests {
         assert_eq!(decimal("\n -123\n"), Ok(("", "-123")));
         assert_eq!(decimal(" +123 \n"), Ok(("", "+123")));
     }
+
+    #[test]
+    fn test_parse_list() {
+        assert_eq!(parse_list("[1,2,3]"), Ok(("", vec!["1", "2", "3"])));
+        assert_eq!(
+            parse_list("[2,3,6,7] 7"),
+            Ok(("7", vec!["2", "3", "6", "7"]))
+        );
+    }
 }

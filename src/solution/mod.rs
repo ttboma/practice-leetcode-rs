@@ -10,6 +10,7 @@ mod can_construct;
 mod can_jump;
 mod can_place_flowers;
 mod candy;
+mod combination_sum;
 mod combine;
 mod contains_duplicate;
 mod contains_nearby_duplicate;
