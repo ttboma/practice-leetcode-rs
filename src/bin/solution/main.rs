@@ -221,6 +221,8 @@ enum Commands {
     Combine {},
     /// # [39. Combination Sum](https://leetcode.com/problems/combination-sum/description/?envType=study-plan-v2&envId=top-interview-150)
     CombinationSum {},
+    /// [52. N-Queens II](https://leetcode.com/problems/n-queens-ii/description/?envType=study-plan-v2&envId=top-interview-150)
+    TotalNQueens {},
 }
 
 fn main() {
@@ -672,6 +674,10 @@ fn main() {
         Commands::CombinationSum {} => {
             let (candidates, target) = parse_i32_list_and_i32(&input);
             println!("{:?}", Solution::combination_sum(candidates, target));
+        }
+        Commands::TotalNQueens {} => {
+            let n = parse_i32(&input);
+            println!("{:?}", Solution::total_n_queens(n));
         }
     }
 }

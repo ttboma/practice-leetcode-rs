@@ -97,6 +97,7 @@ mod subset_xor_sum;
 mod subsets;
 mod swap_pairs;
 mod total_fruit;
+mod total_n_queens;
 mod tribonacci;
 mod two_egg_drop;
 mod two_sum;
