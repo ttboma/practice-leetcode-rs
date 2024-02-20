@@ -43,7 +43,7 @@ impl Solution {
     pub fn exist(board: Vec<Vec<char>>, word: String) -> bool {
         let word = word.as_bytes();
         let mut exist = Exist {
-            visited: vec![vec![false; board.len()]; board[0].len()],
+            visited: vec![vec![false; board[0].len()]; board.len()],
             idx: 0,
             board: &board,
             word,
