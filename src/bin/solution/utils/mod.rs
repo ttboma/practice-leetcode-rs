@@ -134,6 +134,23 @@ pub fn parse_2d_i32_list(input: &str) -> Vec<Vec<i32>> {
         .collect::<Vec<_>>()
 }
 
+pub fn parse_2d_char_list_and_str(input: &str) -> (Vec<Vec<char>>, String) {
+    let (input, result) =
+        nom_parser::parse_2d_list(input).expect(error_msg::TWO_DIMENSION_LIST_FORMAT);
+    let (_, s) = nom_parser::parse_str(input).expect(error_msg::STR_FORMAT);
+    (
+        result
+            .into_iter()
+            .map(|x| {
+                x.into_iter()
+                    .map(|y| y.parse::<char>().expect(error_msg::ITEM_OF_CHAR))
+                    .collect::<Vec<_>>()
+            })
+            .collect::<Vec<_>>(),
+        s.to_owned(),
+    )
+}
+
 pub fn read_from_stdin() -> io::Result<String> {
     let stdin = io::stdin();
     let mut buffer = String::new();

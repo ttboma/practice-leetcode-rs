@@ -26,6 +26,7 @@ mod decode_string;
 mod diff_ways_to_compute;
 mod distribute_cookies;
 mod divisor_game;
+mod exist;
 mod fib;
 mod find_ball;
 mod find_difference;

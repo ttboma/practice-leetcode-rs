@@ -223,6 +223,8 @@ enum Commands {
     CombinationSum {},
     /// [52. N-Queens II](https://leetcode.com/problems/n-queens-ii/description/?envType=study-plan-v2&envId=top-interview-150)
     TotalNQueens {},
+    /// [79. Word Search](https://leetcode.com/problems/word-search/description/?envType=study-plan-v2&envId=top-interview-150)
+    Exist {},
 }
 
 fn main() {
@@ -678,6 +680,10 @@ fn main() {
         Commands::TotalNQueens {} => {
             let n = parse_i32(&input);
             println!("{:?}", Solution::total_n_queens(n));
+        }
+        Commands::Exist {} => {
+            let (board, word) = parse_2d_char_list_and_str(&input);
+            println!("{:?}", Solution::exist(board, word));
         }
     }
 }
