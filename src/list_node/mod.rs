@@ -1,3 +1,20 @@
+use std::iter::Iterator;
+
+/// Definition for singly-linked list.
+#[derive(PartialEq, Eq, Clone, Debug)]
+pub struct ListNode {
+    pub val: i32,
+    pub next: Option<Box<ListNode>>,
+}
+
+impl ListNode {
+    #[inline]
+    #[allow(dead_code)]
+    pub fn new(val: i32) -> Self {
+        ListNode { next: None, val }
+    }
+}
+
 #[derive(PartialEq, Eq, Clone)]
 pub struct SinglyLinkedList {
     pub head: Option<Box<ListNode>>,
@@ -111,9 +128,10 @@ pub struct SinglyLinkedListIterator<'a> {
     link: Option<&'a ListNode>,
 }
 
-impl<'a> SinglyLinkedListIterator<'a> {
-    // TODO: consider implementing the trait `std::iter::Iterator`
-    pub fn next_(&mut self) -> Option<&i32> {
+impl<'a> Iterator for SinglyLinkedListIterator<'a> {
+    type Item = &'a i32;
+
+    fn next(&mut self) -> Option<Self::Item> {
         match self.link {
             Some(node) => {
                 self.link = node.next.as_deref();
@@ -121,20 +139,5 @@ impl<'a> SinglyLinkedListIterator<'a> {
             }
             None => None,
         }
-    }
-}
-
-/// Definition for singly-linked list.
-#[derive(PartialEq, Eq, Clone, Debug)]
-pub struct ListNode {
-    pub val: i32,
-    pub next: Option<Box<ListNode>>,
-}
-
-impl ListNode {
-    #[inline]
-    #[allow(dead_code)]
-    pub fn new(val: i32) -> Self {
-        ListNode { next: None, val }
     }
 }

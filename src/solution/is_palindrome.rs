@@ -35,7 +35,7 @@ impl Solution {
 
         let mut it = list.iter();
         let mut rev_it = rev_list.iter();
-        while let (Some(a), Some(b)) = (rev_it.next_(), it.next_()) {
+        while let (Some(a), Some(b)) = (rev_it.next(), it.next()) {
             if a != b {
                 return false;
             }
