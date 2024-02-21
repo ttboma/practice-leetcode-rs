@@ -92,6 +92,7 @@ mod rotate;
 mod running_sum;
 mod search;
 mod ship_within_days;
+mod sorted_array_to_bst;
 mod stone_game;
 mod str_str;
 mod subset_xor_sum;
