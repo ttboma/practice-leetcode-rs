@@ -19,10 +19,10 @@ struct Cli {
 enum Commands {
     /// [797. All Paths From Source to Target](https://leetcode.com/problems/all-paths-from-source-to-target/)
     AllPathsSourceTarget {},
-    // [894. All Possible Full Binary Trees](https://leetcode.com/problems/all-possible-full-binary-trees/)
-    //AllPossibleFbt { n: i32 },
-    // [257. Binary Tree Paths](https://leetcode.com/problems/binary-tree-paths/)
-    //binary_tree_paths { root: String },
+    /// [894. All Possible Full Binary Trees](https://leetcode.com/problems/all-possible-full-binary-trees/)
+    AllPossibleFbt {},
+    /// [257. Binary Tree Paths](https://leetcode.com/problems/binary-tree-paths/)
+    BinaryTreePaths {},
     /// [605. Can Place Flowers](https://leetcode.com/problems/can-place-flowers/)
     CanPlaceFlowers {},
     /// [217. Contains Duplicate](https://leetcode.com/problems/contains-duplicate/)
@@ -75,13 +75,13 @@ enum Commands {
     GetMaximumGenerated {},
     /// [119. Pascal's Triangle II](https://leetcode.com/problems/pascals-triangle-ii/)
     GetRow {},
-    // [112. Path Sum](https://leetcode.com/problems/path-sum/)
-    //HasPathSum{root: Option<Rc<RefCell<TreeNode>>>, target_sum: i32},
+    /// [112. Path Sum](https://leetcode.com/problems/path-sum/)
+    HasPathSum {},
     /// [242. Valid Anagram](https://leetcode.com/problems/valid-anagram/)
     IsAnagram {},
     /// [205. Isomorphic Strings](https://leetcode.com/problems/isomorphic-strings/)
     IsIsomorphic {},
-    // [234. Palindrome Linked List](https://leetcode.com/problems/palindrome-linked-list/description/)
+    /// [234. Palindrome Linked List](https://leetcode.com/problems/palindrome-linked-list/description/)
     IsPalindrome {},
     /// [342. Power of Four](https://leetcode.com/problems/power-of-four/)
     IsPowerOfFour {},
@@ -111,11 +111,11 @@ enum Commands {
     MaxSumAfterPartitioning {},
     /// [1768. Merge Strings Alternately](https://leetcode.com/problems/merge-strings-alternately/)
     MergeAlternately {},
-    // [21. Merge Two Sorted Lists](https://leetcode.com/problems/merge-two-sorted-lists/)
+    /// [21. Merge Two Sorted Lists](https://leetcode.com/problems/merge-two-sorted-lists/)
     MergeTwoLists {},
     /// [88. Merge Sorted Array](https://leetcode.com/problems/merge-sorted-array/?envType=study-plan-v2&envId=top-interview-150)
     Merge {},
-    // [876. Middle of the Linked List](https://leetcode.com/problems/middle-of-the-linked-list/)
+    /// [876. Middle of the Linked List](https://leetcode.com/problems/middle-of-the-linked-list/)
     MiddleNode {},
     /// [746. Min Cost Climbing Stairs](https://leetcode.com/problems/min-cost-climbing-stairs/)
     MinCostClimbingStairs {},
@@ -145,13 +145,13 @@ enum Commands {
     RemoveDuplicates2 {},
     /// [27. Remove Element](https://leetcode.com/problems/remove-element/?envType=study-plan-v2&envId=top-interview-150)
     RemoveElement {},
-    // [203. Remove Linked List Elements](https://leetcode.com/problems/remove-linked-list-elements/)
+    /// [203. Remove Linked List Elements](https://leetcode.com/problems/remove-linked-list-elements/)
     RemoveElements {},
-    // [2487. Remove Nodes From Linked List](https://leetcode.com/problems/remove-nodes-from-linked-list/)
+    /// [2487. Remove Nodes From Linked List](https://leetcode.com/problems/remove-nodes-from-linked-list/)
     RemoveNodes {},
-    // [143. Reorder List](https://leetcode.com/problems/reorder-list/)
+    /// [143. Reorder List](https://leetcode.com/problems/reorder-list/)
     ReorderList {},
-    // [206. Reverse Linked List](https://leetcode.com/problems/reverse-linked-list/)
+    /// [206. Reverse Linked List](https://leetcode.com/problems/reverse-linked-list/)
     ReverseList {},
     /// [345. Reverse Vowels of a String](https://leetcode.com/problems/reverse-vowels-of-a-string/)
     ReverseVowels {},
@@ -171,7 +171,7 @@ enum Commands {
     SubsetXorSum {},
     /// [78. Subsets](https://leetcode.com/problems/subsets/)
     Subsets {},
-    // [24. Swap Nodes in Pairs](https://leetcode.com/problems/swap-nodes-in-pairs/)
+    /// [24. Swap Nodes in Pairs](https://leetcode.com/problems/swap-nodes-in-pairs/)
     SwapPairs {},
     /// [904. Fruit Into Baskets](https://leetcode.com/problems/fruit-into-baskets/)
     TotalFruit {},
@@ -225,8 +225,8 @@ enum Commands {
     TotalNQueens {},
     /// [79. Word Search](https://leetcode.com/problems/word-search/description/?envType=study-plan-v2&envId=top-interview-150)
     Exist {},
-    // [108. Convert Sorted Array to Binary Search Tree](https://leetcode.com/problems/convert-sorted-array-to-binary-search-tree/description/?envType=study-plan-v2&envId=top-interview-150)
-    //SortedArrayToBst {},
+    /// [108. Convert Sorted Array to Binary Search Tree](https://leetcode.com/problems/convert-sorted-array-to-binary-search-tree/description/?envType=study-plan-v2&envId=top-interview-150)
+    SortedArrayToBst {},
 }
 
 fn main() {
@@ -245,6 +245,21 @@ fn main() {
         Commands::AllPathsSourceTarget {} => {
             let graph = parse_2d_i32_list(&input);
             println!("{:?}", Solution::all_paths_source_target(graph));
+        }
+        Commands::AllPossibleFbt {} => {
+            let n = parse_i32(&input);
+            let roots = Solution::all_possible_fbt(n);
+            let trees = roots
+                .into_iter()
+                .map(|root| Tree { root })
+                .collect::<Vec<Tree>>();
+            println!("{:?}", trees);
+        }
+        Commands::BinaryTreePaths {} => {
+            let nodes = parse_opt_i32_list(&input);
+            let tree = Tree::from(nodes);
+            let root = tree.root.clone();
+            println!("{:?}", Solution::binary_tree_paths(root));
         }
         Commands::CanPlaceFlowers {} => {
             let (flowerbed, n) = parse_i32_list_and_i32(&input);
@@ -349,6 +364,12 @@ fn main() {
         Commands::GetRow {} => {
             let row_index = parse_i32(&input);
             println!("{:?}", Solution::get_row(row_index));
+        }
+        Commands::HasPathSum {} => {
+            let (nodes, sum) = parse_opt_i32_list_and_i32(&input);
+            let tree = Tree::from(nodes);
+            let root = tree.root.clone();
+            println!("{:?}", Solution::has_path_sum(root, sum));
         }
         Commands::IsAnagram {} => {
             let (s, t) = parse_two_str(&input);
@@ -686,6 +707,11 @@ fn main() {
         Commands::Exist {} => {
             let (board, word) = parse_2d_char_list_and_str(&input);
             println!("{:?}", Solution::exist(board, word));
+        }
+        Commands::SortedArrayToBst {} => {
+            let nums = parse_i32_list(&input);
+            let root = Solution::sorted_array_to_bst(nums);
+            println!("{:?}", Tree { root });
         }
     }
 }

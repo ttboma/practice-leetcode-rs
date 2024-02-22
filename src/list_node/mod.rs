@@ -1,5 +1,3 @@
-use std::iter::Iterator;
-
 /// Definition for singly-linked list.
 #[derive(PartialEq, Eq, Clone, Debug)]
 pub struct ListNode {
@@ -15,7 +13,7 @@ impl ListNode {
     }
 }
 
-#[derive(PartialEq, Eq, Clone)]
+#[derive(PartialEq, Eq, Clone, Default)]
 pub struct SinglyLinkedList {
     pub head: Option<Box<ListNode>>,
 }
@@ -76,12 +74,6 @@ impl SinglyLinkedList {
     }
 }
 
-impl Default for SinglyLinkedList {
-    fn default() -> Self {
-        Self::new()
-    }
-}
-
 use std::fmt;
 impl fmt::Debug for SinglyLinkedList {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
@@ -128,6 +120,7 @@ pub struct SinglyLinkedListIterator<'a> {
     link: Option<&'a ListNode>,
 }
 
+use std::iter::Iterator;
 impl<'a> Iterator for SinglyLinkedListIterator<'a> {
     type Item = &'a i32;
 
