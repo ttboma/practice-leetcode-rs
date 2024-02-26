@@ -54,6 +54,5 @@ It is recommended to use [Visual Studio Code](https://code.visualstudio.com/) an
 
 ## TODO
 
-- [ ] ensure that all debug printed output have their proper formatting in `bin/solution.rs`
-  - [ ] [`TreeNode`] by macro
-  - [ ] modify [`TreeNode`] unit tests
+- [ ] How to implement Iterator for [`TreeNode`]?
+- [ ] How to build [`TreeNode`] by macro? And modify those [`TreeNode`] unit tests by macro

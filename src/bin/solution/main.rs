@@ -227,6 +227,8 @@ enum Commands {
     Exist {},
     /// [108. Convert Sorted Array to Binary Search Tree](https://leetcode.com/problems/convert-sorted-array-to-binary-search-tree/description/?envType=study-plan-v2&envId=top-interview-150)
     SortedArrayToBst {},
+    /// [234. Palindrome Linked List](https://leetcode.com/problems/palindrome-linked-list/description/)
+    IsPalindromeStr {},
 }
 
 fn main() {
@@ -298,11 +300,11 @@ fn main() {
             println!("{:?}", Solution::count_vowel_strings(n));
         }
         Commands::DecodeString {} => {
-            let s = input.trim().to_owned();
+            let s = parse_str(&input);
             println!("{:?}", Solution::decode_string(s));
         }
         Commands::DiffWaysToCompute {} => {
-            let expression = input.trim().to_owned();
+            let expression = parse_str(&input);
             println!("{:?}", Solution::diff_ways_to_compute(expression));
         }
         Commands::DistributeCookies {} => {
@@ -417,7 +419,7 @@ fn main() {
             println!("{:?}", Solution::largest_altitude(gain));
         }
         Commands::LongestPalindrome {} => {
-            let s = input.trim().to_owned();
+            let s = parse_str(&input);
             println!("{:?}", Solution::longest_palindrome(s));
         }
         Commands::MajorityElement {} => {
@@ -487,7 +489,7 @@ fn main() {
             println!("{:?}", Solution::move_zeroes(&mut nums));
         }
         Commands::NumTilePossibilities {} => {
-            let tiles = input.trim().to_owned();
+            let tiles = parse_str(&input);
             println!("{:?}", Solution::num_tile_possibilities(tiles));
         }
         Commands::Permute {} => {
@@ -559,11 +561,11 @@ fn main() {
             );
         }
         Commands::ReverseVowels {} => {
-            let s = input.trim().to_owned();
+            let s = parse_str(&input);
             println!("{:?}", Solution::reverse_vowels(s));
         }
         Commands::ReverseWords {} => {
-            let s = input.trim().to_owned();
+            let s = parse_str(&input);
             println!("{:?}", Solution::reverse_words(s));
         }
         Commands::Rotate {} => {
@@ -633,11 +635,11 @@ fn main() {
             println!("{:?}", Solution::can_complete_circuit(gas, cost));
         }
         Commands::LengthOfLastWord {} => {
-            let s = input.trim().to_owned();
+            let s = parse_str(&input);
             println!("{:?}", Solution::length_of_last_word(s));
         }
         Commands::RomanToInt {} => {
-            let s = input.trim().to_owned();
+            let s = parse_str(&input);
             println!("{:?}", Solution::roman_to_int(s));
         }
         Commands::LongestCommonPrefix {} => {
@@ -689,7 +691,7 @@ fn main() {
             println!("{:?}", Solution::candy(ratings));
         }
         Commands::LetterCombinations {} => {
-            let digits = input.trim().to_owned();
+            let digits = parse_str(&input);
             println!("{:?}", Solution::letter_combinations(digits));
         }
         Commands::Combine {} => {
@@ -712,6 +714,10 @@ fn main() {
             let nums = parse_i32_list(&input);
             let root = Solution::sorted_array_to_bst(nums);
             println!("{:?}", Tree { root });
+        }
+        Commands::IsPalindromeStr {} => {
+            let s = parse_str(&input);
+            println!("{:?}", Solution::is_palindrome_str(s));
         }
     }
 }

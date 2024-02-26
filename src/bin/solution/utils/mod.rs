@@ -151,6 +151,11 @@ pub fn parse_2d_char_list_and_str(input: &str) -> (Vec<Vec<char>>, String) {
     )
 }
 
+pub fn parse_str(input: &str) -> String {
+    let (_, s) = nom_parser::parse_str(input).expect(error_msg::STR_FORMAT);
+    s.to_owned()
+}
+
 pub fn parse_opt_i32_list(input: &str) -> Vec<Option<i32>> {
     let (_, val) = nom_parser::parse_list(input).expect(error_msg::LIST_FORMAT);
     val.into_iter()

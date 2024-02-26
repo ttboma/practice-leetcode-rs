@@ -32,13 +32,17 @@ impl SinglyLinkedList {
     }
 
     pub fn push(&mut self, item: i32) {
-        let cur_head = self.head.take();
-        let new_node = Some(Box::new(ListNode {
+        self.head = Some(Box::new(ListNode {
             val: item,
-            next: cur_head,
+            next: self.head.take(),
         }));
+    }
 
-        self.head = new_node;
+    pub fn pop(&mut self) -> Option<i32> {
+        self.head.take().map(|node| {
+            self.head = node.next;
+            node.val
+        })
     }
 
     pub fn reverse(mut self) -> SinglyLinkedList {
