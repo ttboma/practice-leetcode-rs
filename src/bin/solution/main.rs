@@ -229,6 +229,8 @@ enum Commands {
     SortedArrayToBst {},
     /// [234. Palindrome Linked List](https://leetcode.com/problems/palindrome-linked-list/description/)
     IsPalindromeStr {},
+    /// # [2. Add Two Numbers](https://leetcode.com/problems/add-two-numbers/description/?envType=study-plan-v2&envId=top-interview-150)
+    AddTwoNumbers {},
 }
 
 fn main() {
@@ -718,6 +720,15 @@ fn main() {
         Commands::IsPalindromeStr {} => {
             let s = parse_str(&input);
             println!("{:?}", Solution::is_palindrome_str(s));
+        }
+        Commands::AddTwoNumbers {} => {
+            let (l1, l2) = parse_two_i32_list(&input);
+            let l1 = SinglyLinkedList::from(l1);
+            let l2 = SinglyLinkedList::from(l2);
+            let output = SinglyLinkedList {
+                head: Solution::add_two_numbers(l1.head, l2.head),
+            };
+            println!("{:?}", output);
         }
     }
 }

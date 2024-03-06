@@ -1,6 +1,7 @@
 /// LeetCode solutions provided by Shieh, Yueh-chang <ttboma@gmail.com>
 pub struct Solution {}
 
+mod add_two_numbers;
 /// Each of the methods for Solution struct are placed under its own module
 mod all_paths_source_target;
 mod all_possible_fbt;
