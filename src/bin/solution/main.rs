@@ -200,7 +200,9 @@ enum Commands {
     /// [290. Word Pattern](https://leetcode.com/problems/word-pattern/description/?envType=study-plan-v2&envId=top-interview-150)
     WordPattern {},
     /// [1. Two Sum](https://leetcode.com/problems/two-sum/description/?envType=study-plan-v2&envId=top-interview-150)
-    TwoSum {},
+    TwoSum1 {},
+    /// [167. Two Sum II - Input Array Is Sorted](https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/description/?envType=study-plan-v2&envId=top-interview-150)
+    TwoSum2 {},
     /// [202. Happy Number](https://leetcode.com/problems/happy-number/description/?envType=study-plan-v2&envId=top-interview-150)
     IsHappy {},
     /// [219. Contains Duplicate II](https://leetcode.com/problems/contains-duplicate-ii/description/?envType=study-plan-v2&envId=top-interview-150)
@@ -660,9 +662,13 @@ fn main() {
             let (pattern, s) = parse_two_str(&input);
             println!("{:?}", Solution::word_pattern(pattern, s));
         }
-        Commands::TwoSum {} => {
+        Commands::TwoSum1 {} => {
             let (nums, target) = parse_i32_list_and_i32(&input);
-            println!("{:?}", Solution::two_sum(nums, target));
+            println!("{:?}", Solution::two_sum_1(nums, target));
+        }
+        Commands::TwoSum2 {} => {
+            let (nums, target) = parse_i32_list_and_i32(&input);
+            println!("{:?}", Solution::two_sum_2(nums, target));
         }
         Commands::IsHappy {} => {
             let n = parse_i32(&input);
