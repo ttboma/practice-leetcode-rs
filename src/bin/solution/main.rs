@@ -233,6 +233,8 @@ enum Commands {
     IsPalindromeStr {},
     /// # [2. Add Two Numbers](https://leetcode.com/problems/add-two-numbers/description/?envType=study-plan-v2&envId=top-interview-150)
     AddTwoNumbers {},
+    /// [11. Container With Most Water](https://leetcode.com/problems/container-with-most-water/description/?envType=study-plan-v2&envId=top-interview-150)
+    MaxArea {},
 }
 
 fn main() {
@@ -735,6 +737,10 @@ fn main() {
                 head: Solution::add_two_numbers(l1.head, l2.head),
             };
             println!("{:?}", output);
+        }
+        Commands::MaxArea {} => {
+            let heights = parse_i32_list(&input);
+            println!("{:?}", Solution::max_area(heights));
         }
     }
 }

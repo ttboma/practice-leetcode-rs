@@ -63,6 +63,7 @@ mod longest_common_prefix;
 mod longest_consecutive;
 mod longest_palindrome;
 mod majority_element;
+mod max_area;
 mod max_profit;
 mod max_sum_after_partitioning;
 mod merge;
