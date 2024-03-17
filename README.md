@@ -41,7 +41,7 @@ Please follow the conventions, as noted below, to contribute to this project.
 - Please install the [git hook](https://git-scm.com/book/zh-tw/v2/Customizing-Git-Git-Hooks) scripts by the following [pre-commit](https://pre-commit.com/) command:
 
    ```bash
-   pre-commit install --hook-type commit-msg --hook-type pre-commit --hook-type pre-push
+   $ pre-commit install --hook-type commit-msg --hook-type pre-commit --hook-type pre-push
    ```
 
 It is recommended to use [Visual Studio Code](https://code.visualstudio.com/) and plugins listed in the following to maintain your code quality:
