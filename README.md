@@ -1,12 +1,28 @@
-# [README](https://github.com/ttboma/syc_leetcode_solution_rs)
+# Table of Content
+
+- [Table of Content](#table-of-content)
+  - [Introduction](#introduction)
+  - [Build](#build)
+  - [Usage](#usage)
+  - [Developer's Note](#developers-note)
+    - [How to debug with CodeLLDB](#how-to-debug-with-codelldb)
+    - [How to debug with lldb](#how-to-debug-with-lldb)
+  - [TODO](#todo)
+
+## Introduction
 
 Hi,
 
 This crate is a collection of solutions to [LeetCode](https://leetcode.com/) problems provided by SHIEH, YUEH-CHANG.
-The purpose of this project is to practice Rust and DSA.
+The goal of this project is to gain experience in developing a Rust project and learning about data structures and algorithms.
 
-1. Please run `cargo test` to ensure that all the tests are passed correctly
-2. The following shows an example that how to use this library crate. And please run `cargo doc --open` to access the documentation
+## Build
+
+The project only relies on [rustup](https://www.rust-lang.org/learn/get-started) as a dependency. Once it's installed, please execute `cargo test` from the project's root directory to verify that all tests pass successfully.
+
+## Usage
+
+The following shows an example that how to use this library crate. And please run `cargo doc --open` to access the documentation
 
    ```rust
    use leetcode_rs::Solution;
@@ -15,7 +31,7 @@ The purpose of this project is to practice Rust and DSA.
    assert_eq!(ans, 5);
    ```
 
-3. To access the command line interface, please run
+To access the command line interface, please run
 
    ```bash
    $ cargo run --bin solution -- --help
@@ -32,7 +48,7 @@ The purpose of this project is to practice Rust and DSA.
    55
    ```
 
-## Development Note
+## Developer's Note
 
 Please follow the conventions, as noted below, to contribute to this project.
 
@@ -44,14 +60,18 @@ Please follow the conventions, as noted below, to contribute to this project.
    $ pre-commit install --hook-type commit-msg --hook-type pre-commit --hook-type pre-push
    ```
 
-It is recommended to use [Visual Studio Code](https://code.visualstudio.com/) and plugins listed in the following to maintain your code quality:
+To maintain your code quality, the following is a list of recommended [Visual Studio Code](https://code.visualstudio.com/) plugins:
 
 - [rust-analyzer](https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer)
 - [Rust Doc Viewer](https://marketplace.visualstudio.com/items?itemName=JScearcy.rust-doc-viewer)
-- [CodeLLDB](https://marketplace.visualstudio.com/items?itemName=vadimcn.vscode-lldb)
-- [GitLens — Git supercharged](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens)
-- [Code Spell Checker](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker)
+- [crates](https://marketplace.visualstudio.com/items?itemName=serayuzgur.crates)
+- [Even Better TOML](https://marketplace.visualstudio.com/items?itemName=tamasfe.even-better-toml)
 - [markdownlint](https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint)
+- [Code Spell Checker](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker)
+- [CodeLLDB](https://marketplace.visualstudio.com/items?itemName=vadimcn.vscode-lldb)
+- [Error Lens](https://marketplace.visualstudio.com/items?itemName=usernamehw.errorlens)
+- [GitLens — Git supercharged](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens)
+- [pre-commit](https://marketplace.visualstudio.com/items?itemName=elagil.pre-commit-helper)
 
 ### How to debug with CodeLLDB
 
