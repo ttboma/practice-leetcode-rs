@@ -34,17 +34,17 @@ The following shows an example that how to use this library crate. And please ru
 To access the command line interface, please run
 
    ```bash
-   $ cargo run --bin solution -- --help
-   $ cargo run --bin solution -- <COMMAND> --help
-   $ cargo run --bin solution -- <COMMAND>
+   % cargo run --bin solution -- --help
+   % cargo run --bin solution -- <COMMAND> --help
+   % cargo run --bin solution -- <COMMAND>
    ```
 
    For example:
 
    ```bash
-   $ cargo run --bin solution -- --help
-   $ cargo run --bin solution -- fib --help
-   $ echo 10 | cargo run --bin solution -- fib
+   % cargo run --bin solution -- --help
+   % cargo run --bin solution -- fib --help
+   % echo 10 | cargo run --bin solution -- fib
    55
    ```
 
@@ -57,7 +57,7 @@ Please follow the conventions, as noted below, to contribute to this project.
 - Please install the [git hook](https://git-scm.com/book/zh-tw/v2/Customizing-Git-Git-Hooks) scripts by the following [pre-commit](https://pre-commit.com/) command:
 
    ```bash
-   $ pre-commit install --hook-type commit-msg --hook-type pre-commit --hook-type pre-push
+   % pre-commit install --hook-type commit-msg --hook-type pre-commit --hook-type pre-push
    ```
 
 To maintain your code quality, the following is a list of recommended [Visual Studio Code](https://code.visualstudio.com/) plugins:
