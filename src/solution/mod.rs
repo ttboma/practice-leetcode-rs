@@ -100,6 +100,7 @@ mod str_str;
 mod subset_xor_sum;
 mod subsets;
 mod swap_pairs;
+mod three_sum;
 mod total_fruit;
 mod total_n_queens;
 mod tribonacci;

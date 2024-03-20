@@ -235,6 +235,8 @@ enum Commands {
     AddTwoNumbers {},
     /// [11. Container With Most Water](https://leetcode.com/problems/container-with-most-water/description/?envType=study-plan-v2&envId=top-interview-150)
     MaxArea {},
+    /// [15. 3Sum](https://leetcode.com/problems/3sum/description/?envType=study-plan-v2&envId=top-interview-150)
+    ThreeSum {},
 }
 
 fn main() {
@@ -741,6 +743,10 @@ fn main() {
         Commands::MaxArea {} => {
             let heights = parse_i32_list(&input);
             println!("{:?}", Solution::max_area(heights));
+        }
+        Commands::ThreeSum {} => {
+            let nums = parse_i32_list(&input);
+            println!("{:?}", Solution::three_sum(nums));
         }
     }
 }
