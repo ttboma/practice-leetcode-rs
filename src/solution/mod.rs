@@ -1,8 +1,8 @@
 /// LeetCode solutions provided by Shieh, Yueh-chang <ttboma@gmail.com>
 pub struct Solution {}
 
-mod add_two_numbers;
 /// Each of the methods for Solution struct are placed under its own module
+mod add_two_numbers;
 mod all_paths_source_target;
 mod all_possible_fbt;
 mod binary_tree_paths;
@@ -35,6 +35,7 @@ mod find_kth_bit;
 mod find_kth_positive;
 mod find_max_average;
 mod find_the_winner;
+mod full_justify;
 mod gcd_of_strings;
 mod generate;
 mod generate_parenthesis;
@@ -103,6 +104,7 @@ mod swap_pairs;
 mod three_sum;
 mod total_fruit;
 mod total_n_queens;
+mod trap;
 mod tribonacci;
 mod two_egg_drop;
 mod two_sum;

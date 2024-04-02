@@ -110,6 +110,23 @@ pub fn parse_str_list(input: &str) -> Vec<String> {
         .collect::<Vec<_>>()
 }
 
+pub fn parse_str_list_and_i32(input: &str) -> (Vec<String>, i32) {
+    let (input, result) = nom_parser::parse_list(input).expect(error_msg::LIST_FORMAT);
+    let (_, n) = nom_parser::decimal(input).expect(error_msg::INTEGER_FORMAT);
+    (
+        result
+            .into_iter()
+            .map(|x| {
+                nom_parser::parse_str(x)
+                    .expect(error_msg::STR_FORMAT)
+                    .1
+                    .to_owned()
+            })
+            .collect::<Vec<_>>(),
+        n.parse::<i32>().expect(error_msg::I32_VALUE),
+    )
+}
+
 pub fn parse_two_str(input: &str) -> (String, String) {
     let (input, s1) = nom_parser::parse_str(input).expect(error_msg::STR_FORMAT);
     let (_, s2) = nom_parser::parse_str(input).expect(error_msg::STR_FORMAT);
@@ -143,7 +160,7 @@ pub fn parse_2d_char_list_and_str(input: &str) -> (Vec<Vec<char>>, String) {
             .into_iter()
             .map(|x| {
                 x.into_iter()
-                    .map(|y| y.trim().parse::<char>().expect(error_msg::ITEM_OF_CHAR))
+                    .map(|y| *y.trim().as_bytes().get(1).expect(error_msg::ITEM_OF_CHAR) as char)
                     .collect::<Vec<_>>()
             })
             .collect::<Vec<_>>(),

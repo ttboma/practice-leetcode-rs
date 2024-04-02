@@ -237,6 +237,10 @@ enum Commands {
     MaxArea {},
     /// [15. 3Sum](https://leetcode.com/problems/3sum/description/?envType=study-plan-v2&envId=top-interview-150)
     ThreeSum {},
+    /// [42. Trapping Rain Water](https://leetcode.com/problems/trapping-rain-water/description/?envType=study-plan-v2&envId=top-interview-150)
+    Trap {},
+    /// [68. Text Justification](https://leetcode.com/problems/text-justification/description/?envType=study-plan-v2&envId=top-interview-150)
+    FullJustify {},
 }
 
 fn main() {
@@ -747,6 +751,14 @@ fn main() {
         Commands::ThreeSum {} => {
             let nums = parse_i32_list(&input);
             println!("{:?}", Solution::three_sum(nums));
+        }
+        Commands::Trap {} => {
+            let height = parse_i32_list(&input);
+            println!("{:?}", Solution::trap(height));
+        }
+        Commands::FullJustify {} => {
+            let (words, max_width) = parse_str_list_and_i32(&input);
+            println!("{:?}", Solution::full_justify(words, max_width));
         }
     }
 }
