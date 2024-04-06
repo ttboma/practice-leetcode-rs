@@ -241,6 +241,8 @@ enum Commands {
     Trap {},
     /// [68. Text Justification](https://leetcode.com/problems/text-justification/description/?envType=study-plan-v2&envId=top-interview-150)
     FullJustify {},
+    /// [209. Minimum Size Subarray Sum](https://leetcode.com/problems/minimum-size-subarray-sum/description/?envType=study-plan-v2&envId=top-interview-150)
+    MinSubArrayLen {},
 }
 
 fn main() {
@@ -759,6 +761,10 @@ fn main() {
         Commands::FullJustify {} => {
             let (words, max_width) = parse_str_list_and_i32(&input);
             println!("{:?}", Solution::full_justify(words, max_width));
+        }
+        Commands::MinSubArrayLen {} => {
+            let (target, nums) = parse_i32_and_i32_list(&input);
+            println!("{:?}", Solution::min_sub_array_len(target, nums));
         }
     }
 }
