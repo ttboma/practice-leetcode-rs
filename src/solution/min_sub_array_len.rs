@@ -42,8 +42,7 @@ impl Solution {
                 *state += *x;
                 Some((*state, k))
             })
-            .filter_map(|(acc, k)| if acc >= target { Some((acc, k)) } else { None })
-            .next()
+            .find_map(|(acc, k)| if acc >= target { Some((acc, k)) } else { None })
         {
             Some((_, k)) if k == 0 => 1,
             Some((mut acc, mut k)) => {
