@@ -59,6 +59,7 @@ mod kids_with_candies;
 mod kth_grammar;
 mod largest_altitude;
 mod length_of_last_word;
+mod length_of_longest_substring;
 mod letter_combinations;
 mod longest_common_prefix;
 mod longest_consecutive;

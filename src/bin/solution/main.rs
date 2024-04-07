@@ -243,6 +243,8 @@ enum Commands {
     FullJustify {},
     /// [209. Minimum Size Subarray Sum](https://leetcode.com/problems/minimum-size-subarray-sum/description/?envType=study-plan-v2&envId=top-interview-150)
     MinSubArrayLen {},
+    /// [3. Longest Substring Without Repeating Characters](https://leetcode.com/problems/longest-substring-without-repeating-characters/description/?envType=study-plan-v2&envId=top-interview-150)
+    LengthOfLongestSubstring {},
 }
 
 fn main() {
@@ -765,6 +767,10 @@ fn main() {
         Commands::MinSubArrayLen {} => {
             let (target, nums) = parse_i32_and_i32_list(&input);
             println!("{:?}", Solution::min_sub_array_len(target, nums));
+        }
+        Commands::LengthOfLongestSubstring {} => {
+            let s = parse_str(&input);
+            println!("{:?}", Solution::length_of_longest_substring(s));
         }
     }
 }
