@@ -164,6 +164,18 @@ pub fn parse_2d_i32_list(input: &str) -> Vec<Vec<i32>> {
         .collect::<Vec<_>>()
 }
 
+pub fn parse_2d_char_list(input: &str) -> Vec<Vec<char>> {
+    let (_, result) = nom_parser::parse_2d_list(input).expect(error_msg::TWO_DIMENSION_LIST_FORMAT);
+    result
+        .into_iter()
+        .map(|x| {
+            x.into_iter()
+                .map(|y| *y.trim().as_bytes().get(1).expect(error_msg::ITEM_OF_CHAR) as char)
+                .collect::<Vec<_>>()
+        })
+        .collect::<Vec<_>>()
+}
+
 pub fn parse_2d_char_list_and_str(input: &str) -> (Vec<Vec<char>>, String) {
     let (input, result) =
         nom_parser::parse_2d_list(input).expect(error_msg::TWO_DIMENSION_LIST_FORMAT);

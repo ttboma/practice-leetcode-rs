@@ -54,6 +54,7 @@ mod is_power_of_four;
 mod is_power_of_three;
 mod is_power_of_two;
 mod is_subsequence;
+mod is_valid_sudoku;
 mod jump;
 mod kids_with_candies;
 mod kth_grammar;

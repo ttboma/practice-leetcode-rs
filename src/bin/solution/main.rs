@@ -245,6 +245,8 @@ enum Commands {
     MinSubArrayLen {},
     /// [3. Longest Substring Without Repeating Characters](https://leetcode.com/problems/longest-substring-without-repeating-characters/description/?envType=study-plan-v2&envId=top-interview-150)
     LengthOfLongestSubstring {},
+    /// [36. Valid Sudoku](https://leetcode.com/problems/valid-sudoku/description/?envType=study-plan-v2&envId=top-interview-150)
+    IsValidSudoku {},
 }
 
 fn main() {
@@ -771,6 +773,10 @@ fn main() {
         Commands::LengthOfLongestSubstring {} => {
             let s = parse_str(&input);
             println!("{:?}", Solution::length_of_longest_substring(s));
+        }
+        Commands::IsValidSudoku {} => {
+            let board = parse_2d_char_list(&input);
+            println!("{:?}", Solution::is_valid_sudoku(board));
         }
     }
 }
