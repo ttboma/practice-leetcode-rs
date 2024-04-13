@@ -247,6 +247,8 @@ enum Commands {
     LengthOfLongestSubstring {},
     /// [36. Valid Sudoku](https://leetcode.com/problems/valid-sudoku/description/?envType=study-plan-v2&envId=top-interview-150)
     IsValidSudoku {},
+    /// [54. Spiral Matrix](https://leetcode.com/problems/spiral-matrix/description/?envType=study-plan-v2&envId=top-interview-150)
+    SpiralOrder {},
 }
 
 fn main() {
@@ -777,6 +779,10 @@ fn main() {
         Commands::IsValidSudoku {} => {
             let board = parse_2d_char_list(&input);
             println!("{:?}", Solution::is_valid_sudoku(board));
+        }
+        Commands::SpiralOrder {} => {
+            let matrix = parse_2d_i32_list(&input);
+            println!("{:?}", Solution::spiral_order(matrix));
         }
     }
 }
