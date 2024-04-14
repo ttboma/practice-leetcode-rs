@@ -95,6 +95,7 @@ mod reverse_vowels;
 mod reverse_words;
 mod roman_to_int;
 mod rotate;
+mod rotate_image;
 mod running_sum;
 mod search;
 mod ship_within_days;

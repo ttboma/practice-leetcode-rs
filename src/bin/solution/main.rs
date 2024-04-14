@@ -249,6 +249,8 @@ enum Commands {
     IsValidSudoku {},
     /// [54. Spiral Matrix](https://leetcode.com/problems/spiral-matrix/description/?envType=study-plan-v2&envId=top-interview-150)
     SpiralOrder {},
+    /// [48. Rotate Image](https://leetcode.com/problems/rotate-image/description/?envType=study-plan-v2&envId=top-interview-150)
+    RotateImage {},
 }
 
 fn main() {
@@ -783,6 +785,15 @@ fn main() {
         Commands::SpiralOrder {} => {
             let matrix = parse_2d_i32_list(&input);
             println!("{:?}", Solution::spiral_order(matrix));
+        }
+        Commands::RotateImage {} => {
+            let mut matrix = parse_2d_i32_list(&input);
+            Solution::rotate_image(&mut matrix);
+            print!("[{:?}", matrix[0]);
+            for row in matrix.iter().skip(1) {
+                print!("\n {:?}", row);
+            }
+            println!("]");
         }
     }
 }
