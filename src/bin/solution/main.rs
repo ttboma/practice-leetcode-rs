@@ -251,6 +251,8 @@ enum Commands {
     SpiralOrder {},
     /// [48. Rotate Image](https://leetcode.com/problems/rotate-image/description/?envType=study-plan-v2&envId=top-interview-150)
     RotateImage {},
+    /// [73. Set Matrix Zeroes](https://leetcode.com/problems/set-matrix-zeroes/description/?envType=study-plan-v2&envId=top-interview-150)
+    SetZeroes {},
 }
 
 fn main() {
@@ -789,6 +791,15 @@ fn main() {
         Commands::RotateImage {} => {
             let mut matrix = parse_2d_i32_list(&input);
             Solution::rotate_image(&mut matrix);
+            print!("[{:?}", matrix[0]);
+            for row in matrix.iter().skip(1) {
+                print!("\n {:?}", row);
+            }
+            println!("]");
+        }
+        Commands::SetZeroes {} => {
+            let mut matrix = parse_2d_i32_list(&input);
+            Solution::set_zeroes(&mut matrix);
             print!("[{:?}", matrix[0]);
             for row in matrix.iter().skip(1) {
                 print!("\n {:?}", row);
