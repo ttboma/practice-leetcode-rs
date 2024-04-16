@@ -253,6 +253,8 @@ enum Commands {
     RotateImage {},
     /// [73. Set Matrix Zeroes](https://leetcode.com/problems/set-matrix-zeroes/description/?envType=study-plan-v2&envId=top-interview-150)
     SetZeroes {},
+    /// [289. Game of Life](https://leetcode.com/problems/game-of-life/description/?envType=study-plan-v2&envId=top-interview-150)
+    GameOfLife {},
 }
 
 fn main() {
@@ -802,6 +804,15 @@ fn main() {
             Solution::set_zeroes(&mut matrix);
             print!("[{:?}", matrix[0]);
             for row in matrix.iter().skip(1) {
+                print!("\n {:?}", row);
+            }
+            println!("]");
+        }
+        Commands::GameOfLife {} => {
+            let mut board = parse_2d_i32_list(&input);
+            Solution::game_of_life(&mut board);
+            print!("[{:?}", board[0]);
+            for row in board.iter().skip(1) {
                 print!("\n {:?}", row);
             }
             println!("]");
