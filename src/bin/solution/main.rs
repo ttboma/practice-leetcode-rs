@@ -255,6 +255,8 @@ enum Commands {
     SetZeroes {},
     /// [289. Game of Life](https://leetcode.com/problems/game-of-life/description/?envType=study-plan-v2&envId=top-interview-150)
     GameOfLife {},
+    /// [228. Summary Ranges](https://leetcode.com/problems/summary-ranges/description/?envType=study-plan-v2&envId=top-interview-150)
+    SummaryRanges {},
 }
 
 fn main() {
@@ -816,6 +818,10 @@ fn main() {
                 print!("\n {:?}", row);
             }
             println!("]");
+        }
+        Commands::SummaryRanges {} => {
+            let nums = parse_i32_list(&input);
+            println!("{:?}", Solution::summary_ranges(nums));
         }
     }
 }
