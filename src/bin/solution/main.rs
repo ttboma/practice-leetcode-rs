@@ -257,6 +257,8 @@ enum Commands {
     GameOfLife {},
     /// [228. Summary Ranges](https://leetcode.com/problems/summary-ranges/description/?envType=study-plan-v2&envId=top-interview-150)
     SummaryRanges {},
+    /// [56. Merge Intervals](https://leetcode.com/problems/merge-intervals/description/?envType=study-plan-v2&envId=top-interview-150)
+    MergeIntervals {},
 }
 
 fn main() {
@@ -822,6 +824,10 @@ fn main() {
         Commands::SummaryRanges {} => {
             let nums = parse_i32_list(&input);
             println!("{:?}", Solution::summary_ranges(nums));
+        }
+        Commands::MergeIntervals {} => {
+            let intervals = parse_2d_i32_list(&input);
+            println!("{:?}", Solution::merge_intervals(intervals));
         }
     }
 }
