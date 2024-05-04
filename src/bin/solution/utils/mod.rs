@@ -123,6 +123,23 @@ pub fn parse_str_list(input: &str) -> Vec<String> {
         .collect::<Vec<_>>()
 }
 
+pub fn parse_str_and_str_list(input: &str) -> (String, Vec<String>) {
+    let (input, r) = nom_parser::parse_str(input).expect(error_msg::STR_FORMAT);
+    let (_, result) = nom_parser::parse_list(input).expect(error_msg::LIST_FORMAT);
+    (
+        r.to_owned(),
+        result
+            .into_iter()
+            .map(|x| {
+                nom_parser::parse_str(x)
+                    .expect(error_msg::STR_FORMAT)
+                    .1
+                    .to_owned()
+            })
+            .collect::<Vec<_>>(),
+    )
+}
+
 pub fn parse_str_list_and_i32(input: &str) -> (Vec<String>, i32) {
     let (input, result) = nom_parser::parse_list(input).expect(error_msg::LIST_FORMAT);
     let (_, n) = nom_parser::decimal(input).expect(error_msg::INTEGER_FORMAT);

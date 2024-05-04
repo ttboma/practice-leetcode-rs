@@ -34,6 +34,7 @@ mod find_difference;
 mod find_kth_bit;
 mod find_kth_positive;
 mod find_max_average;
+mod find_substring;
 mod find_the_winner;
 mod full_justify;
 mod game_of_life;

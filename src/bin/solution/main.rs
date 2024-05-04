@@ -259,6 +259,8 @@ enum Commands {
     SummaryRanges {},
     /// [56. Merge Intervals](https://leetcode.com/problems/merge-intervals/description/?envType=study-plan-v2&envId=top-interview-150)
     MergeIntervals {},
+    /// [30. Substring with Concatenation of All Words](https://leetcode.com/problems/substring-with-concatenation-of-all-words/description/?envType=study-plan-v2&envId=top-interview-150)
+    FindSubstring {},
 }
 
 fn main() {
@@ -828,6 +830,10 @@ fn main() {
         Commands::MergeIntervals {} => {
             let intervals = parse_2d_i32_list(&input);
             println!("{:?}", Solution::merge_intervals(intervals));
+        }
+        Commands::FindSubstring {} => {
+            let (s, words) = parse_str_and_str_list(&input);
+            println!("{:?}", Solution::find_substring(s, words));
         }
     }
 }
