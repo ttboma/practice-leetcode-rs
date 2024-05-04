@@ -47,6 +47,7 @@ mod get_row;
 mod group_anagrams;
 mod h_index;
 mod has_path_sum;
+mod insert;
 mod int_to_roman;
 mod is_anagram;
 mod is_happy;
