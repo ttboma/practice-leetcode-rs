@@ -263,6 +263,8 @@ enum Commands {
     FindSubstring {},
     /// [57. Insert Interval](https://leetcode.com/problems/insert-interval/description/?envType=study-plan-v2&envId=top-interview-150)
     Insert {},
+    /// [452. Minimum Number of Arrows to Burst Balloons](https://leetcode.com/problems/minimum-number-of-arrows-to-burst-balloons/description/?envType=study-plan-v2&envId=top-interview-150)
+    FindMinArrowShots {},
 }
 
 fn main() {
@@ -840,6 +842,10 @@ fn main() {
         Commands::Insert {} => {
             let (intervals, new_interval) = parse_2d_i32_list_and_i32_list(&input);
             println!("{:?}", Solution::insert(intervals, new_interval));
+        }
+        Commands::FindMinArrowShots {} => {
+            let points = parse_2d_i32_list(&input);
+            println!("{:?}", Solution::find_min_arrow_shots(points));
         }
     }
 }
