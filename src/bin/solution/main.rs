@@ -265,6 +265,8 @@ enum Commands {
     Insert {},
     /// [452. Minimum Number of Arrows to Burst Balloons](https://leetcode.com/problems/minimum-number-of-arrows-to-burst-balloons/description/?envType=study-plan-v2&envId=top-interview-150)
     FindMinArrowShots {},
+    /// [76. Minimum Window Substring](https://leetcode.com/problems/minimum-window-substring/description/?envType=study-plan-v2&envId=top-interview-150)
+    MinWindow {},
 }
 
 fn main() {
@@ -846,6 +848,10 @@ fn main() {
         Commands::FindMinArrowShots {} => {
             let points = parse_2d_i32_list(&input);
             println!("{:?}", Solution::find_min_arrow_shots(points));
+        }
+        Commands::MinWindow {} => {
+            let (s, t) = parse_two_str(&input);
+            println!("{:?}", Solution::min_window(s, t));
         }
     }
 }
