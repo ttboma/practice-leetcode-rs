@@ -267,6 +267,8 @@ enum Commands {
     FindMinArrowShots {},
     /// [76. Minimum Window Substring](https://leetcode.com/problems/minimum-window-substring/description/?envType=study-plan-v2&envId=top-interview-150)
     MinWindow {},
+    /// [71. Simplify Path](https://leetcode.com/problems/simplify-path/description/?envType=study-plan-v2&envId=top-interview-150)
+    SimplifyPath {},
 }
 
 fn main() {
@@ -852,6 +854,10 @@ fn main() {
         Commands::MinWindow {} => {
             let (s, t) = parse_two_str(&input);
             println!("{:?}", Solution::min_window(s, t));
+        }
+        Commands::SimplifyPath {} => {
+            let path = parse_str(&input);
+            println!("{:?}", Solution::simplify_path(path));
         }
     }
 }

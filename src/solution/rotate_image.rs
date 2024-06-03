@@ -28,7 +28,7 @@ impl Solution {
     /// - `n == matrix.length == matrix[i].length`
     /// - `1 <= n <= 20`
     /// - `-1000 <= matrix[i][j] <= 1000`
-    pub fn rotate_image(matrix: &mut Vec<Vec<i32>>) {
+    pub fn rotate_image(matrix: &mut [Vec<i32>]) {
         let n = matrix.len();
         for i in 0..n / 2 {
             for j in 0..n - 2 * i - 1 {

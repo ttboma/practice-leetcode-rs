@@ -51,7 +51,7 @@ impl Solution {
     /// - `1 <= nums.length <= 3 * 10^4`
     /// - `-100 <= nums[i] <= 100`
     /// - `nums` is sorted in **non-decreasing**  order.
-    pub fn remove_duplicates1(nums: &mut Vec<i32>) -> i32 {
+    pub fn remove_duplicates1(nums: &mut [i32]) -> i32 {
         let mut j = 1;
         for i in 1..nums.len() {
             if nums[i] != nums[i - 1] {
@@ -113,7 +113,7 @@ impl Solution {
     /// - `1 <= nums.length <= 3 * 10^4`
     /// - `-10^4 <= nums[i] <= 10^4`
     /// - `nums` is sorted in **non-decreasing**  order.
-    pub fn remove_duplicates2(nums: &mut Vec<i32>) -> i32 {
+    pub fn remove_duplicates2(nums: &mut [i32]) -> i32 {
         let mut cnt = 1;
 
         let mut i = 1;

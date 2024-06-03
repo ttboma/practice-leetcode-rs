@@ -27,7 +27,7 @@ impl Solution {
     /// - `-2^31 <= nums[i] <= 2^31 - 1`
     ///
     /// **Follow up:**  Could you minimize the total number of operations done?
-    pub fn move_zeroes(nums: &mut Vec<i32>) {
+    pub fn move_zeroes(nums: &mut [i32]) {
         let mut i = 0;
         let mut j = 0;
 

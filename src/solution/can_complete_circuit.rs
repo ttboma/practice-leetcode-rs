@@ -47,11 +47,7 @@ impl Solution {
         let mut start = -1;
         let mut back = 0;
         let mut front = 0;
-        let tank: Vec<i32> = gas
-            .into_iter()
-            .zip(cost.into_iter())
-            .map(|(g, c)| g - c)
-            .collect();
+        let tank: Vec<i32> = gas.into_iter().zip(cost).map(|(g, c)| g - c).collect();
         for (index, refill) in tank.iter().enumerate() {
             front += *refill;
             if front < 0 {

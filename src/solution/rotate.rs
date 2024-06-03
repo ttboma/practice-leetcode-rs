@@ -36,7 +36,7 @@ impl Solution {
     ///
     /// - Try to come up with as many solutions as you can. There are at least **three**  different ways to solve this problem.
     /// - Could you do it in-place with `O(1)` extra space?
-    pub fn rotate(nums: &mut Vec<i32>, k: i32) {
+    pub fn rotate(nums: &mut [i32], k: i32) {
         let k = k as usize % nums.len();
         if k == 0 {
             return;

@@ -53,7 +53,7 @@ impl Solution {
     /// - `1 <= num <= 3999`
     pub fn int_to_roman(num: i32) -> String {
         let mut roman_numeral = String::new();
-        let roman_symbols = vec![('M', 'M'), ('C', 'D'), ('X', 'L'), ('I', 'V')];
+        let roman_symbols = [('M', 'M'), ('C', 'D'), ('X', 'L'), ('I', 'V')];
         for (i, d) in (0..=3)
             .rev()
             .map(|i| (num / 10i32.pow(i)).rem(10))

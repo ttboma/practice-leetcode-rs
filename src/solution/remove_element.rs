@@ -55,7 +55,7 @@ impl Solution {
     /// - `0 <= nums.length <= 100`
     /// - `0 <= nums[i] <= 50`
     /// - `0 <= val <= 100`
-    pub fn remove_element(nums: &mut Vec<i32>, val: i32) -> i32 {
+    pub fn remove_element(nums: &mut [i32], val: i32) -> i32 {
         let mut i = 0;
         let mut j = nums.len();
         while i != j {

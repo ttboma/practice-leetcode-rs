@@ -35,7 +35,7 @@ impl Solution {
     /// - A straightforward solution using `O(mn)` space is probably a bad idea.
     /// - A simple improvement uses `O(m + n)` space, but still not the best solution.
     /// - Could you devise a constant space solution?
-    pub fn set_zeroes(matrix: &mut Vec<Vec<i32>>) {
+    pub fn set_zeroes(matrix: &mut [Vec<i32>]) {
         let m = matrix.len();
         let n = matrix[0].len();
 

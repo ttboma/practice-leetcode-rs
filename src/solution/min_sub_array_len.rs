@@ -44,7 +44,7 @@ impl Solution {
             })
             .find_map(|(acc, k)| if acc >= target { Some((acc, k)) } else { None })
         {
-            Some((_, k)) if k == 0 => 1,
+            Some((_, 1)) => 1,
             Some((mut acc, mut k)) => {
                 let mut i = k;
                 while i < nums.len() {

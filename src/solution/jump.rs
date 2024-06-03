@@ -37,7 +37,7 @@ impl Solution {
     }
 }
 
-fn jump_impl(nums: &Vec<i32>, mut i_end: usize, mut answer: i32, mut reach: usize) -> i32 {
+fn jump_impl(nums: &[i32], mut i_end: usize, mut answer: i32, mut reach: usize) -> i32 {
     for i in 0..(nums.len() - 1) {
         let jump = i + <i32 as TryInto<usize>>::try_into(nums[i]).unwrap();
         if nums.len() - 1 <= jump {

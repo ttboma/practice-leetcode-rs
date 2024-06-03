@@ -37,7 +37,7 @@ impl Solution {
             1 => 1,
             2 => 1,
             _ => {
-                let mut array = vec![0, 1, 1];
+                let mut array = [0, 1, 1];
                 for i in 3..n {
                     array[i % 3] = array.iter().sum();
                 }
