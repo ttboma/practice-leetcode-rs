@@ -96,6 +96,7 @@ mod remove_element;
 mod remove_elements;
 mod remove_nodes;
 mod reorder_list;
+mod reverse_between;
 mod reverse_list;
 mod reverse_vowels;
 mod reverse_words;

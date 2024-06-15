@@ -78,6 +78,21 @@ pub fn parse_two_i32_list(input: &str) -> (Vec<i32>, Vec<i32>) {
     )
 }
 
+pub fn parse_i32_list_and_two_i32(input: &str) -> (Vec<i32>, i32, i32) {
+    let (input, list1) = nom_parser::parse_list(input).expect(error_msg::LIST_FORMAT);
+    let (input, n) = nom_parser::decimal(input).expect(error_msg::INTEGER_FORMAT);
+    let (_, m) = nom_parser::decimal(input).expect(error_msg::INTEGER_FORMAT);
+
+    (
+        list1
+            .into_iter()
+            .map(|x| x.trim().parse::<i32>().expect(error_msg::ITEM_OF_I32))
+            .collect::<Vec<_>>(),
+        n.trim().parse::<i32>().expect(error_msg::I32_VALUE),
+        m.trim().parse::<i32>().expect(error_msg::I32_VALUE),
+    )
+}
+
 pub fn parse_two_i32_list_and_two_i32(input: &str) -> (Vec<i32>, i32, Vec<i32>, i32) {
     let (input, list1) = nom_parser::parse_list(input).expect(error_msg::LIST_FORMAT);
     let (input, n) = nom_parser::decimal(input).expect(error_msg::INTEGER_FORMAT);

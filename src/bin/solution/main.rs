@@ -269,6 +269,8 @@ enum Commands {
     MinWindow {},
     /// [71. Simplify Path](https://leetcode.com/problems/simplify-path/description/?envType=study-plan-v2&envId=top-interview-150)
     SimplifyPath {},
+    /// [92. Reverse Linked List II](https://leetcode.com/problems/reverse-linked-list-ii/description/?envType=study-plan-v2&envId=top-interview-150)
+    ReverseBetween {},
 }
 
 fn main() {
@@ -858,6 +860,16 @@ fn main() {
         Commands::SimplifyPath {} => {
             let path = parse_str(&input);
             println!("{:?}", Solution::simplify_path(path));
+        }
+        Commands::ReverseBetween {} => {
+            let (head, left, right) = parse_i32_list_and_two_i32(&input);
+            let mut list = SinglyLinkedList::from(head);
+            println!(
+                "{:?}",
+                SinglyLinkedList {
+                    head: Solution::reverse_between(list.head.take(), left, right)
+                }
+            );
         }
     }
 }
