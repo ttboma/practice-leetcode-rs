@@ -271,6 +271,8 @@ enum Commands {
     SimplifyPath {},
     /// [92. Reverse Linked List II](https://leetcode.com/problems/reverse-linked-list-ii/description/?envType=study-plan-v2&envId=top-interview-150)
     ReverseBetween {},
+    /// [155. Min Stack](https://leetcode.com/problems/min-stack/description/?envType=study-plan-v2&envId=top-interview-150)
+    MinStack {},
 }
 
 fn main() {
@@ -870,6 +872,35 @@ fn main() {
                     head: Solution::reverse_between(list.head.take(), left, right)
                 }
             );
+        }
+        Commands::MinStack {} => {
+            let (commands, values) = parse_str_list_and_2d_i32_list(&input);
+            let mut stack = MinStack::new();
+            for (command, value) in commands.into_iter().zip(values.into_iter()) {
+                match command.as_str() {
+                    "MinStack" => {
+                        print!("[null")
+                    }
+                    "push" => {
+                        stack.push(value[0]);
+                        print!(",null")
+                    }
+                    "pop" => {
+                        stack.pop();
+                        print!(",null")
+                    }
+                    "top" => {
+                        print!(",{}", stack.top());
+                    }
+                    "getMin" => {
+                        print!(",{}", stack.get_min());
+                    }
+                    _ => {
+                        panic!("unknown input")
+                    }
+                }
+            }
+            println!("]")
         }
     }
 }
