@@ -27,6 +27,7 @@ mod decode_string;
 mod diff_ways_to_compute;
 mod distribute_cookies;
 mod divisor_game;
+mod eval_rpn;
 mod exist;
 mod fib;
 mod find_ball;

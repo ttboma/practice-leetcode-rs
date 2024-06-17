@@ -273,6 +273,8 @@ enum Commands {
     ReverseBetween {},
     /// [155. Min Stack](https://leetcode.com/problems/min-stack/description/?envType=study-plan-v2&envId=top-interview-150)
     MinStack {},
+    /// [150. Evaluate Reverse Polish Notation](https://leetcode.com/problems/evaluate-reverse-polish-notation/description/?envType=study-plan-v2&envId=top-interview-150)
+    EvalRpn {},
 }
 
 fn main() {
@@ -901,6 +903,10 @@ fn main() {
                 }
             }
             println!("]")
+        }
+        Commands::EvalRpn {} => {
+            let tokens = parse_str_list(&input);
+            println!("{:?}", Solution::eval_rpn(tokens));
         }
     }
 }
