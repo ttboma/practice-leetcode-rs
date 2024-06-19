@@ -275,6 +275,8 @@ enum Commands {
     MinStack {},
     /// [150. Evaluate Reverse Polish Notation](https://leetcode.com/problems/evaluate-reverse-polish-notation/description/?envType=study-plan-v2&envId=top-interview-150)
     EvalRpn {},
+    /// [224. Basic Calculator](https://leetcode.com/problems/basic-calculator/description/?envType=study-plan-v2&envId=top-interview-150)
+    Calculate {},
 }
 
 fn main() {
@@ -907,6 +909,10 @@ fn main() {
         Commands::EvalRpn {} => {
             let tokens = parse_str_list(&input);
             println!("{:?}", Solution::eval_rpn(tokens));
+        }
+        Commands::Calculate {} => {
+            let s = parse_str(&input);
+            println!("{:?}", Solution::calculate(s));
         }
     }
 }

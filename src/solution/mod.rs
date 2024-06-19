@@ -6,6 +6,7 @@ mod add_two_numbers;
 mod all_paths_source_target;
 mod all_possible_fbt;
 mod binary_tree_paths;
+mod calculate;
 mod can_complete_circuit;
 mod can_construct;
 mod can_jump;
