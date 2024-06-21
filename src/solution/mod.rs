@@ -97,6 +97,7 @@ mod remove_duplicates;
 mod remove_element;
 mod remove_elements;
 mod remove_nodes;
+mod remove_nth_from_end;
 mod reorder_list;
 mod reverse_between;
 mod reverse_list;

@@ -277,6 +277,8 @@ enum Commands {
     EvalRpn {},
     /// [224. Basic Calculator](https://leetcode.com/problems/basic-calculator/description/?envType=study-plan-v2&envId=top-interview-150)
     Calculate {},
+    /// [19. Remove Nth Node From End of List](https://leetcode.com/problems/remove-nth-node-from-end-of-list/description/?envType=study-plan-v2&envId=top-interview-150)
+    RemoveNthFromEnd {},
 }
 
 fn main() {
@@ -913,6 +915,16 @@ fn main() {
         Commands::Calculate {} => {
             let s = parse_str(&input);
             println!("{:?}", Solution::calculate(s));
+        }
+        Commands::RemoveNthFromEnd {} => {
+            let (head, n) = parse_i32_list_and_i32(&input);
+            let mut list = SinglyLinkedList::from(head);
+            println!(
+                "{:?}",
+                SinglyLinkedList {
+                    head: Solution::remove_nth_from_end(list.head.take(), n)
+                }
+            );
         }
     }
 }
