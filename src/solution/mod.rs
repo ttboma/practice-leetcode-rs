@@ -25,6 +25,7 @@ mod count_squares;
 mod count_substrings;
 mod count_vowel_strings;
 mod decode_string;
+mod delete_duplicates;
 mod diff_ways_to_compute;
 mod distribute_cookies;
 mod divisor_game;

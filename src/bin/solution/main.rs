@@ -279,6 +279,8 @@ enum Commands {
     Calculate {},
     /// [19. Remove Nth Node From End of List](https://leetcode.com/problems/remove-nth-node-from-end-of-list/description/?envType=study-plan-v2&envId=top-interview-150)
     RemoveNthFromEnd {},
+    /// [82. Remove Duplicates from Sorted List II](https://leetcode.com/problems/remove-duplicates-from-sorted-list-ii/description/?envType=study-plan-v2&envId=top-interview-150)
+    DeleteDuplicates {},
 }
 
 fn main() {
@@ -432,9 +434,9 @@ fn main() {
             println!("{:?}", Solution::is_isomorphic(s, t));
         }
         Commands::IsPalindrome {} => {
-            let head = parse_i32_list(&input);
-            let mut list = SinglyLinkedList::from(head);
-            println!("{:?}", Solution::is_palindrome(list.head.take()));
+            let list = parse_i32_list(&input);
+            let head = SinglyLinkedList::from(list).head;
+            println!("{:?}", Solution::is_palindrome(head));
         }
         Commands::IsPowerOfFour {} => {
             let n = parse_i32(&input);
@@ -494,12 +496,12 @@ fn main() {
         }
         Commands::MergeTwoLists {} => {
             let (list1, list2) = parse_two_i32_list(&input);
-            let mut list1 = SinglyLinkedList::from(list1);
-            let mut list2 = SinglyLinkedList::from(list2);
+            let h1 = SinglyLinkedList::from(list1).head;
+            let h2 = SinglyLinkedList::from(list2).head;
             println!(
                 "{:?}",
                 SinglyLinkedList {
-                    head: Solution::merge_two_lists(list1.head.take(), list2.head.take()),
+                    head: Solution::merge_two_lists(h1, h2),
                 }
             );
         }
@@ -509,12 +511,12 @@ fn main() {
             println!("{:?}", nums1);
         }
         Commands::MiddleNode {} => {
-            let head = parse_i32_list(&input);
-            let mut list = SinglyLinkedList::from(head);
+            let list = parse_i32_list(&input);
+            let head = SinglyLinkedList::from(list).head;
             println!(
                 "{:?}",
                 SinglyLinkedList {
-                    head: Solution::middle_node(list.head.take())
+                    head: Solution::middle_node(head)
                 }
             );
         }
@@ -575,38 +577,38 @@ fn main() {
             println!("{:?}", Solution::remove_element(&mut nums, val));
         }
         Commands::RemoveElements {} => {
-            let (head, val) = parse_i32_list_and_i32(&input);
-            let mut list = SinglyLinkedList::from(head);
+            let (list, val) = parse_i32_list_and_i32(&input);
+            let head = SinglyLinkedList::from(list).head;
             println!(
                 "{:?}",
                 SinglyLinkedList {
-                    head: Solution::remove_elements(list.head.take(), val)
+                    head: Solution::remove_elements(head, val)
                 }
             );
         }
         Commands::RemoveNodes {} => {
-            let head = parse_i32_list(&input);
-            let mut list = SinglyLinkedList::from(head);
+            let list = parse_i32_list(&input);
+            let head = SinglyLinkedList::from(list).head;
             println!(
                 "{:?}",
                 SinglyLinkedList {
-                    head: Solution::remove_nodes(list.head.take())
+                    head: Solution::remove_nodes(head)
                 }
             );
         }
         Commands::ReorderList {} => {
-            let head = parse_i32_list(&input);
-            let mut list = SinglyLinkedList::from(head);
-            Solution::reorder_list(&mut list.head);
-            println!("{:?}", list);
+            let list = parse_i32_list(&input);
+            let mut head = SinglyLinkedList::from(list).head;
+            Solution::reorder_list(&mut head);
+            println!("{:?}", SinglyLinkedList { head });
         }
         Commands::ReverseList {} => {
-            let head = parse_i32_list(&input);
-            let mut list = SinglyLinkedList::from(head);
+            let list = parse_i32_list(&input);
+            let head = SinglyLinkedList::from(list).head;
             println!(
                 "{:?}",
                 SinglyLinkedList {
-                    head: Solution::reverse_list(list.head.take())
+                    head: Solution::reverse_list(head)
                 }
             );
         }
@@ -647,12 +649,12 @@ fn main() {
             println!("{:?}", Solution::subsets(nums));
         }
         Commands::SwapPairs {} => {
-            let head = parse_i32_list(&input);
-            let mut list = SinglyLinkedList::from(head);
+            let list = parse_i32_list(&input);
+            let head = SinglyLinkedList::from(list).head;
             println!(
                 "{:?}",
                 SinglyLinkedList {
-                    head: Solution::swap_pairs(list.head.take())
+                    head: Solution::swap_pairs(head)
                 }
             );
         }
@@ -775,10 +777,10 @@ fn main() {
         }
         Commands::AddTwoNumbers {} => {
             let (l1, l2) = parse_two_i32_list(&input);
-            let l1 = SinglyLinkedList::from(l1);
-            let l2 = SinglyLinkedList::from(l2);
+            let h1 = SinglyLinkedList::from(l1).head;
+            let h2 = SinglyLinkedList::from(l2).head;
             let output = SinglyLinkedList {
-                head: Solution::add_two_numbers(l1.head, l2.head),
+                head: Solution::add_two_numbers(h1, h2),
             };
             println!("{:?}", output);
         }
@@ -870,12 +872,12 @@ fn main() {
             println!("{:?}", Solution::simplify_path(path));
         }
         Commands::ReverseBetween {} => {
-            let (head, left, right) = parse_i32_list_and_two_i32(&input);
-            let mut list = SinglyLinkedList::from(head);
+            let (list, left, right) = parse_i32_list_and_two_i32(&input);
+            let head = SinglyLinkedList::from(list).head;
             println!(
                 "{:?}",
                 SinglyLinkedList {
-                    head: Solution::reverse_between(list.head.take(), left, right)
+                    head: Solution::reverse_between(head, left, right)
                 }
             );
         }
@@ -917,12 +919,22 @@ fn main() {
             println!("{:?}", Solution::calculate(s));
         }
         Commands::RemoveNthFromEnd {} => {
-            let (head, n) = parse_i32_list_and_i32(&input);
-            let mut list = SinglyLinkedList::from(head);
+            let (list, n) = parse_i32_list_and_i32(&input);
+            let head = SinglyLinkedList::from(list).head;
             println!(
                 "{:?}",
                 SinglyLinkedList {
-                    head: Solution::remove_nth_from_end(list.head.take(), n)
+                    head: Solution::remove_nth_from_end(head, n)
+                }
+            );
+        }
+        Commands::DeleteDuplicates {} => {
+            let list = parse_i32_list(&input);
+            let head = SinglyLinkedList::from(list).head;
+            println!(
+                "{:?}",
+                SinglyLinkedList {
+                    head: Solution::delete_duplicates(head)
                 }
             );
         }
