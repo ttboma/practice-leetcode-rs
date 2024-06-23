@@ -281,6 +281,8 @@ enum Commands {
     RemoveNthFromEnd {},
     /// [82. Remove Duplicates from Sorted List II](https://leetcode.com/problems/remove-duplicates-from-sorted-list-ii/description/?envType=study-plan-v2&envId=top-interview-150)
     DeleteDuplicates {},
+    /// [61. Rotate List](https://leetcode.com/problems/rotate-list/description/?envType=study-plan-v2&envId=top-interview-150)
+    RotateRight {},
 }
 
 fn main() {
@@ -935,6 +937,16 @@ fn main() {
                 "{:?}",
                 SinglyLinkedList {
                     head: Solution::delete_duplicates(head)
+                }
+            );
+        }
+        Commands::RotateRight {} => {
+            let (list, k) = parse_i32_list_and_i32(&input);
+            let head = SinglyLinkedList::from(list).head;
+            println!(
+                "{:?}",
+                SinglyLinkedList {
+                    head: Solution::rotate_right(head, k)
                 }
             );
         }
