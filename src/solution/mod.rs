@@ -89,6 +89,7 @@ mod min_sub_array_len;
 mod min_window;
 mod move_zeroes;
 mod num_tile_possibilities;
+mod partition;
 mod permute;
 mod pivot_index;
 mod predict_the_winner;

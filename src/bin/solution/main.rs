@@ -283,6 +283,8 @@ enum Commands {
     DeleteDuplicates {},
     /// [61. Rotate List](https://leetcode.com/problems/rotate-list/description/?envType=study-plan-v2&envId=top-interview-150)
     RotateRight {},
+    /// [86. Partition List](https://leetcode.com/problems/partition-list/description/?envType=study-plan-v2&envId=top-interview-150)
+    Partition {},
 }
 
 fn main() {
@@ -947,6 +949,16 @@ fn main() {
                 "{:?}",
                 SinglyLinkedList {
                     head: Solution::rotate_right(head, k)
+                }
+            );
+        }
+        Commands::Partition {} => {
+            let (list, x) = parse_i32_list_and_i32(&input);
+            let head = SinglyLinkedList::from(list).head;
+            println!(
+                "{:?}",
+                SinglyLinkedList {
+                    head: Solution::partition(head, x)
                 }
             );
         }
