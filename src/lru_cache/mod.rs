@@ -227,6 +227,46 @@ impl LRUCacheImpl for LRUCacheImpl2 {
     }
 }
 
+// slowest implementation (660ms Beats 5.39%)
+#[allow(unused)]
+struct LRUCacheImpl3 {
+    capacity: i32,
+    vertices: HashMap<i32, (i32, u32)>,
+    id: u32,
+}
+
+impl LRUCacheImpl for LRUCacheImpl3 {
+    fn get(&mut self, key: i32) -> i32 {
+        if let Some(value) = self.vertices.get(&key).map(|node| node.0) {
+            self.put(key, value);
+            value
+        } else {
+            -1
+        }
+    }
+
+    fn put(&mut self, key: i32, value: i32) {
+        self.vertices
+            .entry(key)
+            .and_modify(|node| {
+                node.0 = value;
+                node.1 = self.id;
+            })
+            .or_insert_with(|| (value, self.id));
+        self.id += 1;
+
+        if self.vertices.len() > self.capacity as usize {
+            let key = *self
+                .vertices
+                .iter()
+                .min_by_key(|(_, (_, id))| *id)
+                .unwrap()
+                .0;
+            self.vertices.remove(&key);
+        }
+    }
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
