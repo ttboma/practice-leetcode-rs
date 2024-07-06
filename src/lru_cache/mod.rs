@@ -148,6 +148,7 @@ impl LRUCacheImpl for LRUCacheImpl1 {
 
 struct LRUCacheImpl2 {
     capacity: i32,
+    // NOTE: If we use MemoryBlock instead of Box<MemoryBlock>, we might get pointer to an invalid memory location when we add a new element to the vertices.
     vertices: HashMap<i32, Box<MemoryBlock>>,
     front: *mut MemoryBlock,
 }
@@ -299,5 +300,18 @@ mod tests {
         lru_cache.put(1, 2);
         assert_eq!(lru_cache.get(1), 2);
         assert_eq!(lru_cache.get(2), 6);
+    }
+
+    #[test]
+    fn example7() {
+        let mut lru_cache = LRUCache::new(3);
+        lru_cache.put(1, 1);
+        lru_cache.put(2, 2);
+        lru_cache.put(3, 3);
+        lru_cache.put(4, 4);
+        assert_eq!(lru_cache.get(4), 4);
+        assert_eq!(lru_cache.get(3), 3);
+        assert_eq!(lru_cache.get(2), 2);
+        assert_eq!(lru_cache.get(1), -1);
     }
 }
