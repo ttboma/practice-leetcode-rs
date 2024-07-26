@@ -5,7 +5,6 @@
 - [Install and Setup](#install-and-setup)
 - [Example Usage](#example-usage)
 - [Developer's Note](#developers-note)
-  - [Developer's Note](#developers-note-1)
   - [How to debug with CodeLLDB](#how-to-debug-with-codelldb)
   - [How to debug with lldb](#how-to-debug-with-lldb)
 - [TODO](#todo)
@@ -16,7 +15,9 @@ Hi,
 
 Traditionally, the first step in learning a new programming language is writing a "Hello, World!" program. Another effective approach, based on my experience, is starting a project that involves solving [LeetCode](https://leetcode.com/) problems. This method not only reinforces fundamental programming concepts but also offers practical experience with real-world challenges.
 
-This is a Rust library crate providing a collection of solutions to [LeetCode](https://leetcode.com/) problems
+This repository is a Rust library crate that contains a collection of solutions to various LeetCode problems. It is designed to help you understand and implement data structures and algorithms through hands-on practice.
+
+Author: SHIEH, YUEH-CHANG
 
 ***SHIEH, YUEH-CHANG***.
 
@@ -70,18 +71,6 @@ Please install [pre-commit](https://pre-commit.com/) with the following command 
     % pre-commit --version
     pre-commit 3.7.1
     ```
-
-## Developer's Note
-
-Please follow the conventions, as noted below, to contribute to this project.
-
-- Use chrome and [Clip LeetCode](https://chrome.google.com/webstore/detail/clip-leetcode/cnghimckckgcmhbdokjielmhkmnagdcp/related)
-   extension to maintain documentation of each method of [`Solution`]
-- Please install the [git hook](https://git-scm.com/book/zh-tw/v2/Customizing-Git-Git-Hooks) scripts by the following [pre-commit](https://pre-commit.com/) command:
-
-   ```bash
-   % pre-commit install --hook-type commit-msg --hook-type pre-commit --hook-type pre-push
-   ```
 
 To maintain your code quality, the following is a list of recommended [Visual Studio Code](https://code.visualstudio.com/) plugins:
 
