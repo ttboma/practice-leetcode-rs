@@ -5,6 +5,9 @@
 - [Install and Setup](#install-and-setup)
 - [Example Usage](#example-usage)
 - [Developer's Note](#developers-note)
+  - [Convention](#convention)
+  - [How to Use `pre-commit`](#how-to-use-pre-commit)
+  - [Visual Studio Code Leverage](#visual-studio-code-leverage)
   - [How to debug with CodeLLDB](#how-to-debug-with-codelldb)
   - [How to debug with lldb](#how-to-debug-with-lldb)
 - [TODO](#todo)
@@ -15,7 +18,21 @@ Hi,
 
 Traditionally, the first step in learning a new programming language is writing a "Hello, World!" program. Another effective approach, based on my experience, is starting a project that involves solving [LeetCode](https://leetcode.com/) problems. This method not only reinforces fundamental programming concepts but also offers practical experience with real-world challenges.
 
-This repository is a Rust library crate that contains a collection of solutions to various LeetCode problems. It is designed to help you understand and implement data structures and algorithms through hands-on practice.
+This repository is a Rust library crate that offers a diverse collection of solutions to various LeetCode problems. By engaging with this project, you will gain practical experience in several key areas:
+
+- **Version Control with Git**: Learn to use Git for version control and integrate the [pre-commit](https://pre-commit.com/) framework for managing multi-language code quality hooks. You'll also explore [Git hooks](https://git-scm.com/book/zh-tw/v2/Customizing-Git-Git-Hooks) to automate tasks in your Rust project.
+
+- **Unit Testing in Rust**: Utilize Rust's built-in testing features to create and run unit tests, ensuring your code performs as expected and adheres to quality standards.
+
+- **Parser Development with Nom**: Develop a parser using the [nom](https://docs.rs/nom/latest/nom/) library, which provides powerful tools for building efficient parsers in Rust.
+
+- **Library and Binary Creation**: Create and manage a Rust library crate, as well as develop a binary for console applications located in the `bin` folder.
+
+- **IDE Utilization with VSCode**: Leverage Visual Studio Code (VSCode) to streamline the development and debugging process for your Rust projects, including setting up and using Rust-specific extensions.
+
+- **Data Structures and Algorithms**: Deepen your understanding of data structures and algorithms by implementing them in Rust, enhancing both your problem-solving skills and your proficiency in the language.
+
+This project not only helps you tackle LeetCode problems but also provides valuable hands-on experience with essential Rust development tools and practices.
 
 Author: SHIEH, YUEH-CHANG
 
@@ -59,11 +76,17 @@ Alternatively, you can obtain help through the command line interface with the f
 
 # Developer's Note
 
+This section contains essential guidelines to help you contribute effectively and maintain high-quality code. Please adhere to the following conventions and recommendations to ensure consistency and efficiency across our development process.
+
+## Convention
+
 Please follow the conventions, as noted below, to contribute to this project.
 
 - Use chrome and [Clip LeetCode](https://chrome.google.com/webstore/detail/clip-leetcode/cnghimckckgcmhbdokjielmhkmnagdcp/related)
    extension to maintain documentation of each method of [`Solution`]
-- Exploit [pre-commit](https://pre-commit.com/) the multi-language package manager for pre-commit [git hook](https://git-scm.com/book/zh-tw/v2/Customizing-Git-Git-Hooks)
+
+## How to Use `pre-commit`
+
 Please install [pre-commit](https://pre-commit.com/) with the following command before committing:
 
     ```bash
@@ -71,6 +94,7 @@ Please install [pre-commit](https://pre-commit.com/) with the following command 
     % pre-commit --version
     pre-commit 3.7.1
     ```
+## Visual Studio Code Leverage
 
 To maintain your code quality, the following is a list of recommended [Visual Studio Code](https://code.visualstudio.com/) plugins:
 
