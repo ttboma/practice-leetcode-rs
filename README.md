@@ -1,52 +1,75 @@
 # Table of Content
 
 - [Table of Content](#table-of-content)
-  - [Introduction](#introduction)
-  - [Build](#build)
-  - [Usage](#usage)
-  - [Developer's Note](#developers-note)
-    - [How to debug with CodeLLDB](#how-to-debug-with-codelldb)
-    - [How to debug with lldb](#how-to-debug-with-lldb)
-  - [TODO](#todo)
+- [Introduction](#introduction)
+- [Install and Setup](#install-and-setup)
+- [Example Usage](#example-usage)
+- [Developer's Note](#developers-note)
+  - [Developer's Note](#developers-note-1)
+  - [How to debug with CodeLLDB](#how-to-debug-with-codelldb)
+  - [How to debug with lldb](#how-to-debug-with-lldb)
+- [TODO](#todo)
 
-## Introduction
+# Introduction
 
 Hi,
 
-This crate is a collection of solutions to [LeetCode](https://leetcode.com/) problems provided by SHIEH, YUEH-CHANG.
-The goal of this project is to gain experience in developing a Rust project and learning about data structures and algorithms.
+Traditionally, the first step in learning a new programming language is writing a "Hello, World!" program. Another effective approach, based on my experience, is starting a project that involves solving [LeetCode](https://leetcode.com/) problems. This method not only reinforces fundamental programming concepts but also offers practical experience with real-world challenges.
 
-## Build
+This is a Rust library crate providing a collection of solutions to [LeetCode](https://leetcode.com/) problems
 
-The project only relies on [rustup](https://www.rust-lang.org/learn/get-started) as a dependency. Once it's installed, please execute `cargo test` from the project's root directory to verify that all tests pass successfully.
+***SHIEH, YUEH-CHANG***.
 
-## Usage
+# Install and Setup
 
-The following shows an example that how to use this library crate. And please run `cargo doc --open` to access the documentation
+All you need is to install `rustup` from here: [Install Rust](https://www.rust-lang.org/tools/install). Please Read the website to get all prerequisite information you need to know about `rustc`, `cargo`, and `rustup`.
 
-   ```rust
-   use leetcode_rs::Solution;
+# Example Usage
 
-   let ans = Solution::fib(5);
-   assert_eq!(ans, 5);
-   ```
+After cloning this library crate using `git clone`, run `cargo test` to execute all unit tests and integration tests.
 
-To access the command line interface, please run
+Here is an example of how to use this library crate in your code:
 
-   ```bash
-   % cargo run --bin solution -- --help
-   % cargo run --bin solution -- <COMMAND> --help
-   % cargo run --bin solution -- <COMMAND>
-   ```
+```rust
+use leetcode_rs::Solution;
 
-   For example:
+let ans = Solution::fib(5);
+assert_eq!(ans, 5);
+```
 
-   ```bash
-   % cargo run --bin solution -- --help
-   % cargo run --bin solution -- fib --help
-   % echo 10 | cargo run --bin solution -- fib
-   55
-   ```
+You can also use the `solution` binary through the command line interface:
+
+```bash
+% cargo run --bin solution -- --help
+% cargo run --bin solution -- fib --help
+% echo 10 | cargo run --bin solution -- fib
+55
+```
+
+For additional LeetCode solution commands beyond `Solution::fib`, you can view the documentation by running `cargo doc --open`.
+
+Alternatively, you can obtain help through the command line interface with the following commands:
+
+```bash
+% cargo run --bin solution -- --help
+% cargo run --bin solution -- <COMMAND> --help
+% cargo run --bin solution -- <COMMAND>
+```
+
+# Developer's Note
+
+Please follow the conventions, as noted below, to contribute to this project.
+
+- Use chrome and [Clip LeetCode](https://chrome.google.com/webstore/detail/clip-leetcode/cnghimckckgcmhbdokjielmhkmnagdcp/related)
+   extension to maintain documentation of each method of [`Solution`]
+- Exploit [pre-commit](https://pre-commit.com/) the multi-language package manager for pre-commit [git hook](https://git-scm.com/book/zh-tw/v2/Customizing-Git-Git-Hooks)
+Please install [pre-commit](https://pre-commit.com/) with the following command before committing:
+
+    ```bash
+    % pre-commit install --hook-type commit-msg --hook-type pre-commit --hook-type pre-push
+    % pre-commit --version
+    pre-commit 3.7.1
+    ```
 
 ## Developer's Note
 
@@ -73,7 +96,7 @@ To maintain your code quality, the following is a list of recommended [Visual St
 - [GitLens — Git supercharged](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens)
 - [pre-commit](https://marketplace.visualstudio.com/items?itemName=elagil.pre-commit-helper)
 
-### How to debug with CodeLLDB
+## How to debug with CodeLLDB
 
 To debug using CodeLLDB, press `ctrl+shift+D` and choose names besides the green triangle button from `Debug unit tests in library 'leetcode_rs'`, `Debug executable 'solution'` and `Debug unit tests in executable 'solution'`, if you got `.vscode/launch.json` as the following.
 Note that if you need to pass arguments to binary run by cargo, just change the field `args`
@@ -145,7 +168,7 @@ Note that if you need to pass arguments to binary run by cargo, just change the 
 }
 ```
 
-### How to debug with lldb
+## How to debug with lldb
 
 For some reason, the CodeLens shortcut `Debug` is not working for binary.
 If you need to use lldb on command line:
@@ -255,7 +278,7 @@ Target 0: (solution) stopped.
 (lldb) q
 ```
 
-## TODO
+# TODO
 
 - [ ] How to implement Iterator for [`TreeNode`]?
 - [ ] How to build [`TreeNode`] by macro? And modify those [`TreeNode`] unit tests by macro
