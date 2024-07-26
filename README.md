@@ -34,9 +34,7 @@ This repository is a Rust library crate that offers a diverse collection of solu
 
 This project not only helps you tackle LeetCode problems but also provides valuable hands-on experience with essential Rust development tools and practices.
 
-Author: SHIEH, YUEH-CHANG
-
-***SHIEH, YUEH-CHANG***.
+Author: ***SHIEH, YUEH-CHANG***
 
 # Install and Setup
 
