@@ -13,14 +13,14 @@ impl Solution {
     /// **Example 1:**
     /// <img alt="" src="https://assets.leetcode.com/uploads/2020/11/26/tmp-tree.jpg" style="width: 400px; height: 277px;">
     ///
-    /// ```
+    /// ```txt
     /// Input: root = [3,9,20,null,null,15,7]
     /// Output: 3
     /// ```
     ///
     /// **Example 2:**
     ///
-    /// ```
+    /// ```txt
     /// Input: root = [1,null,2]
     /// Output: 2
     /// ```
