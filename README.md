@@ -46,6 +46,17 @@ Author: ***SHIEH, YUEH-CHANG***
 
 All you need is to install `rustup` from here: [Install Rust](https://www.rust-lang.org/tools/install). Please Read the website to get all prerequisite information you need to know about `rustc`, `cargo`, and `rustup`.
 
+```sh
+% rustup --version
+rustup 1.27.1 (54dd3d00f 2024-04-24)
+info: This is the version for the rustup toolchain manager, not the rustc compiler.
+info: The currently active `rustc` version is `rustc 1.78.0 (9b00956e5 2024-04-29)`
+% rustc --version
+rustc 1.78.0 (9b00956e5 2024-04-29)
+% cargo --version
+cargo 1.78.0 (54d8815d0 2024-03-26)
+```
+
 # Example Usage
 
 After cloning this library crate using `git clone`, run `cargo test` to execute all unit tests and integration tests.

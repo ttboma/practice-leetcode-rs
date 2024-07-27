@@ -74,6 +74,7 @@ mod longest_consecutive;
 mod longest_palindrome;
 mod majority_element;
 mod max_area;
+mod max_depth;
 mod max_profit;
 mod max_sum_after_partitioning;
 mod merge;

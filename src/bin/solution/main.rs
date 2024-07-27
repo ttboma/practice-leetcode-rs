@@ -285,6 +285,8 @@ enum Commands {
     RotateRight {},
     /// [86. Partition List](https://leetcode.com/problems/partition-list/description/?envType=study-plan-v2&envId=top-interview-150)
     Partition {},
+    /// 104. Maximum Depth of Binary Tree
+    MaxDepth {},
 }
 
 fn main() {
@@ -961,6 +963,12 @@ fn main() {
                     head: Solution::partition(head, x)
                 }
             );
+        }
+        Commands::MaxDepth {} => {
+            let nodes = parse_opt_i32_list(&input);
+            let tree = Tree::from(nodes);
+            let root = tree.root.clone();
+            println!("{:?}", Solution::max_depth(root));
         }
     }
 }
