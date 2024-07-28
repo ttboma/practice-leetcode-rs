@@ -286,6 +286,33 @@ pub fn parse_opt_i32_list(input: &str) -> Vec<Option<i32>> {
         .collect()
 }
 
+pub fn parse_two_opt_i32_list(input: &str) -> (Vec<Option<i32>>, Vec<Option<i32>>) {
+    let (input, val1) = nom_parser::parse_list(input).expect(error_msg::LIST_FORMAT);
+    let (_, val2) = nom_parser::parse_list(input).expect(error_msg::LIST_FORMAT);
+    (
+        val1.into_iter()
+            .map(|v| {
+                let v = v.trim();
+                if v == "null" {
+                    None
+                } else {
+                    Some(v.parse::<i32>().expect(error_msg::ITEM_OF_OPT_I32))
+                }
+            })
+            .collect(),
+        val2.into_iter()
+            .map(|v| {
+                let v = v.trim();
+                if v == "null" {
+                    None
+                } else {
+                    Some(v.parse::<i32>().expect(error_msg::ITEM_OF_OPT_I32))
+                }
+            })
+            .collect(),
+    )
+}
+
 pub fn parse_opt_i32_list_and_i32(input: &str) -> (Vec<Option<i32>>, i32) {
     let (input, val) = nom_parser::parse_list(input).expect(error_msg::LIST_FORMAT);
     let (_, n) = nom_parser::decimal(input).expect(error_msg::INTEGER_FORMAT);

@@ -60,6 +60,7 @@ mod is_palindrome;
 mod is_power_of_four;
 mod is_power_of_three;
 mod is_power_of_two;
+mod is_same_tree;
 mod is_subsequence;
 mod is_valid_sudoku;
 mod jump;

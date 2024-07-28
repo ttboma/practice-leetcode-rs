@@ -285,8 +285,10 @@ enum Commands {
     RotateRight {},
     /// [86. Partition List](https://leetcode.com/problems/partition-list/description/?envType=study-plan-v2&envId=top-interview-150)
     Partition {},
-    /// 104. Maximum Depth of Binary Tree
+    /// [104. Maximum Depth of Binary Tree](https://leetcode.com/problems/maximum-depth-of-binary-tree/description/?envType=study-plan-v2&envId=top-interview-150)
     MaxDepth {},
+    /// [100. Same Tree](https://leetcode.com/problems/same-tree/description/?envType=study-plan-v2&envId=top-interview-150)
+    IsSameTree {},
 }
 
 fn main() {
@@ -969,6 +971,14 @@ fn main() {
             let tree = Tree::from(nodes);
             let root = tree.root.clone();
             println!("{:?}", Solution::max_depth(root));
+        }
+        Commands::IsSameTree {} => {
+            let (nodes1, nodes2) = parse_two_opt_i32_list(&input);
+            let tree1 = Tree::from(nodes1);
+            let tree2 = Tree::from(nodes2);
+            let root1 = tree1.root.clone();
+            let root2 = tree2.root.clone();
+            println!("{:?}", Solution::is_same_tree(root1, root2));
         }
     }
 }
