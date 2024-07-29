@@ -53,6 +53,7 @@ mod h_index;
 mod has_path_sum;
 mod insert;
 mod int_to_roman;
+mod invert_tree;
 mod is_anagram;
 mod is_happy;
 mod is_isomorphic;

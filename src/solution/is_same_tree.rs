@@ -47,14 +47,14 @@ impl Solution {
         } else if p.is_none() || q.is_none() {
             return false;
         }
-        (**p.as_ref().unwrap()).borrow().val == (**q.as_ref().unwrap()).borrow().val
+        p.as_ref().unwrap().borrow().val == q.as_ref().unwrap().borrow().val
             && Solution::is_same_tree(
-                (**p.as_ref().unwrap()).borrow().left.clone(),
-                (**q.as_ref().unwrap()).borrow().left.clone(),
+                p.as_ref().unwrap().borrow().left.clone(),
+                q.as_ref().unwrap().borrow().left.clone(),
             )
             && Solution::is_same_tree(
-                (**p.as_ref().unwrap()).borrow().right.clone(),
-                (**q.as_ref().unwrap()).borrow().right.clone(),
+                p.as_ref().unwrap().borrow().right.clone(),
+                q.as_ref().unwrap().borrow().right.clone(),
             )
     }
 }

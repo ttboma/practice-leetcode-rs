@@ -289,6 +289,8 @@ enum Commands {
     MaxDepth {},
     /// [100. Same Tree](https://leetcode.com/problems/same-tree/description/?envType=study-plan-v2&envId=top-interview-150)
     IsSameTree {},
+    /// [226. Invert Binary Tree](https://leetcode.com/problems/invert-binary-tree/description/?envType=study-plan-v2&envId=top-interview-150)
+    InvertTree {},
 }
 
 fn main() {
@@ -979,6 +981,12 @@ fn main() {
             let root1 = tree1.root.clone();
             let root2 = tree2.root.clone();
             println!("{:?}", Solution::is_same_tree(root1, root2));
+        }
+        Commands::InvertTree {} => {
+            let nodes = parse_opt_i32_list(&input);
+            let tree = Tree::from(nodes);
+            let root = tree.root.clone();
+            println!("{:?}", Solution::invert_tree(root));
         }
     }
 }

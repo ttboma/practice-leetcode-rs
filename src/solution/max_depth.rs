@@ -31,8 +31,8 @@ impl Solution {
     /// - `-100 <= Node.val <= 100`
     pub fn max_depth(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
         root.as_ref().map_or(0, |node| {
-            let left = (**node).borrow().left.clone();
-            let right = (**node).borrow().right.clone();
+            let left = node.borrow().left.clone();
+            let right = node.borrow().right.clone();
             std::cmp::max(Solution::max_depth(left), Solution::max_depth(right)) + 1
         })
     }
