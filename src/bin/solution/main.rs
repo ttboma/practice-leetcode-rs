@@ -291,6 +291,8 @@ enum Commands {
     IsSameTree {},
     /// [226. Invert Binary Tree](https://leetcode.com/problems/invert-binary-tree/description/?envType=study-plan-v2&envId=top-interview-150)
     InvertTree {},
+    ///[101. Symmetric Tree](https://leetcode.com/problems/symmetric-tree/description/?envType=study-plan-v2&envId=top-interview-150)
+    IsSymmetric {},
 }
 
 fn main() {
@@ -987,6 +989,12 @@ fn main() {
             let tree = Tree::from(nodes);
             let root = tree.root.clone();
             println!("{:?}", Solution::invert_tree(root));
+        }
+        Commands::IsSymmetric {} => {
+            let nodes = parse_opt_i32_list(&input);
+            let tree = Tree::from(nodes);
+            let root = tree.root.clone();
+            println!("{:?}", Solution::is_symmetric(root));
         }
     }
 }
