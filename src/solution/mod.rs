@@ -7,6 +7,7 @@ mod is_symmetric;
 mod all_paths_source_target;
 mod all_possible_fbt;
 mod binary_tree_paths;
+mod build_tree;
 mod calculate;
 mod can_complete_circuit;
 mod can_construct;

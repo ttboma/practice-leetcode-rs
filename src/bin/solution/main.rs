@@ -293,6 +293,8 @@ enum Commands {
     InvertTree {},
     ///[101. Symmetric Tree](https://leetcode.com/problems/symmetric-tree/description/?envType=study-plan-v2&envId=top-interview-150)
     IsSymmetric {},
+    /// [105. Construct Binary Tree from Preorder and Inorder Traversal](https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/description/?envType=study-plan-v2&envId=top-interview-150)
+    BuildTree {},
 }
 
 fn main() {
@@ -995,6 +997,10 @@ fn main() {
             let tree = Tree::from(nodes);
             let root = tree.root.clone();
             println!("{:?}", Solution::is_symmetric(root));
+        }
+        Commands::BuildTree {} => {
+            let (preorder, inorder) = parse_two_i32_list(&input);
+            println!("{:?}", Solution::build_tree(preorder, inorder));
         }
     }
 }
