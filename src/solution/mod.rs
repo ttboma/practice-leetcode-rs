@@ -3,7 +3,6 @@ pub struct Solution {}
 
 /// Each of the methods for Solution struct are placed under its own module
 mod add_two_numbers;
-mod is_symmetric;
 mod all_paths_source_target;
 mod all_possible_fbt;
 mod binary_tree_paths;
@@ -65,6 +64,7 @@ mod is_power_of_three;
 mod is_power_of_two;
 mod is_same_tree;
 mod is_subsequence;
+mod is_symmetric;
 mod is_valid_sudoku;
 mod jump;
 mod kids_with_candies;

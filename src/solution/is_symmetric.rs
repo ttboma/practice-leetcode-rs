@@ -31,23 +31,33 @@ impl Solution {
     ///
     /// **Follow up:**  Could you solve it both recursively and iteratively?
     pub fn is_symmetric(root: Option<Rc<RefCell<TreeNode>>>) -> bool {
-       root.map(|node| {
+        root.map(|node| {
             is_symmetrically_equal(node.borrow().left.clone(), node.borrow().right.clone())
-       }).unwrap()
+        })
+        .unwrap()
     }
 }
 
-fn is_symmetrically_equal(left: Option<Rc<RefCell<TreeNode>>>, right: Option<Rc<RefCell<TreeNode>>>) -> bool {
+fn is_symmetrically_equal(
+    left: Option<Rc<RefCell<TreeNode>>>,
+    right: Option<Rc<RefCell<TreeNode>>>,
+) -> bool {
     if left.is_none() && right.is_none() {
         return true;
-    } else if left.is_none() || right.is_none() {
-        return false;
-    } else if left.as_ref().unwrap().borrow().val != right.as_ref().unwrap().borrow().val {
+    } else if left.is_none()
+        || right.is_none()
+        || left.as_ref().unwrap().borrow().val != right.as_ref().unwrap().borrow().val
+    {
         return false;
     }
-    
-    is_symmetrically_equal(left.as_ref().unwrap().borrow_mut().right.take(), right.as_ref().unwrap().borrow_mut().left.take()) &&
-    is_symmetrically_equal(left.as_ref().unwrap().borrow_mut().left.take(), right.as_ref().unwrap().borrow_mut().right.take())
+
+    is_symmetrically_equal(
+        left.as_ref().unwrap().borrow_mut().right.take(),
+        right.as_ref().unwrap().borrow_mut().left.take(),
+    ) && is_symmetrically_equal(
+        left.as_ref().unwrap().borrow_mut().left.take(),
+        right.as_ref().unwrap().borrow_mut().right.take(),
+    )
 }
 
 #[cfg(test)]
