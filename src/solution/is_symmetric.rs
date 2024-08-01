@@ -11,7 +11,7 @@ impl Solution {
     /// **Example 1:**
     /// <img alt="" src="https://assets.leetcode.com/uploads/2021/02/19/symtree1.jpg" style="width: 354px; height: 291px;">
     ///
-    /// ```
+    /// ```txt
     /// Input: root = [1,2,2,3,4,4,3]
     /// Output: true
     /// ```
@@ -19,7 +19,7 @@ impl Solution {
     /// **Example 2:**
     /// <img alt="" src="https://assets.leetcode.com/uploads/2021/02/19/symtree2.jpg" style="width: 308px; height: 258px;">
     ///
-    /// ```
+    /// ```txt
     /// Input: root = [1,2,2,null,3,null,3]
     /// Output: false
     /// ```
