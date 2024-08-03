@@ -2,15 +2,15 @@
 # See https://pre-commit.com/hooks.html for more hooks
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v4.4.0
+    rev: v4.6.0
     hooks:
       - id: trailing-whitespace
       - id: end-of-file-fixer
       - id: check-yaml
       - id: check-toml
       - id: check-added-large-files
-  - repo: https://gitea.andestech.com/jasonhch/pre-commit-rust.git
-    rev: v0.1
+  - repo: https://github.com/ttboma/pre-commit-rust
+    rev: v1.0
     hooks:
       - id: rust-fmt
       - id: cargo-check
@@ -18,7 +18,7 @@ repos:
       - id: cargo-test
         stages: [push]
   - repo: https://github.com/alessandrojcm/commitlint-pre-commit-hook
-    rev: v9.5.0
+    rev: v9.16.0
     hooks:
       - id: commitlint
         stages: [commit-msg]
