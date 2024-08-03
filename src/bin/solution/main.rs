@@ -294,7 +294,9 @@ enum Commands {
     ///[101. Symmetric Tree](https://leetcode.com/problems/symmetric-tree/description/?envType=study-plan-v2&envId=top-interview-150)
     IsSymmetric {},
     /// [105. Construct Binary Tree from Preorder and Inorder Traversal](https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/description/?envType=study-plan-v2&envId=top-interview-150)
-    BuildTree {},
+    BuildTreeFromPreorderAndInorder {},
+    /// [106. Construct Binary Tree from Inorder and Postorder Traversal](https://leetcode.com/problems/construct-binary-tree-from-inorder-and-postorder-traversal/description/?envType=study-plan-v2&envId=top-interview-150)
+    BuildTreeFromInorderAndPostorder {},
 }
 
 fn main() {
@@ -998,9 +1000,19 @@ fn main() {
             let root = tree.root.clone();
             println!("{:?}", Solution::is_symmetric(root));
         }
-        Commands::BuildTree {} => {
+        Commands::BuildTreeFromPreorderAndInorder {} => {
             let (preorder, inorder) = parse_two_i32_list(&input);
-            println!("{:?}", Solution::build_tree(preorder, inorder));
+            println!(
+                "{:?}",
+                Solution::build_tree_from_preorder_and_inorder(preorder, inorder)
+            );
+        }
+        Commands::BuildTreeFromInorderAndPostorder {} => {
+            let (inorder, postorder) = parse_two_i32_list(&input);
+            println!(
+                "{:?}",
+                Solution::build_tree_from_inorder_and_postorder(inorder, postorder)
+            );
         }
     }
 }
