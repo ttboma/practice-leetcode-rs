@@ -6,28 +6,17 @@ use std::rc::Rc;
 impl Solution {
     /// # [114. Flatten Binary Tree to Linked List](https://leetcode.com/problems/flatten-binary-tree-to-linked-list/description/?envType=study-plan-v2&envId=top-interview-150)
     ///
-    /// Given a binary tree
+    /// Given the `root` of a binary tree, flatten the tree into a "linked list":
     ///
-    /// ```
-    /// struct Node {
-    ///   int val;
-    ///   Node *left;
-    ///   Node *right;
-    ///   Node *next;
-    /// }
-    /// ```
-    ///
-    /// Populate each next pointer to point to its next right node. If there is no next right node, the next pointer should be set to `NULL`.
-    ///
-    /// Initially, all next pointers are set to `NULL`.
+    /// - The "linked list" should use the same `TreeNode` class where the `right` child pointer points to the next node in the list and the `left` child pointer is always `null`.
+    /// - The "linked list" should be in the same order as a <a href="https://en.wikipedia.org/wiki/Tree_traversal#Pre-order,_NLR" target="_blank">**pre-order** ** traversal** </a> of the binary tree.
     ///
     /// **Example 1:**
-    /// <img alt="" src="https://assets.leetcode.com/uploads/2019/02/15/117_sample.png" style="width: 500px; height: 171px;">
+    /// <img alt="" src="https://assets.leetcode.com/uploads/2021/01/14/flaten.jpg" style="width: 500px; height: 226px;">
     ///
     /// ```txt
-    /// Input: root = [1,2,3,4,5,null,7]
-    /// Output: [1,#,2,3,#,4,5,7,#]
-    /// Explanation: Given the above binary tree (Figure A), your function should populate each next pointer to point to its next right node, just like in Figure B. The serialized output is in level order as connected by the next pointers, with '#' signifying the end of each level.
+    /// Input: root = [1,2,5,3,4,null,6]
+    /// Output: [1,null,2,null,3,null,4,null,5,null,6]
     /// ```
     ///
     /// **Example 2:**
@@ -37,15 +26,19 @@ impl Solution {
     /// Output: []
     /// ```
     ///
+    /// **Example 3:**
+    ///
+    /// ```txt
+    /// Input: root = [0]
+    /// Output: [0]
+    /// ```
+    ///
     /// **Constraints:**
     ///
-    /// - The number of nodes in the tree is in the range `[0, 6000]`.
+    /// - The number of nodes in the tree is in the range `[0, 2000]`.
     /// - `-100 <= Node.val <= 100`
     ///
-    /// **Follow-up:**
-    ///
-    /// - You may only use constant extra space.
-    /// - The recursive approach is fine. You may assume implicit stack space does not count as extra space for this problem.
+    /// **Follow up:**  Can you flatten the tree in-place (with `O(1)` extra space)?
     pub fn flatten(root: &mut Option<Rc<RefCell<TreeNode>>>) {
         if root.is_none() {
             return;
