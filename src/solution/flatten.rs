@@ -49,14 +49,27 @@ impl Solution {
         Self::flatten(&mut left);
         root.as_ref().unwrap().borrow_mut().right = left;
 
-        let mut p = root;
-        unsafe {
-            while let Some(node) = p {
-                let raw_p = &mut (**node).borrow_mut().right as *mut Option<Rc<RefCell<TreeNode>>>;
-                p = &mut *raw_p;
+        // Use unsafe code to find the rightmost node
+        // let mut p = root;
+        // unsafe {
+        //     while let Some(node) = p {
+        //         let raw_p = &mut (**node).borrow_mut().right as *mut Option<Rc<RefCell<TreeNode>>>;
+        //         p = &mut *raw_p;
+        //     }
+        // }
+        // *p = right;
+
+        // Use safe code to find the rightmost node
+        let mut p = root.clone();
+        loop {
+            let next = p.as_ref().unwrap().borrow_mut().right.clone();
+            if next.is_none() {
+                break;
+            } else {
+                p = next;
             }
         }
-        *p = right;
+        p.as_ref().unwrap().borrow_mut().right = right;
     }
 }
 
