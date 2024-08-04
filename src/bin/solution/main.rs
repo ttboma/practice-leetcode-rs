@@ -297,6 +297,8 @@ enum Commands {
     BuildTreeFromPreorderAndInorder {},
     /// [106. Construct Binary Tree from Inorder and Postorder Traversal](https://leetcode.com/problems/construct-binary-tree-from-inorder-and-postorder-traversal/description/?envType=study-plan-v2&envId=top-interview-150)
     BuildTreeFromInorderAndPostorder {},
+    /// [114. Flatten Binary Tree to Linked List](https://leetcode.com/problems/flatten-binary-tree-to-linked-list/description/?envType=study-plan-v2&envId=top-interview-150)
+    Flatten {},
 }
 
 fn main() {
@@ -1013,6 +1015,12 @@ fn main() {
                 "{:?}",
                 Solution::build_tree_from_inorder_and_postorder(inorder, postorder)
             );
+        }
+        Commands::Flatten {} => {
+            let nodes = parse_opt_i32_list(&input);
+            let mut tree = Tree::from(nodes);
+            Solution::flatten(&mut tree.root);
+            println!("{:?}", tree);
         }
     }
 }
