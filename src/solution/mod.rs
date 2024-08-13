@@ -20,6 +20,7 @@ mod contains_nearby_duplicate;
 mod convert;
 mod count_bits;
 mod count_max_or_subsets;
+mod count_nodes;
 mod count_odds;
 mod count_pairs;
 mod count_squares;

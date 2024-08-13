@@ -299,6 +299,8 @@ enum Commands {
     BuildTreeFromInorderAndPostorder {},
     /// [114. Flatten Binary Tree to Linked List](https://leetcode.com/problems/flatten-binary-tree-to-linked-list/description/?envType=study-plan-v2&envId=top-interview-150)
     Flatten {},
+    /// [222. Count Complete Tree Nodes](https://leetcode.com/problems/count-complete-tree-nodes/description/?envType=study-plan-v2&envId=top-interview-150)
+    CountNodes {},
 }
 
 fn main() {
@@ -1021,6 +1023,11 @@ fn main() {
             let mut tree = Tree::from(nodes);
             Solution::flatten(&mut tree.root);
             println!("{:?}", tree);
+        }
+        Commands::CountNodes {} => {
+            let nodes = parse_opt_i32_list(&input);
+            let tree = Tree::from(nodes);
+            println!("{:?}", Solution::count_nodes(tree.root));
         }
     }
 }

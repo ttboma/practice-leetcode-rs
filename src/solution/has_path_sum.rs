@@ -45,34 +45,17 @@ impl Solution {
     /// - `-1000 <= Node.val <= 1000`
     /// - `-1000 <= targetSum <= 1000`
     pub fn has_path_sum(root: Option<Rc<RefCell<TreeNode>>>, target_sum: i32) -> bool {
-        HasPathSum::new(target_sum).solve(root)
-    }
-}
-
-struct HasPathSum {
-    target_sum: i32,
-}
-
-impl HasPathSum {
-    fn new(target_sum: i32) -> Self {
-        Self { target_sum }
-    }
-
-    fn solve(&mut self, root: Option<Rc<RefCell<TreeNode>>>) -> bool {
-        self.dfs(root, 0)
-    }
-
-    fn dfs(&mut self, node: Option<Rc<RefCell<TreeNode>>>, mut sum: i32) -> bool {
-        if node.is_none() {
+        if root.is_none() {
             return false;
         }
-        let node = node.as_ref().unwrap().borrow();
-        sum += node.val;
-        if node.left.is_none() && node.right.is_none() && sum == self.target_sum {
+        let val = root.as_ref().unwrap().borrow().val;
+        let left = root.as_ref().unwrap().borrow().left.clone();
+        let right = root.as_ref().unwrap().borrow().right.clone();
+        if target_sum - val == 0 && left.is_none() && right.is_none() {
             return true;
         }
-
-        self.dfs(node.left.clone(), sum) || self.dfs(node.right.clone(), sum)
+        Solution::has_path_sum(left, target_sum - val)
+            || Solution::has_path_sum(right, target_sum - val)
     }
 }
 
