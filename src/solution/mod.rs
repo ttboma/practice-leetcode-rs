@@ -127,6 +127,7 @@ mod stone_game;
 mod str_str;
 mod subset_xor_sum;
 mod subsets;
+mod sum_numbers;
 mod summary_ranges;
 mod swap_pairs;
 mod three_sum;

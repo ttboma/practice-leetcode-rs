@@ -301,6 +301,8 @@ enum Commands {
     Flatten {},
     /// [222. Count Complete Tree Nodes](https://leetcode.com/problems/count-complete-tree-nodes/description/?envType=study-plan-v2&envId=top-interview-150)
     CountNodes {},
+    /// [129. Sum Root to Leaf Numbers](https://leetcode.com/problems/sum-root-to-leaf-numbers/description/?envType=study-plan-v2&envId=top-interview-150)
+    SumNumbers {},
 }
 
 fn main() {
@@ -1028,6 +1030,11 @@ fn main() {
             let nodes = parse_opt_i32_list(&input);
             let tree = Tree::from(nodes);
             println!("{:?}", Solution::count_nodes(tree.root));
+        }
+        Commands::SumNumbers {} => {
+            let nodes = parse_opt_i32_list(&input);
+            let tree = Tree::from(nodes);
+            println!("{:?}", Solution::sum_numbers(tree.root));
         }
     }
 }
