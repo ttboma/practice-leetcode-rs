@@ -8,6 +8,7 @@ use std::path::PathBuf;
 #[derive(Parser)]
 #[command(author, version, about, propagate_version = true)]
 #[command(help_template = SUBCOMMAND_HELP_TEMPLATE)]
+#[command(after_help = "See 'solution help <command>' for more information on a specific command.")]
 struct Cli {
     #[arg(short, long, value_name = "PATH", long_help = FILE_HELP_MSG)]
     file: Option<PathBuf>,
