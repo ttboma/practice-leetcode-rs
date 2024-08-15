@@ -304,6 +304,8 @@ enum Commands {
     CountNodes {},
     /// [129. Sum Root to Leaf Numbers](https://leetcode.com/problems/sum-root-to-leaf-numbers/description/?envType=study-plan-v2&envId=top-interview-150)
     SumNumbers {},
+    /// [124. Binary Tree Maximum Path Sum](https://leetcode.com/problems/binary-tree-maximum-path-sum/description/?envType=study-plan-v2&envId=top-interview-150)
+    MaxPathSum {},
 }
 
 fn main() {
@@ -1036,6 +1038,11 @@ fn main() {
             let nodes = parse_opt_i32_list(&input);
             let tree = Tree::from(nodes);
             println!("{:?}", Solution::sum_numbers(tree.root));
+        }
+        Commands::MaxPathSum {} => {
+            let nodes = parse_opt_i32_list(&input);
+            let tree = Tree::from(nodes);
+            println!("{:?}", Solution::max_path_sum(tree.root));
         }
     }
 }
