@@ -78,6 +78,7 @@ mod letter_combinations;
 mod longest_common_prefix;
 mod longest_consecutive;
 mod longest_palindrome;
+mod lowest_common_ancestor;
 mod majority_element;
 mod max_area;
 mod max_depth;

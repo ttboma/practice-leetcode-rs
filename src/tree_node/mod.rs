@@ -32,6 +32,21 @@ impl Tree {
     pub fn new() -> Self {
         Tree { root: None }
     }
+
+    pub fn search(&self, val: i32) -> Option<Rc<RefCell<TreeNode>>> {
+        let mut fifo = VecDeque::<Option<Rc<RefCell<TreeNode>>>>::new();
+        fifo.push_back(self.root.clone());
+        while let Some(node) = fifo.pop_front() {
+            if let Some(node) = node {
+                if node.borrow().val == val {
+                    return Some(node.clone());
+                }
+                fifo.push_back(node.borrow().left.clone());
+                fifo.push_back(node.borrow().right.clone());
+            }
+        }
+        None
+    }
 }
 
 use std::convert::From;

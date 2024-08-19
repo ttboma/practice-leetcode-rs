@@ -331,6 +331,26 @@ pub fn parse_opt_i32_list_and_i32(input: &str) -> (Vec<Option<i32>>, i32) {
     )
 }
 
+pub fn parse_opt_i32_list_and_two_i32(input: &str) -> (Vec<Option<i32>>, i32, i32) {
+    let (input, val) = nom_parser::parse_list(input).expect(error_msg::LIST_FORMAT);
+    let (input, p) = nom_parser::decimal(input).expect(error_msg::INTEGER_FORMAT);
+    let (_, q) = nom_parser::decimal(input).expect(error_msg::INTEGER_FORMAT);
+    (
+        val.into_iter()
+            .map(|v| {
+                let v = v.trim();
+                if v == "null" {
+                    None
+                } else {
+                    Some(v.parse::<i32>().expect(error_msg::ITEM_OF_OPT_I32))
+                }
+            })
+            .collect(),
+        p.trim().parse::<i32>().expect(error_msg::I32_VALUE),
+        q.trim().parse::<i32>().expect(error_msg::I32_VALUE),
+    )
+}
+
 pub fn read_from_stdin() -> io::Result<String> {
     let stdin = io::stdin();
     let mut buffer = String::new();

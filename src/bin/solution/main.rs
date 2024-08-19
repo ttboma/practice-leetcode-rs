@@ -306,6 +306,8 @@ enum Commands {
     SumNumbers {},
     /// [124. Binary Tree Maximum Path Sum](https://leetcode.com/problems/binary-tree-maximum-path-sum/description/?envType=study-plan-v2&envId=top-interview-150)
     MaxPathSum {},
+    /// [236. Lowest Common Ancestor of a Binary Tree](https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/description/?envType=study-plan-v2&envId=top-interview-150)
+    LowestCommonAncestor {},
 }
 
 fn main() {
@@ -1043,6 +1045,14 @@ fn main() {
             let nodes = parse_opt_i32_list(&input);
             let tree = Tree::from(nodes);
             println!("{:?}", Solution::max_path_sum(tree.root));
+        }
+        Commands::LowestCommonAncestor {} => {
+            let (nodes, p, q) = parse_opt_i32_list_and_two_i32(&input);
+            let tree = Tree::from(nodes);
+            let p = tree.search(p);
+            let q = tree.search(q);
+            let ans = Solution::lowest_common_ancestor(tree.root, p, q);
+            println!("{}", ans.unwrap().borrow().val);
         }
     }
 }
