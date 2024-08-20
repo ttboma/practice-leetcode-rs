@@ -74,7 +74,7 @@ You can also use the `solution` binary through the command line interface:
 
 ```bash
 % cargo run --bin solution -- --help
-% cargo run --bin solution -- fib --help
+% cargo run --bin solution -- help fib
 % echo 10 | cargo run --bin solution -- fib
 55
 ```
@@ -85,7 +85,7 @@ Alternatively, you can obtain help through the command line interface with the f
 
 ```bash
 % cargo run --bin solution -- --help
-% cargo run --bin solution -- <COMMAND> --help
+% cargo run --bin solution -- help <COMMAND>
 % cargo run --bin solution -- <COMMAND>
 ```
 
@@ -104,11 +104,12 @@ Please follow the conventions, as noted below, to contribute to this project.
 
 Please install [pre-commit](https://pre-commit.com/) with the following command before committing:
 
-    ```bash
-    % pre-commit install --hook-type commit-msg --hook-type pre-commit --hook-type pre-push
-    % pre-commit --version
-    pre-commit 3.7.1
-    ```
+```bash
+% pre-commit install --hook-type commit-msg --hook-type pre-commit --hook-type pre-push
+% pre-commit --version
+pre-commit 3.7.1
+```
+
 ## Visual Studio Code Leverage
 
 To maintain your code quality, the following is a list of recommended [Visual Studio Code](https://code.visualstudio.com/) plugins:
@@ -308,5 +309,4 @@ Target 0: (solution) stopped.
 
 # TODO
 
-- [ ] How to implement Iterator for [`TreeNode`]?
-- [ ] How to build [`TreeNode`] by macro? And modify those [`TreeNode`] unit tests by macro
+- [ ] Refactor nom parsers into builder

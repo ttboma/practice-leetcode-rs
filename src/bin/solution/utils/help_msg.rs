@@ -1,7 +1,7 @@
 pub const FILE_HELP_MSG: &str =
     "A file from which input is read; if missing, input is read from stdin.";
 
-pub const SUBCOMMAND_HELP_TEMPLATE: &str = "\
+pub const FIB_HELP_TEMPLATE: &str = "\
 {before-help}{name} {version}
 {author-with-newline}{about-with-newline}
 {usage-heading} {usage}
@@ -14,10 +14,14 @@ pub const SUBCOMMAND_HELP_TEMPLATE: &str = "\
 {tab}1
 {tab}```
 
-or
-
 {tab}```bash
 {tab}$ echo '2' | solution fib
+{tab}1
+{tab}```
+
+{tab}```bash
+{tab}$ echo '2' >> input-file.txt
+{tab}solution -f input-file.txt fib
 {tab}1
 {tab}```
 

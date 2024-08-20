@@ -7,7 +7,6 @@ use std::path::PathBuf;
 
 #[derive(Parser)]
 #[command(author, version, about, propagate_version = true)]
-#[command(help_template = SUBCOMMAND_HELP_TEMPLATE)]
 #[command(after_help = "See 'solution help <command>' for more information on a specific command.")]
 struct Cli {
     #[arg(short, long, value_name = "PATH", long_help = FILE_HELP_MSG)]
@@ -51,6 +50,7 @@ enum Commands {
     /// [1025. Divisor Game](https://leetcode.com/problems/divisor-game/description/)
     DivisorGame {},
     /// [509. Fibonacci Number](https://leetcode.com/problems/fibonacci-number/)
+    #[command(help_template = FIB_HELP_TEMPLATE)]
     Fib {},
     /// [1706. Where Will the Ball Fall](https://leetcode.com/problems/where-will-the-ball-fall/description/)
     FindBall {},
