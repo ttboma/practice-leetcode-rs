@@ -3,7 +3,7 @@ A file from which input is read; if missing, input is read from stdin. For examp
 
 ```bash
 $ echo '2' >> input-file.txt
-solution -f input-file.txt fib
+$ solution -f input-file.txt fib
 1
 ```";
 
