@@ -114,6 +114,7 @@ mod reverse_between;
 mod reverse_list;
 mod reverse_vowels;
 mod reverse_words;
+mod right_side_view;
 mod roman_to_int;
 mod rotate;
 mod rotate_image;
