@@ -310,6 +310,8 @@ enum Commands {
     LowestCommonAncestor {},
     /// [199. Binary Tree Right Side View](https://leetcode.com/problems/binary-tree-right-side-view/description/?envType=study-plan-v2&envId=top-interview-150)
     RightSideView {},
+    /// [102. Binary Tree Level Order Traversal](https://leetcode.com/problems/binary-tree-level-order-traversal/description/?envType=study-plan-v2&envId=top-interview-150)
+    LevelOrder {},
 }
 
 fn main() {
@@ -1060,6 +1062,11 @@ fn main() {
             let nodes = parse_opt_i32_list(&input);
             let tree = Tree::from(nodes);
             println!("{:?}", Solution::right_side_view(tree.root));
+        }
+        Commands::LevelOrder {} => {
+            let nodes = parse_opt_i32_list(&input);
+            let tree = Tree::from(nodes);
+            println!("{:?}", Solution::level_order(tree.root));
         }
     }
 }
