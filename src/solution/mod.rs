@@ -5,6 +5,7 @@ pub struct Solution {}
 mod add_two_numbers;
 mod all_paths_source_target;
 mod all_possible_fbt;
+mod average_of_levels;
 mod binary_tree_paths;
 mod build_tree;
 mod calculate;

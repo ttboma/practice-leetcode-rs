@@ -312,6 +312,8 @@ enum Commands {
     RightSideView {},
     /// [102. Binary Tree Level Order Traversal](https://leetcode.com/problems/binary-tree-level-order-traversal/description/?envType=study-plan-v2&envId=top-interview-150)
     LevelOrder {},
+    /// [637. Average of Levels in Binary Tree](https://leetcode.com/problems/average-of-levels-in-binary-tree/description/?envType=study-plan-v2&envId=top-interview-150)
+    AverageOfLevels {},
 }
 
 fn main() {
@@ -1067,6 +1069,11 @@ fn main() {
             let nodes = parse_opt_i32_list(&input);
             let tree = Tree::from(nodes);
             println!("{:?}", Solution::level_order(tree.root));
+        }
+        Commands::AverageOfLevels {} => {
+            let nodes = parse_opt_i32_list(&input);
+            let tree = Tree::from(nodes);
+            println!("{:?}", Solution::average_of_levels(tree.root));
         }
     }
 }
