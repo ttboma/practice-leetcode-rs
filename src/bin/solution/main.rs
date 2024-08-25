@@ -314,6 +314,8 @@ enum Commands {
     LevelOrder {},
     /// [637. Average of Levels in Binary Tree](https://leetcode.com/problems/average-of-levels-in-binary-tree/description/?envType=study-plan-v2&envId=top-interview-150)
     AverageOfLevels {},
+    /// [103. Binary Tree Zigzag Level Order Traversal](https://leetcode.com/problems/binary-tree-zigzag-level-order-traversal/description/?envType=study-plan-v2&envId=top-interview-150)
+    ZigzagLevelOrder {},
 }
 
 fn main() {
@@ -1074,6 +1076,11 @@ fn main() {
             let nodes = parse_opt_i32_list(&input);
             let tree = Tree::from(nodes);
             println!("{:?}", Solution::average_of_levels(tree.root));
+        }
+        Commands::ZigzagLevelOrder {} => {
+            let nodes = parse_opt_i32_list(&input);
+            let tree = Tree::from(nodes);
+            println!("{:?}", Solution::zigzag_level_order(tree.root));
         }
     }
 }
