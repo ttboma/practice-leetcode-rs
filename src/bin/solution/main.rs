@@ -317,7 +317,7 @@ enum Commands {
     /// [103. Binary Tree Zigzag Level Order Traversal](https://leetcode.com/problems/binary-tree-zigzag-level-order-traversal/description/?envType=study-plan-v2&envId=top-interview-150)
     ZigzagLevelOrder {},
     /// [530. Minimum Absolute Difference in BST](https://leetcode.com/problems/minimum-absolute-difference-in-bst/description/?envType=study-plan-v2&envId=top-interview-150)
-    GetMinimumDifference {}, 
+    GetMinimumDifference {},
 }
 
 fn main() {
@@ -1084,7 +1084,7 @@ fn main() {
             let tree = Tree::from(nodes);
             println!("{:?}", Solution::zigzag_level_order(tree.root));
         }
-        Commands::GetMinimumDifference {  } => {
+        Commands::GetMinimumDifference {} => {
             let nodes = parse_opt_i32_list(&input);
             let tree = Tree::from(nodes);
             println!("{:?}", Solution::get_minimum_difference(tree.root));
