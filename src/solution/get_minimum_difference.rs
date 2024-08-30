@@ -10,7 +10,7 @@ impl Solution {
     /// **Example 1:**
     /// <img alt="" src="https://assets.leetcode.com/uploads/2021/02/05/bst1.jpg" style="width: 292px; height: 301px;">
     ///
-    /// ```
+    /// ```txt
     /// Input: root = [4,2,6,1,3]
     /// Output: 1
     /// ```
@@ -18,7 +18,7 @@ impl Solution {
     /// **Example 2:**
     /// <img alt="" src="https://assets.leetcode.com/uploads/2021/02/05/bst2.jpg" style="width: 282px; height: 301px;">
     ///
-    /// ```
+    /// ```txt
     /// Input: root = [1,0,48,null,null,12,49]
     /// Output: 1
     /// ```
