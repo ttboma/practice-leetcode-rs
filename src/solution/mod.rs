@@ -3,6 +3,7 @@ pub struct Solution {}
 
 /// Each of the methods for Solution struct are placed under its own module
 mod add_two_numbers;
+mod get_minimum_difference;
 mod all_paths_source_target;
 mod all_possible_fbt;
 mod average_of_levels;
