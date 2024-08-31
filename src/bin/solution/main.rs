@@ -318,6 +318,8 @@ enum Commands {
     ZigzagLevelOrder {},
     /// [530. Minimum Absolute Difference in BST](https://leetcode.com/problems/minimum-absolute-difference-in-bst/description/?envType=study-plan-v2&envId=top-interview-150)
     GetMinimumDifference {},
+    /// [230. Kth Smallest Element in a BST](https://leetcode.com/problems/kth-smallest-element-in-a-bst/description/?envType=study-plan-v2&envId=top-interview-150)
+    KthSmallest {},
 }
 
 fn main() {
@@ -1088,6 +1090,11 @@ fn main() {
             let nodes = parse_opt_i32_list(&input);
             let tree = Tree::from(nodes);
             println!("{:?}", Solution::get_minimum_difference(tree.root));
+        }
+        Commands::KthSmallest {} => {
+            let (nodes, k) = parse_opt_i32_list_and_i32(&input);
+            let tree = Tree::from(nodes);
+            println!("{:?}", Solution::kth_smallest(tree.root, k));
         }
     }
 }
