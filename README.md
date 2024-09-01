@@ -11,7 +11,7 @@
   - [Visual Studio Code Leverage](#visual-studio-code-leverage)
   - [How to debug with CodeLLDB](#how-to-debug-with-codelldb)
   - [How to debug with lldb](#how-to-debug-with-lldb)
-- [TODO](#todo)
+  - [TODO](#todo)
 
 # Introduction
 
@@ -309,6 +309,6 @@ Target 0: (solution) stopped.
 (lldb) q
 ```
 
-# TODO
+## TODO
 
 - [ ] Refactor nom parsers into builder
