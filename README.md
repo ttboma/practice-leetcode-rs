@@ -4,6 +4,7 @@
 - [Introduction](#introduction)
 - [Install and Setup](#install-and-setup)
 - [Example Usage](#example-usage)
+- [API Documentation](#api-documentation)
 - [Developer's Note](#developers-note)
   - [Convention](#convention)
   - [How to Use `pre-commit`](#how-to-use-pre-commit)
@@ -24,7 +25,6 @@ This repository is a Rust library crate that offers a diverse collection of solu
   - **Toolchains**: Familiarize yourself with the toolchain for each programming language, including its compilers, interpreters, and build systems.
   - **Build Tools**: Leverage tools like Make, CMake, Cargo (for Rust), and others to automate the build and testing processes efficiently.
   - **Cross-Platform Development**: Ensure your code is compatible with various operating systems (Windows, macOS, Linux) by addressing platform-specific issues and dependencies.
-  - **Development Environment**: Configure and optimize your development setup to enhance efficiency and productivity.
   - **Package Management**: Utilize package managers such as npm (for JavaScript), Cargo (for Rust), and pip (for Python) to manage dependencies and simplify development tasks.
   - **Package Creation and Distribution**: Learn how to create, publish, and manage packages or libraries for reuse and distribution.
 
@@ -78,6 +78,8 @@ You can also use the `solution` binary through the command line interface:
 % echo 10 | cargo run --bin solution -- fib
 55
 ```
+
+# API Documentation
 
 For additional LeetCode solution commands beyond `Solution::fib`, you can view the documentation by running `cargo doc --open`.
 
