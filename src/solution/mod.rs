@@ -69,6 +69,7 @@ mod is_power_of_two;
 mod is_same_tree;
 mod is_subsequence;
 mod is_symmetric;
+mod is_valid_bst;
 mod is_valid_sudoku;
 mod jump;
 mod kids_with_candies;

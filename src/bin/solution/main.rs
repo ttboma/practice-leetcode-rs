@@ -320,6 +320,8 @@ enum Commands {
     GetMinimumDifference {},
     /// [230. Kth Smallest Element in a BST](https://leetcode.com/problems/kth-smallest-element-in-a-bst/description/?envType=study-plan-v2&envId=top-interview-150)
     KthSmallest {},
+    /// [98. Validate Binary Search Tree](https://leetcode.com/problems/validate-binary-search-tree/description/?envType=study-plan-v2&envId=top-interview-150)
+    IsValidBst {},
 }
 
 fn main() {
@@ -1095,6 +1097,11 @@ fn main() {
             let (nodes, k) = parse_opt_i32_list_and_i32(&input);
             let tree = Tree::from(nodes);
             println!("{:?}", Solution::kth_smallest(tree.root, k));
+        }
+        Commands::IsValidBst {} => {
+            let nodes = parse_opt_i32_list(&input);
+            let tree = Tree::from(nodes);
+            println!("{:?}", Solution::is_valid_bst(tree.root));
         }
     }
 }
