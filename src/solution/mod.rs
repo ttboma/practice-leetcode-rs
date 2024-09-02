@@ -102,6 +102,7 @@ mod min_score;
 mod min_sub_array_len;
 mod min_window;
 mod move_zeroes;
+mod num_islands;
 mod num_tile_possibilities;
 mod partition;
 mod permute;

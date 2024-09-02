@@ -322,6 +322,8 @@ enum Commands {
     KthSmallest {},
     /// [98. Validate Binary Search Tree](https://leetcode.com/problems/validate-binary-search-tree/description/?envType=study-plan-v2&envId=top-interview-150)
     IsValidBst {},
+    /// [200. Number of Islands](https://leetcode.com/problems/number-of-islands/description/?envType=study-plan-v2&envId=top-interview-150)
+    NumIslands {},
 }
 
 fn main() {
@@ -1102,6 +1104,10 @@ fn main() {
             let nodes = parse_opt_i32_list(&input);
             let tree = Tree::from(nodes);
             println!("{:?}", Solution::is_valid_bst(tree.root));
+        }
+        Commands::NumIslands {} => {
+            let grid = parse_2d_char_list(&input);
+            println!("{:?}", Solution::num_islands(grid));
         }
     }
 }
