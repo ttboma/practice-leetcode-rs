@@ -324,6 +324,8 @@ enum Commands {
     IsValidBst {},
     /// [200. Number of Islands](https://leetcode.com/problems/number-of-islands/description/?envType=study-plan-v2&envId=top-interview-150)
     NumIslands {},
+    /// [130. Surrounded Regions](https://leetcode.com/problems/surrounded-regions/description/?envType=study-plan-v2&envId=top-interview-150)
+    Solve {},
 }
 
 fn main() {
@@ -1108,6 +1110,15 @@ fn main() {
         Commands::NumIslands {} => {
             let grid = parse_2d_char_list(&input);
             println!("{:?}", Solution::num_islands(grid));
+        }
+        Commands::Solve {} => {
+            let mut board = parse_2d_char_list(&input);
+            Solution::solve(&mut board);
+            print!("[{:?}", board[0]);
+            for row in board.iter().skip(1) {
+                print!("\n {:?}", row);
+            }
+            println!("]");
         }
     }
 }
