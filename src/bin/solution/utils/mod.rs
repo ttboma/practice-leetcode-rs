@@ -196,6 +196,43 @@ pub fn parse_str_list_and_i32(input: &str) -> (Vec<String>, i32) {
     )
 }
 
+pub fn parse_2d_str_list_and_f64_list_and_2d_str_list(
+    input: &str,
+) -> (Vec<Vec<String>>, Vec<f64>, Vec<Vec<String>>) {
+    let (input, r1) = nom_parser::parse_2d_list(input).expect(error_msg::TWO_DIMENSION_LIST_FORMAT);
+    let (input, r2) = nom_parser::parse_list(input).expect(error_msg::LIST_FORMAT);
+    let (_, r3) = nom_parser::parse_2d_list(input).expect(error_msg::TWO_DIMENSION_LIST_FORMAT);
+    (
+        r1.into_iter()
+            .map(|x| {
+                x.into_iter()
+                    .map(|y| {
+                        nom_parser::parse_str(y)
+                            .expect(error_msg::STR_FORMAT)
+                            .1
+                            .to_owned()
+                    })
+                    .collect::<Vec<_>>()
+            })
+            .collect::<Vec<_>>(),
+        r2.into_iter()
+            .map(|x| x.trim().parse::<f64>().expect(error_msg::ITEM_OF_F64))
+            .collect::<Vec<_>>(),
+        r3.into_iter()
+            .map(|x| {
+                x.into_iter()
+                    .map(|y| {
+                        nom_parser::parse_str(y)
+                            .expect(error_msg::STR_FORMAT)
+                            .1
+                            .to_owned()
+                    })
+                    .collect::<Vec<_>>()
+            })
+            .collect::<Vec<_>>(),
+    )
+}
+
 pub fn parse_two_str(input: &str) -> (String, String) {
     let (input, s1) = nom_parser::parse_str(input).expect(error_msg::STR_FORMAT);
     let (_, s2) = nom_parser::parse_str(input).expect(error_msg::STR_FORMAT);

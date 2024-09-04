@@ -8,6 +8,7 @@ mod all_possible_fbt;
 mod average_of_levels;
 mod binary_tree_paths;
 mod build_tree;
+mod calc_equation;
 mod calculate;
 mod can_complete_circuit;
 mod can_construct;

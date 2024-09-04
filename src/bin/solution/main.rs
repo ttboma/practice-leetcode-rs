@@ -326,6 +326,8 @@ enum Commands {
     NumIslands {},
     /// [130. Surrounded Regions](https://leetcode.com/problems/surrounded-regions/description/?envType=study-plan-v2&envId=top-interview-150)
     Solve {},
+    /// [399. Evaluate Division](https://leetcode.com/problems/evaluate-division/description/?envType=study-plan-v2&envId=top-interview-150)
+    CalcEquation {},
 }
 
 fn main() {
@@ -1119,6 +1121,11 @@ fn main() {
                 print!("\n {:?}", row);
             }
             println!("]");
+        }
+        Commands::CalcEquation {} => {
+            let (equations, values, queries) =
+                parse_2d_str_list_and_f64_list_and_2d_str_list(&input);
+            println!("{:?}", Solution::calc_equation(equations, values, queries));
         }
     }
 }
