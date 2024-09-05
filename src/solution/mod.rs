@@ -12,6 +12,7 @@ mod calc_equation;
 mod calculate;
 mod can_complete_circuit;
 mod can_construct;
+mod can_finish;
 mod can_jump;
 mod can_place_flowers;
 mod candy;

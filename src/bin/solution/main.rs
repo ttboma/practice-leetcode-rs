@@ -328,6 +328,8 @@ enum Commands {
     Solve {},
     /// [399. Evaluate Division](https://leetcode.com/problems/evaluate-division/description/?envType=study-plan-v2&envId=top-interview-150)
     CalcEquation {},
+    /// [207. Course Schedule](https://leetcode.com/problems/course-schedule/description/?envType=study-plan-v2&envId=top-interview-150)
+    CanFinish {},
 }
 
 fn main() {
@@ -1126,6 +1128,10 @@ fn main() {
             let (equations, values, queries) =
                 parse_2d_str_list_and_f64_list_and_2d_str_list(&input);
             println!("{:?}", Solution::calc_equation(equations, values, queries));
+        }
+        Commands::CanFinish {} => {
+            let (num_courses, prerequisites) = parse_i32_and_2d_i32_list(&input);
+            println!("{:?}", Solution::can_finish(num_courses, prerequisites));
         }
     }
 }
