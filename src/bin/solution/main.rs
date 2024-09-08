@@ -330,6 +330,8 @@ enum Commands {
     CalcEquation {},
     /// [207. Course Schedule](https://leetcode.com/problems/course-schedule/description/?envType=study-plan-v2&envId=top-interview-150)
     CanFinish {},
+    /// [210. Course Schedule II](https://leetcode.com/problems/course-schedule-ii/description/?envType=study-plan-v2&envId=top-interview-150)
+    FindOrder {},
 }
 
 fn main() {
@@ -1132,6 +1134,10 @@ fn main() {
         Commands::CanFinish {} => {
             let (num_courses, prerequisites) = parse_i32_and_2d_i32_list(&input);
             println!("{:?}", Solution::can_finish(num_courses, prerequisites));
+        }
+        Commands::FindOrder {} => {
+            let (num_courses, prerequisites) = parse_i32_and_2d_i32_list(&input);
+            println!("{:?}", Solution::find_order(num_courses, prerequisites));
         }
     }
 }
