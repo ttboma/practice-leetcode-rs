@@ -27,7 +27,7 @@ impl Solution {
     /// **Example 1:**
     /// <img alt="" src="https://assets.leetcode.com/uploads/2018/09/23/snakes.png" style="width: 500px; height: 394px;">
     ///
-    /// ```
+    /// ```txt
     /// Input: board = [[-1,-1,-1,-1,-1,-1],[-1,-1,-1,-1,-1,-1],[-1,-1,-1,-1,-1,-1],[-1,35,-1,-1,13,-1],[-1,-1,-1,-1,-1,-1],[-1,15,-1,-1,-1,-1]]
     /// Output: 4
     /// Explanation:
@@ -41,7 +41,7 @@ impl Solution {
     ///
     /// **Example 2:**
     ///
-    /// ```
+    /// ```txt
     /// Input: board = [[-1,-1],[-1,3]]
     /// Output: 1
     /// ```
