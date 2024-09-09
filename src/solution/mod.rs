@@ -133,6 +133,7 @@ mod search;
 mod set_zeroes;
 mod ship_within_days;
 mod simplify_path;
+mod snakes_and_ladders;
 mod solve;
 mod sorted_array_to_bst;
 mod spiral_order;

@@ -332,6 +332,8 @@ enum Commands {
     CanFinish {},
     /// [210. Course Schedule II](https://leetcode.com/problems/course-schedule-ii/description/?envType=study-plan-v2&envId=top-interview-150)
     FindOrder {},
+    /// [909. Snakes and Ladders](https://leetcode.com/problems/snakes-and-ladders/description/?envType=study-plan-v2&envId=top-interview-150)
+    SnakesAndLadders {},
 }
 
 fn main() {
@@ -1138,6 +1140,10 @@ fn main() {
         Commands::FindOrder {} => {
             let (num_courses, prerequisites) = parse_i32_and_2d_i32_list(&input);
             println!("{:?}", Solution::find_order(num_courses, prerequisites));
+        }
+        Commands::SnakesAndLadders {} => {
+            let board = parse_2d_i32_list(&input);
+            println!("{:?}", Solution::snakes_and_ladders(board));
         }
     }
 }
