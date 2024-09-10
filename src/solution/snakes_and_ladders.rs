@@ -1,6 +1,5 @@
-use std::collections::VecDeque;
-
 use crate::Solution;
+use std::collections::VecDeque;
 
 impl Solution {
     /// # [909. Snakes and Ladders](https://leetcode.com/problems/snakes-and-ladders/description/?envType=study-plan-v2&envId=top-interview-150)
@@ -59,25 +58,14 @@ impl Solution {
         let mut color = vec![0; m];
         let mut dist = vec![0; m];
         let mut queue = VecDeque::new();
-        let mut flip = n % 2 == 0;
-        let mut idx = m;
-        for row in board {
-            if flip {
-                for ele in row {
-                    idx -= 1;
-                    if ele != -1 {
-                        graph[idx] = ele - 1;
-                    }
+        for (i, row) in board.iter().enumerate() {
+            for (j, ele) in row.iter().enumerate() {
+                if *ele == -1 {
+                    continue;
                 }
-            } else {
-                for ele in row.iter().rev() {
-                    idx -= 1;
-                    if *ele != -1 {
-                        graph[idx] = ele - 1;
-                    }
-                }
+                let idx = n * (n - i - 1) + (j + 1) * ((n + i) % 2) + (n - j) * ((n + i + 1) % 2);
+                graph[idx - 1] = ele - 1;
             }
-            flip = !flip;
         }
 
         let start = if graph[0] == -1 { 0 } else { graph[0] as usize };
