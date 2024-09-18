@@ -17,14 +17,14 @@ impl Solution {
     ///
     /// **Example 1:**
     ///
-    /// ```
+    /// ```txt
     /// Input: startGene = "AACCGGTT", endGene = "AACCGGTA", bank = ["AACCGGTA"]
     /// Output: 1
     /// ```
     ///
     /// **Example 2:**
     ///
-    /// ```
+    /// ```txt
     /// Input: startGene = "AACCGGTT", endGene = "AAACGGTA", bank = ["AACCGGTA","AACCGCTA","AAACGGTA"]
     /// Output: 2
     /// ```
