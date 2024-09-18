@@ -334,6 +334,8 @@ enum Commands {
     FindOrder {},
     /// [909. Snakes and Ladders](https://leetcode.com/problems/snakes-and-ladders/description/?envType=study-plan-v2&envId=top-interview-150)
     SnakesAndLadders {},
+    /// [433. Minimum Genetic Mutation](https://leetcode.com/problems/minimum-genetic-mutation/description/?envType=study-plan-v2&envId=top-interview-150)
+    MinMutation {},
 }
 
 fn main() {
@@ -1144,6 +1146,10 @@ fn main() {
         Commands::SnakesAndLadders {} => {
             let board = parse_2d_i32_list(&input);
             println!("{:?}", Solution::snakes_and_ladders(board));
+        }
+        Commands::MinMutation {} => {
+            let (start, end, bank) = parse_two_str_and_str_list(&input);
+            println!("{:?}", Solution::min_mutation(start, end, bank));
         }
     }
 }

@@ -179,6 +179,25 @@ pub fn parse_str_and_str_list(input: &str) -> (String, Vec<String>) {
     )
 }
 
+pub fn parse_two_str_and_str_list(input: &str) -> (String, String, Vec<String>) {
+    let (input, r1) = nom_parser::parse_str(input).expect(error_msg::STR_FORMAT);
+    let (input, r2) = nom_parser::parse_str(input).expect(error_msg::STR_FORMAT);
+    let (_, result) = nom_parser::parse_list(input).expect(error_msg::LIST_FORMAT);
+    (
+        r1.to_owned(),
+        r2.to_owned(),
+        result
+            .into_iter()
+            .map(|x| {
+                nom_parser::parse_str(x)
+                    .expect(error_msg::STR_FORMAT)
+                    .1
+                    .to_owned()
+            })
+            .collect::<Vec<_>>(),
+    )
+}
+
 pub fn parse_str_list_and_i32(input: &str) -> (Vec<String>, i32) {
     let (input, result) = nom_parser::parse_list(input).expect(error_msg::LIST_FORMAT);
     let (_, n) = nom_parser::decimal(input).expect(error_msg::INTEGER_FORMAT);

@@ -100,6 +100,7 @@ mod merge_two_lists;
 mod middle_node;
 mod min_cost_climbing_stairs;
 mod min_eating_speed;
+mod min_mutation;
 mod min_non_zero_product;
 mod min_score;
 mod min_sub_array_len;
