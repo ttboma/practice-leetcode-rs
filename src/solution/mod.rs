@@ -78,6 +78,7 @@ mod jump;
 mod kids_with_candies;
 mod kth_grammar;
 mod kth_smallest;
+mod ladder_length;
 mod largest_altitude;
 mod length_of_last_word;
 mod length_of_longest_substring;

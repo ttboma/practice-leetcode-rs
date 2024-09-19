@@ -336,6 +336,8 @@ enum Commands {
     SnakesAndLadders {},
     /// [433. Minimum Genetic Mutation](https://leetcode.com/problems/minimum-genetic-mutation/description/?envType=study-plan-v2&envId=top-interview-150)
     MinMutation {},
+    /// [127. Word Ladder](https://leetcode.com/problems/word-ladder/description/?envType=study-plan-v2&envId=top-interview-150)
+    LadderLength {},
 }
 
 fn main() {
@@ -1150,6 +1152,13 @@ fn main() {
         Commands::MinMutation {} => {
             let (start, end, bank) = parse_two_str_and_str_list(&input);
             println!("{:?}", Solution::min_mutation(start, end, bank));
+        }
+        Commands::LadderLength {} => {
+            let (begin_word, end_word, word_list) = parse_two_str_and_str_list(&input);
+            println!(
+                "{:?}",
+                Solution::ladder_length(begin_word, end_word, word_list)
+            );
         }
     }
 }
