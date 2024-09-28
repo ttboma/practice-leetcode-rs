@@ -21,22 +21,22 @@ Traditionally, the first step in learning a new programming language is writing 
 
 This repository is a Rust library crate that offers a diverse collection of solutions to various LeetCode problems. By engaging with this project, you will gain practical experience in several key areas:
 
+- **Data Structures and Algorithms**: Deepen your understanding of data structures and algorithms by implementing them in Rust, enhancing both your problem-solving skills and your proficiency in the language.
+
 - **Toolchains, Package Managers, Build Tools, and Cross-Platform Development**:
-  - **Toolchains**: Familiarize yourself with the toolchain for each programming language, including its compilers, interpreters, and build systems.
-  - **Build Tools**: Leverage tools like Make, CMake, Cargo (for Rust), and others to automate the build and testing processes efficiently.
+  - **Toolchains**: Familiarize yourself with the toolchain for each programming language, including its compilers, interpreters. For example GCC/Clang (for C/C++), `rustc` (for Rust).
+  - **Build Tools**: Leverage tools like Make/CMake (for C/C++), Cargo (for Rust), and others to automate the build and testing processes efficiently.
   - **Cross-Platform Development**: Ensure your code is compatible with various operating systems (Windows, macOS, Linux) by addressing platform-specific issues and dependencies.
-  - **Package Management**: Utilize package managers such as npm (for JavaScript), Cargo (for Rust), and pip (for Python) to manage dependencies and simplify development tasks.
+  - **Package Management**: Utilize package managers such as `npm` (for JavaScript), `cargo` (for Rust), `vcpkg` (for C/C++), and `pip`/`poetry` (for Python) to manage dependencies and simplify development tasks.
   - **Package Creation and Distribution**: Learn how to create, publish, and manage packages or libraries for reuse and distribution.
-
-- **Library and Binary Development**: Develop and oversee a Rust library crate, along with a binary for console applications stored in the `bin` directory. We use the [clap](https://docs.rs/clap/latest/clap/) library for command-line argument parsing and the [nom](https://docs.rs/nom/latest/nom/) library for input parsing.
-
-- **Utilize Git and Git Hooks**: Gain proficiency in Git for version control and explore [Git hooks](https://git-scm.com/book/zh-tw/v2/Customizing-Git-Git-Hooks) to automate tasks within your Rust project. Use the [pre-commit](https://pre-commit.com/) framework to handle code quality hooks across various languages.
-
-- **IDE Utilization with VSCode**: Leverage Visual Studio Code (VSCode) to streamline the development and debugging process for your Rust projects, including setting up and using Rust-specific extensions.
 
 - **Unit Testing**: Utilize Rust's built-in testing features to create and run unit tests, ensuring your code performs as expected and adheres to quality standards.
 
-- **Data Structures and Algorithms**: Deepen your understanding of data structures and algorithms by implementing them in Rust, enhancing both your problem-solving skills and your proficiency in the language.
+- **Library and Binary Development**: Develop and oversee a Rust library crate, along with a binary for console applications stored in the `bin` directory. We use the [clap](https://docs.rs/clap/latest/clap/) library for command-line argument parsing and the [nom](https://docs.rs/nom/latest/nom/) library for input parsing.
+
+- **IDE Utilization with VSCode**: Leverage Visual Studio Code (VSCode) to streamline the development and debugging process for your Rust projects, including setting up and using Rust-specific extensions.
+
+- **Utilize Git and Git Hooks**: Gain proficiency in Git for version control and explore [Git hooks](https://git-scm.com/book/zh-tw/v2/Customizing-Git-Git-Hooks) to automate tasks within your Rust project. Use the [pre-commit](https://pre-commit.com/) framework to handle code quality hooks across various languages.
 
 This project not only helps you tackle LeetCode problems but also provides valuable hands-on experience with essential Rust development tools and practices.
 
