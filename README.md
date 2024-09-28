@@ -107,9 +107,9 @@ Please follow the conventions, as noted below, to contribute to this project.
 Please install [pre-commit](https://pre-commit.com/) with the following command before committing:
 
 ```bash
-% pre-commit install --hook-type commit-msg --hook-type pre-commit --hook-type pre-push
 % pre-commit --version
 pre-commit 3.7.1
+% pre-commit install --hook-type commit-msg --hook-type pre-commit --hook-type pre-push
 ```
 
 ## Visual Studio Code Leverage
