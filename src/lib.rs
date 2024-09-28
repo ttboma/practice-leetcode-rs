@@ -50,3 +50,6 @@ mod min_stack;
 
 pub use lru_cache::*;
 mod lru_cache;
+
+pub use trie::*;
+mod trie;
