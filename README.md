@@ -17,9 +17,9 @@
 
 Hi,
 
-Traditionally, the first step in learning a new programming language is writing a "Hello, World!" program. Another effective approach, based on my experience, is starting a project that involves solving [LeetCode](https://leetcode.com/) problems. This method not only reinforces fundamental programming concepts but also offers practical experience with real-world challenges.
+This repository is a Rust library crate that offers a diverse collection of solutions to various [LeetCode](https://leetcode.com/) problems.
 
-This repository is a Rust library crate that offers a diverse collection of solutions to various LeetCode problems. By engaging with this project, you will gain practical experience in several key areas:
+Traditionally, the first step in learning a new programming language is writing a "Hello, World!" program. Another effective approach, based on my experience, is starting a project that involves solving [LeetCode](https://leetcode.com/) problems. This method not only reinforces fundamental programming concepts but also offers practical experience with real-world challenges in several key area:
 
 - **Data Structures and Algorithms**: Deepen your understanding of data structures and algorithms by implementing them in Rust, enhancing both your problem-solving skills and your proficiency in the language.
 
