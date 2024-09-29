@@ -13,6 +13,16 @@ impl ListNode {
     }
 }
 
+impl Drop for ListNode {
+    /// To avoid a recursive call of the default ListNode drop method.
+    fn drop(&mut self) {
+        let mut next = self.next.take();
+        while let Some(mut node) = next {
+            next = node.next.take();
+        }
+    }
+}
+
 #[derive(PartialEq, Eq, Clone, Default)]
 pub struct SinglyLinkedList {
     pub head: Option<Box<ListNode>>,
@@ -39,8 +49,8 @@ impl SinglyLinkedList {
     }
 
     pub fn pop(&mut self) -> Option<i32> {
-        self.head.take().map(|node| {
-            self.head = node.next;
+        self.head.take().map(|mut node| {
+            self.head = node.next.take();
             node.val
         })
     }

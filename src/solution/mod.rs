@@ -137,6 +137,7 @@ mod ship_within_days;
 mod simplify_path;
 mod snakes_and_ladders;
 mod solve;
+mod sort_list;
 mod sorted_array_to_bst;
 mod spiral_order;
 mod stone_game;

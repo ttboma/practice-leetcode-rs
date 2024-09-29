@@ -40,7 +40,7 @@ impl Solution {
         let mut out: Option<Box<ListNode>> = None;
 
         while let Some(mut v) = head {
-            head = v.next;
+            head = v.next.take();
             v.next = out;
             out = Some(v);
         }

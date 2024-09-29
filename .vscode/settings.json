@@ -12,6 +12,7 @@
         "lvalues",
         "multispace",
         "mustconsist",
+        "nlogn",
         "nums",
         "popcount",
         "Postorder",

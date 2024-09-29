@@ -338,6 +338,8 @@ enum Commands {
     MinMutation {},
     /// [127. Word Ladder](https://leetcode.com/problems/word-ladder/description/?envType=study-plan-v2&envId=top-interview-150)
     LadderLength {},
+    /// [148. Sort List](https://leetcode.com/problems/sort-list/description/?envType=study-plan-v2&envId=top-interview-150)
+    SortList {},
 }
 
 fn main() {
@@ -1158,6 +1160,16 @@ fn main() {
             println!(
                 "{:?}",
                 Solution::ladder_length(begin_word, end_word, word_list)
+            );
+        }
+        Commands::SortList {} => {
+            let list = parse_i32_list(&input);
+            let head = SinglyLinkedList::from(list).head;
+            println!(
+                "{:?}",
+                SinglyLinkedList {
+                    head: Solution::sort_list(head)
+                }
             );
         }
     }
