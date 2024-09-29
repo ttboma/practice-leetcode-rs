@@ -38,6 +38,8 @@ impl Solution {
         Self::merge_sort(head)
     }
 
+    /// Implementation of [`Solution::sort_list`].
+    ///
     /// Time complexity: O(nlogn), Space complexity: O(1)
     /// However, the quicksort implementation is not working for large n: Stack overflow occurs.
     pub fn quick_sort(mut head: Option<Box<ListNode>>) -> Option<Box<ListNode>> {
@@ -85,6 +87,8 @@ impl Solution {
         Self::quick_sort_impl(k, count - count_smaller - 1);
     }
 
+    /// Implementation of [`Solution::sort_list`].
+    ///
     // Time complexity: O(nlogn), Space complexity: O(1)
     pub fn merge_sort(head: Option<Box<ListNode>>) -> Option<Box<ListNode>> {
         if let Some(node) = head.as_ref() {
@@ -130,6 +134,8 @@ impl Solution {
         (list, right)
     }
 
+    /// Implementation of [`Solution::sort_list`].
+    ///
     /// Time complexity: O(n), Space complexity: O(n)
     pub fn bucket_sort(mut head: Option<Box<ListNode>>) -> Option<Box<ListNode>> {
         head.as_ref()?;
@@ -166,6 +172,8 @@ impl Solution {
         dummy.next.take()
     }
 
+    /// Implementation of [`Solution::sort_list`].
+    ///
     /// Cheat with Vec::sort
     pub fn vec_sort(mut head: Option<Box<ListNode>>) -> Option<Box<ListNode>> {
         let mut vec: Vec<i32> = vec![];
