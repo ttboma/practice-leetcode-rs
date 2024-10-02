@@ -105,6 +105,8 @@ enum SearchMode {
     StartsWith,
 }
 
+pub mod word_dictionary;
+
 #[cfg(test)]
 mod tests {
     use super::*;
