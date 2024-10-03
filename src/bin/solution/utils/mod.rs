@@ -323,6 +323,30 @@ pub fn parse_2d_char_list_and_str(input: &str) -> (Vec<Vec<char>>, String) {
     )
 }
 
+pub fn parse_2d_char_list_and_str_list(input: &str) -> (Vec<Vec<char>>, Vec<String>) {
+    let (input, result) =
+        nom_parser::parse_2d_list(input).expect(error_msg::TWO_DIMENSION_LIST_FORMAT);
+    let (_, s) = nom_parser::parse_list(input).expect(error_msg::LIST_FORMAT);
+    (
+        result
+            .into_iter()
+            .map(|x| {
+                x.into_iter()
+                    .map(|y| *y.trim().as_bytes().get(1).expect(error_msg::ITEM_OF_CHAR) as char)
+                    .collect::<Vec<_>>()
+            })
+            .collect::<Vec<_>>(),
+        s.into_iter()
+            .map(|x| {
+                nom_parser::parse_str(x)
+                    .expect(error_msg::STR_FORMAT)
+                    .1
+                    .to_owned()
+            })
+            .collect::<Vec<_>>(),
+    )
+}
+
 pub fn parse_str(input: &str) -> String {
     let (_, s) = nom_parser::parse_str(input).expect(error_msg::STR_FORMAT);
     s.to_owned()

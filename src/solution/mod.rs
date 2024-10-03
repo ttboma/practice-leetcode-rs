@@ -46,6 +46,7 @@ mod find_min_arrow_shots;
 mod find_order;
 mod find_substring;
 mod find_the_winner;
+mod find_words;
 mod flatten;
 mod full_justify;
 mod game_of_life;
