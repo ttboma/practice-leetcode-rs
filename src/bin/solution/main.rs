@@ -342,6 +342,8 @@ enum Commands {
     SortList {},
     /// [212. Word Search II](https://leetcode.com/problems/word-search-ii/description/?envType=study-plan-v2&envId=top-interview-150)
     FindWords {},
+    /// [53. Maximum Subarray](https://leetcode.com/problems/maximum-subarray/description/?envType=study-plan-v2&envId=top-interview-150)
+    MaxSubArray {},
 }
 
 fn main() {
@@ -1177,6 +1179,10 @@ fn main() {
         Commands::FindWords {} => {
             let (board, words) = parse_2d_char_list_and_str_list(&input);
             println!("{:?}", Solution::find_words(board, words));
+        }
+        Commands::MaxSubArray {} => {
+            let nums = parse_i32_list(&input);
+            println!("{:?}", Solution::max_sub_array(nums));
         }
     }
 }
