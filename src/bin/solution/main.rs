@@ -344,6 +344,8 @@ enum Commands {
     FindWords {},
     /// [53. Maximum Subarray](https://leetcode.com/problems/maximum-subarray/description/?envType=study-plan-v2&envId=top-interview-150)
     MaxSubArray {},
+    /// [918. Maximum Sum Circular Subarray](https://leetcode.com/problems/maximum-sum-circular-subarray/description/?envType=study-plan-v2&envId=top-interview-150)
+    MaxSubarraySumCircular {},
 }
 
 fn main() {
@@ -1183,6 +1185,10 @@ fn main() {
         Commands::MaxSubArray {} => {
             let nums = parse_i32_list(&input);
             println!("{:?}", Solution::max_sub_array(nums));
+        }
+        Commands::MaxSubarraySumCircular {} => {
+            let nums = parse_i32_list(&input);
+            println!("{:?}", Solution::max_subarray_sum_circular(nums));
         }
     }
 }

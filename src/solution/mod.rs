@@ -95,6 +95,7 @@ mod max_depth;
 mod max_path_sum;
 mod max_profit;
 mod max_sub_array;
+mod max_subarray_sum_circular;
 mod max_sum_after_partitioning;
 mod merge;
 mod merge_alternately;
