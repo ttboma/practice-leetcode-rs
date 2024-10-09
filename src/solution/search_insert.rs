@@ -39,7 +39,7 @@ impl Solution {
     }
 
     fn search_insert_recursive(nums: &[i32], target: i32, start: usize, end: usize) -> i32 {
-        if end <= start {
+        if end == start {
             return end as i32;
         }
         let mid = start + (end - start) / 2;
