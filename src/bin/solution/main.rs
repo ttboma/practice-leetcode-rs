@@ -346,6 +346,8 @@ enum Commands {
     MaxSubArray {},
     /// [918. Maximum Sum Circular Subarray](https://leetcode.com/problems/maximum-sum-circular-subarray/description/?envType=study-plan-v2&envId=top-interview-150)
     MaxSubarraySumCircular {},
+    /// [35. Search Insert Position](https://leetcode.com/problems/search-insert-position/description/?envType=study-plan-v2&envId=top-interview-150)
+    SearchInsert {},
 }
 
 fn main() {
@@ -1189,6 +1191,10 @@ fn main() {
         Commands::MaxSubarraySumCircular {} => {
             let nums = parse_i32_list(&input);
             println!("{:?}", Solution::max_subarray_sum_circular(nums));
+        }
+        Commands::SearchInsert {} => {
+            let (nums, target) = parse_i32_list_and_i32(&input);
+            println!("{:?}", Solution::search_insert(nums, target));
         }
     }
 }
