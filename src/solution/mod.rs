@@ -135,6 +135,7 @@ mod rotate_image;
 mod rotate_right;
 mod running_sum;
 mod search;
+mod search_matrix;
 mod search_insert;
 mod set_zeroes;
 mod ship_within_days;

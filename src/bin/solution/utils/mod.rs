@@ -31,6 +31,22 @@ pub fn parse_i32_and_2d_i32_list(input: &str) -> (i32, Vec<Vec<i32>>) {
     )
 }
 
+pub fn parse_2d_i32_list_and_i32(input: &str) -> (Vec<Vec<i32>>, i32) {
+    let (input, value) = nom_parser::decimal(input).expect(error_msg::INTEGER_FORMAT);
+    let (_, result) = nom_parser::parse_2d_list(input).expect(error_msg::TWO_DIMENSION_LIST_FORMAT);
+    (
+        result
+            .into_iter()
+            .map(|x| {
+                x.into_iter()
+                    .map(|y| y.trim().parse::<i32>().expect(error_msg::ITEM_OF_I32))
+                    .collect::<Vec<_>>()
+            })
+            .collect::<Vec<_>>(),
+        value.trim().parse::<i32>().expect(error_msg::I32_VALUE),
+    )
+}
+
 pub fn parse_i32_and_i32_list(input: &str) -> (i32, Vec<i32>) {
     let (input, value) = nom_parser::decimal(input).expect(error_msg::INTEGER_FORMAT);
     let (_, result) = nom_parser::parse_list(input).expect(error_msg::LIST_FORMAT);
