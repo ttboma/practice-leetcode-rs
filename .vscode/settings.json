@@ -1,6 +1,8 @@
 {
     "cSpell.words": [
         "conseq",
+        "curr",
+        "dealloc",
         "Deque",
         "holle",
         "impls",
@@ -16,7 +18,9 @@
         "nums",
         "popcount",
         "Postorder",
+        "Preorder",
         "println",
+        "realloc",
         "rvalues",
         "Shieh",
         "shiehyuehchang",

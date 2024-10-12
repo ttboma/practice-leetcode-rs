@@ -4,7 +4,7 @@ use crate::Solution;
 impl Solution {
     /// # [61. Rotate List](https://leetcode.com/problems/rotate-list/description/?envType=study-plan-v2&envId=top-interview-150)
     ///
-    /// Given the `head` of a linkedlist, rotate the list to the right by `k` places.
+    /// Given the `head` of a linked list, rotate the list to the right by `k` places.
     ///
     /// **Example 1:**
     /// <img alt="" src="https://assets.leetcode.com/uploads/2020/11/13/rotate1.jpg" style="width: 450px; height: 191px;">

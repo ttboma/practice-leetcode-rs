@@ -17,7 +17,7 @@ impl Solution {
     ///
     /// A board square on row `r` and column `c` has a snake or ladder if `board[r][c] != -1`. The destination of that snake or ladder is `board[r][c]`. Squares `1` and `n^2` are not the starting points of any snake or ladder.
     ///
-    /// Note that you only take a snake or ladder at most once per move. If the destination to a snake or ladder is the start of another snake or ladder, you do **not**  follow the subsequentsnake or ladder.
+    /// Note that you only take a snake or ladder at most once per move. If the destination to a snake or ladder is the start of another snake or ladder, you do **not**  follow the subsequent snake or ladder.
     ///
     /// - For example, suppose the board is `[[-1,4],[-1,3]]`, and on the first move, your destination square is `2`. You follow the ladder to square `3`, but do **not**  follow the subsequent ladder to `4`.
     ///
