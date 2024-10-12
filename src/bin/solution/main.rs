@@ -1194,5 +1194,13 @@ fn main() {
             let nums = parse_i32_list(&input);
             println!("{:?}", Solution::max_subarray_sum_circular(nums));
         }
+        Commands::SearchInsert {} => {
+            let (nums, target) = parse_i32_list_and_i32(&input);
+            println!("{:?}", Solution::search_insert(nums, target));
+        }
+        Commands::SearchMatrix {} => {
+            let (matrix, target) = parse_2d_i32_list_and_i32(&input);
+            println!("{:?}", Solution::search_matrix(matrix, target));
+        }
     }
 }
