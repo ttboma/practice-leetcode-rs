@@ -10,7 +10,7 @@
 //!    `cargo doc --open` to access the documentation.
 //!
 //!    ```rust
-//!    use leetcode_rs::Solution;
+//!    use practice_leetcode_rs::*;
 //!
 //!    let ans = Solution::fib(5);
 //!    assert_eq!(ans, 5);

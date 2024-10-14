@@ -2,7 +2,7 @@ mod utils;
 
 use crate::utils::*;
 use clap::{Parser, Subcommand};
-use leetcode_rs::*;
+use practice_leetcode_rs::*;
 use std::path::PathBuf;
 
 #[derive(Parser)]

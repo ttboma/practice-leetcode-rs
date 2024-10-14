@@ -64,7 +64,7 @@ After cloning this library crate using `git clone`, run `cargo test` to execute 
 Here is an example of how to use this library crate in your code:
 
 ```rust
-use leetcode_rs::Solution;
+use practice_leetcode_rs::*;
 
 let ans = Solution::fib(5);
 assert_eq!(ans, 5);
