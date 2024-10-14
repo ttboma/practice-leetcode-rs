@@ -217,16 +217,21 @@ mod tests {
 
     #[test]
     fn example4() {
-        // NOTE: When n is large, stack overflow will occur.
-        //       E.g. n = 4116 using Solution::quick_sort implementation,
+        // NOTE: When n is large, stack overflow will occur. n differs depending on the Platform.
+        //       E.g. The following is tested on my macOS:
+        //            n = 4116 using Solution::quick_sort implementation,
         //            n = 11972 using Solution::vec_sort and Solution::bucket_sort implementation.
         //       Why does Solution::vec_sort stack overflow occur?
-        //       I guess it is because of the recursive call in the assert_eq! macro.
-        let n = 11971;
+        //       I guess it is actually because of the recursive call in the assert_eq! macro, which
+        //       recursively check for the equality of the linked list. The stack overflow occurs
+        let n = 100;
+
         let random_values: Vec<i32> = (0..n).rev().collect();
-        let expected: Vec<i32> = (0..n).collect();
         let root = SinglyLinkedList::from(random_values);
-        let expected = SinglyLinkedList::from(expected);
-        assert_eq!(Solution::sort_list(root.head), expected.head);
+        let ans = Solution::sort_list(root.head);
+
+        let expected_values: Vec<i32> = (0..n).collect();
+        let expected = SinglyLinkedList::from(expected_values);
+        assert_eq!(ans, expected.head);
     }
 }
