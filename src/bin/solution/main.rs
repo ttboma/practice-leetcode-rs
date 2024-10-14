@@ -350,6 +350,8 @@ enum Commands {
     SearchMatrix {},
     /// [35. Search Insert Position](https://leetcode.com/problems/search-insert-position/description/?envType=study-plan-v2&envId=top-interview-150)
     SearchInsert {},
+    /// [162. Find Peak Element](https://leetcode.com/problems/find-peak-element/description/?envType=study-plan-v2&envId=top-interview-150)
+    FindPeakElement {},
 }
 
 fn main() {
@@ -1201,6 +1203,10 @@ fn main() {
         Commands::SearchMatrix {} => {
             let (matrix, target) = parse_2d_i32_list_and_i32(&input);
             println!("{:?}", Solution::search_matrix(matrix, target));
+        }
+        Commands::FindPeakElement {} => {
+            let nums = parse_i32_list(&input);
+            println!("{:?}", Solution::find_peak_element(nums));
         }
     }
 }
