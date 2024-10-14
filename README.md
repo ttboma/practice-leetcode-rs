@@ -117,7 +117,6 @@ pre-commit 3.7.1
 To maintain your code quality, the following is a list of recommended [Visual Studio Code](https://code.visualstudio.com/) plugins:
 
 - [rust-analyzer](https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer)
-- [Rust Doc Viewer](https://marketplace.visualstudio.com/items?itemName=JScearcy.rust-doc-viewer)
 - [crates](https://marketplace.visualstudio.com/items?itemName=serayuzgur.crates)
 - [Even Better TOML](https://marketplace.visualstudio.com/items?itemName=tamasfe.even-better-toml)
 - [markdownlint](https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint)
@@ -125,6 +124,7 @@ To maintain your code quality, the following is a list of recommended [Visual St
 - [CodeLLDB](https://marketplace.visualstudio.com/items?itemName=vadimcn.vscode-lldb)
 - [Error Lens](https://marketplace.visualstudio.com/items?itemName=usernamehw.errorlens)
 - [GitLens — Git supercharged](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens)
+- [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer)
 - [pre-commit](https://marketplace.visualstudio.com/items?itemName=elagil.pre-commit-helper)
 
 ## How to debug with CodeLLDB
