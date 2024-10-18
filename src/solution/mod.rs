@@ -138,6 +138,7 @@ mod running_sum;
 mod search;
 mod search_insert;
 mod search_matrix;
+mod search_range;
 mod search_rotated_sorted_array;
 mod set_zeroes;
 mod ship_within_days;

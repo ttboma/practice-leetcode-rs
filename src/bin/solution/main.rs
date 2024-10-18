@@ -354,6 +354,8 @@ enum Commands {
     FindPeakElement {},
     /// [33. Search in Rotated Sorted Array](https://leetcode.com/problems/search-in-rotated-sorted-array/description/?envType=study-plan-v2&envId=top-interview-150)
     SearchRotatedSortedArray {},
+    /// [34. Find First and Last Position of Element in Sorted Array](https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/description/?envType=study-plan-v2&envId=top-interview-150)
+    SearchRange {},
 }
 
 fn main() {
@@ -1213,6 +1215,10 @@ fn main() {
         Commands::SearchRotatedSortedArray {} => {
             let (nums, target) = parse_i32_list_and_i32(&input);
             println!("{:?}", Solution::search_rotated_sorted_array(nums, target));
+        }
+        Commands::SearchRange {} => {
+            let (nums, target) = parse_i32_list_and_i32(&input);
+            println!("{:?}", Solution::search_range(nums, target));
         }
     }
 }
