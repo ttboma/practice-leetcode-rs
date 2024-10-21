@@ -42,6 +42,7 @@ mod find_difference;
 mod find_kth_bit;
 mod find_kth_positive;
 mod find_max_average;
+mod find_min;
 mod find_min_arrow_shots;
 mod find_order;
 mod find_peak_element;

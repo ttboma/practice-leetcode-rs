@@ -356,6 +356,8 @@ enum Commands {
     SearchRotatedSortedArray {},
     /// [34. Find First and Last Position of Element in Sorted Array](https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/description/?envType=study-plan-v2&envId=top-interview-150)
     SearchRange {},
+    /// [153. Find Minimum in Rotated Sorted Array](https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/description/?envType=study-plan-v2&envId=top-interview-150)
+    FindMin {},
 }
 
 fn main() {
@@ -1219,6 +1221,10 @@ fn main() {
         Commands::SearchRange {} => {
             let (nums, target) = parse_i32_list_and_i32(&input);
             println!("{:?}", Solution::search_range(nums, target));
+        }
+        Commands::FindMin {} => {
+            let nums = parse_i32_list(&input);
+            println!("{:?}", Solution::find_min(nums));
         }
     }
 }
