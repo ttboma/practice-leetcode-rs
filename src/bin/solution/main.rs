@@ -358,6 +358,8 @@ enum Commands {
     SearchRange {},
     /// [153. Find Minimum in Rotated Sorted Array](https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/description/?envType=study-plan-v2&envId=top-interview-150)
     FindMin {},
+    /// [4. Median of Two Sorted Arrays](https://leetcode.com/problems/median-of-two-sorted-arrays/description/?envType=study-plan-v2&envId=top-interview-150)
+    FindMedianSortedArrays {},
 }
 
 fn main() {
@@ -1225,6 +1227,10 @@ fn main() {
         Commands::FindMin {} => {
             let nums = parse_i32_list(&input);
             println!("{:?}", Solution::find_min(nums));
+        }
+        Commands::FindMedianSortedArrays {  } => {
+            let (nums1, nums2) = parse_two_i32_list(&input);
+            println!("{:?}", Solution::find_median_sorted_arrays(nums1, nums2));
         }
     }
 }
