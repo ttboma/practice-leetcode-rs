@@ -4,7 +4,6 @@ pub struct Solution {}
 /// Each of the methods for Solution struct are placed under its own module
 mod add_two_numbers;
 mod all_paths_source_target;
-mod find_median_sorted_arrays;
 mod all_possible_fbt;
 mod average_of_levels;
 mod binary_tree_paths;
@@ -43,6 +42,7 @@ mod find_difference;
 mod find_kth_bit;
 mod find_kth_positive;
 mod find_max_average;
+mod find_median_sorted_arrays;
 mod find_min;
 mod find_min_arrow_shots;
 mod find_order;

@@ -1228,7 +1228,7 @@ fn main() {
             let nums = parse_i32_list(&input);
             println!("{:?}", Solution::find_min(nums));
         }
-        Commands::FindMedianSortedArrays {  } => {
+        Commands::FindMedianSortedArrays {} => {
             let (nums1, nums2) = parse_two_i32_list(&input);
             println!("{:?}", Solution::find_median_sorted_arrays(nums1, nums2));
         }
