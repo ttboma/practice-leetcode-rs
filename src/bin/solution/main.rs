@@ -360,6 +360,8 @@ enum Commands {
     FindMin {},
     /// [4. Median of Two Sorted Arrays](https://leetcode.com/problems/median-of-two-sorted-arrays/description/?envType=study-plan-v2&envId=top-interview-150)
     FindMedianSortedArrays {},
+    /// [23. Merge k Sorted Lists](https://leetcode.com/problems/merge-k-sorted-lists/description/?envType=study-plan-v2&envId=top-interview-150)
+    MergeKLists {},
 }
 
 fn main() {
@@ -1231,6 +1233,14 @@ fn main() {
         Commands::FindMedianSortedArrays {} => {
             let (nums1, nums2) = parse_two_i32_list(&input);
             println!("{:?}", Solution::find_median_sorted_arrays(nums1, nums2));
+        }
+        Commands::MergeKLists {} => {
+            let lists = parse_2d_i32_list(&input);
+            let lists = lists
+                .into_iter()
+                .map(|nodes| SinglyLinkedList::from(nodes).head)
+                .collect();
+            println!("{:?}", Solution::merge_k_lists(lists));
         }
     }
 }

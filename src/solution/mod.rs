@@ -103,6 +103,7 @@ mod max_sum_after_partitioning;
 mod merge;
 mod merge_alternately;
 mod merge_intervals;
+mod merge_k_lists;
 mod merge_two_lists;
 mod middle_node;
 mod min_cost_climbing_stairs;

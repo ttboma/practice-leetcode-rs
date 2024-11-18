@@ -36,12 +36,11 @@ impl Solution {
     /// - The number of nodes in the tree is in the range `[0, 100]`.
     /// - `-100 <= Node.val <= 100`
     pub fn invert_tree(root: Option<Rc<RefCell<TreeNode>>>) -> Option<Rc<RefCell<TreeNode>>> {
-        root.map(|node| {
+        root.inspect(|node| {
             let left = node.borrow_mut().left.take();
             let right = node.borrow_mut().right.take();
             node.borrow_mut().left = Solution::invert_tree(right);
             node.borrow_mut().right = Solution::invert_tree(left);
-            node
         })
     }
 }
