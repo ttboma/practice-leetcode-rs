@@ -362,6 +362,8 @@ enum Commands {
     FindMedianSortedArrays {},
     /// [23. Merge k Sorted Lists](https://leetcode.com/problems/merge-k-sorted-lists/description/?envType=study-plan-v2&envId=top-interview-150)
     MergeKLists {},
+    /// [67. Add Binary](https://leetcode.com/problems/add-binary/description/?envType=study-plan-v2&envId=top-interview-150)
+    AddBinary {},
 }
 
 fn main() {
@@ -1241,6 +1243,10 @@ fn main() {
                 .map(|nodes| SinglyLinkedList::from(nodes).head)
                 .collect();
             println!("{:?}", Solution::merge_k_lists(lists));
+        }
+        Commands::AddBinary {} => {
+            let (a, b) = parse_two_str(&input);
+            println!("{:?}", Solution::add_binary(a, b));
         }
     }
 }
