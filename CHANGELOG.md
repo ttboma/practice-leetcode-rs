@@ -1,0 +1,194 @@
+# Changelog
+
+## [v1.0.0] - 2023-10-10
+
+### Added
+
+- Introduced a new command-line interface (CLI) using clap with multiple subcommands for various LeetCode problems.
+- Added support for reading input from a file or stdin.
+- Implemented the following commands:
+  - AllPathsSourceTarget: Solves the "All Paths From Source to Target" problem.
+  - AllPossibleFbt: Solves the "All Possible Full Binary Trees" problem.
+  - BinaryTreePaths: Solves the "Binary Tree Paths" problem.
+  - CanPlaceFlowers: Solves the "Can Place Flowers" problem.
+  - ContainsDuplicate: Solves the "Contains Duplicate" problem.
+  - CountBits: Solves the "Counting Bits" problem.
+  - CountMaxOrSubsets: Solves the "Count Number of Maximum Bitwise-OR Subsets" problem.
+  - CountOdds: Solves the "Count Odd Numbers in an Interval Range" problem.
+  - CountPairs: Solves the "Count Unreachable Pairs of Nodes in an Undirected Graph" problem.
+  - CountSquares: Solves the "Count Square Submatrices with All Ones" problem.
+  - CountSubstrings: Solves the "Count Substrings That Differ by One Character" problem.
+  - CountVowelStrings: Solves the "Count Sorted Vowel Strings" problem.
+  - DecodeStrin: Solves the "Decode String" problem.
+  - DiffWaysToCompute: Solves the "Different Ways to Add Parentheses" problem.
+  - DistributeCookies: Solves the "Fair Distribution of Cookies" problem.
+  - DivisorGame: Solves the "Divisor Game" problem.
+  - Fib: Solves the "Fibonacci Number" problem.
+  - FindBall: Solves the "Where Will the Ball Fall" problem.
+  - FindDifference: Solves the "Find the Difference" problem.
+  - FindKthBit: Solves the "Find Kth Bit in Nth Binary String" problem.
+  - FindKthPositive: Solves the "Kth Missing Positive Number" problem.
+  - FindMaxAverage: Solves the "Maximum Average Subarray I" problem.
+  - FindTheWinner: Solves the "Find the Winner of the Circular Game" problem.
+  - GcdOfStrings: Solves the "Greatest Common Divisor of Strings" problem.
+  - GenerateParenthesis: Solves the "Generate Parentheses" problem.
+  - Generate: Solves the "Pascal's Triangle" problem.
+  - GetKth: Solves the "Sort Integers by The Power Value" problem.
+  - GetMaximumGenerated: Solves the "Get Maximum in Generated Array" problem.
+  - GetRow: Solves the "Pascal's Triangle II" problem.
+  - HasPathSum: Solves the "Path Sum" problem.
+  - IsAnagram: Solves the "Valid Anagram" problem.
+  - IsIsomorphic: Solves the "Isomorphic Strings" problem.
+  - IsPalindrome: Solves the "Palindrome Linked List" problem.
+  - IsPowerOfFour: Solves the "Power of Four" problem.
+  - IsPowerOfThree: Solves the "Power of Three" problem.
+  - IsPowerOfTwo: Solves the "Power of Two" problem.
+  - IsSubsequence: Solves the "Is Subsequence" problem.
+  - Jump: Solves the "Jump Game II" problem.
+  - KidsWithCandies: Solves the "Kids With the Greatest Number of Candies" problem.
+  - KthGrammar: Solves the "K-th Symbol in Grammar" problem.
+  - LargestAltitude: Solves the "Find the Highest Altitude" problem.
+  - LongestPalindrome: Solves the "Longest Palindrome" problem.
+  - MajorityElement: Solves the "Majority Element" problem.
+  - MaxProfit1: Solves the "Best Time to Buy and Sell Stock" problem.
+  - MaxProfit2: Solves the "Best Time to Buy and Sell Stock II" problem.
+  - MaxSumAfterPartitioning: Solves the "Partition Array for Maximum Sum" problem.
+  - MergeAlternately: Solves the "Merge Strings Alternately" problem.
+  - MergeTwoLists: Solves the "Merge Two Sorted Lists" problem.
+  - Merge: Solves the "Merge Sorted Array" problem.
+  - MiddleNode: Solves the "Middle of the Linked List" problem.
+  - MinCostClimbingStairs: Solves the "Min Cost Climbing Stairs" problem.
+  - MinEatingSpeed: Solves the "Koko Eating Bananas" problem.
+  - MinNonZeroProduct: Solves the "Minimum Non-Zero Product of the Array Elements" problem.
+  - MinScore: Solves the "Minimum Score of a Path Between Two Cities" problem.
+  - MoveZeroes: Solves the "Move Zeroes" problem.
+  - NumTilePossibilities: Solves the "Letter Tile Possibilities" problem.
+  - Permute: Solves the "Permutations" problem.
+  - PivotIndex: Solves the "Find Pivot Index" problem.
+  - PredictTheWinner: Solves the "Predict the Winner" problem.
+  - ProductExceptSelf: Solves the "Product of Array Except Self" problem.
+  - ReadBinaryWatch: Solves the "Binary Watch" problem.
+  - RemoveDuplicates1: Solves the "Remove Duplicates from Sorted Array" problem.
+  - RemoveDuplicates2: Solves the "Remove Duplicates from Sorted Array II" problem.
+  - RemoveElement: Solves the "Remove Element" problem.
+  - RemoveElements: Solves the "Remove Linked List Elements" problem.
+  - RemoveNodes: Solves the "Remove Nodes From Linked List" problem.
+  - ReorderList: Solves the "Reorder List" problem.
+  - ReverseList: Solves the "Reverse Linked List" problem.
+  - ReverseVowels: Solves the "Reverse Vowels of a String" problem.
+  - ReverseWords: Solves the "Reverse Words in a String" problem.
+  - Rotate: Solves the "Rotate Array" problem.
+  - RunningSum: Solves the "Running Sum of 1d Array" problem.
+  - Search: Solves the "Binary Search" problem.
+  - ShipWithinDays: Solves the "Capacity To Ship Packages Within D Days" problem.
+  - StoneGame: Solves the "Stone Game" problem.
+  - SubsetXorSum: Solves the "Sum of All Subset XOR Totals" problem.
+  - Subsets: Solves the "Subsets" problem.
+  - SwapPairs: Solves the "Swap Nodes in Pairs" problem.
+  - TotalFruit: Solves the "Fruit Into Baskets" problem.
+  - Tribonacci: Solves the "N-th Tribonacci Number" problem.
+  - TwoEggDrop: Solves the "Egg Drop With 2 Eggs and N Floors" problem.
+  - ZeroFilledSubarray: Solves the "Number of Zero-Filled Subarrays" problem.
+  - CanJump: Solves the "Jump Game" problem.
+  - HIndex: Solves the "H-Index" problem.
+  - CanCompleteCircuit: Solves the "Gas Station" problem.
+  - LengthOfLastWord: Solves the "Length of Last Word" problem.
+  - RomanToInt: Solves the "Roman to Integer" problem.
+  - LongestCommonPrefix: Solves the "Longest Common Prefix" problem.
+  - StrStr: Solves the "Find the Index of the First Occurrence in a String" problem.
+  - CanConstruct: Solves the "Ransom Note" problem.
+  - WordPattern: Solves the "Word Pattern" problem.
+  - TwoSum1: Solves the "Two Sum" problem.
+  - TwoSum2: Solves the "Two Sum II - Input Array Is Sorted" problem.
+  - IsHappy: Solves the "Happy Number" problem.
+  - ContainsNearbyDuplicate: Solves the "Contains Duplicate II" problem.
+  - GroupAnagrams: Solves the "Group Anagrams" problem.
+  - LongestConsecutive: Solves the "Longest Consecutive Sequence" problem.
+  - IntToRoman: Solves the "Integer to Roman" problem.
+  - Convert: Solves the "Zigzag Conversion" problem.
+  - Candy: Solves the "Candy" problem.
+  - LetterCombinations: Solves the "Letter Combinations of a Phone Number" problem.
+  - Combine: Solves the "Combinations" problem.
+  - CombinationSum: Solves the "Combination Sum" problem.
+  - TotalNQueens: Solves the "N-Queens II" problem.
+  - Exist: Solves the "Word Search" problem.
+  - SortedArrayToBst: Solves the "Convert Sorted Array to Binary Search Tree" problem.
+  - IsPalindromeStr: Solves the "Palindrome Linked List" problem.
+  - AddTwoNumbers: Solves the "Add Two Numbers" problem.
+  - MaxArea: Solves the "Container With Most Water" problem.
+  - ThreeSum: Solves the "3Sum" problem.
+  - Trap: Solves the "Trapping Rain Water" problem.
+  - FullJustify: Solves the "Text Justification" problem.
+  - MinSubArrayLen: Solves the "Minimum Size Subarray Sum" problem.
+  - LengthOfLongestSubstring: Solves the "Longest Substring Without Repeating Characters" problem.
+  - IsValidSudoku: Solves the "Valid Sudoku" problem.
+  - SpiralOrder: Solves the "Spiral Matrix" problem.
+  - RotateImage: Solves the "Rotate Image" problem.
+  - SetZeroes: Solves the "Set Matrix Zeroes" problem.
+  - GameOfLife: Solves the "Game of Life" problem.
+  - SummaryRanges: Solves the "Summary Ranges" problem.
+  - MergeIntervals: Solves the "Merge Intervals" problem.
+  - FindSubstring: Solves the "Substring with Concatenation of All Words" problem.
+  - Insert: Solves the "Insert Interval" problem.
+  - FindMinArrowShots: Solves the "Minimum Number of Arrows to Burst Balloons" problem.
+  - MinWindow: Solves the "Minimum Window Substring" problem.
+  - SimplifyPath: Solves the "Simplify Path" problem.
+  - ReverseBetween: Solves the "Reverse Linked List II" problem.
+  - MinStack: Solves the "Min Stack" problem.
+  - EvalRpn: Solves the "Evaluate Reverse Polish Notation" problem.
+  - Calculate: Solves the "Basic Calculator" problem.
+  - RemoveNthFromEnd: Solves the "Remove Nth Node From End of List" problem.
+  - DeleteDuplicates: Solves the "Remove Duplicates from Sorted List II" problem.
+  - RotateRight: Solves the "Rotate List" problem.
+  - Partition: Solves the "Partition List" problem.
+  - MaxDepth: Solves the "Maximum Depth of Binary Tree" problem.
+  - IsSameTree: Solves the "Same Tree" problem.
+  - InvertTree: Solves the "Invert Binary Tree" problem.
+  - IsSymmetric: Solves the "Symmetric Tree" problem.
+  - BuildTreeFromPreorderAndInorder: Solves the "Construct Binary Tree from Preorder and Inorder Traversal" problem.
+  - BuildTreeFromInorderAndPostorder: Solves the "Construct Binary Tree from Inorder and Postorder Traversal" problem.
+  - Flatten: Solves the "Flatten Binary Tree to Linked List" problem.
+  - CountNodes: Solves the "Count Complete Tree Nodes" problem.
+  - SumNumbers: Solves the "Sum Root to Leaf Numbers" problem.
+  - MaxPathSum: Solves the "Binary Tree Maximum Path Sum" problem.
+  - LowestCommonAncestor: Solves the "Lowest Common Ancestor of a Binary Tree" problem.
+  - RightSideView: Solves the "Binary Tree Right Side View" problem.
+  - LevelOrder: Solves the "Binary Tree Level Order Traversal" problem.
+  - AverageOfLevels: Solves the "Average of Levels in Binary Tree" problem.
+  - ZigzagLevelOrder: Solves the "Binary Tree Zigzag Level Order Traversal" problem.
+  - GetMinimumDifference: Solves the "Minimum Absolute Difference in BST" problem.
+  - KthSmallest: Solves the "Kth Smallest Element in a BST" problem.
+  - IsValidBst: Solves the "Validate Binary Search Tree" problem.
+  - NumIslands: Solves the "Number of Islands" problem.
+  - Solve: Solves the "Surrounded Regions" problem.
+  - CalcEquation: Solves the "Evaluate Division" problem.
+  - CanFinish: Solves the "Course Schedule" problem.
+  - FindOrder: Solves the "Course Schedule II" problem.
+  - SnakesAndLadders: Solves the "Snakes and Ladders" problem.
+  - MinMutation: Solves the "Minimum Genetic Mutation" problem.
+  - LadderLength: Solves the "Word Ladder" problem.
+  - SortList: Solves the "Sort List" problem.
+  - FindWords: Solves the "Word Search II" problem.
+  - MaxSubArray: Solves the "Maximum Subarray" problem.
+  - MaxSubarraySumCircular: Solves the "Maximum Sum Circular Subarray" problem.
+  - SearchInsert: Solves the "Search Insert Position" problem.
+  - SearchMatrix: Solves the "Search a 2D Matrix" problem.
+  - FindPeakElement: Solves the "Find Peak Element" problem.
+  - SearchRotatedSortedArray: Solves the "Search in Rotated Sorted Array" problem.
+  - SearchRange: Solves the "Find First and Last Position of Element in Sorted Array" problem.
+  - FindMin: Solves the "Find Minimum in Rotated Sorted Array" problem.
+  - FindMedianSortedArrays: Solves the "Median of Two Sorted Arrays" problem.
+  - MergeKLists: Solves the "Merge k Sorted Lists" problem.
+  - AddBinary: Solves the "Add Binary" problem.
+
+### Changed
+
+- Updated the package version to `1.0.0` to indicate a stable release.
+
+### Fixed
+
+- N/A
+
+### Removed
+
+- N/A
