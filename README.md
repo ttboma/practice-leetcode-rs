@@ -1,18 +1,3 @@
-# Table of Content
-
-- [Table of Content](#table-of-content)
-- [Introduction](#introduction)
-- [Install and Setup](#install-and-setup)
-- [Example Usage](#example-usage)
-- [API Documentation](#api-documentation)
-- [Developer's Note](#developers-note)
-  - [Convention](#convention)
-  - [How to Use `pre-commit`](#how-to-use-pre-commit)
-  - [Visual Studio Code Leverage](#visual-studio-code-leverage)
-  - [How to debug with CodeLLDB](#how-to-debug-with-codelldb)
-  - [How to debug with lldb](#how-to-debug-with-lldb)
-  - [TODO](#todo)
-
 # Introduction
 
 Hi,
