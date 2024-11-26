@@ -364,6 +364,8 @@ enum Commands {
     MergeKLists {},
     /// [67. Add Binary](https://leetcode.com/problems/add-binary/description/?envType=study-plan-v2&envId=top-interview-150)
     AddBinary {},
+    /// [190. Reverse Bits](https://leetcode.com/problems/reverse-bits/description/?envType=study-plan-v2&envId=top-interview-150)
+    ReverseBits {},
 }
 
 fn main() {
@@ -1247,6 +1249,11 @@ fn main() {
         Commands::AddBinary {} => {
             let (a, b) = parse_two_str(&input);
             println!("{:?}", Solution::add_binary(a, b));
+        }
+        Commands::ReverseBits {} => {
+            let n = parse_bits(&input);
+            let rev_n = Solution::reverse_bits(n);
+            println!("{rev_n} ({rev_n:032b})",);
         }
     }
 }

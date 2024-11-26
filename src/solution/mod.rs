@@ -130,6 +130,7 @@ mod remove_nodes;
 mod remove_nth_from_end;
 mod reorder_list;
 mod reverse_between;
+mod reverse_bits;
 mod reverse_list;
 mod reverse_vowels;
 mod reverse_words;
