@@ -19,7 +19,7 @@
   - CountSquares: Solves the "Count Square Submatrices with All Ones" problem.
   - CountSubstrings: Solves the "Count Substrings That Differ by One Character" problem.
   - CountVowelStrings: Solves the "Count Sorted Vowel Strings" problem.
-  - DecodeStrin: Solves the "Decode String" problem.
+  - DecodeString: Solves the "Decode String" problem.
   - DiffWaysToCompute: Solves the "Different Ways to Add Parentheses" problem.
   - DistributeCookies: Solves the "Fair Distribution of Cookies" problem.
   - DivisorGame: Solves the "Divisor Game" problem.
