@@ -1,8 +1,8 @@
 /// LeetCode solutions provided by Shieh, Yueh-chang <ttboma@gmail.com>
 pub struct Solution {}
 
-mod add_binary;
 /// Each of the methods for Solution struct are placed under its own module
+mod add_binary;
 mod add_two_numbers;
 mod all_paths_source_target;
 mod all_possible_fbt;
@@ -63,6 +63,7 @@ mod get_minimum_difference;
 mod get_row;
 mod group_anagrams;
 mod h_index;
+mod hamming_weight;
 mod has_path_sum;
 mod insert;
 mod int_to_roman;

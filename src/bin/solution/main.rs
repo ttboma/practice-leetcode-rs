@@ -366,6 +366,8 @@ enum Commands {
     AddBinary {},
     /// [190. Reverse Bits](https://leetcode.com/problems/reverse-bits/description/?envType=study-plan-v2&envId=top-interview-150)
     ReverseBits {},
+    /// [191. Number of 1 Bits](https://leetcode.com/problems/number-of-1-bits/description/?envType=study-plan-v2&envId=top-interview-150)
+    HammingWeight {},
 }
 
 fn main() {
@@ -1254,6 +1256,10 @@ fn main() {
             let n = parse_bits(&input);
             let rev_n = Solution::reverse_bits(n);
             println!("{rev_n} ({rev_n:032b})",);
+        }
+        Commands::HammingWeight {} => {
+            let n = parse_i32(&input);
+            println!("{:?}", Solution::hamming_weight(n));
         }
     }
 }
