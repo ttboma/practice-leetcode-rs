@@ -368,6 +368,8 @@ enum Commands {
     ReverseBits {},
     /// [191. Number of 1 Bits](https://leetcode.com/problems/number-of-1-bits/description/?envType=study-plan-v2&envId=top-interview-150)
     HammingWeight {},
+    /// [136. Single Number](https://leetcode.com/problems/single-number/description/?envType=study-plan-v2&envId=top-interview-150)
+    SingleNumber {},
 }
 
 fn main() {
@@ -1260,6 +1262,10 @@ fn main() {
         Commands::HammingWeight {} => {
             let n = parse_i32(&input);
             println!("{:?}", Solution::hamming_weight(n));
+        }
+        Commands::SingleNumber {} => {
+            let nums = parse_i32_list(&input);
+            println!("{:?}", Solution::single_number(nums));
         }
     }
 }
