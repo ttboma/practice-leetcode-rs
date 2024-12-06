@@ -150,6 +150,7 @@ mod set_zeroes;
 mod ship_within_days;
 mod simplify_path;
 mod single_number;
+mod single_number2;
 mod snakes_and_ladders;
 mod solve;
 mod sort_list;

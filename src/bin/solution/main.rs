@@ -370,6 +370,8 @@ enum Commands {
     HammingWeight {},
     /// [136. Single Number](https://leetcode.com/problems/single-number/description/?envType=study-plan-v2&envId=top-interview-150)
     SingleNumber {},
+    /// [137. Single Number II](https://leetcode.com/problems/single-number-ii/description/?envType=study-plan-v2&envId=top-interview-150)
+    SingleNumber2 {},
 }
 
 fn main() {
@@ -1266,6 +1268,10 @@ fn main() {
         Commands::SingleNumber {} => {
             let nums = parse_i32_list(&input);
             println!("{:?}", Solution::single_number(nums));
+        }
+        Commands::SingleNumber2 {} => {
+            let nums = parse_i32_list(&input);
+            println!("{:?}", Solution::single_number2(nums));
         }
     }
 }
