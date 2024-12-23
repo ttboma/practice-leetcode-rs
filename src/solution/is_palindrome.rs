@@ -106,36 +106,36 @@ mod tests {
     #[test]
     fn example1_1() {
         let head = singly_linked_list![1, 2, 2, 1].head;
-        assert_eq!(Solution::is_palindrome(head), true);
+        assert!(Solution::is_palindrome(head));
     }
 
     #[test]
     fn example1_2() {
         let head = singly_linked_list![1, 2].head;
-        assert_eq!(Solution::is_palindrome(head), false);
+        assert!(!Solution::is_palindrome(head));
     }
 
     #[test]
     fn example1_3() {
         let head = singly_linked_list![2].head;
-        assert_eq!(Solution::is_palindrome(head), true);
+        assert!(Solution::is_palindrome(head));
     }
 
     #[test]
     fn example2_1() {
         let s = "A man, a plan, a canal: Panama".to_owned();
-        assert_eq!(Solution::is_palindrome_str(s), true);
+        assert!(Solution::is_palindrome_str(s));
     }
 
     #[test]
     fn example2_2() {
         let s = "race a car".to_owned();
-        assert_eq!(Solution::is_palindrome_str(s), false);
+        assert!(!Solution::is_palindrome_str(s));
     }
 
     #[test]
     fn example2_3() {
         let s = " ".to_owned();
-        assert_eq!(Solution::is_palindrome_str(s), true);
+        assert!(Solution::is_palindrome_str(s));
     }
 }

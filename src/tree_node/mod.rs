@@ -224,12 +224,12 @@ mod tests {
         let mut bst_iterator = BSTIterator::new(root.root.clone());
         assert_eq!(bst_iterator.next(), 3);
         assert_eq!(bst_iterator.next(), 7);
-        assert_eq!(bst_iterator.has_next(), true);
+        assert!(bst_iterator.has_next());
         assert_eq!(bst_iterator.next(), 9);
-        assert_eq!(bst_iterator.has_next(), true);
+        assert!(bst_iterator.has_next());
         assert_eq!(bst_iterator.next(), 15);
-        assert_eq!(bst_iterator.has_next(), true);
+        assert!(bst_iterator.has_next());
         assert_eq!(bst_iterator.next(), 20);
-        assert_eq!(bst_iterator.has_next(), false);
+        assert!(!bst_iterator.has_next());
     }
 }

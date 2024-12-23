@@ -95,18 +95,18 @@ mod tests {
     #[test]
     fn example1() {
         let nums = vec![1, 5, 2];
-        assert_eq!(Solution::predict_the_winner(nums), false);
+        assert!(!Solution::predict_the_winner(nums));
     }
 
     #[test]
     fn example2() {
         let nums = vec![1, 5, 233, 7];
-        assert_eq!(Solution::predict_the_winner(nums), true);
+        assert!(Solution::predict_the_winner(nums));
     }
 
     #[test]
     fn example3() {
         let nums = vec![0];
-        assert_eq!(Solution::predict_the_winner(nums), true);
+        assert!(Solution::predict_the_winner(nums));
     }
 }

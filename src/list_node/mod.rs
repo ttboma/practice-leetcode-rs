@@ -120,12 +120,12 @@ impl From<Vec<i32>> for SinglyLinkedList {
 macro_rules! singly_linked_list {
     ($($x:expr),*) => {{
         let mut list = SinglyLinkedList::new();
+        #[allow(unused_mut, unused_assignments)] // Suppress both warnings
         let mut last = &mut list.head;
         $(
             *last = Some(Box::new(ListNode::new($x)));
             last = &mut { last }.as_mut().unwrap().next;
         )*
-        let _ = last; // to workaround unused assignments warning
         list
     }};
 }
