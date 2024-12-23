@@ -57,15 +57,13 @@ fn is_valid_bst_with_limit(
 
 #[cfg(test)]
 mod test {
-    use std::i32;
-
     use super::*;
     use crate::Tree;
 
     #[test]
     fn example1() {
         let tree = Tree::from(vec![Some(2), Some(1), Some(3)]);
-        assert_eq!(Solution::is_valid_bst(tree.root), true);
+        assert!(Solution::is_valid_bst(tree.root));
     }
 
     #[test]
@@ -79,30 +77,30 @@ mod test {
             Some(3),
             Some(6),
         ]);
-        assert_eq!(Solution::is_valid_bst(tree.root), false);
+        assert!(!Solution::is_valid_bst(tree.root));
     }
 
     #[test]
     fn example3() {
         let tree = Tree::from(vec![Some(2), Some(2), Some(2)]);
-        assert_eq!(Solution::is_valid_bst(tree.root), false);
+        assert!(!Solution::is_valid_bst(tree.root));
     }
 
     #[test]
     fn example4() {
         let tree = Tree::from(vec![Some(1), None, Some(1)]);
-        assert_eq!(Solution::is_valid_bst(tree.root), false);
+        assert!(!Solution::is_valid_bst(tree.root));
     }
 
     #[test]
     fn example5() {
         let tree = Tree::from(vec![Some(i32::MIN)]);
-        assert_eq!(Solution::is_valid_bst(tree.root), true);
+        assert!(Solution::is_valid_bst(tree.root));
     }
 
     #[test]
     fn example6() {
         let tree = Tree::from(vec![Some(i32::MAX)]);
-        assert_eq!(Solution::is_valid_bst(tree.root), true);
+        assert!(Solution::is_valid_bst(tree.root));
     }
 }

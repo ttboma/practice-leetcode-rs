@@ -69,7 +69,7 @@ struct Exist<'a> {
     word: &'a [u8],
 }
 
-impl<'a> Exist<'a> {
+impl Exist<'_> {
     fn backtrace(&mut self, i: usize, j: usize) -> bool {
         self.idx += 1;
         if self.idx == self.word.len() {
@@ -105,46 +105,38 @@ impl<'a> Exist<'a> {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     #[test]
     fn example1() {
-        assert_eq!(
-            Solution::exist(
-                vec![
-                    vec!['A', 'B', 'C', 'E'],
-                    vec!['S', 'F', 'C', 'S'],
-                    vec!['A', 'D', 'E', 'E']
-                ],
-                String::from("ABCCED")
-            ),
-            true
-        );
+        assert!(Solution::exist(
+            vec![
+                vec!['A', 'B', 'C', 'E'],
+                vec!['S', 'F', 'C', 'S'],
+                vec!['A', 'D', 'E', 'E']
+            ],
+            String::from("ABCCED")
+        ))
     }
     #[test]
     fn example2() {
-        assert_eq!(
-            Solution::exist(
-                vec![
-                    vec!['A', 'B', 'C', 'E'],
-                    vec!['S', 'F', 'C', 'S'],
-                    vec!['A', 'D', 'E', 'E']
-                ],
-                String::from("SEE")
-            ),
-            true
-        );
+        assert!(Solution::exist(
+            vec![
+                vec!['A', 'B', 'C', 'E'],
+                vec!['S', 'F', 'C', 'S'],
+                vec!['A', 'D', 'E', 'E']
+            ],
+            String::from("SEE")
+        ))
     }
     #[test]
     fn example3() {
-        assert_eq!(
-            Solution::exist(
-                vec![
-                    vec!['A', 'B', 'C', 'E'],
-                    vec!['S', 'F', 'C', 'S'],
-                    vec!['A', 'D', 'E', 'E']
-                ],
-                String::from("ABCB")
-            ),
-            false
-        );
+        assert!(!Solution::exist(
+            vec![
+                vec!['A', 'B', 'C', 'E'],
+                vec!['S', 'F', 'C', 'S'],
+                vec!['A', 'D', 'E', 'E']
+            ],
+            String::from("ABCB")
+        ))
     }
 }

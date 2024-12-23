@@ -68,20 +68,20 @@ mod tests {
     fn example1() {
         let p = Tree::from(vec![Some(1), Some(2), Some(3)]);
         let q = Tree::from(vec![Some(1), Some(2), Some(3)]);
-        assert_eq!(Solution::is_same_tree(p.root, q.root), true);
+        assert!(Solution::is_same_tree(p.root, q.root));
     }
 
     #[test]
     fn example2() {
         let p = Tree::from(vec![Some(1), Some(2)]);
         let q = Tree::from(vec![Some(1), None, Some(2)]);
-        assert_eq!(Solution::is_same_tree(p.root, q.root), false);
+        assert!(!Solution::is_same_tree(p.root, q.root));
     }
 
     #[test]
     fn example3() {
         let p = Tree::from(vec![Some(1), Some(2), Some(1)]);
         let q = Tree::from(vec![Some(1), Some(1), Some(2)]);
-        assert_eq!(Solution::is_same_tree(p.root, q.root), false);
+        assert!(!Solution::is_same_tree(p.root, q.root));
     }
 }

@@ -46,18 +46,18 @@ mod tests {
     #[test]
     fn example1() {
         let nums = vec![2, 3, 1, 1, 4];
-        assert_eq!(Solution::can_jump(nums), true);
+        assert!(Solution::can_jump(nums));
     }
 
     #[test]
     fn example2() {
         let nums = vec![3, 2, 1, 0, 4];
-        assert_eq!(Solution::can_jump(nums), false);
+        assert!(!Solution::can_jump(nums));
     }
 
     #[test]
     fn example3() {
         let nums = vec![0];
-        assert_eq!(Solution::can_jump(nums), true);
+        assert!(Solution::can_jump(nums));
     }
 }

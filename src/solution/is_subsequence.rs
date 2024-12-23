@@ -54,12 +54,12 @@ mod tests {
     fn example1() {
         let s = String::from("abc");
         let t = String::from("ahbgdc");
-        assert_eq!(Solution::is_subsequence(s, t), true)
+        assert!(Solution::is_subsequence(s, t))
     }
     #[test]
     fn example2() {
         let s = String::from("axc");
         let t = String::from("ahbgdc");
-        assert_eq!(Solution::is_subsequence(s, t), false)
+        assert!(!Solution::is_subsequence(s, t))
     }
 }

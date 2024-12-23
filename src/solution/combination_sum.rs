@@ -63,7 +63,7 @@ struct CombinationSum<'a> {
     sum: i32,
 }
 
-impl<'a> CombinationSum<'a> {
+impl CombinationSum<'_> {
     fn backtrace(&mut self, start: usize) {
         for i in start..self.candidates.len() {
             self.combination.push(self.candidates[i]);
