@@ -6,6 +6,11 @@ pub fn parse_i32(input: &str) -> i32 {
     value.trim().parse::<i32>().expect(error_msg::I32_VALUE)
 }
 
+pub fn parse_bits(input: &str) -> u32 {
+    let (_, binary_str) = nom_parser::binary(input).expect(error_msg::BINARY_32_BITS_FORMAT);
+    u32::from_str_radix(binary_str, 2).expect(error_msg::BINARY_32_BITS_FORMAT)
+}
+
 pub fn parse_two_i32(input: &str) -> (i32, i32) {
     let (input, value1) = nom_parser::decimal(input).expect(error_msg::INTEGER_FORMAT);
     let (_, value2) = nom_parser::decimal(input).expect(error_msg::INTEGER_FORMAT);

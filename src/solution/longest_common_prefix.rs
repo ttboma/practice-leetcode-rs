@@ -42,7 +42,7 @@ impl Solution {
             }
             i += 1;
         }
-        return strs.first().unwrap()[0..i].to_owned();
+        strs.first().unwrap()[0..i].to_owned()
     }
 }
 

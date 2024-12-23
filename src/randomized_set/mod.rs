@@ -85,11 +85,11 @@ mod tests {
     #[test]
     fn example1() {
         let mut obj = RandomizedSet::new();
-        assert_eq!(obj.insert(1), true); // Inserts 1 to the set. Returns true as 1 was inserted successfully.
-        assert_eq!(obj.remove(2), false); // Returns false as 2 does not exist in the set.
-        assert_eq!(obj.insert(2), true); // Inserts 2 to the set, returns true. Set now contains [1,2].
-        assert_eq!(obj.remove(1), true); // Removes 1 from the set, returns true. Set now contains [2].
-        assert_eq!(obj.insert(2), false); // 2 was already in the set, so return false.
+        assert!(obj.insert(1)); // Inserts 1 to the set. Returns true as 1 was inserted successfully.
+        assert!(!obj.remove(2)); // Returns false as 2 does not exist in the set.
+        assert!(obj.insert(2)); // Inserts 2 to the set, returns true. Set now contains [1,2].
+        assert!(obj.remove(1)); // Removes 1 from the set, returns true. Set now contains [2].
+        assert!(!obj.insert(2)); // 2 was already in the set, so return false.
         obj.get_random(); // Since 2 is the only number in the set, getRandom() will always return 2.
     }
 }

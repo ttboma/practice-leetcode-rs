@@ -65,25 +65,16 @@ mod tests {
 
     #[test]
     fn example1() {
-        assert_eq!(
-            Solution::can_construct("a".to_string(), "b".to_string()),
-            false
-        );
+        assert!(!Solution::can_construct("a".to_string(), "b".to_string()),)
     }
 
     #[test]
     fn example2() {
-        assert_eq!(
-            Solution::can_construct("aa".to_string(), "ab".to_string()),
-            false
-        );
+        assert!(!Solution::can_construct("aa".to_string(), "ab".to_string()),)
     }
 
     #[test]
     fn example3() {
-        assert_eq!(
-            Solution::can_construct("aa".to_string(), "aab".to_string()),
-            true
-        );
+        assert!(Solution::can_construct("aa".to_string(), "aab".to_string()))
     }
 }

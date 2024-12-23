@@ -55,11 +55,11 @@ mod test {
             vec!['i', 'h', 'k', 'r'],
             vec!['i', 'f', 'l', 'v'],
         ];
-        let words = vec!["oath", "pea", "eat", "rain"]
+        let words = ["oath", "pea", "eat", "rain"]
             .iter()
             .map(|s| s.to_string())
             .collect();
-        let expected: Vec<String> = vec!["oath", "eat"].iter().map(|s| s.to_string()).collect();
+        let expected: Vec<String> = ["oath", "eat"].iter().map(|s| s.to_string()).collect();
         let ans = Solution::find_words(board, words);
         assert_eq!(ans, expected);
     }
@@ -67,7 +67,7 @@ mod test {
     #[test]
     fn example2() {
         let board = vec![vec!['a', 'b'], vec!['c', 'd']];
-        let words = vec!["abcb"].iter().map(|s| s.to_string()).collect();
+        let words = ["abcb"].iter().map(|s| s.to_string()).collect();
         let expected: Vec<String> = vec![];
         assert_eq!(Solution::find_words(board, words), expected);
     }

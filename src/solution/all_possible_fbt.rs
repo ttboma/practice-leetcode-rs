@@ -78,12 +78,12 @@ mod tests {
 
     #[test]
     fn example1() {
-        let fbt = vec![
+        let fbt = [
             Solution::all_possible_fbt(1),
             Solution::all_possible_fbt(3),
             Solution::all_possible_fbt(5),
         ];
-        let output = vec![
+        let output = [
             Some(Rc::new(RefCell::new(TreeNode {
                 val: 0,
                 left: Some(fbt[0][0].clone().unwrap()),

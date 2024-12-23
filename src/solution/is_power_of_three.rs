@@ -48,16 +48,16 @@ mod tests {
 
     #[test]
     fn example1() {
-        assert_eq!(Solution::is_power_of_three(27), true);
+        assert!(Solution::is_power_of_three(27));
     }
 
     #[test]
     fn example2() {
-        assert_eq!(Solution::is_power_of_three(0), false);
+        assert!(!Solution::is_power_of_three(0));
     }
 
     #[test]
     fn example3() {
-        assert_eq!(Solution::is_power_of_three(-1), false);
+        assert!(!Solution::is_power_of_three(-1));
     }
 }

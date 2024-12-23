@@ -24,6 +24,10 @@ pub fn decimal(input: &str) -> IResult<&str, &str> {
     )))(input)
 }
 
+pub fn binary(input: &str) -> IResult<&str, &str> {
+    ws(recognize(many1(one_of("01"))))(input)
+}
+
 pub fn parse_list(input: &str) -> IResult<&str, Vec<&str>> {
     delimited(
         ws(tag("[")),

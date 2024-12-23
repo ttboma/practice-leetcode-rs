@@ -66,30 +66,30 @@ mod tests {
     fn example1() {
         let s = String::from("egg");
         let t = String::from("add");
-        assert_eq!(Solution::is_isomorphic(s, t), true)
+        assert!(Solution::is_isomorphic(s, t))
     }
     #[test]
     fn example2() {
         let s = String::from("foo");
         let t = String::from("bar");
-        assert_eq!(Solution::is_isomorphic(s, t), false)
+        assert!(!Solution::is_isomorphic(s, t))
     }
     #[test]
     fn example3() {
         let s = String::from("paper");
         let t = String::from("title");
-        assert_eq!(Solution::is_isomorphic(s, t), true)
+        assert!(Solution::is_isomorphic(s, t))
     }
     #[test]
     fn example4() {
         let s = String::from("");
         let t = String::from("");
-        assert_eq!(Solution::is_isomorphic(s, t), true)
+        assert!(Solution::is_isomorphic(s, t))
     }
     #[test]
     fn example5() {
         let s = String::from("badc");
         let t = String::from("baba");
-        assert_eq!(Solution::is_isomorphic(s, t), false)
+        assert!(!Solution::is_isomorphic(s, t))
     }
 }

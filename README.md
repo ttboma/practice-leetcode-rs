@@ -1,18 +1,3 @@
-# Table of Content
-
-- [Table of Content](#table-of-content)
-- [Introduction](#introduction)
-- [Install and Setup](#install-and-setup)
-- [Example Usage](#example-usage)
-- [API Documentation](#api-documentation)
-- [Developer's Note](#developers-note)
-  - [Convention](#convention)
-  - [How to Use `pre-commit`](#how-to-use-pre-commit)
-  - [Visual Studio Code Leverage](#visual-studio-code-leverage)
-  - [How to debug with CodeLLDB](#how-to-debug-with-codelldb)
-  - [How to debug with lldb](#how-to-debug-with-lldb)
-  - [TODO](#todo)
-
 # Introduction
 
 Hi,
@@ -101,6 +86,7 @@ Please follow the conventions, as noted below, to contribute to this project.
 
 - Use chrome and [Clip LeetCode](https://chrome.google.com/webstore/detail/clip-leetcode/cnghimckckgcmhbdokjielmhkmnagdcp/related)
    extension to maintain documentation of each method of [`Solution`]
+- Follow the [Conventional Commits 1.0.0](https://www.conventionalcommits.org/en/v1.0.0/#specification), which recommends types `fix:` and `feat:` `build:`, `chore:`, `ci:`, `docs:`, `style:`, `refactor:`, `perf:`, `test:`, and others (based on the [Angular convention](https://github.com/angular/angular/blob/22b96b9/CONTRIBUTING.md#-commit-message-guidelines)).
 
 ## How to Use `pre-commit`
 
@@ -110,6 +96,21 @@ Please install [pre-commit](https://pre-commit.com/) with the following command 
 % pre-commit --version
 pre-commit 3.7.1
 % pre-commit install --hook-type commit-msg --hook-type pre-commit --hook-type pre-push
+```
+
+## [Git-cliff](https://git-cliff.org/)
+
+Please install and initialize git-cliff:
+
+```bash
+% cargo install git-cliff
+% git cliff --init
+```
+
+Generate a changelog:
+
+```bash
+% git cliff -o CHANGELOG.md
 ```
 
 ## Visual Studio Code Leverage

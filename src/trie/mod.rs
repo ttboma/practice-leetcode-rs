@@ -285,10 +285,10 @@ mod tests {
     fn example1() {
         let mut trie = Trie::new();
         trie.insert("apple".to_string());
-        assert_eq!(trie.search("apple".to_string()), true);
-        assert_eq!(trie.search("app".to_string()), false);
-        assert_eq!(trie.starts_with("app".to_string()), true);
+        assert!(trie.search("apple".to_string()));
+        assert!(!trie.search("app".to_string()));
+        assert!(trie.starts_with("app".to_string()));
         trie.insert("app".to_string());
-        assert_eq!(trie.search("app".to_string()), true);
+        assert!(trie.search("app".to_string()));
     }
 }

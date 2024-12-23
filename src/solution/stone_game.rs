@@ -58,11 +58,11 @@ mod tests {
 
     #[test]
     fn example1() {
-        assert_eq!(Solution::stone_game(vec![5, 3, 4, 5]), true);
+        assert!(Solution::stone_game(vec![5, 3, 4, 5]));
     }
 
     #[test]
     fn example2() {
-        assert_eq!(Solution::stone_game(vec![3, 7, 2, 3]), true);
+        assert!(Solution::stone_game(vec![3, 7, 2, 3]));
     }
 }

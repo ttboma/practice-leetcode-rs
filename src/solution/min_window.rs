@@ -108,7 +108,7 @@ impl<'a, 'b> MinWindow<'a, 'b> {
     }
 }
 
-impl<'a, 'b> Iterator for MinWindow<'a, 'b> {
+impl<'a> Iterator for MinWindow<'a, '_> {
     type Item = &'a str;
 
     fn next(&mut self) -> Option<Self::Item> {

@@ -74,18 +74,18 @@ mod tests {
     fn example1() {
         let pattern = String::from("abba");
         let s = String::from("dog cat cat dog");
-        assert_eq!(Solution::word_pattern(pattern, s), true)
+        assert!(Solution::word_pattern(pattern, s))
     }
     #[test]
     fn example2() {
         let pattern = String::from("abba");
         let s = String::from("dog cat cat fish");
-        assert_eq!(Solution::word_pattern(pattern, s), false)
+        assert!(!Solution::word_pattern(pattern, s))
     }
     #[test]
     fn example3() {
         let pattern = String::from("aaaa");
         let s = String::from("dog cat cat dog");
-        assert_eq!(Solution::word_pattern(pattern, s), false)
+        assert!(!Solution::word_pattern(pattern, s))
     }
 }
