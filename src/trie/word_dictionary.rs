@@ -100,10 +100,10 @@ mod tests {
         wd.add_word("bad".to_string());
         wd.add_word("dad".to_string());
         wd.add_word("mad".to_string());
-        assert_eq!(wd.search("pad".to_string()), false);
-        assert_eq!(wd.search("bad".to_string()), true);
-        assert_eq!(wd.search(".ad".to_string()), true);
-        assert_eq!(wd.search("b..".to_string()), true);
+        assert!(!wd.search("pad".to_string()));
+        assert!(wd.search("bad".to_string()));
+        assert!(wd.search(".ad".to_string()));
+        assert!(wd.search("b..".to_string()));
     }
 
     #[test]
@@ -113,14 +113,14 @@ mod tests {
         wd.add_word("and".to_string());
         wd.add_word("an".to_string());
         wd.add_word("add".to_string());
-        assert_eq!(wd.search("a".to_string()), false);
-        assert_eq!(wd.search(".at".to_string()), false);
+        assert!(!wd.search("a".to_string()));
+        assert!(!wd.search(".at".to_string()));
         wd.add_word("bat".to_string());
-        assert_eq!(wd.search(".at".to_string()), true);
-        assert_eq!(wd.search("an.".to_string()), true);
-        assert_eq!(wd.search("a.d.".to_string()), false);
-        assert_eq!(wd.search("b.".to_string()), false);
-        assert_eq!(wd.search("a.d".to_string()), true);
-        assert_eq!(wd.search(".".to_string()), false);
+        assert!(wd.search(".at".to_string()));
+        assert!(wd.search("an.".to_string()));
+        assert!(!wd.search("a.d.".to_string()));
+        assert!(!wd.search("b.".to_string()));
+        assert!(wd.search("a.d".to_string()));
+        assert!(!wd.search(".".to_string()));
     }
 }

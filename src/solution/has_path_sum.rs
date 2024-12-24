@@ -87,7 +87,7 @@ mod tests {
             }))),
         })));
         let target_sum = 22;
-        assert_eq!(Solution::has_path_sum(root, target_sum), true);
+        assert!(Solution::has_path_sum(root, target_sum));
     }
 
     #[test]
@@ -98,13 +98,13 @@ mod tests {
             right: Some(Rc::new(RefCell::new(TreeNode::new(3)))),
         })));
         let target_sum = 5;
-        assert_eq!(Solution::has_path_sum(root, target_sum), false);
+        assert!(!Solution::has_path_sum(root, target_sum));
     }
 
     #[test]
     fn example3() {
         let root: Option<Rc<RefCell<TreeNode>>> = None;
         let target_sum = 0;
-        assert_eq!(Solution::has_path_sum(root, target_sum), false);
+        assert!(!Solution::has_path_sum(root, target_sum));
     }
 }

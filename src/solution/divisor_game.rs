@@ -52,11 +52,11 @@ mod tests {
 
     #[test]
     fn example1() {
-        assert_eq!(Solution::divisor_game(2), true);
+        assert!(Solution::divisor_game(2));
     }
 
     #[test]
     fn example2() {
-        assert_eq!(Solution::divisor_game(3), false);
+        assert!(!Solution::divisor_game(3));
     }
 }

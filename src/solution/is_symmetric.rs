@@ -76,7 +76,7 @@ mod tests {
             Some(4),
             Some(3),
         ]);
-        assert_eq!(Solution::is_symmetric(tree.root), true);
+        assert!(Solution::is_symmetric(tree.root));
     }
 
     #[test]
@@ -90,6 +90,6 @@ mod tests {
             None,
             Some(3),
         ]);
-        assert_eq!(Solution::is_symmetric(tree.root), false);
+        assert!(!Solution::is_symmetric(tree.root));
     }
 }

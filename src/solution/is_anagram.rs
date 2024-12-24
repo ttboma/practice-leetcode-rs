@@ -59,20 +59,20 @@ mod tests {
     fn example1() {
         let s = "anagram";
         let t = "nagaram";
-        assert_eq!(Solution::is_anagram(s.to_string(), t.to_string()), true);
+        assert!(Solution::is_anagram(s.to_string(), t.to_string()));
     }
 
     #[test]
     fn example2() {
         let s = "rat";
         let t = "car";
-        assert_eq!(Solution::is_anagram(s.to_string(), t.to_string()), false);
+        assert!(!Solution::is_anagram(s.to_string(), t.to_string()));
     }
 
     #[test]
     fn example3() {
         let s = "aacc";
         let t = "ccac";
-        assert_eq!(Solution::is_anagram(s.to_string(), t.to_string()), false);
+        assert!(!Solution::is_anagram(s.to_string(), t.to_string()));
     }
 }

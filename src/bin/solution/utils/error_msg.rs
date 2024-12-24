@@ -7,4 +7,5 @@ pub const ITEM_OF_OPT_I32: &str = "item should be a i32 type value or null";
 pub const ITEM_OF_CHAR: &str = "item should be a char type value";
 pub const I32_VALUE: &str = "i32 type value";
 pub const INTEGER_FORMAT: &str = "input should conform to the integer format";
+pub const BINARY_32_BITS_FORMAT: &str = "input should conform to the 32-bits binary value format";
 pub const U64_VALUE: &str = "u64 type value";

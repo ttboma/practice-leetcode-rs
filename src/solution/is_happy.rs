@@ -77,11 +77,11 @@ mod tests {
 
     #[test]
     fn example1() {
-        assert_eq!(Solution::is_happy(19), true);
+        assert!(Solution::is_happy(19));
     }
 
     #[test]
     fn example2() {
-        assert_eq!(Solution::is_happy(2), false);
+        assert!(!Solution::is_happy(2));
     }
 }
