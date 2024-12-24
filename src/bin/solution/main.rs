@@ -83,7 +83,7 @@ enum Commands {
     /// [205. Isomorphic Strings](https://leetcode.com/problems/isomorphic-strings/)
     IsIsomorphic {},
     /// [234. Palindrome Linked List](https://leetcode.com/problems/palindrome-linked-list/description/)
-    IsPalindrome {},
+    IsPalindromeList {},
     /// [342. Power of Four](https://leetcode.com/problems/power-of-four/)
     IsPowerOfFour {},
     /// [326. Power of Three](https://leetcode.com/problems/power-of-three/)
@@ -372,6 +372,8 @@ enum Commands {
     SingleNumber {},
     /// [137. Single Number II](https://leetcode.com/problems/single-number-ii/description/?envType=study-plan-v2&envId=top-interview-150)
     SingleNumber2 {},
+    /// [9. Palindrome Number](https://leetcode.com/problems/palindrome-number/description/?envType=study-plan-v2&envId=top-interview-150)
+    IsPalindrome {},
 }
 
 fn main() {
@@ -524,10 +526,10 @@ fn main() {
             let (s, t) = parse_two_str(&input);
             println!("{:?}", Solution::is_isomorphic(s, t));
         }
-        Commands::IsPalindrome {} => {
+        Commands::IsPalindromeList {} => {
             let list = parse_i32_list(&input);
             let head = SinglyLinkedList::from(list).head;
-            println!("{:?}", Solution::is_palindrome(head));
+            println!("{:?}", Solution::is_palindrome_list(head));
         }
         Commands::IsPowerOfFour {} => {
             let n = parse_i32(&input);
@@ -1272,6 +1274,10 @@ fn main() {
         Commands::SingleNumber2 {} => {
             let nums = parse_i32_list(&input);
             println!("{:?}", Solution::single_number2(nums));
+        }
+        Commands::IsPalindrome {} => {
+            let x = parse_i32(&input);
+            println!("{:?}", Solution::is_palindrome(x));
         }
     }
 }

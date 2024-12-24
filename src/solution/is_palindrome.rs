@@ -29,7 +29,7 @@ impl Solution {
     /// - `0 <= Node.val <= 9`
     ///
     /// **Follow up:**  Could you do it in `O(n)` time and `O(1)` space?
-    pub fn is_palindrome(head: Option<Box<ListNode>>) -> bool {
+    pub fn is_palindrome_list(head: Option<Box<ListNode>>) -> bool {
         let mut list = SinglyLinkedList { head };
         let rev_list = list.splice_at_half().reverse();
 
@@ -95,6 +95,53 @@ impl Solution {
         }
         true
     }
+
+    /// # [9. Palindrome Number](https://leetcode.com/problems/palindrome-number/description/?envType=study-plan-v2&envId=top-interview-150)
+    ///
+    /// Given an integer `x`, return `true` if `x` is a <div aria-expanded="false" data-headlessui-state="" id="headlessui-popover-button-:rt:">**palindrome** <div style="position: fixed; z-index: 40; inset: 0px auto auto 0px; transform: translate(332px, 183px);">, and `false` otherwise.
+    ///
+    /// **Example 1:**
+    ///
+    /// ```txt
+    /// Input: x = 121
+    /// Output: true
+    /// Explanation: 121 reads as 121 from left to right and from right to left.
+    /// ```
+    ///
+    /// **Example 2:**
+    ///
+    /// ```txt
+    /// Input: x = -121
+    /// Output: false
+    /// Explanation: From left to right, it reads -121. From right to left, it becomes 121-. Therefore it is not a palindrome.
+    /// ```
+    ///
+    /// **Example 3:**
+    ///
+    /// ```txt
+    /// Input: x = 10
+    /// Output: false
+    /// Explanation: Reads 01 from right to left. Therefore it is not a palindrome.
+    /// ```
+    ///
+    /// **Constraints:**
+    ///
+    /// - `-2^31<= x <= 2^31- 1`
+    ///
+    /// **Follow up:**  Could you solve it without converting the integer to a string?
+    pub fn is_palindrome(x: i32) -> bool {
+        if x < 0 {
+            return false;
+        }
+        let mut tmp = x;
+        let mut reverse_x = 0;
+        while tmp != 0 {
+            reverse_x *= 10;
+            reverse_x += tmp % 10;
+            tmp /= 10;
+        }
+        x == reverse_x
+    }
 }
 
 #[cfg(test)]
@@ -106,19 +153,19 @@ mod tests {
     #[test]
     fn example1_1() {
         let head = singly_linked_list![1, 2, 2, 1].head;
-        assert!(Solution::is_palindrome(head));
+        assert!(Solution::is_palindrome_list(head));
     }
 
     #[test]
     fn example1_2() {
         let head = singly_linked_list![1, 2].head;
-        assert!(!Solution::is_palindrome(head));
+        assert!(!Solution::is_palindrome_list(head));
     }
 
     #[test]
     fn example1_3() {
         let head = singly_linked_list![2].head;
-        assert!(Solution::is_palindrome(head));
+        assert!(Solution::is_palindrome_list(head));
     }
 
     #[test]
@@ -137,5 +184,20 @@ mod tests {
     fn example2_3() {
         let s = " ".to_owned();
         assert!(Solution::is_palindrome_str(s));
+    }
+
+    #[test]
+    fn example3_1() {
+        assert!(Solution::is_palindrome(121));
+    }
+
+    #[test]
+    fn example3_2() {
+        assert!(!Solution::is_palindrome(-121));
+    }
+
+    #[test]
+    fn example3_3() {
+        assert!(!Solution::is_palindrome(10));
     }
 }
