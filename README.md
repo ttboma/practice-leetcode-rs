@@ -113,6 +113,12 @@ Generate a changelog:
 % git cliff -o CHANGELOG.md
 ```
 
+Before merging `develop` branch into `release` branch, remember to:
+
+```bash
+git cliff --unreleased --bump -o CHANGELOG.md
+```
+
 ## Visual Studio Code Leverage
 
 To maintain your code quality, the following is a list of recommended [Visual Studio Code](https://code.visualstudio.com/) plugins:
