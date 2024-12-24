@@ -116,7 +116,7 @@ Generate a changelog:
 Before merging `develop` branch into `release` branch, remember to:
 
 ```bash
-git cliff --unreleased --bump -o CHANGELOG.md
+git cliff --bump -o CHANGELOG.md
 ```
 
 ## Visual Studio Code Leverage
